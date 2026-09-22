@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.24)
+project(awe_blas_examples LANGUAGES C CXX)
+find_package(awe_blas CONFIG REQUIRED)
+add_executable(awe_example_c minimal.c)
+target_link_libraries(awe_example_c PRIVATE awe::awe_blas)
+add_executable(awe_example_cpp minimal.cpp)
+target_compile_features(awe_example_cpp PRIVATE cxx_std_17)
+target_link_libraries(awe_example_cpp PRIVATE awe::awe_blas)

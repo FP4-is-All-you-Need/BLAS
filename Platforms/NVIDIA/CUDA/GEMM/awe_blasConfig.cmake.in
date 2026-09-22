@@ -1,0 +1,4 @@
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+find_dependency(CUDAToolkit 13.2)
+include("${CMAKE_CURRENT_LIST_DIR}/awe_blasTargets.cmake")
