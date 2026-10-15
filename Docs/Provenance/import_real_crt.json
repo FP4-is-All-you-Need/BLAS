@@ -1,0 +1,534 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "scope": "Device and metadata equality, host table equality, and token checks after specified host API edits. Timing and hash records bind all three measured libraries. The public API has not run on a GPU.",
+  "engines": [
+    {
+      "id": "k96_d53_gemm_crt",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ab3e800ef7fd12cf066de395f8ad6864ff10c24cb9e1643c80928eb77d82befe",
+          "attributes": "00288ac055a8bbd2458cfbc275d79dd6f51c9b7ceb67a0df4c830d2764ce6d55",
+          "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ab3e800ef7fd12cf066de395f8ad6864ff10c24cb9e1643c80928eb77d82befe",
+          "attributes": "00288ac055a8bbd2458cfbc275d79dd6f51c9b7ceb67a0df4c830d2764ce6d55",
+          "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "0dd7d5991908e4bfa442f7cc374b9608c7264757573e4c57ef17b796b507a5a3",
+        "candidate_sha256": "4798d8aa27fd4714f359c9f4e0a73baaac52f18f33221accfa3353ecd30669d6",
+        "reference_sass_sha256": "f478b10371e2ca39228a53f11a5d9e20df10f40480b18fad8e5128f3b94e07e4",
+        "candidate_sass_sha256": "f478b10371e2ca39228a53f11a5d9e20df10f40480b18fad8e5128f3b94e07e4",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64032,
+        "candidate_instructions": 64032
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL11l8_limb_off": "1e688230b788c31cfbcd7ba0d6ae8db786422acedba5a715322dd9bdfad11749",
+        "_ZL9l8_planes": "cd8ce2f2b6d9c19ba95a1aa47b67e0a69613920ccdf64bf2d54204b9c87427b5",
+        "_ZL7l8_kind": "5d66a0d284376d947d7b3269eb2fd3dd5f111f1b3454ba7c591e843d4ab5fb7b",
+        "_ZL6l8_mod": "78e274130b8d6a0ce2c1b4626446ef86fc2e8233f4865fa26595e9ff2e826be5",
+        "_ZL8l8_limbs": "69e56679dd7b17eb8a73adcc3cd0e667ced33187d563a051fd4ca9ad0bc3738a",
+        "_ZL18l8k_flips59_k16384": "45c14affa28a12ada13c7a27dff4127aaed81074061477419907738f950b0d43",
+        "_ZL17l8k_mods59_k16384": "b7e7f8e6340e1bcdd5c3b5683a51ed3787e19c75f2d6612dbc3dac5a086895dd",
+        "_ZL17l8k_flips59_k8192": "38d7b9c63d1711a01417a649b5768a9f694794873fec18fa933c40ba5ad35a48",
+        "_ZL16l8k_mods59_k8192": "df6dd53ecac0ba84a410f638458635e0aeecd75dceac072e5bf7736578678c9b",
+        "_ZL16l8_flip_a_K16384": "45c14affa28a12ada13c7a27dff4127aaed81074061477419907738f950b0d43",
+        "_ZL15l8_flip_a_K4096": "38d7b9c63d1711a01417a649b5768a9f694794873fec18fa933c40ba5ad35a48",
+        "_ZL15l8_flip_a_K8192": "38d7b9c63d1711a01417a649b5768a9f694794873fec18fa933c40ba5ad35a48"
+      },
+      "tokens": {
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "duald40_load.cuh": true,
+        "l8rt_plan.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "l8k_tables_k4096.h": true,
+        "crt2_split.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "l8k_tables.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "l8rt.cu": true,
+        "ptx_common.cuh": true,
+        "crt2_dev.cuh": true,
+        "l8rt_dtab.cuh": true,
+        "fp64k_tables.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "l8_encode.cuh": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "crt2_host.h": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {
+        "l8rt_plan.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt.cu": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt_dtab.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison."
+      }
+    },
+    {
+      "id": "k96_d51_gemm_crt",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4fa8e786c8fd59dc67c02e11585a4918f5019267a893587b64318946dc619120",
+          "attributes": "14e328c780211893229c2155f22fe8f7699f995cd28c04b710ffe20a3067ce98",
+          "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4fa8e786c8fd59dc67c02e11585a4918f5019267a893587b64318946dc619120",
+          "attributes": "14e328c780211893229c2155f22fe8f7699f995cd28c04b710ffe20a3067ce98",
+          "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "f1742f7602b740cf31e1c47a286f6175ddfbb97c9da6e89169f697c6b242358c",
+        "candidate_sha256": "f2fd12f42e2cdf76a2ef7b8c2af7a173044f2913c7fc32f3787dbb624f67595a",
+        "reference_sass_sha256": "a28acca562d7c4a47c10a68aa64e222929601a436abbaec2a292cb834c65e7c8",
+        "candidate_sass_sha256": "a28acca562d7c4a47c10a68aa64e222929601a436abbaec2a292cb834c65e7c8",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 63488,
+        "candidate_instructions": 63488
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL11l8_limb_off": "da4d98c7ee7617fc10850755f8382ab55925ac0340588c6cffe7dc30aab84e02",
+        "_ZL9l8_planes": "5bab4695b031efa0f9a697aeae575b8f6bb0821cfb54d5351982a8bbd32f42e8",
+        "_ZL7l8_kind": "fa82f9b6a1740a1a9db6c25cf8b1ad13378908d22f82e0772ec0b33ce6451754",
+        "_ZL6l8_mod": "767c863b94ec7a04a54c549e70f1bd27d321b9af3865ac4bfcf30639a563784e",
+        "_ZL8l8_limbs": "997cf77e5fa57c5e5ef7aeff788384952f190dedab591c6b1d5112e6e65c5ebd",
+        "_ZL18l8k_flips59_k16384": "2f8f864aaaa588026cba797b975db3296db12c1b51d7a5d93b5582b40f64763b",
+        "_ZL17l8k_mods59_k16384": "d23495c3a7e9aeee2db3df445f23e60c45e0c53710b03cd0d8c2e3d63796e496",
+        "_ZL17l8k_flips59_k8192": "b0a7c9e026e783d477d71c68853aaf15e892b8e1b9c3a0469b4b3a9b7675e903",
+        "_ZL16l8k_mods59_k8192": "263e12e8a17680bc7e1f7daff2a54b993fe0ea803378d83e555651940a7f73db",
+        "_ZL16l8_flip_a_K16384": "2f8f864aaaa588026cba797b975db3296db12c1b51d7a5d93b5582b40f64763b",
+        "_ZL15l8_flip_a_K4096": "b0a7c9e026e783d477d71c68853aaf15e892b8e1b9c3a0469b4b3a9b7675e903",
+        "_ZL15l8_flip_a_K8192": "b0a7c9e026e783d477d71c68853aaf15e892b8e1b9c3a0469b4b3a9b7675e903"
+      },
+      "tokens": {
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "duald40_load.cuh": true,
+        "l8rt_plan.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "l8k_tables_k4096.h": true,
+        "crt2_split.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "l8k_tables.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "l8rt.cu": true,
+        "ptx_common.cuh": true,
+        "crt2_dev.cuh": true,
+        "l8rt_dtab.cuh": true,
+        "fp64k_tables.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "l8_encode.cuh": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "crt2_host.h": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {
+        "l8rt_plan.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt.cu": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt_dtab.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison."
+      }
+    },
+    {
+      "id": "k96_d52_gemm_crt",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4fa8e786c8fd59dc67c02e11585a4918f5019267a893587b64318946dc619120",
+          "attributes": "13b58c823fdc02317b6d26f4480889dc21d93790d7f5c7aebd0a95f8fd935fd7",
+          "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4fa8e786c8fd59dc67c02e11585a4918f5019267a893587b64318946dc619120",
+          "attributes": "13b58c823fdc02317b6d26f4480889dc21d93790d7f5c7aebd0a95f8fd935fd7",
+          "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "d9b80eef85e93b11a34e7af7259bcd9dca1b2a5ff8a0658073d555dd5d704696",
+        "candidate_sha256": "4f1ee9a10ebb7f1c4146a306b9988d777c9b35f3830202905817e576248ed6bc",
+        "reference_sass_sha256": "23d7bb18117a30564d4fa9422bd27650fa9ae39e42ebf2182942886330d14bf8",
+        "candidate_sass_sha256": "23d7bb18117a30564d4fa9422bd27650fa9ae39e42ebf2182942886330d14bf8",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 62760,
+        "candidate_instructions": 62760
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL11l8_limb_off": "a9ba584d15408ea971a48f3d82f3cfec37985ed0ee1599fe7e2d32fed54be809",
+        "_ZL9l8_planes": "5122e5a13bfc07b611b42345d8b7d2ca848662b5641640d347bf9005807b2cf8",
+        "_ZL7l8_kind": "2f44eeeefb286807dc2bf1e1d576c205d317e93bc8d143b4274fcbdfb3ac7d3f",
+        "_ZL6l8_mod": "b78ede7b273225aa298554297eca582f2de1809047200853f80aa01b3f463975",
+        "_ZL8l8_limbs": "0285b232d616199706571ab844be3b252873d2101074bd34d56de3bda03ecebb",
+        "_ZL18l8k_flips59_k16384": "c93afbc73b2385ade8bdd251e24356bda0327391122013f1f75601464dd59bc4",
+        "_ZL17l8k_mods59_k16384": "3769525819f848875734cd38528ea3ee914b03d9be17873782b52dbc4fe54bd0",
+        "_ZL17l8k_flips59_k8192": "b27c8916bdc508e6e10f2bc89e7b15adfc23ae9428a00f84c5b934d9af2540c3",
+        "_ZL16l8k_mods59_k8192": "ed613dc9ee45f99da44109a1dbe063fa64ea893ed56464d1ae241e4caa5bb319",
+        "_ZL16l8_flip_a_K16384": "c93afbc73b2385ade8bdd251e24356bda0327391122013f1f75601464dd59bc4",
+        "_ZL15l8_flip_a_K4096": "b27c8916bdc508e6e10f2bc89e7b15adfc23ae9428a00f84c5b934d9af2540c3",
+        "_ZL15l8_flip_a_K8192": "b27c8916bdc508e6e10f2bc89e7b15adfc23ae9428a00f84c5b934d9af2540c3"
+      },
+      "tokens": {
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "duald40_load.cuh": true,
+        "l8rt_plan.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "l8k_tables_k4096.h": true,
+        "crt2_split.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "l8k_tables.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "l8rt.cu": true,
+        "ptx_common.cuh": true,
+        "crt2_dev.cuh": true,
+        "l8rt_dtab.cuh": true,
+        "fp64k_tables.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "l8_encode.cuh": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "crt2_host.h": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {
+        "l8rt_plan.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt.cu": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison.",
+        "l8rt_dtab.cuh": "Expected configured API wrapper, option lookup, active device, strict coverage and neutral text edits applied before token comparison."
+      }
+    }
+  ],
+  "measurements": [
+    {
+      "id": "k96_d51_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "bits": 51,
+      "median_ms": 11.802428494966946,
+      "qualified": true,
+      "p95": 80.25,
+      "max_ulp": 2386.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 28,
+        "p95": 117.85,
+        "max": 7509.0,
+        "p95_exact": [
+          2357,
+          20
+        ],
+        "max_exact": [
+          7509,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "5185fd290bb9012b",
+        "got": "5185fd290bb9012b",
+        "ok": true
+      },
+      "reference_sha256": "f1742f7602b740cf31e1c47a286f6175ddfbb97c9da6e89169f697c6b242358c",
+      "record_sha256": "f83f313a607e294e36f80cdc1edbb0f09649289e1e74fd25343fe6eb7c6d4327",
+      "judgement_sha256": "aa811be37c3d455d7bffc40922f40f5df8baf72d699a23a62a9357f03e0d9505",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    },
+    {
+      "id": "k96_d52_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "bits": 52,
+      "median_ms": 11.932494882436899,
+      "qualified": true,
+      "p95": 38.85,
+      "max_ulp": 7244.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 28,
+        "p95": 117.85,
+        "max": 7509.0,
+        "p95_exact": [
+          2357,
+          20
+        ],
+        "max_exact": [
+          7509,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "4e6f0cb7a7cab7f5",
+        "got": "4e6f0cb7a7cab7f5",
+        "ok": true
+      },
+      "reference_sha256": "d9b80eef85e93b11a34e7af7259bcd9dca1b2a5ff8a0658073d555dd5d704696",
+      "record_sha256": "f83f313a607e294e36f80cdc1edbb0f09649289e1e74fd25343fe6eb7c6d4327",
+      "judgement_sha256": "aa811be37c3d455d7bffc40922f40f5df8baf72d699a23a62a9357f03e0d9505",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    },
+    {
+      "id": "k96_d53_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "bits": 53,
+      "median_ms": 12.293503101055439,
+      "qualified": true,
+      "p95": 21.85,
+      "max_ulp": 478.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 28,
+        "p95": 117.85,
+        "max": 7509.0,
+        "p95_exact": [
+          2357,
+          20
+        ],
+        "max_exact": [
+          7509,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "5932fa5539d9a779",
+        "got": "5932fa5539d9a779",
+        "ok": true
+      },
+      "reference_sha256": "0dd7d5991908e4bfa442f7cc374b9608c7264757573e4c57ef17b796b507a5a3",
+      "record_sha256": "f83f313a607e294e36f80cdc1edbb0f09649289e1e74fd25343fe6eb7c6d4327",
+      "judgement_sha256": "aa811be37c3d455d7bffc40922f40f5df8baf72d699a23a62a9357f03e0d9505",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    },
+    {
+      "id": "k96_d51_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "bits": 51,
+      "median_ms": 1.8885600614547728,
+      "qualified": false,
+      "p95": 61.0,
+      "max_ulp": 2919.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 22,
+        "p95": 92.85,
+        "max": 2156.0,
+        "p95_exact": [
+          1857,
+          20
+        ],
+        "max_exact": [
+          2156,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "abc5af369b54bab5",
+        "got": "abc5af369b54bab5",
+        "ok": true
+      },
+      "reference_sha256": "f1742f7602b740cf31e1c47a286f6175ddfbb97c9da6e89169f697c6b242358c",
+      "record_sha256": "26b53e8f6cb0fd579e7cfd8489ad10a56d14156e9dd5a3e1c1ef20e7f3de7fbe",
+      "judgement_sha256": "d5bf7811d7b83332564d13badad8a95435285be896be7b432f7cfa86603cdf44",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    },
+    {
+      "id": "k96_d52_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "bits": 52,
+      "median_ms": 1.8965253162384033,
+      "qualified": true,
+      "p95": 38.85,
+      "max_ulp": 2027.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 22,
+        "p95": 92.85,
+        "max": 2156.0,
+        "p95_exact": [
+          1857,
+          20
+        ],
+        "max_exact": [
+          2156,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "f1894a222f4bf20d",
+        "got": "f1894a222f4bf20d",
+        "ok": true
+      },
+      "reference_sha256": "d9b80eef85e93b11a34e7af7259bcd9dca1b2a5ff8a0658073d555dd5d704696",
+      "record_sha256": "26b53e8f6cb0fd579e7cfd8489ad10a56d14156e9dd5a3e1c1ef20e7f3de7fbe",
+      "judgement_sha256": "d5bf7811d7b83332564d13badad8a95435285be896be7b432f7cfa86603cdf44",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    },
+    {
+      "id": "k96_d53_gemm_crt",
+      "routine": "DGEMM",
+      "distribution": "normal",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "bits": 53,
+      "median_ms": 1.95057423826936,
+      "qualified": true,
+      "p95": 17.85,
+      "max_ulp": 933.0,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 1024,
+        "nonfinite": 0,
+        "correctly_rounded": 22,
+        "p95": 92.85,
+        "max": 2156.0,
+        "p95_exact": [
+          1857,
+          20
+        ],
+        "max_exact": [
+          2156,
+          1
+        ]
+      },
+      "output_hash_check": {
+        "expected": "4ba6e7993f815877",
+        "got": "4ba6e7993f815877",
+        "ok": true
+      },
+      "reference_sha256": "0dd7d5991908e4bfa442f7cc374b9608c7264757573e4c57ef17b796b507a5a3",
+      "record_sha256": "26b53e8f6cb0fd579e7cfd8489ad10a56d14156e9dd5a3e1c1ef20e7f3de7fbe",
+      "judgement_sha256": "d5bf7811d7b83332564d13badad8a95435285be896be7b432f7cfa86603cdf44",
+      "record_file": "result.json",
+      "hardware": "one NVIDIA B300",
+      "month": "2026-10"
+    }
+  ]
+}

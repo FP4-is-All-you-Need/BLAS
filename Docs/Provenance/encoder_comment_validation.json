@@ -1,0 +1,961 @@
+[
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_GEMM/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_GEMM/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_GEMM/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K8192/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K8192/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K8192/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C22/l8_probe.cuh",
+    "before_sha256": "49a51fcf8ff10d01780d768df73193431367ac2e7105ca877249c5740398a714",
+    "after_sha256": "45ef438bb0b3d94803be1041c4a7cc30de687a41e2eb858f1e66473187151590",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C22/l8_encode.cuh",
+    "before_sha256": "cab071746455bf43b7eb3c28630fb2e504ff796ec04b11b51452f52c32d1dc12",
+    "after_sha256": "eb08001b8f00ff3f8e494c9b5cdc74efc76f8b99607b8d825dd9be3ab2ccf810",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/f5_kernel.cuh",
+    "before_sha256": "85eaf95599b22eaef29cdc0f5976f32db8dae7a88878f56b5439a750f99b24ee",
+    "after_sha256": "23b58e37ac5a3c440765a6f8d9dddce5b7daf522d41c25a2ef667921f8eb0585",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/e2_kernel.cuh",
+    "before_sha256": "b8d4ac6d228e49df873f995be2fd43fc328623133cf4193793d4d73da38b1e99",
+    "after_sha256": "8d2d800295d45df09d9f76aea299a49b4f2b3b35595ccede03ed4b7ab3d8df50",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/e1_kernel.cuh",
+    "before_sha256": "6637206cbfd09b928b227a5d540346c7c5b6aba681366d002345825f0cf4b637",
+    "after_sha256": "7cf1dd3577e4cf2d90cedd15a986c8b94c181c67e91cb3638130b768effda996",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_K8192/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_K8192/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23_K8192/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21_K8192/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21_K8192/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21_K8192/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K4096/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K4096/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S22_K4096/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/TRSM/SM100a_K64/D57_TRSM/l8_flips.h",
+    "before_sha256": "014399f4dd66b476f879a968ee9d2646510203791a10d4c142649bc9ea4f130d",
+    "after_sha256": "4368ff35c22eaf700bf7ca54c4f4cc1e00d912a8f6ad13c112b8a9adcb0b1a53",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/TRSM/SM100a_K64/D57_TRSM/l8_probe.cuh",
+    "before_sha256": "11f1dec8b36fbf7b1a49b56141d93d39ab60ddf3c7d53a2d918160015f5701ad",
+    "after_sha256": "d161dde0f9fbc3a116ba0a3dc93e1dce9c623059ea66ca20b75b5dabbfcf7dc5",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/TRSM/SM100a_K64/D57_TRSM/l8_encode.cuh",
+    "before_sha256": "eb931573d1f57e11da7c967264a682d73f8eb1bd7cf0b57c0262b2084d9b5d6a",
+    "after_sha256": "adb985b2eaa1a8d72317ca720a9798647b3257cdef2de89c5105960fdc9675e1",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/Z53_General/l8_probe.cuh",
+    "before_sha256": "49a51fcf8ff10d01780d768df73193431367ac2e7105ca877249c5740398a714",
+    "after_sha256": "45ef438bb0b3d94803be1041c4a7cc30de687a41e2eb858f1e66473187151590",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/Z53_General/l8_encode.cuh",
+    "before_sha256": "cab071746455bf43b7eb3c28630fb2e504ff796ec04b11b51452f52c32d1dc12",
+    "after_sha256": "eb08001b8f00ff3f8e494c9b5cdc74efc76f8b99607b8d825dd9be3ab2ccf810",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S24/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S24/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S24/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C23/l8_probe.cuh",
+    "before_sha256": "49a51fcf8ff10d01780d768df73193431367ac2e7105ca877249c5740398a714",
+    "after_sha256": "45ef438bb0b3d94803be1041c4a7cc30de687a41e2eb858f1e66473187151590",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C23/l8_encode.cuh",
+    "before_sha256": "cab071746455bf43b7eb3c28630fb2e504ff796ec04b11b51452f52c32d1dc12",
+    "after_sha256": "eb08001b8f00ff3f8e494c9b5cdc74efc76f8b99607b8d825dd9be3ab2ccf810",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S21/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S23/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C20/l8_probe.cuh",
+    "before_sha256": "49a51fcf8ff10d01780d768df73193431367ac2e7105ca877249c5740398a714",
+    "after_sha256": "45ef438bb0b3d94803be1041c4a7cc30de687a41e2eb858f1e66473187151590",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/C20/l8_encode.cuh",
+    "before_sha256": "cab071746455bf43b7eb3c28630fb2e504ff796ec04b11b51452f52c32d1dc12",
+    "after_sha256": "eb08001b8f00ff3f8e494c9b5cdc74efc76f8b99607b8d825dd9be3ab2ccf810",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S20/l8_probe.cuh",
+    "before_sha256": "7afdcb5bfa6d65b0769a6aaff88acd713609397379b20624f4b3a5a3d405287c",
+    "after_sha256": "a716b602c3933d0d0b92d6cb77120022e3dc3c05bc6aa0ef3cfc285e8964fe49",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S20/l8_encode_fast.cuh",
+    "before_sha256": "60d9b929692bde0305c331bcdf63b6b173f054eb0be954bc4c437346325f395b",
+    "after_sha256": "3262f53337a198599f4f7099cb8971c95d466e0653d66f2ba1431940ef4b375b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/S20/l8_encode.cuh",
+    "before_sha256": "d39d36db1a8618a7603dd61b635a61fdd8f6e2b414866b38e1268a697f6fe7f7",
+    "after_sha256": "fa1e5cc95a397e9f9aeb83342d33cb444654c77fc1dc684b5d92504c70614d96",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_GEMM_CRT/l8_flips.h",
+    "before_sha256": "7fa96b30b861ab4d83d3a966a892919f5cbcc7378e8db67e97bbb2f8a3557728",
+    "after_sha256": "ef1755eed2e68b531b1d4b2c7a7e58093bdcdfa6cbd359ed7985f1bfc721334b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_GEMM_CRT/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_GEMM_CRT/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/Z52_SYRK/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/Z52_SYRK/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Fused/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Fused/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Fused/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Fused/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Fused/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Fused/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_GEMM/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_GEMM/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_GEMM/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z53_HERK/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z53_HERK/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_GEMM_CRT/l8_flips.h",
+    "before_sha256": "65bca53d1db764ae2d4ca9abf89cacc8fa517d3a0b748a8ec587a8a087e6173f",
+    "after_sha256": "569927c1fa29a1ad55db74e7de549c0c5da832a4ee23cdaef3f854530f415ac4",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_GEMM_CRT/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_GEMM_CRT/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S20_SYR2K/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S20_SYR2K/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S20_SYR2K/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_GEMM/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_GEMM/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_GEMM/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/Z50_SYRK/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/Z50_SYRK/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_GEMM_K4096/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_GEMM_K4096/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_GEMM_K4096/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current_K4096/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current_K4096/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current_K4096/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_Current/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_Current/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_Current/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C22/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C22/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Current_K4096/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Current_K4096/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Current_K4096/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/f5_kernel.cuh",
+    "before_sha256": "33ba3c08cf0c3129da7e5bdb61550ac1e82e6d6e90ca19af3c7548e3b7429e91",
+    "after_sha256": "e61c66c791d86e556426d4e15ee862b545fd6ee58adb072fa6eb83c2fa06300b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/e2_kernel.cuh",
+    "before_sha256": "b8d4ac6d228e49df873f995be2fd43fc328623133cf4193793d4d73da38b1e99",
+    "after_sha256": "8d2d800295d45df09d9f76aea299a49b4f2b3b35595ccede03ed4b7ab3d8df50",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/e1_kernel.cuh",
+    "before_sha256": "6637206cbfd09b928b227a5d540346c7c5b6aba681366d002345825f0cf4b637",
+    "after_sha256": "7cf1dd3577e4cf2d90cedd15a986c8b94c181c67e91cb3638130b768effda996",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": true
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_General/l8_flips.h",
+    "before_sha256": "7fa96b30b861ab4d83d3a966a892919f5cbcc7378e8db67e97bbb2f8a3557728",
+    "after_sha256": "ef1755eed2e68b531b1d4b2c7a7e58093bdcdfa6cbd359ed7985f1bfc721334b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_General/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D51_General/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/S21_Level3_K4096/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/S21_Level3_K4096/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/S21_Level3_K4096/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_General/l8_flips.h",
+    "before_sha256": "54be7dc088708f38661146f53081b4ffd44f4841314940f1a6a0ddf82b151644",
+    "after_sha256": "dcae05c90bd8de1d1cc081d3318bddab1665b5ca68b86b631a5f4d70bd26139d",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_General/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_General/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/Z53_General/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/Z53_General/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z49_HERK/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z49_HERK/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_B/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_B/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_B/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C23/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C23/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_GEMM_CRT/l8_flips.h",
+    "before_sha256": "54be7dc088708f38661146f53081b4ffd44f4841314940f1a6a0ddf82b151644",
+    "after_sha256": "dcae05c90bd8de1d1cc081d3318bddab1665b5ca68b86b631a5f4d70bd26139d",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_GEMM_CRT/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_GEMM_CRT/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S22_SYR2K_K4096/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S22_SYR2K_K4096/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYR2K/SM103a_K96/S22_SYR2K_K4096/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/Z48_General/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/Z48_General/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C20/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/C20/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S24_Fused/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S24_Fused/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S24_Fused/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z51_HERK_K4096/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z51_HERK_K4096/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_General/l8_flips.h",
+    "before_sha256": "65bca53d1db764ae2d4ca9abf89cacc8fa517d3a0b748a8ec587a8a087e6173f",
+    "after_sha256": "569927c1fa29a1ad55db74e7de549c0c5da832a4ee23cdaef3f854530f415ac4",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_General/l8_probe.cuh",
+    "before_sha256": "14ec7252b3dcbff72c68017219f99d826d2148f5f4f9bdafe79c579f71586d42",
+    "after_sha256": "ba14638ca62f143766654a68c4953a0fcee9d754786aafbbb8c05648b2d9fa9e",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D52_General/l8_encode.cuh",
+    "before_sha256": "30e41c5e528356acb2e5efcbc8f3b70acfd7c20ae5c9722477b571e6abeb0655",
+    "after_sha256": "f45bba50996cc2994f9f793d2a530fd9d4d28681e5103e3ebc3c98d1a9ed179b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S20_Fused/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S20_Fused/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S20_Fused/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_A/l8_probe.cuh",
+    "before_sha256": "f01ba7d183f4277e2e9533c543c9fe37051ee08c1be540aff81767077fd5c19c",
+    "after_sha256": "29b78894dd2113dca19ecae78e8e7e37438d670401377cfe81f78bac485ee407",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_A/l8_encode_fast.cuh",
+    "before_sha256": "483e41393129d49eb7b56ae96d22999821bb82c7e68be7cf6bb7245930ff895b",
+    "after_sha256": "e62dcef4f1829ca1d0ba9ad60b5fd5b8f50eec1b3a941e7c90db3b1f7937f50f",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/S23_SYRK_K4096_A/l8_encode.cuh",
+    "before_sha256": "2bb4458c790cb27651ce801062c038273998369a52cbe55ce29299978e296d23",
+    "after_sha256": "93356c39ef2ed90b9432449a4ad5b6685ec77c29cb9f244064ebf0265e563fe2",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S23_Fused/l8_fp32_flips.h",
+    "before_sha256": "df43720d5b05df0c16408ebf347fc42beafeb3aa80221d1a7e82bfbeea93ae52",
+    "after_sha256": "330145d8054d759b8b77292da21609577e36494fb885d11d6b18c867b7be3d85",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Fused/l8_fp32_flips.h",
+    "before_sha256": "945950d569eff8c78ae14a5973fe9893ea45b1579b13b2e457e7ff90f9289213",
+    "after_sha256": "64c702157ba08c436b13a0069a517bd968095d6f6a1ae9517faee046062af132",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_GEMM/l8_fp32_flips.h",
+    "before_sha256": "9a9841e908626571b09b756082337d0d9d299a146d4a94d4ac40e6e9be588b05",
+    "after_sha256": "d837096b73b46d85732b311baa03293b74057f8465fa51a5da8c1104802df499",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S21_Current/l8_fp32_flips.h",
+    "before_sha256": "9a9841e908626571b09b756082337d0d9d299a146d4a94d4ac40e6e9be588b05",
+    "after_sha256": "d837096b73b46d85732b311baa03293b74057f8465fa51a5da8c1104802df499",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S22_Current/l8_fp32_flips.h",
+    "before_sha256": "945950d569eff8c78ae14a5973fe9893ea45b1579b13b2e457e7ff90f9289213",
+    "after_sha256": "64c702157ba08c436b13a0069a517bd968095d6f6a1ae9517faee046062af132",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S24_Fused/l8_fp32_flips.h",
+    "before_sha256": "a7fdc05a040e3f822e342e14a56de919aec68721e0566e98ce9e0c20b2156adb",
+    "after_sha256": "a1460fbcd1aa20b236efdac09ad6331cb8e695e9c8f6350e8630e6c85bbb8c4b",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  },
+  {
+    "file": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/S20_Fused/l8_fp32_flips.h",
+    "before_sha256": "0a999cc2019a9e001a0f25b6392863a41fb75e82dbe36a32d3ec553ab901175f",
+    "after_sha256": "02233a8e9901f8680815ae742b370d39dca73d5d3a1c6a732a884bcdceca37a9",
+    "tokens_equal_except_compile_time_diagnostic": true,
+    "diagnostic_changed": false
+  }
+]

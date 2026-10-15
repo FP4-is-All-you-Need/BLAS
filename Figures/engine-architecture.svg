@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title id="title">Public API, engine loading and Template comparisons</title><desc id="desc">The frontend loads Inline engines. Template d17 and d18 libraries are built explicitly and compared offline; they are not selected by dispatch.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 1 L8 5 L0 9" fill="none" stroke="#596579" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#233044}.heading{font-size:29px;font-weight:700}.label{font-size:21px;font-weight:700}.body{font-size:19px}.small{font-size:17px}</style>
+<rect width="1200" height="700" fill="#fff"/>
+<text x="35" y="48" class="heading">Implementation and comparison builds</text>
+<rect x="35" y="91" width="310" height="126" rx="10" fill="#f6f8fc" stroke="#bdc7d4" stroke-width="2"/><text x="55" y="124" class="label">C API</text>
+<text x="55" y="156" class="body">Include/AWE/</text>
+<text x="55" y="184" class="body">Descriptors and plan calls</text>
+<text x="55" y="212" class="body">Options and diagnostics</text>
+<rect x="405" y="91" width="340" height="126" rx="10" fill="#f6f8fc" stroke="#bdc7d4" stroke-width="2"/><text x="425" y="124" class="label">Host dispatch</text>
+<text x="425" y="156" class="body">API/api.cpp</text>
+<text x="425" y="184" class="body">Routine / geometry / moduli</text>
+<text x="425" y="212" class="body">Coverage and argument checks</text>
+<path d="M345 154 H397" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/><rect x="405" y="270" width="340" height="126" rx="10" fill="#f6f8fc" stroke="#bdc7d4" stroke-width="2"/><text x="425" y="303" class="label">Module loader</text>
+<text x="425" y="335" class="body">Separate engine libraries</text>
+<text x="425" y="363" class="body">Module ownership and locking</text>
+<text x="425" y="391" class="body">Shared-module calls serialize</text>
+<path d="M575 217 V262" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/><rect x="405" y="460" width="340" height="146" rx="10" fill="#fff2e5" stroke="#ED964F" stroke-width="2"/><text x="425" y="493" class="label">CUDA-Inline engines</text>
+<text x="425" y="525" class="body">Recorded CUDA / PTX and tables</text>
+<text x="425" y="553" class="body">Loaded by the frontend</text>
+<text x="425" y="581" class="body">Default implementation</text>
+<path d="M575 396 V452" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/><rect x="825" y="91" width="340" height="126" rx="10" fill="#f6f8fc" stroke="#bdc7d4" stroke-width="2"/><text x="845" y="124" class="label">Explicit comparison build</text>
+<text x="845" y="156" class="body">AWE_BUILD_TEMPLATE=ON</text>
+<text x="845" y="184" class="body">d17 and d18; K96 and K64</text>
+<text x="845" y="212" class="body">Option is OFF by default</text>
+<rect x="825" y="270" width="340" height="126" rx="10" fill="#f9edf2" stroke="#DC92AE" stroke-width="2"/><text x="845" y="303" class="label">CUDA-Template / GEMM</text>
+<text x="845" y="335" class="body">Shared GeometryTraits</text>
+<text x="845" y="363" class="body">Shared ModulusSetTraits</text>
+<text x="845" y="391" class="body">Matching recorded tables</text>
+<path d="M995 217 V262" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/><rect x="825" y="460" width="340" height="146" rx="10" fill="#f6f8fc" stroke="#bdc7d4" stroke-width="2"/><text x="845" y="493" class="label">Recorded equivalence</text>
+<text x="845" y="525" class="body">SASS / device metadata</text>
+<text x="845" y="553" class="body">Host code and data checks</text>
+<text x="845" y="581" class="body">nvcc 13.2.86 / g++ 11.4.0</text>
+<path d="M995 396 V452" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/><path d="M745 533 H817" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/><text x="35" y="662" class="small">Template libraries are comparison artifacts. Changing frontend dispatch awaits GPU hash and timing checks.</text>
+</svg>

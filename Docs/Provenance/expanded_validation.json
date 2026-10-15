@@ -1,0 +1,1056 @@
+{
+  "nvcc": "13.2.86",
+  "local_host_compiler": "g++ 11.4.0",
+  "measured_k96_host_compiler": "GCC 13.3.0 (.comment)",
+  "import_tree": "fb465e26a47db4446bad861186df43ccd60acf1a",
+  "placement_tree": "9e42e8cfadbd48ae32352d2bf401ab465bb22893",
+  "placement_proof": "All 369 source/header blobs are identical (R100); engines.json paths are updated in the same commit.",
+  "import_gates": [
+    {
+      "id": "k96_d17",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "2147d828610d820b66aafff74e4ffec9b998e812aa7fa7920edf98d73b3062e6",
+        "attributes": "08fc0ab480aeed435f7e0b31ca6512c92b15fb992bf2acfa20f1d71e7859705a",
+        "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "2147d828610d820b66aafff74e4ffec9b998e812aa7fa7920edf98d73b3062e6",
+        "attributes": "08fc0ab480aeed435f7e0b31ca6512c92b15fb992bf2acfa20f1d71e7859705a",
+        "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "8846e336a01ce34f705581d296bb56f51efebe3df871a46ba50690925f4904e1",
+      "candidate_sha256": "1213b5ec027d4aff1279a8eca435d9806c6694f2d7ee139dcb40cc9fbd6204b6",
+      "reference_sass_sha256": "ec49aa8055b0ab7505d3af33b3837a29517b53ec995c25e4c411b25bab4e5c21",
+      "candidate_sass_sha256": "ec49aa8055b0ab7505d3af33b3837a29517b53ec995c25e4c411b25bab4e5c21",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 65920,
+      "candidate_instructions": 65920
+    },
+    {
+      "id": "k96_d18",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "3db04b10b657fd686472d5148ba660b5d5360a29f8ef649e268077e3f554a92c",
+        "attributes": "49ec047be1de5e48da82c78f7126987c42444021b1a6ebb16539cb1917aa3795",
+        "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "3db04b10b657fd686472d5148ba660b5d5360a29f8ef649e268077e3f554a92c",
+        "attributes": "49ec047be1de5e48da82c78f7126987c42444021b1a6ebb16539cb1917aa3795",
+        "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "72a2d5d1a17c5898c348c8d4b34265382d9bcee021cb95679c091bdfa6b95f11",
+      "candidate_sha256": "cff536beb12b64fdd835ecbf6e31ec39483030da8951147a36e3494b668c916c",
+      "reference_sass_sha256": "34c5e900c7314c764f91b63da9a1b1b4bf733b7dc51a8dab1e9a4ef68ffaaf1a",
+      "candidate_sass_sha256": "34c5e900c7314c764f91b63da9a1b1b4bf733b7dc51a8dab1e9a4ef68ffaaf1a",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 68896,
+      "candidate_instructions": 68896
+    },
+    {
+      "id": "k96_d18_syrk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "fa60017ff25e0770e5a1bebb8f50abe507194428368a613d9adccbc47227f77b",
+        "attributes": "d0765432da6ab96beeb58c465769d7cf3837e33bb596c58cedcab721792906d0",
+        "initialized_data": "6c8828cf49c5d8b14620f16dd3d7eb670880feb389e9c9ba2ab0b708a04cab44"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "fa60017ff25e0770e5a1bebb8f50abe507194428368a613d9adccbc47227f77b",
+        "attributes": "d0765432da6ab96beeb58c465769d7cf3837e33bb596c58cedcab721792906d0",
+        "initialized_data": "6c8828cf49c5d8b14620f16dd3d7eb670880feb389e9c9ba2ab0b708a04cab44"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "88430ab25188e0d98a6e2b2d35223d62e6c35a557d92ddc4c8a70189a1c186fc",
+      "candidate_sha256": "24aa8e5465360aa295063df45fdb6c5d334e2cc2f92bacdd90e939564ecc4f60",
+      "reference_sass_sha256": "a7d9faf53aa04b4f2adbf6fe543179c38c5c1ed0f54805d45feae03e4251e9f9",
+      "candidate_sass_sha256": "a7d9faf53aa04b4f2adbf6fe543179c38c5c1ed0f54805d45feae03e4251e9f9",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 64344,
+      "candidate_instructions": 64344
+    },
+    {
+      "id": "k96_d21_syrk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "9f5534ca67ae45eb9f0fc0e163fff4c3d61ea720c8d00020b9353780fa1d30a2",
+        "attributes": "34668cf2dfa265230ed23be910f69d7e6736c5f7a685ae33c2949c4a0e8bff21",
+        "initialized_data": "0c6777d834081d07704b5528934744e166da1fa0e249b9c159f95122847b383c"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "9f5534ca67ae45eb9f0fc0e163fff4c3d61ea720c8d00020b9353780fa1d30a2",
+        "attributes": "34668cf2dfa265230ed23be910f69d7e6736c5f7a685ae33c2949c4a0e8bff21",
+        "initialized_data": "0c6777d834081d07704b5528934744e166da1fa0e249b9c159f95122847b383c"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "101692ad2e34e6a4008dd6e180fdda7f71c984983b9a5890f5f166c2167699d9",
+      "candidate_sha256": "ea71cf58e32183effcca936c734b5ba0bff16a4a04d45346b3beba116982b0de",
+      "reference_sass_sha256": "fb10c363eaabb3d50480e999dca64f908a430ac4c4069a21a1bb7c3b8edbed94",
+      "candidate_sass_sha256": "fb10c363eaabb3d50480e999dca64f908a430ac4c4069a21a1bb7c3b8edbed94",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 67840,
+      "candidate_instructions": 67840
+    },
+    {
+      "id": "k96_d18_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "a3b06fbf19b4c16edf85aa1d6613d3eb26444d5331521d3c4395427ebf512100",
+        "attributes": "1e19d9d9fa5633f41f4ef376b3d44de9fb68cbd5ba72e06228b6edee0512b188",
+        "initialized_data": "91eb2ba7a3e05b4fd979d4ea8045f3b3fc05266644aed47f14ca68c861b1a79b"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "a3b06fbf19b4c16edf85aa1d6613d3eb26444d5331521d3c4395427ebf512100",
+        "attributes": "1e19d9d9fa5633f41f4ef376b3d44de9fb68cbd5ba72e06228b6edee0512b188",
+        "initialized_data": "91eb2ba7a3e05b4fd979d4ea8045f3b3fc05266644aed47f14ca68c861b1a79b"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "d219a16dc51fb79cadfe060cd9e2ebc14c9d4a187ea6bb8cdf9e60889e0eed2a",
+      "candidate_sha256": "48b73caccdd046a1f96a419ab0459beb54678df0bcf0241a603eaacaa161ad6d",
+      "reference_sass_sha256": "3fd6de1912e815722433ae48f2e650ba3eac6573d41d6484050622da6955c72c",
+      "candidate_sass_sha256": "3fd6de1912e815722433ae48f2e650ba3eac6573d41d6484050622da6955c72c",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 64568,
+      "candidate_instructions": 64568
+    },
+    {
+      "id": "k96_d21_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "66019b8026e50b5952b6bca6b2b397b708e899cab44391c3fb7289269ae3e5a1",
+        "attributes": "a90e9ebab5c36784b0c853f037cc28189d8bad42406129cd7f6a139b68f4f618",
+        "initialized_data": "894e5628459e49b684cb8fb34a9c2a20bc77bd49bc094d8a8f6446920ab227c7"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "66019b8026e50b5952b6bca6b2b397b708e899cab44391c3fb7289269ae3e5a1",
+        "attributes": "a90e9ebab5c36784b0c853f037cc28189d8bad42406129cd7f6a139b68f4f618",
+        "initialized_data": "894e5628459e49b684cb8fb34a9c2a20bc77bd49bc094d8a8f6446920ab227c7"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "efe2869f77f5ae4d868d747385f3bdadb3341e61e212b4cff5e8c647629356ea",
+      "candidate_sha256": "cfd517b56542832e7316e07703668d6fc1c9ef2f6de1317ddca2460358701ce1",
+      "reference_sass_sha256": "4daa1882d527bf5455c8f94334dc05a0c249400e93781e066d12c302a04b6261",
+      "candidate_sass_sha256": "4daa1882d527bf5455c8f94334dc05a0c249400e93781e066d12c302a04b6261",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 68056,
+      "candidate_instructions": 68056
+    },
+    {
+      "id": "k96_z53_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "950f588b9ec3531744349ac336d20aee4014355ea8fdb4fa23f81f2e5c4076b1",
+        "attributes": "8b4700b5659583efdbd705496d34dda8e4ea820178a9ee926fb91901685f8ccd",
+        "initialized_data": "6c06a475fa0402b2a38ab63531614280893bc2ca70eadc099b8d390f0cd372cc"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "950f588b9ec3531744349ac336d20aee4014355ea8fdb4fa23f81f2e5c4076b1",
+        "attributes": "8b4700b5659583efdbd705496d34dda8e4ea820178a9ee926fb91901685f8ccd",
+        "initialized_data": "6c06a475fa0402b2a38ab63531614280893bc2ca70eadc099b8d390f0cd372cc"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "ff29663b316cdfb08c3ea2f0d9d03e2b94231f80b8ffdefb85d2c7507bcdede8",
+      "candidate_sha256": "728546da7ef3088191d9aff87e770f6115feaeb3f6b35a590b233ad8fb540092",
+      "reference_sass_sha256": "668a976df203a5aaabe6460cf5928523e40ac814f62a10463cec4a9c3f85ccba",
+      "candidate_sass_sha256": "668a976df203a5aaabe6460cf5928523e40ac814f62a10463cec4a9c3f85ccba",
+      "reference_functions": 31,
+      "candidate_functions": 31,
+      "reference_instructions": 37048,
+      "candidate_instructions": 37048
+    },
+    {
+      "id": "k96_z51_herk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "4c4622e0d57cfbe1146b000154f11e1046329784f5bc717c122ac62e7eae72ef",
+        "attributes": "3d28946ba4da331d3e5b089a2582175552bb458ffe8ee0c8bf8bbc9a66cef4ce",
+        "initialized_data": "ae5fc94333c3c1acc8356be9fa8d8aede81e6b166cf0e37ffa0445532a5c0950"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "4c4622e0d57cfbe1146b000154f11e1046329784f5bc717c122ac62e7eae72ef",
+        "attributes": "3d28946ba4da331d3e5b089a2582175552bb458ffe8ee0c8bf8bbc9a66cef4ce",
+        "initialized_data": "ae5fc94333c3c1acc8356be9fa8d8aede81e6b166cf0e37ffa0445532a5c0950"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "8b00d4d2359be47783a67c6891159fb8759664472049625c33f857e0df12eb1e",
+      "candidate_sha256": "c3eba038e04e91701f0921824b5131a17011eef36d767d20fb96c68a7e24d996",
+      "reference_sass_sha256": "a2060b425bd7314b17fb3b12b5ad559e606bcc0f9ce7c07454313b224ce2e91f",
+      "candidate_sass_sha256": "a2060b425bd7314b17fb3b12b5ad559e606bcc0f9ce7c07454313b224ce2e91f",
+      "reference_functions": 32,
+      "candidate_functions": 32,
+      "reference_instructions": 43472,
+      "candidate_instructions": 43472
+    },
+    {
+      "id": "k64_d17",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "d54835de674f214ff736dd75a93cb079bdc9a21f1452f1becc06f55b8e8e3b2d",
+        "attributes": "046f5ecbcb35d4899cf63046f1d36eae3263d44826e61ff320ba8e62a87448d1",
+        "initialized_data": "4035a098c21b2ff3ef1d2633f0fa9a346386139f7b0c06cfd6692b0a847f2ef1"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "d54835de674f214ff736dd75a93cb079bdc9a21f1452f1becc06f55b8e8e3b2d",
+        "attributes": "046f5ecbcb35d4899cf63046f1d36eae3263d44826e61ff320ba8e62a87448d1",
+        "initialized_data": "4035a098c21b2ff3ef1d2633f0fa9a346386139f7b0c06cfd6692b0a847f2ef1"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "ecdc0142e3f5042a42f4e50e847843c2790cc8550dcfd0dcd2b5981d417b0851",
+      "candidate_sha256": "6a5f32844d8cc320ae58a881f2201a4836d4d1e87c19a1e65fe8a64b10432b3c",
+      "reference_sass_sha256": "9e8d1b55fed77b43561851f6497179fcc463ff593e535004f3d2c9585b600e92",
+      "candidate_sass_sha256": "9e8d1b55fed77b43561851f6497179fcc463ff593e535004f3d2c9585b600e92",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 66952,
+      "candidate_instructions": 66952
+    },
+    {
+      "id": "k64_d18",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "903207dd8957388c551a34de4e336d090075c25f0173eb254a866300759d6ec5",
+        "attributes": "a85dc863ee89c3ee9f9950979bc04159b48619d752cdda47fb506f623e2da4cf",
+        "initialized_data": "8fca3f6bc393037742e4b026dd09ab46465954b1cda1e98cb2af23779a61bb9e"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "903207dd8957388c551a34de4e336d090075c25f0173eb254a866300759d6ec5",
+        "attributes": "a85dc863ee89c3ee9f9950979bc04159b48619d752cdda47fb506f623e2da4cf",
+        "initialized_data": "8fca3f6bc393037742e4b026dd09ab46465954b1cda1e98cb2af23779a61bb9e"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "4f98e3f42e28af7b4a4d58311b51cc2cd586fa8700e4d5432dd0c7312b464b2c",
+      "candidate_sha256": "204524ae0e36dcf643f1789350a4d974c01842546b539ca2c0804bfab6db9623",
+      "reference_sass_sha256": "92c5014b8e2368311acbcce67cffdc6ef4ba20304359f7e20368ce2071f9e6df",
+      "candidate_sass_sha256": "92c5014b8e2368311acbcce67cffdc6ef4ba20304359f7e20368ce2071f9e6df",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 69672,
+      "candidate_instructions": 69672
+    },
+    {
+      "id": "k64_d21",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "a9a34a36ebeceb8620a07eacaf823d569cea7b96d507d55f56e48ece09aa464a",
+        "attributes": "36b5c99cea2a10513aaa4306829b2990e0e3460e859436b7466c49f209503931",
+        "initialized_data": "6c0361552f358c23a46ce6803a185207aa8385c8ecb473455162247e576916a2"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "a9a34a36ebeceb8620a07eacaf823d569cea7b96d507d55f56e48ece09aa464a",
+        "attributes": "36b5c99cea2a10513aaa4306829b2990e0e3460e859436b7466c49f209503931",
+        "initialized_data": "6c0361552f358c23a46ce6803a185207aa8385c8ecb473455162247e576916a2"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "259573dfac9d6f1932b868850ca432cdbe9cfa0376075f20067bd1516f67bb13",
+      "candidate_sha256": "dd32ca00b16ee7965d2ec868803e8eccb344e91ddee9b44cd7daa01471ff34c1",
+      "reference_sass_sha256": "2d9ad899cd421f0bc0e42d980972921b88852b6b7d2280c408a8008ef15b572d",
+      "candidate_sass_sha256": "2d9ad899cd421f0bc0e42d980972921b88852b6b7d2280c408a8008ef15b572d",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 67112,
+      "candidate_instructions": 67112
+    }
+  ],
+  "cmake_tree": "7f4bd7ba798c59aebcecd5ad9cefc1150bac5465",
+  "cmake_gates": [
+    {
+      "id": "k96_d17",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "2147d828610d820b66aafff74e4ffec9b998e812aa7fa7920edf98d73b3062e6",
+        "attributes": "08fc0ab480aeed435f7e0b31ca6512c92b15fb992bf2acfa20f1d71e7859705a",
+        "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "2147d828610d820b66aafff74e4ffec9b998e812aa7fa7920edf98d73b3062e6",
+        "attributes": "08fc0ab480aeed435f7e0b31ca6512c92b15fb992bf2acfa20f1d71e7859705a",
+        "initialized_data": "9935288567c77dda703aedfa24f2998cad4a884d4025b35a38d5cc7286657fb6"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "1213b5ec027d4aff1279a8eca435d9806c6694f2d7ee139dcb40cc9fbd6204b6",
+      "candidate_sha256": "d90d191f704984e36d1f30b9e368d5f8b5b9517e1ca672868d1caf74aa360d9e",
+      "reference_sass_sha256": "ec49aa8055b0ab7505d3af33b3837a29517b53ec995c25e4c411b25bab4e5c21",
+      "candidate_sass_sha256": "ec49aa8055b0ab7505d3af33b3837a29517b53ec995c25e4c411b25bab4e5c21",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 65920,
+      "candidate_instructions": 65920
+    },
+    {
+      "id": "k96_d18",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "3db04b10b657fd686472d5148ba660b5d5360a29f8ef649e268077e3f554a92c",
+        "attributes": "49ec047be1de5e48da82c78f7126987c42444021b1a6ebb16539cb1917aa3795",
+        "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "3db04b10b657fd686472d5148ba660b5d5360a29f8ef649e268077e3f554a92c",
+        "attributes": "49ec047be1de5e48da82c78f7126987c42444021b1a6ebb16539cb1917aa3795",
+        "initialized_data": "596bb78b5dbef9471306eb90186bc6699a1879d88e033536798d5e88b5aaa597"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "cff536beb12b64fdd835ecbf6e31ec39483030da8951147a36e3494b668c916c",
+      "candidate_sha256": "7c12af01f453e90f92ea8bc31d6d2adc1873071b69233b8a3df56def5b63dd08",
+      "reference_sass_sha256": "34c5e900c7314c764f91b63da9a1b1b4bf733b7dc51a8dab1e9a4ef68ffaaf1a",
+      "candidate_sass_sha256": "34c5e900c7314c764f91b63da9a1b1b4bf733b7dc51a8dab1e9a4ef68ffaaf1a",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 68896,
+      "candidate_instructions": 68896
+    },
+    {
+      "id": "k96_d18_syrk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "fa60017ff25e0770e5a1bebb8f50abe507194428368a613d9adccbc47227f77b",
+        "attributes": "d0765432da6ab96beeb58c465769d7cf3837e33bb596c58cedcab721792906d0",
+        "initialized_data": "6c8828cf49c5d8b14620f16dd3d7eb670880feb389e9c9ba2ab0b708a04cab44"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "fa60017ff25e0770e5a1bebb8f50abe507194428368a613d9adccbc47227f77b",
+        "attributes": "d0765432da6ab96beeb58c465769d7cf3837e33bb596c58cedcab721792906d0",
+        "initialized_data": "6c8828cf49c5d8b14620f16dd3d7eb670880feb389e9c9ba2ab0b708a04cab44"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "24aa8e5465360aa295063df45fdb6c5d334e2cc2f92bacdd90e939564ecc4f60",
+      "candidate_sha256": "124bee43b543e5e41ecfbec142b1ed2f36595d0075d1046b72e3a53f6882c1f9",
+      "reference_sass_sha256": "a7d9faf53aa04b4f2adbf6fe543179c38c5c1ed0f54805d45feae03e4251e9f9",
+      "candidate_sass_sha256": "a7d9faf53aa04b4f2adbf6fe543179c38c5c1ed0f54805d45feae03e4251e9f9",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 64344,
+      "candidate_instructions": 64344
+    },
+    {
+      "id": "k96_d21_syrk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "9f5534ca67ae45eb9f0fc0e163fff4c3d61ea720c8d00020b9353780fa1d30a2",
+        "attributes": "34668cf2dfa265230ed23be910f69d7e6736c5f7a685ae33c2949c4a0e8bff21",
+        "initialized_data": "0c6777d834081d07704b5528934744e166da1fa0e249b9c159f95122847b383c"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "9f5534ca67ae45eb9f0fc0e163fff4c3d61ea720c8d00020b9353780fa1d30a2",
+        "attributes": "34668cf2dfa265230ed23be910f69d7e6736c5f7a685ae33c2949c4a0e8bff21",
+        "initialized_data": "0c6777d834081d07704b5528934744e166da1fa0e249b9c159f95122847b383c"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "ea71cf58e32183effcca936c734b5ba0bff16a4a04d45346b3beba116982b0de",
+      "candidate_sha256": "eed68900902e3d188178795abfde66e36fc0a995086b3c165916c736541abc3d",
+      "reference_sass_sha256": "fb10c363eaabb3d50480e999dca64f908a430ac4c4069a21a1bb7c3b8edbed94",
+      "candidate_sass_sha256": "fb10c363eaabb3d50480e999dca64f908a430ac4c4069a21a1bb7c3b8edbed94",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 67840,
+      "candidate_instructions": 67840
+    },
+    {
+      "id": "k96_d18_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "a3b06fbf19b4c16edf85aa1d6613d3eb26444d5331521d3c4395427ebf512100",
+        "attributes": "1e19d9d9fa5633f41f4ef376b3d44de9fb68cbd5ba72e06228b6edee0512b188",
+        "initialized_data": "91eb2ba7a3e05b4fd979d4ea8045f3b3fc05266644aed47f14ca68c861b1a79b"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "a3b06fbf19b4c16edf85aa1d6613d3eb26444d5331521d3c4395427ebf512100",
+        "attributes": "1e19d9d9fa5633f41f4ef376b3d44de9fb68cbd5ba72e06228b6edee0512b188",
+        "initialized_data": "91eb2ba7a3e05b4fd979d4ea8045f3b3fc05266644aed47f14ca68c861b1a79b"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "48b73caccdd046a1f96a419ab0459beb54678df0bcf0241a603eaacaa161ad6d",
+      "candidate_sha256": "5a9dd77d6e04eac611e35a21258f68a0ea9eb4e686ca6f57804eda20e99793fe",
+      "reference_sass_sha256": "3fd6de1912e815722433ae48f2e650ba3eac6573d41d6484050622da6955c72c",
+      "candidate_sass_sha256": "3fd6de1912e815722433ae48f2e650ba3eac6573d41d6484050622da6955c72c",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 64568,
+      "candidate_instructions": 64568
+    },
+    {
+      "id": "k96_d21_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "66019b8026e50b5952b6bca6b2b397b708e899cab44391c3fb7289269ae3e5a1",
+        "attributes": "a90e9ebab5c36784b0c853f037cc28189d8bad42406129cd7f6a139b68f4f618",
+        "initialized_data": "894e5628459e49b684cb8fb34a9c2a20bc77bd49bc094d8a8f6446920ab227c7"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "66019b8026e50b5952b6bca6b2b397b708e899cab44391c3fb7289269ae3e5a1",
+        "attributes": "a90e9ebab5c36784b0c853f037cc28189d8bad42406129cd7f6a139b68f4f618",
+        "initialized_data": "894e5628459e49b684cb8fb34a9c2a20bc77bd49bc094d8a8f6446920ab227c7"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "cfd517b56542832e7316e07703668d6fc1c9ef2f6de1317ddca2460358701ce1",
+      "candidate_sha256": "d970ee036d35a790523ae0adb0911928cdb3db30336f734af9b9304ff14df45c",
+      "reference_sass_sha256": "4daa1882d527bf5455c8f94334dc05a0c249400e93781e066d12c302a04b6261",
+      "candidate_sass_sha256": "4daa1882d527bf5455c8f94334dc05a0c249400e93781e066d12c302a04b6261",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 68056,
+      "candidate_instructions": 68056
+    },
+    {
+      "id": "k96_z53_trmm",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "950f588b9ec3531744349ac336d20aee4014355ea8fdb4fa23f81f2e5c4076b1",
+        "attributes": "8b4700b5659583efdbd705496d34dda8e4ea820178a9ee926fb91901685f8ccd",
+        "initialized_data": "6c06a475fa0402b2a38ab63531614280893bc2ca70eadc099b8d390f0cd372cc"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "950f588b9ec3531744349ac336d20aee4014355ea8fdb4fa23f81f2e5c4076b1",
+        "attributes": "8b4700b5659583efdbd705496d34dda8e4ea820178a9ee926fb91901685f8ccd",
+        "initialized_data": "6c06a475fa0402b2a38ab63531614280893bc2ca70eadc099b8d390f0cd372cc"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "728546da7ef3088191d9aff87e770f6115feaeb3f6b35a590b233ad8fb540092",
+      "candidate_sha256": "51084e6d3570c5e1aebf59377660136eb1eaa3f8faddf88b0f24242c6f32156b",
+      "reference_sass_sha256": "668a976df203a5aaabe6460cf5928523e40ac814f62a10463cec4a9c3f85ccba",
+      "candidate_sass_sha256": "668a976df203a5aaabe6460cf5928523e40ac814f62a10463cec4a9c3f85ccba",
+      "reference_functions": 31,
+      "candidate_functions": 31,
+      "reference_instructions": 37048,
+      "candidate_instructions": 37048
+    },
+    {
+      "id": "k96_z51_herk",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "4c4622e0d57cfbe1146b000154f11e1046329784f5bc717c122ac62e7eae72ef",
+        "attributes": "3d28946ba4da331d3e5b089a2582175552bb458ffe8ee0c8bf8bbc9a66cef4ce",
+        "initialized_data": "ae5fc94333c3c1acc8356be9fa8d8aede81e6b166cf0e37ffa0445532a5c0950"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "4c4622e0d57cfbe1146b000154f11e1046329784f5bc717c122ac62e7eae72ef",
+        "attributes": "3d28946ba4da331d3e5b089a2582175552bb458ffe8ee0c8bf8bbc9a66cef4ce",
+        "initialized_data": "ae5fc94333c3c1acc8356be9fa8d8aede81e6b166cf0e37ffa0445532a5c0950"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "c3eba038e04e91701f0921824b5131a17011eef36d767d20fb96c68a7e24d996",
+      "candidate_sha256": "a6800e7e6b1808675d58b1a29c01d61a0834483059f9869b32e3bebe8ec922b4",
+      "reference_sass_sha256": "a2060b425bd7314b17fb3b12b5ad559e606bcc0f9ce7c07454313b224ce2e91f",
+      "candidate_sass_sha256": "a2060b425bd7314b17fb3b12b5ad559e606bcc0f9ce7c07454313b224ce2e91f",
+      "reference_functions": 32,
+      "candidate_functions": 32,
+      "reference_instructions": 43472,
+      "candidate_instructions": 43472
+    },
+    {
+      "id": "k64_d17",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "d54835de674f214ff736dd75a93cb079bdc9a21f1452f1becc06f55b8e8e3b2d",
+        "attributes": "046f5ecbcb35d4899cf63046f1d36eae3263d44826e61ff320ba8e62a87448d1",
+        "initialized_data": "4035a098c21b2ff3ef1d2633f0fa9a346386139f7b0c06cfd6692b0a847f2ef1"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "d54835de674f214ff736dd75a93cb079bdc9a21f1452f1becc06f55b8e8e3b2d",
+        "attributes": "046f5ecbcb35d4899cf63046f1d36eae3263d44826e61ff320ba8e62a87448d1",
+        "initialized_data": "4035a098c21b2ff3ef1d2633f0fa9a346386139f7b0c06cfd6692b0a847f2ef1"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "6a5f32844d8cc320ae58a881f2201a4836d4d1e87c19a1e65fe8a64b10432b3c",
+      "candidate_sha256": "bde8c45e6eb0fa8cda93e70c95b1fd61e114188305258483432d992e6f91ab0b",
+      "reference_sass_sha256": "9e8d1b55fed77b43561851f6497179fcc463ff593e535004f3d2c9585b600e92",
+      "candidate_sass_sha256": "9e8d1b55fed77b43561851f6497179fcc463ff593e535004f3d2c9585b600e92",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 66952,
+      "candidate_instructions": 66952
+    },
+    {
+      "id": "k64_d18",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "903207dd8957388c551a34de4e336d090075c25f0173eb254a866300759d6ec5",
+        "attributes": "a85dc863ee89c3ee9f9950979bc04159b48619d752cdda47fb506f623e2da4cf",
+        "initialized_data": "8fca3f6bc393037742e4b026dd09ab46465954b1cda1e98cb2af23779a61bb9e"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "903207dd8957388c551a34de4e336d090075c25f0173eb254a866300759d6ec5",
+        "attributes": "a85dc863ee89c3ee9f9950979bc04159b48619d752cdda47fb506f623e2da4cf",
+        "initialized_data": "8fca3f6bc393037742e4b026dd09ab46465954b1cda1e98cb2af23779a61bb9e"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "204524ae0e36dcf643f1789350a4d974c01842546b539ca2c0804bfab6db9623",
+      "candidate_sha256": "488322bdfd129085737b3e04a950e8f68d7460c2312438a58103bcb3cd7ebf52",
+      "reference_sass_sha256": "92c5014b8e2368311acbcce67cffdc6ef4ba20304359f7e20368ce2071f9e6df",
+      "candidate_sass_sha256": "92c5014b8e2368311acbcce67cffdc6ef4ba20304359f7e20368ce2071f9e6df",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 69672,
+      "candidate_instructions": 69672
+    },
+    {
+      "id": "k64_d21",
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "a9a34a36ebeceb8620a07eacaf823d569cea7b96d507d55f56e48ece09aa464a",
+        "attributes": "36b5c99cea2a10513aaa4306829b2990e0e3460e859436b7466c49f209503931",
+        "initialized_data": "6c0361552f358c23a46ce6803a185207aa8385c8ecb473455162247e576916a2"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "a9a34a36ebeceb8620a07eacaf823d569cea7b96d507d55f56e48ece09aa464a",
+        "attributes": "36b5c99cea2a10513aaa4306829b2990e0e3460e859436b7466c49f209503931",
+        "initialized_data": "6c0361552f358c23a46ce6803a185207aa8385c8ecb473455162247e576916a2"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "dd32ca00b16ee7965d2ec868803e8eccb344e91ddee9b44cd7daa01471ff34c1",
+      "candidate_sha256": "6ad142459eeabbdcf742ac8ec67f7b69d728c1f003ab4ce24d5a2ca70f7aca79",
+      "reference_sass_sha256": "2d9ad899cd421f0bc0e42d980972921b88852b6b7d2280c408a8008ef15b572d",
+      "candidate_sass_sha256": "2d9ad899cd421f0bc0e42d980972921b88852b6b7d2280c408a8008ef15b572d",
+      "reference_functions": 47,
+      "candidate_functions": 47,
+      "reference_instructions": 67112,
+      "candidate_instructions": 67112
+    }
+  ],
+  "host_abi": [
+    {
+      "id": "k96_d17",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_d18",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_d18_syrk",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_d21_syrk",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_d18_trmm",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorIjSaIjEED1Ev",
+        "W _ZNSt6vectorIjSaIjEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_d21_trmm",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIdSaIdEED1Ev",
+        "W _ZNSt6vectorIdSaIdEED2Ev",
+        "W _ZNSt6vectorIhSaIhEED1Ev",
+        "W _ZNSt6vectorIhSaIhEED2Ev",
+        "W _ZNSt6vectorIjSaIjEED1Ev",
+        "W _ZNSt6vectorIjSaIjEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_z53_trmm",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIiSaIiEED1Ev",
+        "W _ZNSt6vectorIiSaIiEED2Ev",
+        "W _ZNSt6vectorIjSaIjEED1Ev",
+        "W _ZNSt6vectorIjSaIjEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev",
+        "W _ZNSt6vectorIxSaIxEED1Ev",
+        "W _ZNSt6vectorIxSaIxEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k96_z51_herk",
+      "all_symbols_equal": false,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [
+        "W _ZNSt6vectorIiSaIiEED1Ev",
+        "W _ZNSt6vectorIiSaIiEED2Ev",
+        "W _ZNSt6vectorItSaItEED1Ev",
+        "W _ZNSt6vectorItSaItEED2Ev",
+        "W _ZNSt6vectorIxSaIxEED1Ev",
+        "W _ZNSt6vectorIxSaIxEED2Ev"
+      ],
+      "added_symbols": [
+        "V _ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_",
+        "W _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_"
+      ]
+    },
+    {
+      "id": "k64_d17",
+      "all_symbols_equal": true,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [],
+      "added_symbols": []
+    },
+    {
+      "id": "k64_d18",
+      "all_symbols_equal": true,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [],
+      "added_symbols": []
+    },
+    {
+      "id": "k64_d21",
+      "all_symbols_equal": true,
+      "strong_symbols_equal": true,
+      "needed_equal": true,
+      "reference_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "candidate_needed": [
+        "libc.so.6",
+        "libcudart.so.13",
+        "libgcc_s.so.1",
+        "libm.so.6",
+        "libstdc++.so.6"
+      ],
+      "removed_symbols": [],
+      "added_symbols": []
+    }
+  ],
+  "cmake_gate_reference": "Frozen imported binaries, already compared against measured K96 binaries or frozen nvcc 13.2.86 K64 baseline builds by import_gates. ABI uses those original references directly."
+}

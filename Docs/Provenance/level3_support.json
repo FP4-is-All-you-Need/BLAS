@@ -1,0 +1,67 @@
+{
+  "reference_scope": "Measured K96 Level-3 adapter libraries, nvcc 13.2.86; all original device functions retained without token edits.",
+  "gpu_execution": false,
+  "real": {
+    "passed": true,
+    "sass_equal": true,
+    "device_metadata_checks": {
+      "inventory": true,
+      "resources": true,
+      "attributes": true,
+      "initialized_data": true
+    },
+    "reference_device_metadata_sha256": {
+      "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+      "resources": "3115d34d3f40d860636710f41c7ab0bffde0a6ebc362bdb4f763c5b2a78a1d7b",
+      "attributes": "04324c3964cf391e5ae3e7fabb86dacb50b3eaeb66ddb959d6ab16906d5f0a0e",
+      "initialized_data": "0b29aba8b1689d3fff1c2c0c5037004c8f99d7a9957102fbf1170126b28e58b9"
+    },
+    "candidate_device_metadata_sha256": {
+      "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+      "resources": "3115d34d3f40d860636710f41c7ab0bffde0a6ebc362bdb4f763c5b2a78a1d7b",
+      "attributes": "04324c3964cf391e5ae3e7fabb86dacb50b3eaeb66ddb959d6ab16906d5f0a0e",
+      "initialized_data": "0b29aba8b1689d3fff1c2c0c5037004c8f99d7a9957102fbf1170126b28e58b9"
+    },
+    "ignore_kernel_names": true,
+    "reference_sha256": "7a56848a74c4e5c2d4e8e7f628281af06844a438b0980ed7a122cd0dbe0df8d3",
+    "candidate_sha256": "7b5bb264c51b2578e3c85eaf75af14d11e0a746917e95da74a960879fb5d2b5f",
+    "reference_sass_sha256": "6aa9ddf8e0e8fd38f9a1943ad544e21a4c76587baf313a5f3642e1d05a2639ab",
+    "candidate_sass_sha256": "6aa9ddf8e0e8fd38f9a1943ad544e21a4c76587baf313a5f3642e1d05a2639ab",
+    "reference_functions": 11,
+    "candidate_functions": 11,
+    "reference_instructions": 1960,
+    "candidate_instructions": 1960
+  },
+  "complex": {
+    "passed": true,
+    "sass_equal": true,
+    "device_metadata_checks": {
+      "inventory": true,
+      "resources": true,
+      "attributes": true,
+      "initialized_data": true
+    },
+    "reference_device_metadata_sha256": {
+      "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+      "resources": "6448f7266234c34c576be0f05125f8759225129d029f3e70d2ee93d8954aa8e2",
+      "attributes": "041d90a1899718f34885b9dfbcf58bfb48ea9e25ad83d4d0405f40a1570a3b17",
+      "initialized_data": "f4de6a97611b540b64f5572dea7b008df53b0772965e74c66a28e63b6a0e1aa1"
+    },
+    "candidate_device_metadata_sha256": {
+      "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+      "resources": "6448f7266234c34c576be0f05125f8759225129d029f3e70d2ee93d8954aa8e2",
+      "attributes": "041d90a1899718f34885b9dfbcf58bfb48ea9e25ad83d4d0405f40a1570a3b17",
+      "initialized_data": "f4de6a97611b540b64f5572dea7b008df53b0772965e74c66a28e63b6a0e1aa1"
+    },
+    "ignore_kernel_names": true,
+    "reference_sha256": "c0f3438e71176ddafecdeb766587dd1e27d51de4f7f375856e38af13c2b6debb",
+    "candidate_sha256": "5272711ed16ce2ece852b2f5c0876e37267c49b5a3fa81ba3b9a702b461d4abf",
+    "reference_sass_sha256": "98e1e9917d84a5524038b52146496a09222a0f48baae31b41cde9692a1b7bae6",
+    "candidate_sass_sha256": "98e1e9917d84a5524038b52146496a09222a0f48baae31b41cde9692a1b7bae6",
+    "reference_functions": 3,
+    "candidate_functions": 3,
+    "reference_instructions": 720,
+    "candidate_instructions": 720
+  },
+  "source_note": "Only device definitions are imported; host wrappers forward grid, block, stream, and unchanged kernel arguments. Original benchmark and comparison backends are excluded."
+}

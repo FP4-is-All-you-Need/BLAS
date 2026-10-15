@@ -1,0 +1,955 @@
+// Table-driven GEMM over paired CTAs with per-part drain, read_done, and store_done handshakes.
+// Each part names its planes and products, including accumulator, scale slot, and first write.
+// The ring geometry uses the active FTS, Slots, and cut width; groups are numbered across
+// parts, so the ring phase is k * gt + gbase + g.
+// B scale slots encode E4M3 2w over the base 2 x 2. Payout warps rewrite weights after
+// reading accumulators and before read_done; the issuer waits before the next part's MMA.
+// Payout forms t = D0 + gamma D1 + bias and applies Barrett reduction. D1 is omitted for
+// a single-accumulator part. The residue is lambda0 R; its inverse is folded into CRT weights.
+// The host checks each accumulator's bound sum w max|plane A| max|plane B| K <= 2^24 - 1,
+// 0 <= t + bias < 2^32, and that groups contain a multiple of BoxTiles plane tiles.
+
+// Runtime kernel geometry and reconstruction.
+#ifndef L8_PAY_N
+#define L8_PAY_N 1
+#endif
+struct L8Shape {
+    int m, n, cuts, tile_rows, tile_cols, tiles, clusters,
+        nchunk; // nchunk (was pad) = modulus ranges per tile
+    int whole; // the leading work items that are whole tiles (the rest split into nchunk ranges; unused when nchunk = 1)
+    long long ldc; // doubles between columns of C (>= m)
+    unsigned long long
+        plane;  // residues per modulus plane = tiles * Cols * Side (tile-major, padding included)
+    int pace_s; // < 0 off; S = the parts a cluster may run ahead of the slowest
+    unsigned *pace;          // per cluster, parts started + 1 (0xffffffff when done)
+    unsigned *pace_timeouts; // waits that gave up
+    int item_order;          // 0 = the split items tile-major, 1 = chunk-major
+    int pingpong;            // 0 = the payout before the next part; 1 = behind it
+    int zk16;                // 1 = the K 16384 plan's Re / Im constants
+    int herk;                // 1 = ZHERK from C+ only (ZL8_HERK=1; whole tiles, masks below)
+    unsigned long long herk_up,
+        herk_lo; // the parts run by a tile above the diagonal / by any other tile
+};
+__device__ __forceinline__ int l8_ntiles(const L8Shape &sh, unsigned q) {
+    return q < unsigned(sh.tiles)
+               ? int((unsigned(sh.tiles) - q + unsigned(sh.clusters) - 1) / unsigned(sh.clusters))
+               : 0;
+}
+__device__ __forceinline__ int l8_nwork(const L8Shape &sh, unsigned q,
+                                        int nc) { // work items of cluster q
+    const unsigned items = nc > 1
+                               ? unsigned(sh.whole) + unsigned(sh.tiles - sh.whole) * unsigned(nc)
+                               : unsigned(sh.tiles);
+    return q < items ? int((items - q + unsigned(sh.clusters) - 1) / unsigned(sh.clusters)) : 0;
+}
+__device__ __forceinline__ unsigned l8_tile_row(const L8Shape &sh, unsigned tile) {
+    const unsigned band = tile / (8u * sh.tile_cols), within = tile - band * 8u * sh.tile_cols;
+    const unsigned rb = min(8u, unsigned(sh.tile_rows) - band * 8u);
+    return band * 8u + within % rb;
+}
+__device__ __forceinline__ unsigned l8_tile_col(const L8Shape &sh, unsigned tile) {
+    const unsigned band = tile / (8u * sh.tile_cols), within = tile - band * 8u * sh.tile_cols;
+    const unsigned rb = min(8u, unsigned(sh.tile_rows) - band * 8u);
+    return within / rb;
+}
+// every element of the tile above the diagonal (its last row < its first column)
+__device__ __forceinline__ bool l8_tile_upper(const L8Shape &sh, unsigned tile) {
+    return (l8_tile_row(sh, tile) + 1u) * unsigned(Side) <= l8_tile_col(sh, tile) * unsigned(Cols);
+}
+// CRT for columns [c0, c1) of this thread's row of a tile.
+#if L8_CRT5 // the 5-word CRT constants of the complex set (zl8_crt5.h, uploaded by the plan) and 5-word compare / subtract
+__constant__ unsigned crt_w5[L8K_NMOD][5];
+__constant__ unsigned crt_p5[5], crt_ph5[5];
+__device__ __forceinline__ bool crt5_ge(const unsigned (&a)[5], const unsigned (&b)[5]) {
+#pragma unroll
+    for (int k = 4; k >= 0; --k) {
+        if (a[k] != b[k]) {
+            return a[k] > b[k];
+        }
+    }
+    return true;
+}
+__device__ __forceinline__ bool crt5_gt(const unsigned (&a)[5], const unsigned (&b)[5]) {
+#pragma unroll
+    for (int k = 4; k >= 0; --k) {
+        if (a[k] != b[k]) {
+            return a[k] > b[k];
+        }
+    }
+    return false;
+}
+__device__ __forceinline__ void crt5_sub(unsigned (&a)[5],
+                                         const unsigned (&b)[5]) { // a -= b (a >= b)
+    unsigned br = 0;
+#pragma unroll
+    for (int k = 0; k < 5; ++k) {
+        const unsigned long long tt = (unsigned long long)a[k] - b[k] - br;
+        a[k] = unsigned(tt);
+        br = unsigned(tt >> 63);
+    }
+}
+// X = sum_q W_q r_q (5 words) -> the symmetric residue of X mod P as (magnitude, sign); make_zl8_crt5.py's arithmetic, word for word
+__device__ __forceinline__ f64_impl::U128 crt5_reduce(const unsigned long long (&acc)[5],
+                                                      bool &neg) {
+    unsigned x[5];
+    {
+        unsigned long long c = 0;
+#pragma unroll
+        for (int k = 0; k < 4; ++k) {
+            const unsigned long long tt = acc[k] + c;
+            x[k] = unsigned(tt);
+            c = tt >> 32;
+        }
+        x[4] = unsigned(acc[4] + c);
+    }
+    const unsigned qq = unsigned(__umul64hi(((unsigned long long)x[4] << 32) | x[3], crt_pt_magic));
+    unsigned u[5];
+    {
+        unsigned long long cc = 0;
+        unsigned br = 0;
+#pragma unroll
+        for (int k = 0; k < 5; ++k) {
+            const unsigned long long mq = (unsigned long long)qq * crt_p5[k] + cc;
+            cc = mq >> 32;
+            const unsigned long long tt = (unsigned long long)x[k] - (unsigned)mq - br;
+            u[k] = unsigned(tt);
+            br = unsigned(tt >> 63);
+        }
+    }
+#pragma unroll
+    for (int it = 0; it < 3; ++it) {
+        if (crt5_ge(u, crt_p5)) {
+            crt5_sub(u, crt_p5);
+        }
+    }
+    neg = crt5_gt(u, crt_ph5);
+    unsigned mg[5];
+    if (neg) {
+#pragma unroll
+        for (int k = 0; k < 5; ++k) {
+            mg[k] = crt_p5[k];
+        }
+        crt5_sub(mg, u);
+    } else {
+#pragma unroll
+        for (int k = 0; k < 5; ++k) {
+            mg[k] = u[k];
+        }
+    }
+    return (f64_impl::U128(((unsigned long long)mg[3] << 32) | mg[2]) << 64) |
+           (((unsigned long long)mg[1] << 32) | mg[0]);
+}
+#endif
+__device__ __forceinline__ void crt_cols_rt(const unsigned short *resid, double *cout,
+                                            const int *ea, const int *eb, f64_impl::U128 P,
+                                            unsigned tm_row, unsigned tn, unsigned rank, unsigned t,
+                                            int c0, int c1, const L8Shape &sh, unsigned tile_id) {
+    const unsigned row = tm_row * Side + rank * (Side / 2) + (t % 128);
+    if (row >= unsigned(sh.m)) {
+        return;
+    }
+    const int er = -ea[row];
+    for (int c = c0; c < c1; ++c) {
+        const unsigned global_n = tn * Cols + (t / 128) * 112 + c;
+        if (global_n >= unsigned(sh.n)) {
+            continue;
+        }
+        const size_t cindex = size_t(global_n) * sh.ldc + row;
+        unsigned r[kParts];
+        {
+            const ResT *rp = reinterpret_cast<const ResT *>(resid) +
+                             (size_t(tile_id) * Cols + (t / 128) * 112 + c) * Side +
+                             rank * (Side / 2) + (t % 128);
+#pragma unroll
+            for (int q = 0; q < kParts; ++q) {
+                r[q] = __ldcg(rp);
+                rp += sh.plane;
+            }
+        }
+#if ZL8 // the complex CRT: Re_q / Im_q of every modulus from its parts (zl8_tables_rt.h), then two 4-word CRT sums
+#if L8_CRT5 // the 5-word sums
+        constexpr int NW = 5;
+        unsigned long long acr[5] = {0, 0, 0, 0, 0}, aci[5] = {0, 0, 0, 0, 0};
+#else
+        constexpr int NW = 4;
+        unsigned long long acr[4] = {0, 0, 0, 0}, aci[4] = {0, 0, 0, 0};
+#endif
+        const bool k16 = sh.zk16 != 0;
+#pragma unroll
+        for (int q = 0; q < ZL8_NMODC; ++q) {
+            const unsigned p = unsigned(zl8_p_ct(q));
+            const int f = zl8_first_ct(q);
+            const unsigned cr = k16 ? zl8_cr_k16384_ct(q) : zl8_cr_k8192_ct(q),
+                           ci = k16 ? zl8_ci_k16384_ct(q) : zl8_ci_k8192_ct(q);
+            unsigned re, im;
+            if (zl8_role_ct(q) == 0) { // 2M: Re = cr (u+ + u-), Im = ci (u+ - u-)
+                re = cr * (r[f] + r[f + 1]) % p;
+                im = ci * (r[f] + p - r[f + 1]) % p;
+            } else { // 3M: Re = cr (u0 - u1), Im = ci (u2 - u0 - u1)
+                re = cr * (r[f] + p - r[f + 1]) % p;
+                im = ci * (r[f + 2] + 2 * p - r[f] - r[f + 1]) % p;
+            }
+#pragma unroll
+            for (int k = 0; k < NW; ++k) {
+#if L8_CRT5
+                acr[k] += (unsigned long long)crt_w5[q][k] * re;
+                aci[k] += (unsigned long long)crt_w5[q][k] * im;
+#else
+                acr[k] += (unsigned long long)crt_wl[q][k] * re;
+                aci[k] += (unsigned long long)crt_wl[q][k] * im;
+#endif
+            }
+        }
+#if L8_CRT5
+        (void)P;
+        bool nr = false, ni = false;
+        const f64_impl::U128 mr = crt5_reduce(acr, nr), mi = crt5_reduce(aci, ni);
+        reinterpret_cast<double2 *>(cout)[cindex] =
+            make_double2(round_scaled_int(mr, nr, er - eb[global_n]),
+                         round_scaled_int(mi, ni, er - eb[global_n]));
+#else
+        auto reduce = [&](const unsigned long long (&acc)[4]) {
+            unsigned long long cy = acc[0] >> 32, v1 = acc[1] + cy;
+            cy = v1 >> 32;
+            const unsigned long long v2 = acc[2] + cy;
+            cy = v2 >> 32;
+            const unsigned long long v3 = acc[3] + cy;
+            const f64_impl::U128 lo =
+                (f64_impl::U128(((v3 & 0xffffffffull) << 32) | (v2 & 0xffffffffull)) << 64) |
+                (((v1 & 0xffffffffull) << 32) | (acc[0] & 0xffffffffull));
+            f64_impl::U128 u = lo - f64_impl::U128(__umul64hi(v3, crt_pt_magic)) * P;
+            if (u >= P) {
+                u -= P;
+            }
+            if (u >= P) {
+                u -= P;
+            }
+            return u;
+        };
+        const f64_impl::U128 ur = reduce(acr), ui = reduce(aci);
+        const bool nr = ur > P / 2, ni = ui > P / 2;
+        reinterpret_cast<double2 *>(cout)[cindex] =
+            make_double2(round_scaled_int(nr ? P - ur : ur, nr, er - eb[global_n]),
+                         round_scaled_int(ni ? P - ui : ui, ni, er - eb[global_n]));
+#endif // L8_CRT5
+#else
+        unsigned long long acc[4] = {0, 0, 0, 0};
+#pragma unroll
+        for (int q = 0; q < kParts; ++q)
+#pragma unroll
+            for (int k = 0; k < 4; ++k) {
+                acc[k] += (unsigned long long)crt_wl[q][k] * r[q];
+            }
+        unsigned long long cy = acc[0] >> 32, v1 = acc[1] + cy;
+        cy = v1 >> 32;
+        const unsigned long long v2 = acc[2] + cy;
+        cy = v2 >> 32;
+        const unsigned long long v3 = acc[3] + cy;
+        const f64_impl::U128 lo =
+            (f64_impl::U128(((v3 & 0xffffffffull) << 32) | (v2 & 0xffffffffull)) << 64) |
+            (((v1 & 0xffffffffull) << 32) | (acc[0] & 0xffffffffull));
+        f64_impl::U128 u = lo - f64_impl::U128(__umul64hi(v3, crt_pt_magic)) * P;
+        if (u >= P) {
+            u -= P;
+        }
+        if (u >= P) {
+            u -= P;
+        }
+        const bool neg = u > P / 2;
+        cout[cindex] = round_scaled_int(neg ? P - u : u, neg, er - eb[global_n]);
+#endif
+    }
+}
+
+template <bool Unused>
+__global__ __launch_bounds__(384, 1) void l8k_gemm_kernel_rt(
+    const unsigned char *A, const unsigned char *B, unsigned short *resid, const L8kMod *mods,
+    unsigned block_tiles, KernelMetrics *km, Metrics *measures, f64_impl::U128 *crt_state,
+    const f64_impl::U128 *crtw, double *cout, const int *ea, const int *eb, f64_impl::U128 crt_p,
+    const __grid_constant__ CUtensorMap tmA, const __grid_constant__ CUtensorMap tmB,
+    const __grid_constant__ L8Shape sh) {
+    (void)crt_state;
+    (void)crtw;
+    const unsigned q = blockIdx.x / 2;
+    const int nc = sh.nchunk > 1 ? sh.nchunk : 1;
+    const int ntiles = l8_nwork(sh, q, nc), cuts = sh.cuts; // work items (= tiles when nc = 1)
+    const unsigned F = nc > 1 ? unsigned(sh.whole) : 0xffffffffu; // items w < F are whole tiles
+    const unsigned NS =
+        unsigned(sh.tiles) - (F < unsigned(sh.tiles) ? F : unsigned(sh.tiles)); // the split tiles
+    auto chunk_of = [&](unsigned w) {
+        return sh.item_order ? (w - F) / NS : (w - F) % unsigned(nc);
+    };
+    auto tile_of = [&](unsigned w) {
+        return w < F ? w : (sh.item_order ? F + (w - F) % NS : F + (w - F) / unsigned(nc));
+    };
+    auto p0_of = [&](unsigned w) { return w < F ? 0 : int(chunk_of(w)) * kParts / nc; };
+    auto p1_of = [&](unsigned w) { return w < F ? kParts : (int(chunk_of(w)) + 1) * kParts / nc; };
+    // the parts an item runs (sh.herk: its tile's mask; otherwise all of [p0, p1)), the first and the next
+    auto pm_of = [&](unsigned w) -> unsigned long long {
+        return !sh.herk ? ~0ull : (l8_tile_upper(sh, tile_of(w)) ? sh.herk_up : sh.herk_lo);
+    };
+    auto pafter = [&](unsigned w, int part) {
+        const unsigned long long msk = pm_of(w);
+        const int e = p1_of(w);
+        int p = part + 1;
+        while (p < e && !((msk >> p) & 1ull)) {
+            ++p;
+        }
+        return p;
+    };
+    auto pfirst = [&](unsigned w) { return pafter(w, p0_of(w) - 1); };
+    const auto tile_begin = clock64();
+    auto cluster = cooperative_groups::this_cluster();
+    unsigned rank = cluster.block_rank(), t = threadIdx.x;
+    __shared__ unsigned tmbase;
+    __shared__ __align__(8) unsigned long long afull[kSlots], bfull[kSlots], empty[kSlots], drain,
+        read_done, store_done, slots_ready, place_free0,
+        place_free1; // the next modulus's scale slots written; TMEM place 0 / 1 read
+    extern __shared__ __align__(1024) unsigned char sm[];
+    if (t == 0) {
+#pragma unroll
+        for (int s = 0; s < kSlots; ++s) {
+            asm volatile(
+                "mbarrier.init.shared::cta.b64 [%0],1;mbarrier.init.shared::cta.b64 [%1],1;"
+                "mbarrier.init.shared::cta.b64 [%2],1;" ::"r"(sa(&afull[s])),
+                "r"(sa(&bfull[s])), "r"(sa(&empty[s]))
+                : "memory");
+        }
+        asm volatile("mbarrier.init.shared::cta.b64 [%0],1;mbarrier.init.shared::cta.b64 [%1],2;"
+                     "mbarrier.init.shared::cta.b64 [%2],2;mbarrier.init.shared::cta.b64 [%3],2;"
+                     "mbarrier.init.shared::cta.b64 [%4],2;mbarrier.init.shared::cta.b64 [%5],2;"
+                     "fence.mbarrier_init.release.cluster;" ::"r"(sa(&drain)),
+                     "r"(sa(&read_done)), "r"(sa(&store_done)), "r"(sa(&slots_ready)),
+                     "r"(sa(&place_free0)), "r"(sa(&place_free1))
+                     : "memory");
+    }
+    asm volatile("fence.proxy.async.shared::cta;" ::: "memory");
+    __syncthreads();
+    cluster.sync();
+    if (t < 32) {
+        asm volatile(
+            "tcgen05.alloc.cta_group::2.sync.aligned.shared::cta.b32 [%0],512;" ::"r"(sa(&tmbase))
+            : "memory");
+    }
+    __syncthreads();
+    cluster.sync();
+    unsigned tm = tmbase, local = tm + ((t / 32 % 4 * 32) << 16);
+    // Initialize four 16-column scale slots starting at TMEM column 448.
+    // Slot 0 holds weight 1; slots 1..3 hold the first assigned part's weights.
+    if (t < 128) {
+        const int f0 = ntiles > 0 ? pfirst(q) : 0; // the first modulus of this cluster's first item
+        const unsigned code[4] = {0x40u, mods[f0].code[0], mods[f0].code[1], mods[f0].code[2]};
+#pragma unroll
+        for (int s = 0; s < 4; ++s) {
+            const unsigned bits = code[s] * 0x01010101u;
+            for (int c = 0; c < 16; ++c) {
+                st(local + 448 + 16 * s + c, bits);
+            }
+        }
+        asm volatile("tcgen05.wait::st.sync.aligned;tcgen05.fence::before_thread_sync;" ::
+                         : "memory");
+    }
+    __syncthreads();
+    cluster.sync();
+    asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+
+    if (t == 288 ||
+        t == 320) { // supply (A side / B side); both CTAs, completion on rank 0's barrier
+        const bool side_b = t == 320;
+        int gcnt = 0; // the running group count (= k * gt + gbase with whole tiles)
+        unsigned pcnt = 0,
+                 pace_seen =
+                     0; // the parts this supply has started; the smallest pace entry it has seen
+        for (int k = 0; k < ntiles; ++k) {
+            const unsigned w = unsigned(k) * sh.clusters + q, tile = tile_of(w);
+            const size_t block = size_t(side_b ? l8_tile_col(sh, tile) : l8_tile_row(sh, tile)) *
+                                 block_tiles; // in plane tiles
+            for (int part = pfirst(w); part < p1_of(w);
+                 part = pafter(w, part)) { // the item's parts
+                const int F = mods[part].planes, cpg = mods[part].cpg, groups = mods[part].groups;
+                const int gb = gcnt, pbase = mods[part].pbase;
+                gcnt += groups;
+                if (!side_b && sh.pace_s >= 0) { // the pace (see L8Shape)
+                    if (rank == 0) {
+                        *(volatile unsigned *)(sh.pace + q) = pcnt + 1u;
+                    }
+                    if (pcnt >= unsigned(sh.pace_s)) {
+                        const unsigned need = pcnt - unsigned(sh.pace_s) + 1u,
+                                       nclu = unsigned(sh.clusters);
+                        if (pace_seen < need) {
+                            int it = 0;
+                            for (; it < 20000; ++it) {
+                                unsigned mn = 0xffffffffu;
+                                for (unsigned c = 0; c < nclu; ++c) {
+                                    mn = min(mn, *(const volatile unsigned *)(sh.pace + c));
+                                }
+                                pace_seen = mn;
+                                if (mn >= need) {
+                                    break;
+                                }
+                                __nanosleep(256);
+                            }
+                            if (it == 20000) {
+                                atomicAdd(sh.pace_timeouts, 1u);
+                            }
+                        }
+                    }
+                }
+                ++pcnt;
+                for (int g = 0; g < groups; ++g) {
+                    const int G = gb + g, slot = G % kSlots;
+                    if (G >= kSlots) {
+                        await(sa(&empty[slot]), ((G / kSlots) + 1) & 1);
+                    }
+                    const int cut0 = g * cpg, nc = min(cpg, cuts - cut0);
+                    const unsigned ntile = unsigned(nc * F), bytes = ntile * TileBytes;
+                    // l8e::plane_offset: tile block, then 2 x cuts x pbase tiles, then ((rank x cuts + cut) x F + plane)
+#if L8_FOLD_TILES
+                    // Diagnostic loads fold into the first L8_FOLD_TILES planes of each operand.
+                    // The output is not a matrix product.
+                    const size_t first =
+                        (block + size_t(2) * cuts * pbase + (size_t(rank) * cuts + cut0) * F) %
+                        L8_FOLD_TILES;
+#else
+                    const size_t first =
+                        block + size_t(2) * cuts * pbase + (size_t(rank) * cuts + cut0) * F;
+#endif
+                    const unsigned dest = sa(sm + slot * kGroup + (side_b ? kOperand : 0));
+                    const unsigned lbar_local = sa(side_b ? &bfull[slot] : &afull[slot]);
+                    unsigned lbar;
+                    asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                 : "=r"(lbar)
+                                 : "r"(lbar_local));
+                    if (rank == 0) {
+                        asm volatile(
+                            "mbarrier.arrive.expect_tx.release.cta.shared::cta.b64 _,[%0],%1;" ::
+                                "r"(lbar_local),
+                            "r"(2u * bytes)
+                            : "memory");
+                    }
+                    for (unsigned b = 0; b < ntile; b += kBoxTiles) {
+                        asm volatile(
+                            "cp.async.bulk.tensor.2d.cta_group::2.shared::cluster.global.tile.mbarrier::complete_tx::bytes "
+                            "[%0],[%1,{%2,%3}],[%4];" ::"r"(dest + b * TileBytes),
+                            "l"(reinterpret_cast<unsigned long long>(side_b ? &tmB : &tmA)), "r"(0),
+                            "r"(int((first + b) * (TileBytes / 256))), "r"(lbar)
+                            : "memory");
+                    }
+                }
+            }
+        }
+        if (!side_b && sh.pace_s >= 0 && rank == 0) {
+            *(volatile unsigned *)(sh.pace + q) = 0xffffffffu; // done, never wait on me
+        }
+    } else if (t == 256 && rank == 0) { // issue
+        unsigned long long abase[kSlots], bbase[kSlots];
+#pragma unroll
+        for (int slot = 0; slot < kSlots; ++slot) {
+            const unsigned addr = sa(sm + slot * kGroup);
+            abase[slot] = tile_desc(addr);
+            bbase[slot] = tile_desc(addr + kOperand);
+        }
+        int gcnt = 0, scnt = 0; // the running group and step counts
+        int sel = 0, u0 = 0, u1 = 0, w0 = 0,
+            w1 = 0; // the next place; uses of place 0 / 1 issued / freed seen
+        for (int k = 0; k < ntiles; ++k) {
+            const unsigned w = unsigned(k) * sh.clusters + q, tile = tile_of(w);
+            for (int part = pfirst(w); part < p1_of(w);
+                 part = pafter(w, part)) { // the item's parts
+                const int step = scnt++;
+                const int F = mods[part].planes, cpg = mods[part].cpg, np = mods[part].nprod;
+                const int first = gcnt, last = first + mods[part].groups;
+                gcnt = last;
+                unsigned pr[4];
+#pragma unroll
+                for (int i = 0; i < 4; ++i) {
+                    pr[i] = mods[part].prod[i];
+                }
+                const unsigned sf0 = tm + 448;
+                int accb = 0; // the TMEM place of a one-accumulator part (0 unless pingpong)
+                if (sh.pingpong) { // Wait for the previous payout before reusing either selected TMEM place.
+                    const int na = mods[part].nacc;
+                    accb = na > 1 ? 0 : sel;
+                    const bool p0 = na > 1 || sel == 0, p1 = na > 1 || sel == 1;
+                    if (p0 && u0 >= 1 && w0 < u0) {
+                        await(sa(&place_free0), unsigned(u0 - 1) & 1u);
+                        w0 = u0;
+                    }
+                    if (p1 && u1 >= 1 && w1 < u1) {
+                        await(sa(&place_free1), unsigned(u1 - 1) & 1u);
+                        w1 = u1;
+                    }
+                    asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+                    u0 += p0 ? 1 : 0;
+                    u1 += p1 ? 1 : 0;
+                    if (na == 1) {
+                        sel ^= 1;
+                    }
+                }
+                unsigned long long aw = 0, bw = 0, issue = 0, ns0;
+                auto core_begin = clock64();
+                asm volatile("mov.u64 %0,%%globaltimer;" : "=l"(ns0));
+                measures[(size_t(tile) * kParts + part) * 2 + 1].ns =
+                    ns0; // the part's issue start in rank 1's unused ns
+                for (int round = first / kSlots; round <= (last - 1) / kSlots; ++round) {
+#pragma unroll
+                    for (int slot = 0; slot < kSlots; ++slot) {
+                        const int G = round * kSlots + slot;
+                        if (G >= first && G < last) {
+                            const int g = G - first, nc = min(cpg, cuts - g * cpg);
+                            auto w = clock64();
+                            await(sa(&afull[slot]), round & 1);
+                            aw += clock64() - w;
+                            w = clock64();
+                            await(sa(&bfull[slot]), round & 1);
+                            bw += clock64() - w;
+                            asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+                            auto i0 = clock64();
+                            for (int c = 0; c < nc; ++c) {
+#pragma unroll
+                                for (int i = 0; i < 4; ++i) {
+                                    if (i < np) {
+                                        const unsigned e = pr[i];
+                                        const unsigned fa = e & 3u, fb = (e >> 2) & 3u,
+                                                       acc = (e >> 4) & 1u, bs = (e >> 5) & 3u;
+                                        const bool overwrite = ((e >> 7) & 1u) && g == 0 && c == 0;
+                                        const unsigned long long a =
+                                            abase[slot] + (unsigned long long)((c * F + int(fa)) *
+                                                                               (TileBytes >> 4));
+                                        const unsigned long long b =
+                                            bbase[slot] + (unsigned long long)((c * F + int(fb)) *
+                                                                               (TileBytes >> 4));
+                                        face_mma<false, 0>(tm + (unsigned(accb) + acc) * Cols, a, b,
+                                                           sf0, sf0 + 16 * bs,
+                                                           !overwrite);
+                                    }
+                                }
+                            }
+                            issue += clock64() - i0;
+                            done(sa(&empty[slot]));
+                        }
+                    }
+                }
+                done(sa(&drain));
+                auto commit_after = clock64();
+                await(sa(&drain), step & 1);
+                auto end = clock64();
+                unsigned long long ns1;
+                asm volatile("mov.u64 %0,%%globaltimer;" : "=l"(ns1));
+                auto &z = measures[(size_t(tile) * kParts + part) * 2];
+                z.core = end - core_begin;
+                z.ns = ns1 - ns0;
+                z.a_wait = aw;
+                z.b_wait = bw;
+                z.commit_wait = end - commit_after;
+                z.issue = issue;
+                if (sh.pingpong) { // only the scale slots; read_done is waited per place before a part
+                    await(sa(&slots_ready), step & 1);
+                    asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+                } else {
+                    await(sa(&read_done), step & 1);
+                    asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+                    await(sa(&store_done), step & 1);
+                }
+            }
+        }
+    } else if (t < 256) { // payout
+        long long prev = tile_begin;
+        int scnt = 0; // the running step count
+        int psel = 0; // the payout's copy of the issuer's sel
+        for (int k = 0; k < ntiles; ++k) {
+            const unsigned w = unsigned(k) * sh.clusters + q, tile = tile_of(w);
+            const unsigned tm_row = l8_tile_row(sh, tile), tn = l8_tile_col(sh, tile);
+            const int pend = p1_of(w),
+                      pnext = k + 1 < ntiles ? pfirst(w + sh.clusters) : 0; // pfirst
+            if (!sh.herk && k > 0 && w >= F &&
+                w - sh.clusters <
+                    F) { // the first split item after whole tiles: the last whole tile's CRT first
+                const unsigned pt = w - sh.clusters;
+                crt_cols_rt(resid, cout, ea, eb, crt_p, l8_tile_row(sh, pt), l8_tile_col(sh, pt),
+                            rank, t, 0, 112, sh, pt);
+            }
+            for (int part = pfirst(w); part < pend; part = pafter(w, part)) { // the item's parts
+                const int step = scnt++;
+                await(sa(&drain), step & 1);
+                auto began = clock64();
+                const int p = mods[part].p, gamma = mods[part].gamma, bias = mods[part].bias,
+                          nacc = mods[part].nacc;
+                const unsigned mmagic = mods[part].mmagic;
+                ResT *const out = reinterpret_cast<ResT *>(resid) + size_t(part) * sh.plane;
+                asm volatile("tcgen05.fence::after_thread_sync;" ::: "memory");
+                int paccb = 0; // this part's TMEM place (the issuer's accb)
+                if (sh.pingpong) {
+                    if (nacc == 1) {
+                        paccb = psel;
+                        psel ^= 1;
+                    }
+                    // the next modulus's weights first: this part's MMAs are complete (drain), so the slots are free; then the issuer may
+                    // start the next part on the other place while this payout reads this one
+                    if (t < 128) {
+                        const int pa_ = pafter(w, part),
+                                  nx = pa_ < pend ? pa_ : pnext; // the next part of the mask
+                        const unsigned c1 = mods[nx].code[0], c2 = mods[nx].code[1],
+                                       c3 = mods[nx].code[2];
+                        const unsigned b1 = c1 * 0x01010101u, b2 = c2 * 0x01010101u,
+                                       b3 = c3 * 0x01010101u;
+                        for (int c = 0; c < 16; ++c) {
+                            st(local + 448 + 16 + c, b1);
+                            st(local + 448 + 32 + c, b2);
+                            st(local + 448 + 48 + c, b3);
+                        }
+                        asm volatile("tcgen05.wait::st.sync.aligned;" ::: "memory");
+                    }
+                    asm volatile("tcgen05.fence::before_thread_sync;barrier.cta.sync 1,256;" ::
+                                     : "memory");
+                    if (t == 0) {
+                        unsigned remote;
+                        asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                     : "=r"(remote)
+                                     : "r"(sa(&slots_ready)));
+                        asm volatile(
+                            "mbarrier.arrive.release.cluster.shared::cluster.b64 _,[%0];" ::"r"(
+                                remote)
+                            : "memory");
+                    }
+                }
+#if L8_PAY_N // one-accumulator moduli neither load nor convert D1
+                if (nacc > 1) {
+#pragma unroll
+                    for (int chunk = 0; chunk < 7; ++chunk) {
+                        unsigned v0[16], v1[16];
+                        const unsigned col = (t / 128) * 112 + chunk * 16;
+                        load16(local + unsigned(paccb) * Cols + col,
+                               v0); // paccb (0 for two accumulators)
+                        if (nacc > 1) {
+                            load16(local + Cols + col, v1);
+                        } else {
+#pragma unroll
+                            for (int j = 0; j < 16; ++j) {
+                                v1[j] = 0u;
+                            }
+                        }
+                        // the whole tile, padding included: residues without a condition, one register, immediates j * Side
+                        ResT *const tp = out + (size_t(tile) * Cols + col) * Side +
+                                         rank * (Side / 2) + (t % 128);
+#pragma unroll
+                        for (int j = 0; j < 16; ++j) {
+                            const int x0 = __float2int_rn(__uint_as_float(v0[j]));
+                            const int x1 = __float2int_rn(__uint_as_float(v1[j]));
+                            // D0 + gamma D1 made positive by bias (a multiple of p), then Barrett; the host checked 0 <= tt < 2^32.
+                            const unsigned tt =
+                                (unsigned)((long long)x0 + (long long)gamma * x1 + (long long)bias);
+                            const unsigned qd = (unsigned)(((unsigned long long)tt * mmagic) >> 32);
+                            unsigned r = tt - qd * (unsigned)p;
+                            if (r >= (unsigned)p) {
+                                r -= (unsigned)p;
+                            }
+                            tp[j * Side] = (ResT)r;
+                        }
+                    }
+                } else {
+#pragma unroll
+                    for (int chunk = 0; chunk < 7; ++chunk) {
+                        unsigned v0[16];
+                        const unsigned col = (t / 128) * 112 + chunk * 16;
+                        load16(local + unsigned(paccb) * Cols + col,
+                               v0); // paccb (0 for two accumulators)
+                        // the whole tile, padding included: residues without a condition, one register, immediates j * Side
+                        ResT *const tp = out + (size_t(tile) * Cols + col) * Side +
+                                         rank * (Side / 2) + (t % 128);
+#pragma unroll
+                        for (int j = 0; j < 16; ++j) {
+                            const int x0 = __float2int_rn(__uint_as_float(v0[j]));
+                            // D0 + gamma D1 made positive by bias (a multiple of p), then Barrett; the host checked 0 <= tt < 2^32.
+                            const unsigned tt =
+                                (unsigned)((long long)x0 +
+                                           (long long)bias); // one accumulator: gamma = 0, no D1
+                            const unsigned qd = (unsigned)(((unsigned long long)tt * mmagic) >> 32);
+                            unsigned r = tt - qd * (unsigned)p;
+                            if (r >= (unsigned)p) {
+                                r -= (unsigned)p;
+                            }
+                            tp[j * Side] = (ResT)r;
+                        }
+                    }
+                }
+#else
+#pragma unroll
+                for (int chunk = 0; chunk < 7; ++chunk) {
+                    unsigned v0[16], v1[16];
+                    const unsigned col = (t / 128) * 112 + chunk * 16;
+                    load16(local + unsigned(paccb) * Cols + col,
+                           v0); // paccb (0 for two accumulators)
+                    if (nacc > 1) {
+                        load16(local + Cols + col, v1);
+                    } else {
+#pragma unroll
+                        for (int j = 0; j < 16; ++j) {
+                            v1[j] = 0u;
+                        }
+                    }
+                    // the whole tile, padding included: residues without a condition, one register, immediates j * Side
+                    ResT *const tp =
+                        out + (size_t(tile) * Cols + col) * Side + rank * (Side / 2) + (t % 128);
+#pragma unroll
+                    for (int j = 0; j < 16; ++j) {
+                        const int x0 = __float2int_rn(__uint_as_float(v0[j]));
+                        const int x1 = __float2int_rn(__uint_as_float(v1[j]));
+                        // D0 + gamma D1 made positive by bias (a multiple of p), then Barrett; the host checked 0 <= tt < 2^32.
+                        const unsigned tt =
+                            (unsigned)((long long)x0 + (long long)gamma * x1 + (long long)bias);
+                        const unsigned qd = (unsigned)(((unsigned long long)tt * mmagic) >> 32);
+                        unsigned r = tt - qd * (unsigned)p;
+                        if (r >= (unsigned)p) {
+                            r -= (unsigned)p;
+                        }
+                        tp[j * Side] = (ResT)r;
+                    }
+                }
+#endif
+                // the next modulus's weights into scale slots 1..3 (this CTA's TMEM), before the accumulators are handed back
+                if (t < 128 && !sh.pingpong) { // pingpong 1 wrote them right after drain
+                    const int pa_ = pafter(w, part),
+                              nx = pa_ < pend ? pa_ : pnext; // The next part this cluster runs.
+                    const unsigned c1 = mods[nx].code[0], c2 = mods[nx].code[1],
+                                   c3 = mods[nx].code[2];
+                    const unsigned b1 = c1 * 0x01010101u, b2 = c2 * 0x01010101u,
+                                   b3 = c3 * 0x01010101u;
+                    for (int c = 0; c < 16; ++c) {
+                        st(local + 448 + 16 + c, b1);
+                        st(local + 448 + 32 + c, b2);
+                        st(local + 448 + 48 + c, b3);
+                    }
+                    asm volatile("tcgen05.wait::st.sync.aligned;" ::: "memory");
+                }
+                asm volatile("tcgen05.fence::before_thread_sync;barrier.cta.sync 1,256;" ::
+                                 : "memory");
+                if (t == 0) {
+                    unsigned remote;
+                    asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                 : "=r"(remote)
+                                 : "r"(sa(&read_done)));
+                    asm volatile(
+                        "mbarrier.arrive.release.cluster.shared::cluster.b64 _,[%0];" ::"r"(remote)
+                        : "memory");
+                    if (sh.pingpong) { // Release the TMEM places after all payout loads and the CTA barrier.
+                        if (nacc > 1 || paccb == 0) {
+                            asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                         : "=r"(remote)
+                                         : "r"(sa(&place_free0)));
+                            asm volatile(
+                                "mbarrier.arrive.release.cluster.shared::cluster.b64 _,[%0];" ::"r"(
+                                    remote)
+                                : "memory");
+                        }
+                        if (nacc > 1 || paccb == 1) {
+                            asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                         : "=r"(remote)
+                                         : "r"(sa(&place_free1)));
+                            asm volatile(
+                                "mbarrier.arrive.release.cluster.shared::cluster.b64 _,[%0];" ::"r"(
+                                    remote)
+                                : "memory");
+                        }
+                    }
+                }
+                asm volatile("barrier.cta.sync 1,256;" ::: "memory");
+                if (t == 0) {
+                    measures[(size_t(tile) * kParts + part) * 2 + rank].payout = clock64() - began;
+                    unsigned remote;
+                    asm volatile("mapa.shared::cluster.u32 %0,%1,0;"
+                                 : "=r"(remote)
+                                 : "r"(sa(&store_done)));
+                    asm volatile(
+                        "mbarrier.arrive.release.cluster.shared::cluster.b64 _,[%0];" ::"r"(remote)
+                        : "memory");
+                }
+                if (!sh.herk && k > 0 &&
+                    w < F) { // the CRT of one slice of the previous tile's columns, behind the next MMA
+                    const auto s0 = clock64();
+                    const unsigned pt = unsigned(k - 1) * sh.clusters + q;
+                    crt_cols_rt(resid, cout, ea, eb, crt_p, l8_tile_row(sh, pt),
+                                l8_tile_col(sh, pt), rank, t, part * 112 / kParts,
+                                (part + 1) * 112 / kParts, sh, pt);
+                    if (t == 0) {
+                        measures[(size_t(tile) * kParts + part) * 2 + rank].payout_read =
+                            clock64() - s0;
+                    }
+                }
+            }
+            if (t == 0 && w < F) { // the per-tile timing of whole items only
+                auto now = clock64();
+                km[size_t(tile) * 2 + rank].total = now - prev;
+                km[size_t(tile) * 2 + rank].smid = smid();
+                prev = now;
+            }
+        }
+        if (!sh.herk && ntiles > 0 &&
+            unsigned(ntiles - 1) * sh.clusters + q <
+                F) { // the last item whole = the kernel's CRT; split = l8k_crt_after
+            const unsigned pt = unsigned(ntiles - 1) * sh.clusters + q;
+            crt_cols_rt(resid, cout, ea, eb, crt_p, l8_tile_row(sh, pt), l8_tile_col(sh, pt), rank,
+                        t, 0, 112, sh, pt);
+        }
+    }
+    __syncthreads();
+    cluster.sync();
+    if (t < 32) {
+        asm volatile(
+            "tcgen05.dealloc.cta_group::2.sync.aligned.b32 %0,512;tcgen05.relinquish_alloc_"
+            "permit.cta_group::2.sync.aligned;" ::"r"(tm)
+            : "memory");
+    }
+    cluster.sync();
+}
+
+// the CRT after the GEMM when the moduli of a tile are split over clusters (sh.nchunk > 1): the same crt_cols_rt as the
+// The follow-up kernel partitions each (tile, rank) into column ranges.
+// the split's GEMM stage at 214 us for about 12 us of MMA work per cluster, the CRT on 12 blocks being the suspect).
+__global__ void __launch_bounds__(256)
+    l8k_crt_after(const unsigned short *resid, double *cout, const int *ea, const int *eb,
+                  f64_impl::U128 crt_p, const __grid_constant__ L8Shape sh, int nch) {
+    const unsigned n = unsigned(nch), tile = unsigned(sh.whole) + blockIdx.x / (2u * n),
+                   rank = (blockIdx.x / n) % 2u, ch = blockIdx.x % n; // the split tiles
+    crt_cols_rt(resid, cout, ea, eb, crt_p, l8_tile_row(sh, tile), l8_tile_col(sh, tile), rank,
+                threadIdx.x, int(ch) * 112 / nch, (int(ch) + 1) * 112 / nch, sh, tile);
+}
+
+#if ZL8
+// ZHERK from C+ only (sh.herk). Index of the residue of (row, col) in a part plane (the payout's layout:
+// tile-major, then the column in the tile, then the row in the tile; tile id as l8_tile_row / l8_tile_col invert).
+__device__ __forceinline__ size_t l8_resid_index(const L8Shape &sh, unsigned row, unsigned col) {
+    const unsigned tr = row / unsigned(Side), tc = col / unsigned(Cols), band = tr / 8u;
+    const unsigned rb = min(8u, unsigned(sh.tile_rows) - band * 8u);
+    const unsigned tile = band * 8u * unsigned(sh.tile_cols) + tc * rb + (tr - band * 8u);
+    return (size_t(tile) * Cols + (col - tc * unsigned(Cols))) * Side + (row - tr * unsigned(Side));
+}
+ZL8_HD constexpr int zl8_nplus() {
+    int c = 0;
+    for (int q = 0; q < ZL8_NMODC; ++q) {
+        c += zl8_role_ct(q) == 0 ? 1 : 0;
+    }
+    return c;
+}
+// the complex CRT of one element from its parts: crt_cols_rt's ZL8 arithmetic, unchanged
+__device__ __forceinline__ double2 zl8_crt_elem(const unsigned (&r)[kParts], f64_impl::U128 P,
+                                                int exponent, bool k16) {
+#if L8_CRT2C // Re and Im by the two-group CRT (crt2c_dev.cuh), the same u as the 4-word sums below
+    unsigned vre[ZL8_NMODC], vim[ZL8_NMODC];
+#pragma unroll
+    for (int q = 0; q < ZL8_NMODC; ++q) {
+        const unsigned p = unsigned(zl8_p_ct(q));
+        const int f = zl8_first_ct(q);
+        const unsigned cr = k16 ? zl8_cr_k16384_ct(q) : zl8_cr_k8192_ct(q),
+                       ci = k16 ? zl8_ci_k16384_ct(q) : zl8_ci_k8192_ct(q);
+        if (zl8_role_ct(q) == 0) {
+            vre[q] = cr * (r[f] + r[f + 1]) % p;
+            vim[q] = ci * (r[f] + p - r[f + 1]) % p;
+        } else {
+            vre[q] = cr * (r[f] + p - r[f + 1]) % p;
+            vim[q] = ci * (r[f + 2] + 2 * p - r[f] - r[f + 1]) % p;
+        }
+    }
+    const f64_impl::U128 ur = crt2c_reduce(vre), ui = crt2c_reduce(vim);
+#else
+    unsigned long long acr[4] = {0, 0, 0, 0}, aci[4] = {0, 0, 0, 0};
+#pragma unroll
+    for (int q = 0; q < ZL8_NMODC; ++q) {
+        const unsigned p = unsigned(zl8_p_ct(q));
+        const int f = zl8_first_ct(q);
+        const unsigned cr = k16 ? zl8_cr_k16384_ct(q) : zl8_cr_k8192_ct(q),
+                       ci = k16 ? zl8_ci_k16384_ct(q) : zl8_ci_k8192_ct(q);
+        unsigned re, im;
+        if (zl8_role_ct(q) == 0) {
+            re = cr * (r[f] + r[f + 1]) % p;
+            im = ci * (r[f] + p - r[f + 1]) % p;
+        } else {
+            re = cr * (r[f] + p - r[f + 1]) % p;
+            im = ci * (r[f + 2] + 2 * p - r[f] - r[f + 1]) % p;
+        }
+#pragma unroll
+        for (int k = 0; k < 4; ++k) {
+            acr[k] += (unsigned long long)crt_wl[q][k] * re;
+            aci[k] += (unsigned long long)crt_wl[q][k] * im;
+        }
+    }
+    auto reduce = [&](const unsigned long long (&acc)[4]) {
+        unsigned long long cy = acc[0] >> 32, v1 = acc[1] + cy;
+        cy = v1 >> 32;
+        const unsigned long long v2 = acc[2] + cy;
+        cy = v2 >> 32;
+        const unsigned long long v3 = acc[3] + cy;
+        const f64_impl::U128 lo =
+            (f64_impl::U128(((v3 & 0xffffffffull) << 32) | (v2 & 0xffffffffull)) << 64) |
+            (((v1 & 0xffffffffull) << 32) | (acc[0] & 0xffffffffull));
+        f64_impl::U128 u = lo - f64_impl::U128(__umul64hi(v3, crt_pt_magic)) * P;
+        if (u >= P) {
+            u -= P;
+        }
+        if (u >= P) {
+            u -= P;
+        }
+        return u;
+    };
+    const f64_impl::U128 ur = reduce(acr), ui = reduce(aci);
+#endif
+    const bool nr = ur > P / 2, ni = ui > P / 2;
+    return make_double2(round_scaled_int(nr ? P - ur : ur, nr, exponent),
+                        round_scaled_int(ni ? P - ui : ui, ni, exponent));
+}
+// grid (ceil(n/32), ceil(n/32)), block (32, 8): block (bx, by) = rows 32 bx.., columns 32 by..; by > bx has no lower element
+__global__ void __launch_bounds__(256)
+    zl8_herk_crt(const unsigned short *resid, double *cout, const int *ea, const int *eb,
+                 f64_impl::U128 P, const __grid_constant__ L8Shape sh) {
+    constexpr int kPlus = zl8_nplus();
+    __shared__ ResT tq[kPlus][32][33];
+    if (blockIdx.y > blockIdx.x) {
+        return;
+    }
+    const unsigned r0 = blockIdx.x * 32u, c0 = blockIdx.y * 32u, lane = threadIdx.x,
+                   ty = threadIdx.y;
+    const ResT *R = reinterpret_cast<const ResT *>(resid);
+    const bool k16 = sh.zk16 != 0;
+    for (unsigned j = ty; j < 32u;
+         j += 8u) { // tq[i][j][lane] = u+ of 2M modulus i at (c0 + lane, r0 + j)
+        const unsigned srow = c0 + lane, scol = r0 + j;
+        if (srow < unsigned(sh.m) && scol < unsigned(sh.n)) {
+            const size_t idx = l8_resid_index(sh, srow, scol);
+            int i = 0;
+#pragma unroll
+            for (int q = 0; q < ZL8_NMODC; ++q) {
+                if (zl8_role_ct(q) == 0) {
+                    tq[i][j][lane] = __ldcg(R + idx + size_t(zl8_first_ct(q)) * sh.plane);
+                    ++i;
+                }
+            }
+        }
+    }
+    __syncthreads();
+    for (unsigned b = ty; b < 32u; b += 8u) {
+        const unsigned row = r0 + lane, col = c0 + b;
+        if (row >= unsigned(sh.m) || col >= unsigned(sh.n) || row < col) {
+            continue;
+        }
+        const size_t idx = l8_resid_index(sh, row, col);
+        unsigned r[kParts];
+        int i = 0;
+#pragma unroll
+        for (int q = 0; q < ZL8_NMODC; ++q) {
+            const int f = zl8_first_ct(q);
+            if (zl8_role_ct(q) == 0) {
+                r[f] = __ldcg(R + idx + size_t(f) * sh.plane);
+                r[f + 1] = tq[i][lane][b]; // u- (row, col) = u+ (col, row)
+                ++i;
+            } else {
+#pragma unroll
+                for (int x = 0; x < 3; ++x) {
+                    r[f + x] = __ldcg(R + idx + size_t(f + x) * sh.plane);
+                }
+            }
+        }
+        reinterpret_cast<double2 *>(cout)[size_t(col) * sh.ldc + row] =
+            zl8_crt_elem(r, P, -ea[row] - eb[col], k16);
+    }
+}
+#endif

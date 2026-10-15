@@ -1,0 +1,3277 @@
+{
+  "parent_tree": "b4cd99ee76b6416bc1596e07e5fda081f960825b",
+  "gpu_execution": false,
+  "nvcc": "13.2.86",
+  "host_gxx": "11.4.0",
+  "default_path": "direct",
+  "engines": [
+    {
+      "id": "k96_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "71079f9a40526939917084773481a129b0eb5bb9c1c935b5aef29e25644a1d49",
+        "candidate_sha256": "4bd76bb0274fdb2ca9de2b9a8eef57da58bccee506571a965bf6ef17562a5061",
+        "reference_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "candidate_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68896,
+        "candidate_instructions": 68896
+      },
+      "host": {
+        "reference_text_bytes": 88226,
+        "candidate_text_bytes": 88226,
+        "reference_text_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+        "candidate_text_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "437b0c13ae8ef2d4484d0b6d4d70c44221d83db96931c0f9aa19a92041162807",
+        "candidate_disassembly_sha256": "16c9784f922f238437306ef225fbafa18cdd62d0f6551e13719cc3ee1d7f8e55",
+        "normalized_reference_disassembly_sha256": "c8ea8e4c7c153abea5ffff0ac09c060a4623e290d355d4a88a6842fb97ce16cd",
+        "normalized_candidate_disassembly_sha256": "c8ea8e4c7c153abea5ffff0ac09c060a4623e290d355d4a88a6842fb97ce16cd",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "host_relocation_revalidation": {
+        "raw": {
+          "reference_text_bytes": 88226,
+          "candidate_text_bytes": 88226,
+          "reference_text_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+          "candidate_text_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+          "raw_text_equal": true,
+          "raw_disassembly_equal": false,
+          "disassembly_equal": true,
+          "reference_disassembly_sha256": "437b0c13ae8ef2d4484d0b6d4d70c44221d83db96931c0f9aa19a92041162807",
+          "candidate_disassembly_sha256": "16c9784f922f238437306ef225fbafa18cdd62d0f6551e13719cc3ee1d7f8e55",
+          "normalized_reference_disassembly_sha256": "c8ea8e4c7c153abea5ffff0ac09c060a4623e290d355d4a88a6842fb97ce16cd",
+          "normalized_candidate_disassembly_sha256": "c8ea8e4c7c153abea5ffff0ac09c060a4623e290d355d4a88a6842fb97ce16cd",
+          "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+          "reference_normalized_labels": 1,
+          "candidate_normalized_labels": 1,
+          "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+          "passed": true
+        },
+        "passed": true,
+        "stage": "raw",
+        "gpu_execution": false,
+        "scope": "Fixed-layout host .text, RIP references, all RELA entries and selected host data sections; device gate required separately.",
+        "outside_scope": [
+          "Unwind and exception-table decoding (.eh_frame, .eh_frame_hdr, .gcc_except_table)."
+        ],
+        "normalized_fatbin_equal": true,
+        "compiler_symbol_identity": {
+          "before": "_INTERNAL_5137550c_",
+          "after": "_INTERNAL_2b213a99_",
+          "registration_names": 5,
+          "entire_normalized_fatbin_equal": true,
+          "names_before": [
+            "_ZN37_INTERNAL_5137550c_7_l8rt_cu_50b65db34cuda3std3__45__cpo9iter_swapE",
+            "_ZN37_INTERNAL_5137550c_7_l8rt_cu_50b65db34cuda3std9execution3__43seqE",
+            "_ZN37_INTERNAL_5137550c_7_l8rt_cu_50b65db34cuda3std9execution3__43parE",
+            "_ZN37_INTERNAL_5137550c_7_l8rt_cu_50b65db34cuda3std9execution3__49par_unseqE",
+            "_ZN37_INTERNAL_5137550c_7_l8rt_cu_50b65db34cuda3std9execution3__45unseqE"
+          ],
+          "names_after": [
+            "_ZN37_INTERNAL_2b213a99_7_l8rt_cu_50b65db34cuda3std3__45__cpo9iter_swapE",
+            "_ZN37_INTERNAL_2b213a99_7_l8rt_cu_50b65db34cuda3std9execution3__43seqE",
+            "_ZN37_INTERNAL_2b213a99_7_l8rt_cu_50b65db34cuda3std9execution3__43parE",
+            "_ZN37_INTERNAL_2b213a99_7_l8rt_cu_50b65db34cuda3std9execution3__49par_unseqE",
+            "_ZN37_INTERNAL_2b213a99_7_l8rt_cu_50b65db34cuda3std9execution3__45unseqE"
+          ]
+        },
+        "strings": [],
+        "alignment_padding": [],
+        "relocation_pairs": [
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".data",
+              "reference": "0x18c298",
+              "candidate": "0x18c298"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 8,
+            "type": 1,
+            "target": {
+              "symbol": "_ZTISt9exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 16,
+            "type": 1,
+            "target": {
+              "symbol": "__gxx_personality_v0",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data.rel.ro",
+            "offset": 0,
+            "type": 1,
+            "target": {
+              "symbol": "_ZTVN10__cxxabiv117__class_type_infoE",
+              "addend": 16
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data.rel.ro",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".rodata",
+              "reference": "0x1e110",
+              "candidate": "0x1e110"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".fini_array",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x5190",
+              "candidate": "0x5190"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 0,
+            "type": 6,
+            "target": {
+              "symbol": "__cxa_finalize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 8,
+            "type": 6,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 16,
+            "type": 6,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorD1Ev",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 24,
+            "type": 6,
+            "target": {
+              "symbol": "_ITM_deregisterTMCloneTable",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 32,
+            "type": 6,
+            "target": {
+              "symbol": "__gmon_start__",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 40,
+            "type": 6,
+            "target": {
+              "symbol": "_ITM_registerTMCloneTable",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 48,
+            "type": 6,
+            "target": {
+              "symbol": "_ZTISt13runtime_error",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 24,
+            "type": 7,
+            "target": {
+              "symbol": "_ZdlPvmSt11align_val_t",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 32,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFree",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 40,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaGetKernel",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 48,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 56,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_appendEPKcm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 64,
+            "type": 7,
+            "target": {
+              "symbol": "__udivti3",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 72,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMalloc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 80,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemset2DAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 88,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 96,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorC1EPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 104,
+            "type": 7,
+            "target": {
+              "symbol": "cudaHostAlloc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 112,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetErrorString",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 120,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_begin_catch",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 128,
+            "type": 7,
+            "target": {
+              "symbol": "strlen",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 136,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventRecord",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 144,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_allocate_exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 152,
+            "type": 7,
+            "target": {
+              "symbol": "__divmodti4",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 160,
+            "type": 7,
+            "target": {
+              "symbol": "_ZSt20__throw_length_errorPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 168,
+            "type": 7,
+            "target": {
+              "symbol": "memset",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 176,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFuncGetAttributes",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 184,
+            "type": 7,
+            "target": {
+              "symbol": "__snprintf_chk",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 192,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_abort",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 200,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_release",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 208,
+            "type": 7,
+            "target": {
+              "symbol": "__fread_chk",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 216,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpy2D",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 224,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_free_exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 232,
+            "type": 7,
+            "target": {
+              "symbol": "cudaStreamSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 240,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFuncSetAttribute",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 248,
+            "type": 7,
+            "target": {
+              "symbol": "cudaDeviceGetAttribute",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 256,
+            "type": 7,
+            "target": {
+              "symbol": "memcpy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 264,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyToSymbol",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 272,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_atexit",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 280,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 288,
+            "type": 7,
+            "target": {
+              "symbol": "fclose",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 296,
+            "type": 7,
+            "target": {
+              "symbol": "_Znwm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 304,
+            "type": 7,
+            "target": {
+              "symbol": "_ZdlPvm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 312,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFatBinaryEnd",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 320,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDeviceProperties",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 328,
+            "type": 7,
+            "target": {
+              "symbol": "_ZnwmSt11align_val_t",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 336,
+            "type": 7,
+            "target": {
+              "symbol": "__stack_chk_fail",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 344,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFatBinary",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 352,
+            "type": 7,
+            "target": {
+              "symbol": "cudaRuntimeGetVersion",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 360,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructEmc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 368,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFunction",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 376,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 384,
+            "type": 7,
+            "target": {
+              "symbol": "fopen",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 392,
+            "type": 7,
+            "target": {
+              "symbol": "exit",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 400,
+            "type": 7,
+            "target": {
+              "symbol": "getenv",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 408,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventElapsedTime",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 416,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventDestroy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 424,
+            "type": 7,
+            "target": {
+              "symbol": "cudaLaunchKernelExC",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 432,
+            "type": 7,
+            "target": {
+              "symbol": "cudaStreamWaitEvent",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 440,
+            "type": 7,
+            "target": {
+              "symbol": "strtol",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 448,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaPopCallConfiguration",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 456,
+            "type": 7,
+            "target": {
+              "symbol": "cudaDeviceSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 464,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_rethrow",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 472,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetLastError",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 480,
+            "type": 7,
+            "target": {
+              "symbol": "ldexp",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 488,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaUnregisterFatBinary",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 496,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 504,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaPushCallConfiguration",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 512,
+            "type": 7,
+            "target": {
+              "symbol": "__umodti3",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 520,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 528,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 536,
+            "type": 7,
+            "target": {
+              "symbol": "memmove",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 544,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_end_catch",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 552,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_throw",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 560,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDriverEntryPoint",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 568,
+            "type": 7,
+            "target": {
+              "symbol": "_Unwind_Resume",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 576,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 584,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyToSymbolAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 592,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDevice",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 600,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_acquire",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 608,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemset",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 616,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterVar",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 624,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemsetAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 632,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventCreate",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 640,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFreeHost",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 648,
+            "type": 7,
+            "target": {
+              "symbol": "fwrite",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 656,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaLaunchKernel",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x51d0",
+              "candidate": "0x51d0"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x4550",
+              "candidate": "0x4550"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 16,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x50e0",
+              "candidate": "0x50e0"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".nvFatBinSegment",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".nv_fatbin",
+              "reference": "0x1eab0",
+              "candidate": "0x1eab0"
+            }
+          }
+        ],
+        "relocations_checked": 97,
+        "data_sections": {
+          ".data.rel.ro": {
+            "bytes": 16,
+            "relocation_words": 2,
+            "remaining_bytes_equal": true
+          },
+          ".init_array": {
+            "bytes": 24,
+            "relocation_words": 3,
+            "remaining_bytes_equal": true
+          },
+          ".fini_array": {
+            "bytes": 8,
+            "relocation_words": 1,
+            "remaining_bytes_equal": true
+          },
+          ".data": {
+            "bytes": 24,
+            "relocation_words": 3,
+            "remaining_bytes_equal": true
+          },
+          ".nvFatBinSegment": {
+            "bytes": 24,
+            "relocation_words": 1,
+            "remaining_bytes_equal": true
+          }
+        },
+        "rip_references_checked": 1152,
+        "relocated_instructions": [],
+        "relocated_instruction_count": 0,
+        "control_flow": "Identical bytes and fixed function layout"
+      },
+      "all_sections": {
+        "passed": true,
+        "sections": [
+          {
+            "name": "",
+            "reference_size": 0,
+            "candidate_size": 0,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".note.gnu.property",
+            "reference_size": 32,
+            "candidate_size": 32,
+            "reference_address": "0x2a8",
+            "candidate_address": "0x2a8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d6cd20a8414b70fa5c66ad93440a165a54500b1d36fd8cbf6a34914c90f5bf54",
+            "candidate_sha256": "d6cd20a8414b70fa5c66ad93440a165a54500b1d36fd8cbf6a34914c90f5bf54",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".note.gnu.build-id",
+            "reference_size": 36,
+            "candidate_size": 36,
+            "reference_address": "0x2c8",
+            "candidate_address": "0x2c8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "c7d819ba2a64e7644ab2144fa04fd1727f0b1fad22125e84ccfa5afeed35ac28",
+            "candidate_sha256": "9ab3feaec923a5e4704787a94a89cf4f86a4384e00785f7a1bc009293943f746",
+            "raw_equal": false,
+            "exception": "Linker build ID",
+            "accepted": true
+          },
+          {
+            "name": ".gnu.hash",
+            "reference_size": 108,
+            "candidate_size": 108,
+            "reference_address": "0x2f0",
+            "candidate_address": "0x2f0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "3b6f4a45e9ada366be0e3270325452073422ac885d5cef5a2df8b70039370d23",
+            "candidate_sha256": "3b6f4a45e9ada366be0e3270325452073422ac885d5cef5a2df8b70039370d23",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynsym",
+            "reference_size": 2616,
+            "candidate_size": 2616,
+            "reference_address": "0x360",
+            "candidate_address": "0x360",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "f54e4e23611ff0bb318520a95f7c993631cf47a268e798ad96ec5b45daf0b24e",
+            "candidate_sha256": "f54e4e23611ff0bb318520a95f7c993631cf47a268e798ad96ec5b45daf0b24e",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynstr",
+            "reference_size": 2381,
+            "candidate_size": 2381,
+            "reference_address": "0xd98",
+            "candidate_address": "0xd98",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "839abadbc5d588e31446014c9895f3a9e5f4e8901fffae7fb11810044b074ae8",
+            "candidate_sha256": "839abadbc5d588e31446014c9895f3a9e5f4e8901fffae7fb11810044b074ae8",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gnu.version",
+            "reference_size": 218,
+            "candidate_size": 218,
+            "reference_address": "0x16e6",
+            "candidate_address": "0x16e6",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "51c8a914953bdc8fc25cd18848fb610e27cc83832bd914d4a34138900206f73e",
+            "candidate_sha256": "51c8a914953bdc8fc25cd18848fb610e27cc83832bd914d4a34138900206f73e",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gnu.version_r",
+            "reference_size": 304,
+            "candidate_size": 304,
+            "reference_address": "0x17c0",
+            "candidate_address": "0x17c0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "8f91faaa9b6a14bf4b93aeda0508b73516b835493fb631353c1d94e401ec1a70",
+            "candidate_sha256": "8f91faaa9b6a14bf4b93aeda0508b73516b835493fb631353c1d94e401ec1a70",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rela.dyn",
+            "reference_size": 408,
+            "candidate_size": 408,
+            "reference_address": "0x18f0",
+            "candidate_address": "0x18f0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "c6c4867ed093b5aab78746d09ef61252d62e645be83e337df042521d6b7cd4b4",
+            "candidate_sha256": "c6c4867ed093b5aab78746d09ef61252d62e645be83e337df042521d6b7cd4b4",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rela.plt",
+            "reference_size": 1920,
+            "candidate_size": 1920,
+            "reference_address": "0x1a88",
+            "candidate_address": "0x1a88",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "5ec27baa36b831dca916bddda285a9632b3f538f3549510533e74dc712a0e1a9",
+            "candidate_sha256": "5ec27baa36b831dca916bddda285a9632b3f538f3549510533e74dc712a0e1a9",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".init",
+            "reference_size": 27,
+            "candidate_size": 27,
+            "reference_address": "0x3000",
+            "candidate_address": "0x3000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "479957cc1e98c975d5dd263c0d5b2ea96ac0bc89b3311a13dea9548d20f7a77b",
+            "candidate_sha256": "479957cc1e98c975d5dd263c0d5b2ea96ac0bc89b3311a13dea9548d20f7a77b",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt",
+            "reference_size": 1296,
+            "candidate_size": 1296,
+            "reference_address": "0x3020",
+            "candidate_address": "0x3020",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "6daca6b1ccda3753cbacd6b7f594018e428249c0850c649b840fedb0e27662e0",
+            "candidate_sha256": "6daca6b1ccda3753cbacd6b7f594018e428249c0850c649b840fedb0e27662e0",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt.got",
+            "reference_size": 16,
+            "candidate_size": 16,
+            "reference_address": "0x3530",
+            "candidate_address": "0x3530",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "cbbcbca23353ec30612b6bbaefd5f045fca2fa4e7c6427ebb275b49829d9c2f6",
+            "candidate_sha256": "cbbcbca23353ec30612b6bbaefd5f045fca2fa4e7c6427ebb275b49829d9c2f6",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt.sec",
+            "reference_size": 1280,
+            "candidate_size": 1280,
+            "reference_address": "0x3540",
+            "candidate_address": "0x3540",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "0d4f5605ff7c2654e0b9e1d5d65b3380e78ab11b13dfe5441eeea00269ffa665",
+            "candidate_sha256": "0d4f5605ff7c2654e0b9e1d5d65b3380e78ab11b13dfe5441eeea00269ffa665",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".text",
+            "reference_size": 88226,
+            "candidate_size": 88226,
+            "reference_address": "0x3a40",
+            "candidate_address": "0x3a40",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+            "candidate_sha256": "498c23f64a17af1cffda2fc2988168a12bbdc3cea15f8cb866939dd20206a91b",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".fini",
+            "reference_size": 13,
+            "candidate_size": 13,
+            "reference_address": "0x192e4",
+            "candidate_address": "0x192e4",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "6a4f3e5efc7c1f7ee7d6f21afd9ed040ba1d7f0b97bb12b016f5b176cc558bd8",
+            "candidate_sha256": "6a4f3e5efc7c1f7ee7d6f21afd9ed040ba1d7f0b97bb12b016f5b176cc558bd8",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rodata",
+            "reference_size": 17368,
+            "candidate_size": 17368,
+            "reference_address": "0x1a000",
+            "candidate_address": "0x1a000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "758e075283d89a26112b69a323dca3ea9631b291ef32cba5a0cfc3b4891eec5f",
+            "candidate_sha256": "3feaa9d09f68ba42bac99d26a273239d41a6e2e606e28a17bf643145433861c7",
+            "raw_equal": false,
+            "normalization": "Compiler-local _INTERNAL_<8 hex>_ symbol identity; independently verified by the host relocation gate",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".nv_fatbin",
+            "reference_size": 1477232,
+            "candidate_size": 1477232,
+            "reference_address": "0x1e3d8",
+            "candidate_address": "0x1e3d8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d19833b0a62de8274f8b9c4a92beeb789f1bdc9b9a486576cf4bb13745acd150",
+            "candidate_sha256": "1ab7b33bb980d48f6aa5ea9cf6aa84b813c225b062e3cd719288b987ab174d62",
+            "raw_equal": false,
+            "normalization": "Compiler-local _INTERNAL_<8 hex>_ symbol identity; independently verified by the host relocation gate",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".eh_frame_hdr",
+            "reference_size": 1580,
+            "candidate_size": 1580,
+            "reference_address": "0x186e48",
+            "candidate_address": "0x186e48",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "fb3e1570f169e6d0559816579af0747eca5b787e63859f93c9cabb1917f9d2b8",
+            "candidate_sha256": "fb3e1570f169e6d0559816579af0747eca5b787e63859f93c9cabb1917f9d2b8",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".eh_frame",
+            "reference_size": 10112,
+            "candidate_size": 10112,
+            "reference_address": "0x187478",
+            "candidate_address": "0x187478",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "6b4cfdf6f178688a0976932be1afc5442d3a74e62d1450578f58bbfbe8fe85f0",
+            "candidate_sha256": "6b4cfdf6f178688a0976932be1afc5442d3a74e62d1450578f58bbfbe8fe85f0",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gcc_except_table",
+            "reference_size": 2988,
+            "candidate_size": 2988,
+            "reference_address": "0x189bf8",
+            "candidate_address": "0x189bf8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "352fccb6de4b0d7d1e7f69a4133cad5a22ae2a4f142c4afa168b6249d9877b44",
+            "candidate_sha256": "352fccb6de4b0d7d1e7f69a4133cad5a22ae2a4f142c4afa168b6249d9877b44",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".init_array",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x18bd68",
+            "candidate_address": "0x18bd68",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "53d0dc1466b4a7219a25c934e4ab58e1d8058838c05854f0eb4ae5c44e0ec390",
+            "candidate_sha256": "53d0dc1466b4a7219a25c934e4ab58e1d8058838c05854f0eb4ae5c44e0ec390",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".fini_array",
+            "reference_size": 8,
+            "candidate_size": 8,
+            "reference_address": "0x18bd80",
+            "candidate_address": "0x18bd80",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "c8160308f5bc19be04b342421deba4e70255319047d2d98d92ad5e7b921bbcf1",
+            "candidate_sha256": "c8160308f5bc19be04b342421deba4e70255319047d2d98d92ad5e7b921bbcf1",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".data.rel.ro",
+            "reference_size": 16,
+            "candidate_size": 16,
+            "reference_address": "0x18bd88",
+            "candidate_address": "0x18bd88",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "60e05919b7410102161ff7a4141863e30f172cf63fc1875c3362cfb394106800",
+            "candidate_sha256": "60e05919b7410102161ff7a4141863e30f172cf63fc1875c3362cfb394106800",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynamic",
+            "reference_size": 560,
+            "candidate_size": 560,
+            "reference_address": "0x18bd98",
+            "candidate_address": "0x18bd98",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "525b1b3aaf8f8bc5b8cf9995b521b504e6eeb5256a9670c59ebcc7d75aa525af",
+            "candidate_sha256": "525b1b3aaf8f8bc5b8cf9995b521b504e6eeb5256a9670c59ebcc7d75aa525af",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".got",
+            "reference_size": 56,
+            "candidate_size": 56,
+            "reference_address": "0x18bfc8",
+            "candidate_address": "0x18bfc8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+            "candidate_sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".got.plt",
+            "reference_size": 664,
+            "candidate_size": 664,
+            "reference_address": "0x18c000",
+            "candidate_address": "0x18c000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "8ff317a99dc1c2bdbcd34ef7017d32c0109f44a6f3a90d00d48d69207cefdbbf",
+            "candidate_sha256": "8ff317a99dc1c2bdbcd34ef7017d32c0109f44a6f3a90d00d48d69207cefdbbf",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".data",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x18c298",
+            "candidate_address": "0x18c298",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "51090345804edd95c645831918a5148a4bf547b611cefaef2ef6324e554d2876",
+            "candidate_sha256": "51090345804edd95c645831918a5148a4bf547b611cefaef2ef6324e554d2876",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".nvFatBinSegment",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x18c2b0",
+            "candidate_address": "0x18c2b0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "a7794b3658b34896351f1f185224a43e17dd28f8fc8ee96ecbb3cfe8a83b7ce7",
+            "candidate_sha256": "a7794b3658b34896351f1f185224a43e17dd28f8fc8ee96ecbb3cfe8a83b7ce7",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".bss",
+            "reference_size": 12376,
+            "candidate_size": 12376,
+            "reference_address": "0x18c2e0",
+            "candidate_address": "0x18c2e0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".comment",
+            "reference_size": 45,
+            "candidate_size": 45,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "870f2f9d818ee55a81431c961308199a1a9afcbf8de379cc236abf98c80d6f66",
+            "candidate_sha256": "870f2f9d818ee55a81431c961308199a1a9afcbf8de379cc236abf98c80d6f66",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".symtab",
+            "reference_size": 12072,
+            "candidate_size": 12072,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "09349f85a9be2b24c84b129f3cea63d12a3e139c768b8ee286d0209821f15dd3",
+            "candidate_sha256": "09349f85a9be2b24c84b129f3cea63d12a3e139c768b8ee286d0209821f15dd3",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".strtab",
+            "reference_size": 32687,
+            "candidate_size": 32687,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "ab9419c4766e537e0dbeb4bc0c143ddca2c2943c61b0bc8c7007a7ee4721b848",
+            "candidate_sha256": "754ca0896c3802e15a301302b4ba8130bfaa644ad0f279dcd9514725f3081d48",
+            "raw_equal": false,
+            "temporary_strings_before": [
+              "tmpxft_0004db2a_00000000-6_l8rt.cudafe1.cpp",
+              "_GLOBAL__sub_I_tmpxft_0004db2a_00000000_6_l8rt.cudafe1.cpp"
+            ],
+            "temporary_strings_after": [
+              "tmpxft_0004f107_00000000-6_l8rt.cudafe1.cpp",
+              "_GLOBAL__sub_I_tmpxft_0004f107_00000000_6_l8rt.cudafe1.cpp"
+            ],
+            "normalization": "NVCC temporary filename prefix at file/initializer symbol boundaries only",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".shstrtab",
+            "reference_size": 328,
+            "candidate_size": 328,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "92af93c84640bb2ec4b7323559433ebf28c9cc435cecb17d7ed1f1db847a721b",
+            "candidate_sha256": "92af93c84640bb2ec4b7323559433ebf28c9cc435cecb17d7ed1f1db847a721b",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          }
+        ],
+        "scope": "Contents, virtual addresses, sizes, section types and alignment of every ELF section. Build ID is recorded as an exception; specified compiler names alone are normalized."
+      }
+    },
+    {
+      "id": "k64_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "823c13aa5030435e9cf9ce17f571f8377c5310854cda5bec345224c20e5ee071",
+        "candidate_sha256": "98721309dbe7832333f7e2234aa7b0088e991f65abdf42a3818716eb46c9a8f2",
+        "reference_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "candidate_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 69672,
+        "candidate_instructions": 69672
+      },
+      "host": {
+        "reference_text_bytes": 88914,
+        "candidate_text_bytes": 88914,
+        "reference_text_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+        "candidate_text_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "cdf8ee659dc6837fb87e97f92b41973299ed099f8ab3554296c7bd040da02435",
+        "candidate_disassembly_sha256": "69d0aaa04d36137fe36c57bae4a898d8070b392840416046a6cca6f0334e2543",
+        "normalized_reference_disassembly_sha256": "49f185fc702b7bd26f8aa3e8116b684e68e21b6f65f7bb3eab0ce5a1e6ab7a93",
+        "normalized_candidate_disassembly_sha256": "49f185fc702b7bd26f8aa3e8116b684e68e21b6f65f7bb3eab0ce5a1e6ab7a93",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "host_relocation_revalidation": {
+        "raw": {
+          "reference_text_bytes": 88914,
+          "candidate_text_bytes": 88914,
+          "reference_text_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+          "candidate_text_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+          "raw_text_equal": true,
+          "raw_disassembly_equal": false,
+          "disassembly_equal": true,
+          "reference_disassembly_sha256": "cdf8ee659dc6837fb87e97f92b41973299ed099f8ab3554296c7bd040da02435",
+          "candidate_disassembly_sha256": "69d0aaa04d36137fe36c57bae4a898d8070b392840416046a6cca6f0334e2543",
+          "normalized_reference_disassembly_sha256": "49f185fc702b7bd26f8aa3e8116b684e68e21b6f65f7bb3eab0ce5a1e6ab7a93",
+          "normalized_candidate_disassembly_sha256": "49f185fc702b7bd26f8aa3e8116b684e68e21b6f65f7bb3eab0ce5a1e6ab7a93",
+          "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+          "reference_normalized_labels": 1,
+          "candidate_normalized_labels": 1,
+          "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+          "passed": true
+        },
+        "passed": true,
+        "stage": "raw",
+        "gpu_execution": false,
+        "scope": "Fixed-layout host .text, RIP references, all RELA entries and selected host data sections; device gate required separately.",
+        "outside_scope": [
+          "Unwind and exception-table decoding (.eh_frame, .eh_frame_hdr, .gcc_except_table)."
+        ],
+        "normalized_fatbin_equal": true,
+        "compiler_symbol_identity": {
+          "before": "_INTERNAL_e2011afd_",
+          "after": "_INTERNAL_b549f2e5_",
+          "registration_names": 5,
+          "entire_normalized_fatbin_equal": true,
+          "names_before": [
+            "_ZN37_INTERNAL_e2011afd_7_l8rt_cu_50b65db34cuda3std3__45__cpo9iter_swapE",
+            "_ZN37_INTERNAL_e2011afd_7_l8rt_cu_50b65db34cuda3std9execution3__43seqE",
+            "_ZN37_INTERNAL_e2011afd_7_l8rt_cu_50b65db34cuda3std9execution3__43parE",
+            "_ZN37_INTERNAL_e2011afd_7_l8rt_cu_50b65db34cuda3std9execution3__49par_unseqE",
+            "_ZN37_INTERNAL_e2011afd_7_l8rt_cu_50b65db34cuda3std9execution3__45unseqE"
+          ],
+          "names_after": [
+            "_ZN37_INTERNAL_b549f2e5_7_l8rt_cu_50b65db34cuda3std3__45__cpo9iter_swapE",
+            "_ZN37_INTERNAL_b549f2e5_7_l8rt_cu_50b65db34cuda3std9execution3__43seqE",
+            "_ZN37_INTERNAL_b549f2e5_7_l8rt_cu_50b65db34cuda3std9execution3__43parE",
+            "_ZN37_INTERNAL_b549f2e5_7_l8rt_cu_50b65db34cuda3std9execution3__49par_unseqE",
+            "_ZN37_INTERNAL_b549f2e5_7_l8rt_cu_50b65db34cuda3std9execution3__45unseqE"
+          ]
+        },
+        "strings": [],
+        "alignment_padding": [],
+        "relocation_pairs": [
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".data",
+              "reference": "0x190298",
+              "candidate": "0x190298"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 8,
+            "type": 1,
+            "target": {
+              "symbol": "_ZTISt9exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data",
+            "offset": 16,
+            "type": 1,
+            "target": {
+              "symbol": "__gxx_personality_v0",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data.rel.ro",
+            "offset": 0,
+            "type": 1,
+            "target": {
+              "symbol": "_ZTVN10__cxxabiv117__class_type_infoE",
+              "addend": 16
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".data.rel.ro",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".rodata",
+              "reference": "0x1e870",
+              "candidate": "0x1e870"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".fini_array",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x5190",
+              "candidate": "0x5190"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 0,
+            "type": 6,
+            "target": {
+              "symbol": "__cxa_finalize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 8,
+            "type": 6,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 16,
+            "type": 6,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorD1Ev",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 24,
+            "type": 6,
+            "target": {
+              "symbol": "_ITM_deregisterTMCloneTable",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 32,
+            "type": 6,
+            "target": {
+              "symbol": "__gmon_start__",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 40,
+            "type": 6,
+            "target": {
+              "symbol": "_ITM_registerTMCloneTable",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".got",
+            "offset": 48,
+            "type": 6,
+            "target": {
+              "symbol": "_ZTISt13runtime_error",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 24,
+            "type": 7,
+            "target": {
+              "symbol": "_ZdlPvmSt11align_val_t",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 32,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFree",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 40,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaGetKernel",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 48,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 56,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_appendEPKcm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 64,
+            "type": 7,
+            "target": {
+              "symbol": "__udivti3",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 72,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMalloc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 80,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemset2DAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 88,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 96,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorC1EPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 104,
+            "type": 7,
+            "target": {
+              "symbol": "cudaHostAlloc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 112,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetErrorString",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 120,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_begin_catch",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 128,
+            "type": 7,
+            "target": {
+              "symbol": "strlen",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 136,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventRecord",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 144,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_allocate_exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 152,
+            "type": 7,
+            "target": {
+              "symbol": "__divmodti4",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 160,
+            "type": 7,
+            "target": {
+              "symbol": "_ZSt20__throw_length_errorPKc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 168,
+            "type": 7,
+            "target": {
+              "symbol": "memset",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 176,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFuncGetAttributes",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 184,
+            "type": 7,
+            "target": {
+              "symbol": "__snprintf_chk",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 192,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_abort",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 200,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_release",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 208,
+            "type": 7,
+            "target": {
+              "symbol": "__fread_chk",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 216,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpy2D",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 224,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_free_exception",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 232,
+            "type": 7,
+            "target": {
+              "symbol": "cudaStreamSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 240,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFuncSetAttribute",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 248,
+            "type": 7,
+            "target": {
+              "symbol": "cudaDeviceGetAttribute",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 256,
+            "type": 7,
+            "target": {
+              "symbol": "memcpy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 264,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyToSymbol",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 272,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_atexit",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 280,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 288,
+            "type": 7,
+            "target": {
+              "symbol": "fclose",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 296,
+            "type": 7,
+            "target": {
+              "symbol": "_Znwm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 304,
+            "type": 7,
+            "target": {
+              "symbol": "_ZdlPvm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 312,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFatBinaryEnd",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 320,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDeviceProperties",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 328,
+            "type": 7,
+            "target": {
+              "symbol": "_ZnwmSt11align_val_t",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 336,
+            "type": 7,
+            "target": {
+              "symbol": "__stack_chk_fail",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 344,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFatBinary",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 352,
+            "type": 7,
+            "target": {
+              "symbol": "cudaRuntimeGetVersion",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 360,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructEmc",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 368,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterFunction",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 376,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 384,
+            "type": 7,
+            "target": {
+              "symbol": "fopen",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 392,
+            "type": 7,
+            "target": {
+              "symbol": "exit",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 400,
+            "type": 7,
+            "target": {
+              "symbol": "getenv",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 408,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventElapsedTime",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 416,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventDestroy",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 424,
+            "type": 7,
+            "target": {
+              "symbol": "cudaLaunchKernelExC",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 432,
+            "type": 7,
+            "target": {
+              "symbol": "cudaStreamWaitEvent",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 440,
+            "type": 7,
+            "target": {
+              "symbol": "strtol",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 448,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaPopCallConfiguration",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 456,
+            "type": 7,
+            "target": {
+              "symbol": "cudaDeviceSynchronize",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 464,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_rethrow",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 472,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetLastError",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 480,
+            "type": 7,
+            "target": {
+              "symbol": "ldexp",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 488,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaUnregisterFatBinary",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 496,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 504,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaPushCallConfiguration",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 512,
+            "type": 7,
+            "target": {
+              "symbol": "__umodti3",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 520,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 528,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt13runtime_errorC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 536,
+            "type": 7,
+            "target": {
+              "symbol": "memmove",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 544,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_end_catch",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 552,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_throw",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 560,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDriverEntryPoint",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 568,
+            "type": 7,
+            "target": {
+              "symbol": "_Unwind_Resume",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 576,
+            "type": 7,
+            "target": {
+              "symbol": "_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 584,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemcpyToSymbolAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 592,
+            "type": 7,
+            "target": {
+              "symbol": "cudaGetDevice",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 600,
+            "type": 7,
+            "target": {
+              "symbol": "__cxa_guard_acquire",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 608,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemset",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 616,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaRegisterVar",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 624,
+            "type": 7,
+            "target": {
+              "symbol": "cudaMemsetAsync",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 632,
+            "type": 7,
+            "target": {
+              "symbol": "cudaEventCreate",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 640,
+            "type": 7,
+            "target": {
+              "symbol": "cudaFreeHost",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 648,
+            "type": 7,
+            "target": {
+              "symbol": "fwrite",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.plt",
+            "section": ".got.plt",
+            "offset": 656,
+            "type": 7,
+            "target": {
+              "symbol": "__cudaLaunchKernel",
+              "addend": 0
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 0,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x51d0",
+              "candidate": "0x51d0"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x4550",
+              "candidate": "0x4550"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".init_array",
+            "offset": 16,
+            "type": 8,
+            "target": {
+              "section": ".text",
+              "reference": "0x50e0",
+              "candidate": "0x50e0"
+            }
+          },
+          {
+            "relocation_section": ".rela.dyn",
+            "section": ".nvFatBinSegment",
+            "offset": 8,
+            "type": 8,
+            "target": {
+              "section": ".nv_fatbin",
+              "reference": "0x1f210",
+              "candidate": "0x1f210"
+            }
+          }
+        ],
+        "relocations_checked": 97,
+        "data_sections": {
+          ".data.rel.ro": {
+            "bytes": 16,
+            "relocation_words": 2,
+            "remaining_bytes_equal": true
+          },
+          ".init_array": {
+            "bytes": 24,
+            "relocation_words": 3,
+            "remaining_bytes_equal": true
+          },
+          ".fini_array": {
+            "bytes": 8,
+            "relocation_words": 1,
+            "remaining_bytes_equal": true
+          },
+          ".data": {
+            "bytes": 24,
+            "relocation_words": 3,
+            "remaining_bytes_equal": true
+          },
+          ".nvFatBinSegment": {
+            "bytes": 24,
+            "relocation_words": 1,
+            "remaining_bytes_equal": true
+          }
+        },
+        "rip_references_checked": 1154,
+        "relocated_instructions": [],
+        "relocated_instruction_count": 0,
+        "control_flow": "Identical bytes and fixed function layout"
+      },
+      "all_sections": {
+        "passed": true,
+        "sections": [
+          {
+            "name": "",
+            "reference_size": 0,
+            "candidate_size": 0,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".note.gnu.property",
+            "reference_size": 32,
+            "candidate_size": 32,
+            "reference_address": "0x2a8",
+            "candidate_address": "0x2a8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d6cd20a8414b70fa5c66ad93440a165a54500b1d36fd8cbf6a34914c90f5bf54",
+            "candidate_sha256": "d6cd20a8414b70fa5c66ad93440a165a54500b1d36fd8cbf6a34914c90f5bf54",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".note.gnu.build-id",
+            "reference_size": 36,
+            "candidate_size": 36,
+            "reference_address": "0x2c8",
+            "candidate_address": "0x2c8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "f6d34bd9788ca5de9b704d25a18553ed1a548c07b54adf8e9aa572ea37edbace",
+            "candidate_sha256": "4b88bd6af6c7772a9ba1a5ddb32ceb2100332f2d508f01aadc79fd4e9c1863ba",
+            "raw_equal": false,
+            "exception": "Linker build ID",
+            "accepted": true
+          },
+          {
+            "name": ".gnu.hash",
+            "reference_size": 108,
+            "candidate_size": 108,
+            "reference_address": "0x2f0",
+            "candidate_address": "0x2f0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "3b6f4a45e9ada366be0e3270325452073422ac885d5cef5a2df8b70039370d23",
+            "candidate_sha256": "3b6f4a45e9ada366be0e3270325452073422ac885d5cef5a2df8b70039370d23",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynsym",
+            "reference_size": 2616,
+            "candidate_size": 2616,
+            "reference_address": "0x360",
+            "candidate_address": "0x360",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e8738d599c9da4690cf86ae3b6f54c5b3fcee78f3f41265db8f6fe5824944856",
+            "candidate_sha256": "e8738d599c9da4690cf86ae3b6f54c5b3fcee78f3f41265db8f6fe5824944856",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynstr",
+            "reference_size": 2381,
+            "candidate_size": 2381,
+            "reference_address": "0xd98",
+            "candidate_address": "0xd98",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "70b12938f676907781024e376d196e9a96cc00b28ea681280560285154ddaa1f",
+            "candidate_sha256": "70b12938f676907781024e376d196e9a96cc00b28ea681280560285154ddaa1f",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gnu.version",
+            "reference_size": 218,
+            "candidate_size": 218,
+            "reference_address": "0x16e6",
+            "candidate_address": "0x16e6",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "51c8a914953bdc8fc25cd18848fb610e27cc83832bd914d4a34138900206f73e",
+            "candidate_sha256": "51c8a914953bdc8fc25cd18848fb610e27cc83832bd914d4a34138900206f73e",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gnu.version_r",
+            "reference_size": 304,
+            "candidate_size": 304,
+            "reference_address": "0x17c0",
+            "candidate_address": "0x17c0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "8f91faaa9b6a14bf4b93aeda0508b73516b835493fb631353c1d94e401ec1a70",
+            "candidate_sha256": "8f91faaa9b6a14bf4b93aeda0508b73516b835493fb631353c1d94e401ec1a70",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rela.dyn",
+            "reference_size": 408,
+            "candidate_size": 408,
+            "reference_address": "0x18f0",
+            "candidate_address": "0x18f0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "a431d1feb387ef0b2ec78c0ac31453214a99bb7475b21b03917c17bdd0f79104",
+            "candidate_sha256": "a431d1feb387ef0b2ec78c0ac31453214a99bb7475b21b03917c17bdd0f79104",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rela.plt",
+            "reference_size": 1920,
+            "candidate_size": 1920,
+            "reference_address": "0x1a88",
+            "candidate_address": "0x1a88",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "332db97ffbf9ecf8682359f42665e9c96382178e3e5a01f09ff98b2ab266ed53",
+            "candidate_sha256": "332db97ffbf9ecf8682359f42665e9c96382178e3e5a01f09ff98b2ab266ed53",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".init",
+            "reference_size": 27,
+            "candidate_size": 27,
+            "reference_address": "0x3000",
+            "candidate_address": "0x3000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "0064bba9eabae84b45bd4dd4f70cb80cf7feefc8cea62251b33a782258d68191",
+            "candidate_sha256": "0064bba9eabae84b45bd4dd4f70cb80cf7feefc8cea62251b33a782258d68191",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt",
+            "reference_size": 1296,
+            "candidate_size": 1296,
+            "reference_address": "0x3020",
+            "candidate_address": "0x3020",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d84ecceb4f985159967164ab02b3b8952fc6df369a07eaad6f9eea244e55ddba",
+            "candidate_sha256": "d84ecceb4f985159967164ab02b3b8952fc6df369a07eaad6f9eea244e55ddba",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt.got",
+            "reference_size": 16,
+            "candidate_size": 16,
+            "reference_address": "0x3530",
+            "candidate_address": "0x3530",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e7ab6fd8249f3aea743ed9a6f45c4fd304cc00c91637c8636ff2891680bd86a9",
+            "candidate_sha256": "e7ab6fd8249f3aea743ed9a6f45c4fd304cc00c91637c8636ff2891680bd86a9",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".plt.sec",
+            "reference_size": 1280,
+            "candidate_size": 1280,
+            "reference_address": "0x3540",
+            "candidate_address": "0x3540",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "463e3a5d6f82b2f8392542cfdc6f999ff9738483cefacb3324d580f6557fb3c9",
+            "candidate_sha256": "463e3a5d6f82b2f8392542cfdc6f999ff9738483cefacb3324d580f6557fb3c9",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".text",
+            "reference_size": 88914,
+            "candidate_size": 88914,
+            "reference_address": "0x3a40",
+            "candidate_address": "0x3a40",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+            "candidate_sha256": "9fac95f94cb87e4a62def7e1f8b1236c63b13ea988fd2ed1ae513bf7dfc7cdb9",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".fini",
+            "reference_size": 13,
+            "candidate_size": 13,
+            "reference_address": "0x19594",
+            "candidate_address": "0x19594",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "6a4f3e5efc7c1f7ee7d6f21afd9ed040ba1d7f0b97bb12b016f5b176cc558bd8",
+            "candidate_sha256": "6a4f3e5efc7c1f7ee7d6f21afd9ed040ba1d7f0b97bb12b016f5b176cc558bd8",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".rodata",
+            "reference_size": 19256,
+            "candidate_size": 19256,
+            "reference_address": "0x1a000",
+            "candidate_address": "0x1a000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "b0905cb66c50859278526726f536d07e1352fb6984e8ffda0e23dbfc722e4dbb",
+            "candidate_sha256": "1c201ee6e097a2811a4512e9803b0d28fd526ce57bb4000b2571e9bb0ff359b0",
+            "raw_equal": false,
+            "normalization": "Compiler-local _INTERNAL_<8 hex>_ symbol identity; independently verified by the host relocation gate",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".nv_fatbin",
+            "reference_size": 1489280,
+            "candidate_size": 1489280,
+            "reference_address": "0x1eb38",
+            "candidate_address": "0x1eb38",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "4810dd63a03e27d04721c18b072842504dea1a84f977b97f6cd1f062d85ffebc",
+            "candidate_sha256": "92391adceea90580b46942ed75166403dd31e9e1b079d00b6755ea4447283a47",
+            "raw_equal": false,
+            "normalization": "Compiler-local _INTERNAL_<8 hex>_ symbol identity; independently verified by the host relocation gate",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".eh_frame_hdr",
+            "reference_size": 1580,
+            "candidate_size": 1580,
+            "reference_address": "0x18a4b8",
+            "candidate_address": "0x18a4b8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "aaed98f5c8ef16d4bf60439ef33b27f3c90b26977b710287ef475062913adcaf",
+            "candidate_sha256": "aaed98f5c8ef16d4bf60439ef33b27f3c90b26977b710287ef475062913adcaf",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".eh_frame",
+            "reference_size": 10112,
+            "candidate_size": 10112,
+            "reference_address": "0x18aae8",
+            "candidate_address": "0x18aae8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "c9f3009e97d7178c3210a42a67b94ce95789c97ea62b8a91993c8fe1abc8a299",
+            "candidate_sha256": "c9f3009e97d7178c3210a42a67b94ce95789c97ea62b8a91993c8fe1abc8a299",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".gcc_except_table",
+            "reference_size": 2984,
+            "candidate_size": 2984,
+            "reference_address": "0x18d268",
+            "candidate_address": "0x18d268",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "a3324d50ead3f47cf15cefbc2ddcf23871ab5dbd8d54980e6f8c232f1ece7bd2",
+            "candidate_sha256": "a3324d50ead3f47cf15cefbc2ddcf23871ab5dbd8d54980e6f8c232f1ece7bd2",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".init_array",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x18fd68",
+            "candidate_address": "0x18fd68",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "53d0dc1466b4a7219a25c934e4ab58e1d8058838c05854f0eb4ae5c44e0ec390",
+            "candidate_sha256": "53d0dc1466b4a7219a25c934e4ab58e1d8058838c05854f0eb4ae5c44e0ec390",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".fini_array",
+            "reference_size": 8,
+            "candidate_size": 8,
+            "reference_address": "0x18fd80",
+            "candidate_address": "0x18fd80",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "c8160308f5bc19be04b342421deba4e70255319047d2d98d92ad5e7b921bbcf1",
+            "candidate_sha256": "c8160308f5bc19be04b342421deba4e70255319047d2d98d92ad5e7b921bbcf1",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".data.rel.ro",
+            "reference_size": 16,
+            "candidate_size": 16,
+            "reference_address": "0x18fd88",
+            "candidate_address": "0x18fd88",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "827d5baf146e9252687337ee62f25536e042eeda6e23415bac1e5a95153a8a6d",
+            "candidate_sha256": "827d5baf146e9252687337ee62f25536e042eeda6e23415bac1e5a95153a8a6d",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".dynamic",
+            "reference_size": 560,
+            "candidate_size": 560,
+            "reference_address": "0x18fd98",
+            "candidate_address": "0x18fd98",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e2f95ba138b87227f5dfd8c8f4880a78dbc9f7a02aacf4149c285b526eadeaa3",
+            "candidate_sha256": "e2f95ba138b87227f5dfd8c8f4880a78dbc9f7a02aacf4149c285b526eadeaa3",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".got",
+            "reference_size": 56,
+            "candidate_size": 56,
+            "reference_address": "0x18ffc8",
+            "candidate_address": "0x18ffc8",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+            "candidate_sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".got.plt",
+            "reference_size": 664,
+            "candidate_size": 664,
+            "reference_address": "0x190000",
+            "candidate_address": "0x190000",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "dcd8c3640b28013c6ae32449d0b15ff506291b5ce8c9916b2f6c4474c7ce6467",
+            "candidate_sha256": "dcd8c3640b28013c6ae32449d0b15ff506291b5ce8c9916b2f6c4474c7ce6467",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".data",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x190298",
+            "candidate_address": "0x190298",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "f84760a472b5eac46807ec838556ae084a42e8a28ef049f09282463b9dee8d75",
+            "candidate_sha256": "f84760a472b5eac46807ec838556ae084a42e8a28ef049f09282463b9dee8d75",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".nvFatBinSegment",
+            "reference_size": 24,
+            "candidate_size": 24,
+            "reference_address": "0x1902b0",
+            "candidate_address": "0x1902b0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "378eff0abe8f9d3889688997469c6e442b41ae5727b26cadb8e5f16bb0fe970c",
+            "candidate_sha256": "378eff0abe8f9d3889688997469c6e442b41ae5727b26cadb8e5f16bb0fe970c",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".bss",
+            "reference_size": 12376,
+            "candidate_size": 12376,
+            "reference_address": "0x1902e0",
+            "candidate_address": "0x1902e0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".comment",
+            "reference_size": 45,
+            "candidate_size": 45,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "870f2f9d818ee55a81431c961308199a1a9afcbf8de379cc236abf98c80d6f66",
+            "candidate_sha256": "870f2f9d818ee55a81431c961308199a1a9afcbf8de379cc236abf98c80d6f66",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".symtab",
+            "reference_size": 12024,
+            "candidate_size": 12024,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "389ed7d2b0e0790cd4e50ad746cddd0b1565f5da4d3f53b8b1f66fa7fb5238de",
+            "candidate_sha256": "389ed7d2b0e0790cd4e50ad746cddd0b1565f5da4d3f53b8b1f66fa7fb5238de",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".strtab",
+            "reference_size": 32640,
+            "candidate_size": 32640,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "6f1d539a98cb8d93a2fdbcfaf12a4b47fbc2beb4533ad2ea363d0934a06f0407",
+            "candidate_sha256": "37aee9134d3b0bec8b581c2f08f06a82b54c1ee6394ac5e9f2f9bb79cd16d2f9",
+            "raw_equal": false,
+            "temporary_strings_before": [
+              "tmpxft_0004de28_00000000-6_l8rt.cudafe1.cpp",
+              "_GLOBAL__sub_I_tmpxft_0004de28_00000000_6_l8rt.cudafe1.cpp"
+            ],
+            "temporary_strings_after": [
+              "tmpxft_0004f121_00000000-6_l8rt.cudafe1.cpp",
+              "_GLOBAL__sub_I_tmpxft_0004f121_00000000_6_l8rt.cudafe1.cpp"
+            ],
+            "normalization": "NVCC temporary filename prefix at file/initializer symbol boundaries only",
+            "normalized_equal": true,
+            "accepted": true
+          },
+          {
+            "name": ".shstrtab",
+            "reference_size": 328,
+            "candidate_size": 328,
+            "reference_address": "0x0",
+            "candidate_address": "0x0",
+            "type_equal": true,
+            "alignment_equal": true,
+            "reference_sha256": "92af93c84640bb2ec4b7323559433ebf28c9cc435cecb17d7ed1f1db847a721b",
+            "candidate_sha256": "92af93c84640bb2ec4b7323559433ebf28c9cc435cecb17d7ed1f1db847a721b",
+            "raw_equal": true,
+            "normalized_equal": true,
+            "accepted": true
+          }
+        ],
+        "scope": "Contents, virtual addresses, sizes, section types and alignment of every ELF section. Build ID is recorded as an exception; specified compiler names alone are normalized."
+      }
+    }
+  ],
+  "structured_source_sha256": {
+    "Platforms/NVIDIA/CUDA-Template/GEMM/SM100a_K64/D53_M18/l8rt.cu": "33b2dd3f4631de0f6dca5ac60504a44363509ae49d81f7a3da48d08feb53d233",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/SM103a_K96/D53_M18/l8rt.cu": "81f31f6e867b225f5c171f030e4918cb8048959690959605c0514d67c0f36c98",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/crt2_dev.cuh": "3d15410e16402f4218106664d31e753ec3aa6ca7065f24f82d1dca91db2afe85",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/crt2_host.h": "3424e1fec591907fa0ea55f4f1abbdc431eccec8ebf479dc33ad4c9881cc8bd9",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/crt2_split.h": "00d14f9ac6e54323c7988f0e1fd512a749f5f1ed10d32473010d49cb0c08c78d",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/duald40_load.cuh": "4ad451eb18dc213c7e178eb4e51c91fe571645e70a119cb641dbc75c0e7b3edb",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fp64k_common.h": "bfa21c6044f5cf3f541a98c51e179988876c21db0a3073d5ec5319c871660bb1",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fp64k_encode.cuh": "e06f49ebb70da467bb8cd6b5c275b2b68142ea21bd8cc0ba70efba7b82af772e",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fp64k_tables.h": "e176455af91748bb0653ec66c05daf777f9efbd23803918c6460cedaa04a1120",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fp64kc_parts.h": "f520d185b45e66b6b132f846b2cfd2601e890625761917d165dac9dd22c3c50a",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fused_qe.cuh": "f6072a3a5abca6f7682947bc6f8f58cde812e51f2b1db9a75f19cf625f6e4242",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/fused_zqe2.cuh": "a123b51384d7eff03bbd3709fdd947465c413f15d81bbe18ab9ab44d04f84cc1",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/geometry.h": "a119dbc1e735bc48923efb88a01fc294041514320e45cf0c3ead0f38bcf2a0c5",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8_encode.cuh": "d3a8ab530f4b647c0fcdfc07e1369938cb43311173500663d96b7ba6a3589066",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8_encode_fast.cuh": "c7f3fcf7b8eade38341ce711f10f1d1c54ab48ba02723a5a595e3f82c894a9fb",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8_flips.h": "7fcf02fef13bce1188a30166ce98382dc2d6193699ddbbca1d772c0a994e1fb3",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8_probe.cuh": "c32f01b31f7d7c5dc0a207b9d245dee0a1ea90f0251133a972b93393efba45f4",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8_tables.h": "9d8f28ab409db065e3ddbc844367beeba7f684bdf02142f45ba804e349418188",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8k_host.cuh": "db333925d39b9eeb1b106d43026f2a106ba5a8b19c7d2a181998c9a3fa93da01",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8k_kernel_rt.cuh": "0c40e68b7940b5d49ab2e67c151635bb4f7c47208f9114c915aaa5a97f576030",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8k_tables.h": "28b3ffd8863c09ec36037a5db394182b54e07c21c8cf1762af453667b11ab866",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8k_tables_k4096.h": "9faf20f9e9a92ba8cc4196ce3f68ba7a5dcaae5e5d48f1e5635816274580ecbc",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8k_tables_rt.h": "b28e91a8631444ee593271d6ccb173a00d2ba68308aef5d1f82ab34cc77a9458",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8rt.cu": "3106dc2eb849f471362461fae5b2917f0673eb014359db4212d38ff78ad607ed",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8rt_dtab.cuh": "859707054dead300122dfdbc82269756b4793804dffbe6f090e6966ac59f4432",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8rt_main.cuh": "cb1fda83cc23f1d9402161fbd36bd7695e2b4d7c4059aade6e40dda80321b08c",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/l8rt_plan.cuh": "ab770d0e64650d097cede6bd5d2b2a1d4ae3e96d2e6d33e6a8eadcecf9471b80",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/ptx_common.cuh": "376777a775e85a5491797c74dc0370e5d37609a8ac04116fa8fe1adfc84297bc",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/quant_int.cuh": "e8e209f0f4f0534ab6b3778335dcd7a8cfad1265bbdef6cf6857e55b26641ab4",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/Reference/awe_backend.h": "dbe3fb6266232dcc4f11e95359673649849bbbd6144d34c00f603ce8a5c80e7e",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/Reference/awe_blas.h": "611d4aba8bd0671927de630e9917af907b833a7bdd69dd2cc82f00f065b1c30b",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/Reference/f64_backend.cuh": "17e60c23e5ae4244030c545d90b2de062793eebb929e908539f8904d762c8c61",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/Reference/tables_generated.h": "fe9ce8a54ab4d2c225bca3017f987462ce0597bf1da78c859359e5eff853f081",
+    "Platforms/NVIDIA/CUDA-Template/GEMM/Common/sample_hash.cuh": "64f825079149e0c7bc2b09a060ee5c0d1a8affbf6d67f244a1eb0534cf8dc1d7"
+  },
+  "frozen_includes_sha256": {
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/crt2_split.h": "812cc0f11bbd1be65ed040e6d2c97eb90822454d2eaeda56ccacf8a16f02ddf8",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/crt2_split.h": "8eaf06eb737af432ba0beae5aaaebc0fec166e0ce622b398ba29bf56bed37629",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/fp64k_tables.h": "582d1f39f4fbd08cab9a2af05d7e97fe80f82d422de5485d790b689c266bdde2",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/fp64k_tables.h": "582d1f39f4fbd08cab9a2af05d7e97fe80f82d422de5485d790b689c266bdde2",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/fp64kc_parts.h": "e146a22426f43ca7ebc9f3f5106d7bef9e26e7c61f693d434ab8a22a5255cc07",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/fp64kc_parts.h": "e146a22426f43ca7ebc9f3f5106d7bef9e26e7c61f693d434ab8a22a5255cc07",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8_flips.h": "5169da6a10fe0671d717e5e55c3c848140d57a38ac34ca4c33710546c53718e7",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8_flips.h": "b048f5c07bace8a8077426ea07da4db8d92fb5cba96a88228c6126f6bae02a7f",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8_tables.h": "7c5d97ff20abfbe0441ee6de14e4c540f3e60798fec2fe5406b7abc49b66815b",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8_tables.h": "3797dff56a6ec9f8eadbf87217a5ebb9628ff308477dc227baf94feda55e76f3",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8k_tables.h": "9f0f534465f2e24d7b88d992be546a9a5080ea4106b1a63f6eafe8e32da51bbb",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8k_tables.h": "9f0f534465f2e24d7b88d992be546a9a5080ea4106b1a63f6eafe8e32da51bbb",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8k_tables_k4096.h": "b2446bfc3c7d1dc059cee0aef687c76c5ad3aade735460df5d182b519fbfa855",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8k_tables_k4096.h": "b2446bfc3c7d1dc059cee0aef687c76c5ad3aade735460df5d182b519fbfa855",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8k_tables_rt.h": "56cd949313a5261bf52c40670230f76b5537282ad13e035a07495aa4f56cd278",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8k_tables_rt.h": "9a4cfe63908f2a4935d177508791a2944b34e5ce2d70a15c68b091313f3c73fb",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/tables_generated.h": "12190167741c07122c9e70612d106490a289f0cbc73f22b4850acd780549ae67",
+    "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/Reference/tables_generated.h": "12190167741c07122c9e70612d106490a289f0cbc73f22b4850acd780549ae67"
+  }
+}

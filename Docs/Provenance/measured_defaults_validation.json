@@ -1,0 +1,400 @@
+{
+  "parent_tree": "027e25cb173ed8474f6d5180d938aa113871a6fd",
+  "gpu_execution": false,
+  "nvcc": "13.2.86",
+  "host_gxx": "11.4.0",
+  "engines": [
+    {
+      "id": "k96_d17",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "a016783ab4cf7e041afd5365f289144b8f2f44df66572dbfe30cef527ae2140a",
+        "candidate_sha256": "36ec2ffcf2cd00c45b737a997a638cfc673d341403e473b1379c9d186aa45053",
+        "reference_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "candidate_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 65920,
+        "candidate_instructions": 65920
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "b0c85a3fa46a02cade3f4942ea81203ef148aa4761741a6b4742010ca7b79a8d",
+        "candidate_sha256": "d4adca7969fd706342c324d14b34bd8e33c389c67f9b0370dc0c93d29aec4904",
+        "reference_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "candidate_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68896,
+        "candidate_instructions": 68896
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_d18_syrk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "ca4919e21790a12aed09218bb89bf36f323b0bc9ee45efb7bc9116e52a5b5d95",
+        "candidate_sha256": "4e34238e8d369f09bc19c2d069b34231fec9cd354ecc919f2d0ec4edcbcc511b",
+        "reference_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "candidate_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64344,
+        "candidate_instructions": 64344
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_d21_syrk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "4c6afa9692e9b0f0451e01ad79f69a5a8f548f12acb4422857480999e51caada",
+        "candidate_sha256": "724e5ba4485de579ffedd6251de37993ed9b42bf337bf88fd59896390364841b",
+        "reference_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "candidate_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67840,
+        "candidate_instructions": 67840
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_d18_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "bf34e9be9188bb07e1ddfd10e5f22ece96c57e59ffb87b966ea242173bd1804d",
+        "candidate_sha256": "4dd92816594a6c500d63d331b2998fdbf2627759bf48f4602a4091ae00d3c6c0",
+        "reference_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "candidate_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64568,
+        "candidate_instructions": 64568
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_d21_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "92b5172b63c548badbbf4ec4bbd7ba9b007cf7b0b2044f48540d343b068fef5d",
+        "candidate_sha256": "765ccdae327b1f8abbceb3f7355a5b6f7e7f65966bf46331ab1812f804dd6009",
+        "reference_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "candidate_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68056,
+        "candidate_instructions": 68056
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_z53_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "f1df87717ee34f3ce51cf1896152af68d337c0f17036b3f9ef0fa225cd9a1f05",
+        "candidate_sha256": "bc54884425badbc0d480b4600d2c751b44595007d824297824755f512e245ea9",
+        "reference_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "candidate_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 37048,
+        "candidate_instructions": 37048
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k96_z51_herk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "e62fd8b596b8ce1e88d390a7dc90ae4d881c344488692d6d33f8be1dea58bb5e",
+        "candidate_sha256": "ec0a87b5a0538147b68f42443a2f309058d4341c989ffbf3d3c9a34ba6872311",
+        "reference_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "candidate_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 43472,
+        "candidate_instructions": 43472
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k64_d17",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "504ed330ee1e6991c97d4a64037883c6459c9923fc06926574c1a9009e9529f9",
+        "candidate_sha256": "9941b80d1febfde3a78dc72eb4df836604b8d2b7c0624f60659f94febcd8d95f",
+        "reference_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "candidate_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 66952,
+        "candidate_instructions": 66952
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k64_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "dbd70bc9d9d757479a0725418808164891fb0cdf0e1f7388539f18ec2dc8ce05",
+        "candidate_sha256": "505e5073ebffa9320751093f560fa0627cb8163fb6e1d0b0fdecf7768928d100",
+        "reference_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "candidate_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 69672,
+        "candidate_instructions": 69672
+      },
+      "export_list_equal_to_parent": true
+    },
+    {
+      "id": "k64_d21",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "2d58522006f1f923c487607573975d293e81326bdc1711c5fb88ff4249783e72",
+        "candidate_sha256": "5e35588866b703432c2edc4a2a3b4e45242d7251f873ac9fab778a3681ad61a5",
+        "reference_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "candidate_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67112,
+        "candidate_instructions": 67112
+      },
+      "export_list_equal_to_parent": true
+    }
+  ],
+  "cpu_tests_passed": 33,
+  "public_ABI": "Unchanged functions and structure layouts; JSON info adds poison.",
+  "source_check": {
+    "files": 369,
+    "changed_files": 6,
+    "rule": "Only the configured host-options constructor adds a measured pingpong value in six real engines. Other engine files byte-identical to parent."
+  }
+}

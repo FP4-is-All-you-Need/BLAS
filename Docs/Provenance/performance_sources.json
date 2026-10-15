@@ -1,0 +1,201 @@
+{
+  "precision_plot_script_sha256": "4c732ea8d0f15b503a6f7e71c38a1fd70a74c0695ba9e690136dc185981ef518",
+  "gpu_execution": false,
+  "claims": {
+    "dgemm_normal_8192": {
+      "ours_bits": 53,
+      "competitor_bits": 51,
+      "ours_ms_rounded": 11.8,
+      "median_paired_time_ratio": 0.832,
+      "competitor": "cuBLAS 13.8 FP64 emulation, fastest measured setting meeting the same sampled target"
+    },
+    "nine_shape_loss": {
+      "shape": [
+        8192,
+        8192,
+        4096
+      ],
+      "time_ratio": 1.011
+    },
+    "wide_exponent_phi": 4,
+    "wide_exponent_minimum_qualified_bits": 66,
+    "accuracy_samples": 1024,
+    "nine_shape_widths": {
+      "selection": "Fastest accuracy-qualified AWE width per shape",
+      "range_bits": [
+        51,
+        53
+      ],
+      "cube8192_bits": 51,
+      "release_dgemm_bits": 53,
+      "separate_from_11_8_ms_series": true
+    },
+    "exact_int8_8192": {
+      "M": 8192,
+      "N": 8192,
+      "K": 8192,
+      "distribution": "discrete uniform over all 256 INT8 values",
+      "ours_ms": 1.2309192780524194,
+      "comparator_ms": 1.2993303675229593,
+      "paired_time_ratio": 0.9475412660762298,
+      "paired_ratio_statistic": "median of 6 paired-round ratios",
+      "ours_tops": 893.2442991027528,
+      "operation_count": "2MNK integer operations",
+      "accuracy_scope": "Exact INT8-to-INT32; full-output GPU equality/hash and 1024 independently regenerated CPU integer dot products.",
+      "timing_method": "CUDA events including encoding, GEMM and integer reconstruction; synchronized every 16 calls in continuous intervals.",
+      "rounds": 6,
+      "source_sha256": "83d3e4fc24edcb99038ba4a2d18b8c79aa03f7d0b41eada5884cdcdebacfeac7",
+      "source_id": "exact-int8-full-api-b300",
+      "values_sha256": "3097875c4c220d48c1cca0bbeeeebcca23cb85392977217c76c232ac05456d0a",
+      "awe_weights": [
+        1,
+        7,
+        28
+      ],
+      "display": {
+        "awe_ms": 1.231,
+        "comparator_ms": 1.299,
+        "median_paired_time_ratio": 0.948,
+        "effective_tops": 893,
+        "effective_over_nominal_int8": 6.0
+      },
+      "comparator": "cuBLASLt FP16 products with exact FP32 accumulation in K chunks of 1024, summed in INT32",
+      "awe_unchunked_max_k": 14563,
+      "scope": "Separate September–October 2026 measurements on one B300; these INT8 engines are not imported; current frontend unmeasured."
+    },
+    "int8_six_vs_nine_products": {
+      "reference": "cuBLASLt NVFP4 per-plane products on the same inputs",
+      "awe_weights": [
+        1,
+        5,
+        27
+      ],
+      "base13_limbs": 3,
+      "base13_products": 9,
+      "awe_products": 6,
+      "shapes": [
+        [
+          8192,
+          8192,
+          16384
+        ],
+        [
+          16384,
+          16384,
+          16384
+        ]
+      ],
+      "distributions": [
+        "uniform",
+        "normal"
+      ],
+      "product_time_ratio_range": [
+        0.66,
+        0.67
+      ],
+      "whole_call_time_ratio_range": [
+        0.69,
+        0.71
+      ],
+      "scope": "Separate September–October 2026 B300 construction comparison, supplied measurement summary; not imported release-engine timing."
+    },
+    "gemmul8_int8_replacement": {
+      "values_sha256": "cbb4ec6ab2f3d3db27bc7750bc95681c2fc223efd33e85681d335e7edc522b4b",
+      "gemmul8_version": "3.5.2",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "moduli": 15,
+      "original_ms": 113.38,
+      "replacement_ms": 20.49,
+      "speedup": 5.53,
+      "output_bit_identical": true,
+      "fp8_ms_rounded": 14.6,
+      "separate_awe_dgemm_53bit_ms": 11.8,
+      "scope": "Only INT8 product calls replaced; source values and separate NVFP4 series are documented in figures.json."
+    }
+  },
+  "explicit_exception": {
+    "shape": [
+      5120,
+      5120,
+      5120
+    ],
+    "bits": 53,
+    "qualified": false,
+    "source": "Measurement summary, range_by_K.excluded and range_d53.excluded; both independently listed ranges exclude the same shape.",
+    "source_sha256": {
+      "summary": "55ca0c75f449727c4971bb6521faa4977002e5a1aa124d14973edadb2b1e65db",
+      "case_specification": "d1d0b0d27e322ffb15f7300e6a4fabddb6ec2b049c6d87c482c02a961d03be40",
+      "qualification_checker": "ad07ccb5742044577e0663e83b36bf3619ca51cb177c1af060c7fb89158fab0f",
+      "measurement_judge": "dde23290e4268b242224410c05cedbfa637d815ae34878dc2a85b7a3f2f55e01"
+    },
+    "gpu": "B300",
+    "gpu_count": 1,
+    "measurement_period": "2026-10",
+    "distribution": "normal",
+    "moduli": 18,
+    "comparison": {
+      "method": "base-13",
+      "bits": 53,
+      "qualified": false
+    },
+    "accuracy_samples": 1024,
+    "accuracy_target": "Both p95 and maximum ULP error must be no greater than native cuBLAS DGEMM on the same sampled exact dot products rounded to FP64 in the same measurement.",
+    "qualification_by_run": {
+      "awe_53": [
+        false,
+        false
+      ],
+      "base13_53": [
+        false,
+        false
+      ]
+    }
+  },
+  "scope": "Repository measurements: earlier measurements of the imported engines, not execution of the new frontend. Nine-shape and routine-comparison series are distinct. Complete figure measurement datasets were not regenerated.",
+  "measurement_summary_source_sha256": "c3eaaa6608419894b438a1fa1188dcc9269a6fccd1d8620032e2cdca0a0f1b31",
+  "measurement_period": "2026-10",
+  "hardware": {
+    "gpu": "B300 SXM6 AC",
+    "gpu_count": 1,
+    "power_limit_w": 1100,
+    "clocks_fixed": false
+  },
+  "method_references": {
+    "arxiv": [
+      "2608.06812",
+      "2609.24519"
+    ],
+    "scope": "Methods only; these references do not report the B300 measurements."
+  },
+  "accuracy_target": "On the same 1024 sampled outputs, both p95 and maximum ULP error against the exact dot product rounded to FP64 must not exceed native cuBLAS DGEMM in the same measurement. Each runtime-comparison method uses its fastest measured qualifying setting.",
+  "input_distributions": {
+    "runtime": "normal",
+    "precision_energy": [
+      "normal",
+      "uniform"
+    ],
+    "wide_exponent": "(rand - 0.5) * exp(phi * randn), phi=4"
+  },
+  "hardware_sources": [
+    {
+      "title": "NVIDIA Blackwell Architecture Technical Brief V2.1",
+      "url": "https://resources.nvidia.com/en-us-blackwell-architecture/blackwell-architecture-technical-brief",
+      "pdf_sha256": "df58a797c6bc4236b1877b634fe31ff8da4c82fff289605adfb5aaca424aec69",
+      "table": 3,
+      "page": 25,
+      "note": "Per-GPU dense FP4 14 PFLOPS, FP8 4.5 PFLOPS, INT8 0.15 POPS; rounded INT8 sparse 0.30 POPS."
+    },
+    {
+      "title": "NVIDIA Blackwell Ultra Datasheet (2025)",
+      "url": "https://resources.nvidia.com/en-us-gpu-resources/blackwell-ultra-datasheet",
+      "pdf_sha256": "ccdffc064731cc160016f4c7a77ecfa37983038bcaf60e39190ba4175b39c7c8",
+      "page": 5,
+      "note": "HGX B300 per-GPU rates; FP4 dense explicitly given; FP8 and BF16/FP16 sparse values halved; FP64 1.2 TFLOPS directly given. INT8 307 sparse TOPS is finer-grained than the rounded technical-brief value used here."
+    }
+  ]
+}

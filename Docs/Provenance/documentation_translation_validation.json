@@ -1,0 +1,1050 @@
+{
+  "base_tree": "64974a3a17edca606909615b6341269b6d248386",
+  "scope": "English translation only; no numerical recomputation",
+  "method": {
+    "numbers_regex": "[-+−±]?(?:\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:[eE][-+]?\\d+)?|[⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉]+)",
+    "fractions_regex": "[-+−±]?\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:/[-+−±]?\\d+(?:,\\d{3})*(?:\\.\\d+)?)+",
+    "exponents_regex": "(?:[A-Za-z_][A-Za-z_0-9]*|\\d+)(?:\\^(?:\\([^\\n)]*\\)|\\{[^\\n}]*\\}|[-−]?\\d+(?:\\.\\d+)?|[A-Za-z_][A-Za-z_0-9]*)|[⁰¹²³⁴⁵⁶⁷⁸⁹]+)",
+    "numeric_tuples_regex": "[([]\\s*[-−±+]?\\d+(?:\\.\\d+)?(?:\\s*,\\s*[-−±+]?\\d+(?:\\.\\d+)?)+\\s*[)\\]]",
+    "table_cells": "Ordered literal Markdown rows/cells, split at unescaped pipes. Includes header and separator rows; pre-existing formula pipes are preserved."
+  },
+  "files": {
+    "AWE/Solutions/PLANE.md": {
+      "before_sha256": "66e04fa4b3e9783b3e59e26aafcadf55db4f3854b11ae67ad778d78e0f45db87",
+      "after_sha256": "d65a6b5a7cd8a58292126340ba38421824073b75133bfc73f8915b39b7ac8e2c",
+      "removed_internal_numbers": [],
+      "checks": {
+        "numbers": {
+          "before_count": 6838,
+          "after_count": 6838,
+          "equal": true,
+          "before_sha256": "385fe93d6b76695466c778c9488744922090f62b6c0a5a48afd953107bef7783",
+          "after_sha256": "385fe93d6b76695466c778c9488744922090f62b6c0a5a48afd953107bef7783"
+        },
+        "fractions": {
+          "before_count": 10,
+          "after_count": 10,
+          "equal": true,
+          "before_sha256": "42eb866696eca30eb097b24f1c6dfb6f4b52e400eb0ea4f7a9b8fc01bfce2cd0",
+          "after_sha256": "42eb866696eca30eb097b24f1c6dfb6f4b52e400eb0ea4f7a9b8fc01bfce2cd0"
+        },
+        "exponents": {
+          "before_count": 15,
+          "after_count": 15,
+          "equal": true,
+          "before_sha256": "1229032a9e2bc75a9da527521554092d7de168e3a5f8ec25d6d1d8ebad81b29a",
+          "after_sha256": "1229032a9e2bc75a9da527521554092d7de168e3a5f8ec25d6d1d8ebad81b29a"
+        },
+        "numeric_tuples": {
+          "before_count": 516,
+          "after_count": 516,
+          "equal": true,
+          "before_sha256": "f3c28ae3d634f657e068d57d135f979977c1226ea516ab02e6aacf8f47ade168",
+          "after_sha256": "f3c28ae3d634f657e068d57d135f979977c1226ea516ab02e6aacf8f47ade168"
+        },
+        "table_shapes_equal": true,
+        "ordered_cell_numbers_equal": true,
+        "tables": [
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 17,
+            "data_rows": 15,
+            "columns_by_row": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 17,
+            "data_rows": 15,
+            "columns_by_row": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 17,
+            "data_rows": 15,
+            "columns_by_row": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 36,
+            "data_rows": 34,
+            "columns_by_row": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 227,
+            "data_rows": 225,
+            "columns_by_row": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 37,
+            "data_rows": 35,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 17,
+            "data_rows": 15,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 44,
+            "data_rows": 42,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 10,
+            "data_rows": 8,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 9,
+            "data_rows": 7,
+            "columns_by_row": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              5,
+              5,
+              5,
+              5,
+              7,
+              7,
+              5,
+              5
+            ]
+          }
+        ],
+        "table_count": 18,
+        "table_cell_numbers_sha256": "17a03e9da42427d6695e002ca5345076f4d0a422ccd1475e58ae637023ff4fdf"
+      }
+    },
+    "AWE/Solutions/SIX_PRODUCT.md": {
+      "before_sha256": "cf77ea1c0369da980e5c4c23f1bafc65cadea4145f7be1decbb8ac3335b96789",
+      "after_sha256": "9449d6d1dc90aaeb66d52f23952517e2266bd255faee193d2044cad6879e83ae",
+      "removed_internal_numbers": [
+        {
+          "line_before": 59,
+          "kind": "internal role label",
+          "removed_numbers": [
+            "300"
+          ],
+          "occurrences": 1
+        }
+      ],
+      "checks": {
+        "numbers": {
+          "before_count": 763,
+          "after_count": 763,
+          "equal": true,
+          "before_sha256": "85939216482ba523bd75f76f9346b8479692642f3b8570a824f988db97294865",
+          "after_sha256": "85939216482ba523bd75f76f9346b8479692642f3b8570a824f988db97294865"
+        },
+        "fractions": {
+          "before_count": 2,
+          "after_count": 2,
+          "equal": true,
+          "before_sha256": "454e8e17a1dfd62b64555cbc01c6cd7c341c5c713d435c4371b444b714a59935",
+          "after_sha256": "454e8e17a1dfd62b64555cbc01c6cd7c341c5c713d435c4371b444b714a59935"
+        },
+        "exponents": {
+          "before_count": 20,
+          "after_count": 20,
+          "equal": true,
+          "before_sha256": "4b88385f9d6d895febd1136f9c6417081d9c889684b9ed159c12c4d6248b901e",
+          "after_sha256": "4b88385f9d6d895febd1136f9c6417081d9c889684b9ed159c12c4d6248b901e"
+        },
+        "numeric_tuples": {
+          "before_count": 66,
+          "after_count": 66,
+          "equal": true,
+          "before_sha256": "fac22581afa65cd1acb8d560c72bbecfd17b60bcc84a3539edee02f8018f9e15",
+          "after_sha256": "fac22581afa65cd1acb8d560c72bbecfd17b60bcc84a3539edee02f8018f9e15"
+        },
+        "table_shapes_equal": true,
+        "ordered_cell_numbers_equal": true,
+        "tables": [
+          {
+            "rows_including_header_and_separator": 9,
+            "data_rows": 7,
+            "columns_by_row": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 7,
+            "data_rows": 5,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 6,
+            "data_rows": 4,
+            "columns_by_row": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 4,
+            "data_rows": 2,
+            "columns_by_row": [
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 6,
+            "data_rows": 4,
+            "columns_by_row": [
+              3,
+              3,
+              3,
+              3,
+              7,
+              3
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 6,
+            "data_rows": 4,
+            "columns_by_row": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 5,
+            "data_rows": 3,
+            "columns_by_row": [
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          }
+        ],
+        "table_count": 11,
+        "table_cell_numbers_sha256": "68163648fc473f7966326c501a8e4c99aa12b4dcda2a1f583645882dc482a567"
+      }
+    },
+    "AWE/Solutions/SOLUTIONS_intN.md": {
+      "before_sha256": "d51c85497c81da2fc825970173ce68a2ec1082e43611db118f6d2ddff045e121",
+      "after_sha256": "1a4d25dc0b139bd5f1404b11fc35576dd62410e082f338dd4e6e0e1a7e264d5e",
+      "removed_internal_numbers": [],
+      "checks": {
+        "numbers": {
+          "before_count": 1134,
+          "after_count": 1134,
+          "equal": true,
+          "before_sha256": "407312e6a848dd921ba01914809fd505020fd1346a42f609442d98e88726e0b5",
+          "after_sha256": "407312e6a848dd921ba01914809fd505020fd1346a42f609442d98e88726e0b5"
+        },
+        "fractions": {
+          "before_count": 58,
+          "after_count": 58,
+          "equal": true,
+          "before_sha256": "c09faaef355533f93a005c18af116668dbc9a6dff32c4a2e40f3b7dbb0212644",
+          "after_sha256": "c09faaef355533f93a005c18af116668dbc9a6dff32c4a2e40f3b7dbb0212644"
+        },
+        "exponents": {
+          "before_count": 8,
+          "after_count": 8,
+          "equal": true,
+          "before_sha256": "def7338a08686af9cf4711d0c9edfd308d6bbef6ec2b023e9065d490033cf289",
+          "after_sha256": "def7338a08686af9cf4711d0c9edfd308d6bbef6ec2b023e9065d490033cf289"
+        },
+        "numeric_tuples": {
+          "before_count": 96,
+          "after_count": 96,
+          "equal": true,
+          "before_sha256": "efef474845db2bace193450101f3c9b7c4a69caa1f10c86e845a464406355f40",
+          "after_sha256": "efef474845db2bace193450101f3c9b7c4a69caa1f10c86e845a464406355f40"
+        },
+        "table_shapes_equal": true,
+        "ordered_cell_numbers_equal": true,
+        "tables": [
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 6,
+            "data_rows": 4,
+            "columns_by_row": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 7,
+            "data_rows": 5,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 9,
+            "data_rows": 7,
+            "columns_by_row": [
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10,
+              10
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 7,
+            "data_rows": 5,
+            "columns_by_row": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 8,
+            "data_rows": 6,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 13,
+            "data_rows": 11,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 13,
+            "data_rows": 11,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 13,
+            "data_rows": 11,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 12,
+            "data_rows": 10,
+            "columns_by_row": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "rows_including_header_and_separator": 7,
+            "data_rows": 5,
+            "columns_by_row": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        ],
+        "table_count": 12,
+        "table_cell_numbers_sha256": "d865d4e28592e352eb7e9107579422d8e61ef4daba57ae0de048e4791c388cd0"
+      }
+    }
+  },
+  "deleted_files": [],
+  "pass": true
+}

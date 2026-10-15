@@ -1,0 +1,190 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "scope": "Engine device instructions, resources, attributes, initialized data and ELF/PTX inventory match the reference libraries. The 53-bit library has an indirect link to the measurements; see its measurement_link entry. Host API and adapter paths have CPU tests but have not run on GPU.",
+  "comment_review": "Repeated comments in the imported files describe generated table entries, shared-memory strides, scale slots and CRT upload. They were read against their code contexts. No empty comments or malformed punctuation were found.",
+  "engines": [
+    {
+      "id": "k96_z53_general",
+      "source_id": "complex-general-tailpace-20261001",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "7901435d059fdccf2df35cc50805051d553d8bb8ec8da2e25f0f9b0afc93f1b8",
+          "attributes": "482ff4e3f8d265ab8f40abb6df880770d252f30c488a6985484f7d02551e7c74",
+          "initialized_data": "2652422b2192357a5dc35ec725e5fef20c0505c09b52132e5a008f11b79ec5e8"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "7901435d059fdccf2df35cc50805051d553d8bb8ec8da2e25f0f9b0afc93f1b8",
+          "attributes": "482ff4e3f8d265ab8f40abb6df880770d252f30c488a6985484f7d02551e7c74",
+          "initialized_data": "2652422b2192357a5dc35ec725e5fef20c0505c09b52132e5a008f11b79ec5e8"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "6bb7c7348385c1294f355dffe7aa0f5b08827324edbf41e758b6dbca0c9521c3",
+        "candidate_sha256": "af28bf87b67b724d6b1d6fe9e3ce46acb3fe9e6b7809c59c276c3cf2e2f4410e",
+        "reference_sass_sha256": "6887c4b1e97f20a861a34b65760d254062db349751e6646986cdc38ec2d46681",
+        "candidate_sass_sha256": "6887c4b1e97f20a861a34b65760d254062db349751e6646986cdc38ec2d46681",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 36600,
+        "candidate_instructions": 36600
+      },
+      "measurement_link": {
+        "kind": "indirect",
+        "width_and_moduli_record": "ours_version_bits.json: 53 bits, 20 moduli; per-cell engine SHA is null",
+        "timing_record": "ZGEMM normal and general complex Level-3 measurements in October 2026",
+        "binary_record": "Archived build recipe identifies the tail-pacing library with SHA 6bb7c7348385c1294f355dffe7aa0f5b08827324edbf41e758b6dbca0c9521c3. The extracted library has that SHA.",
+        "limitation": "The measurement result.json contexts entry has not been checked. The build-to-measurement link is not established by a per-job binary SHA."
+      }
+    },
+    {
+      "id": "k96_z52_syrk",
+      "source_id": "complex-52bit-lower-tiles-20261005",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f7cf6ccbec1cd8a8b729fdf6f27001f62ca212d38d990138d85c4e9aec6e4057",
+          "attributes": "8fc6fb0408dec7dab659d2f95068999f2fe6937330061d57c84a2bf7189cbc4f",
+          "initialized_data": "b98772d3d613e9dce2ac51cee2619293b043cfe535338f6439379e7b8ff40eea"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f7cf6ccbec1cd8a8b729fdf6f27001f62ca212d38d990138d85c4e9aec6e4057",
+          "attributes": "8fc6fb0408dec7dab659d2f95068999f2fe6937330061d57c84a2bf7189cbc4f",
+          "initialized_data": "b98772d3d613e9dce2ac51cee2619293b043cfe535338f6439379e7b8ff40eea"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "57692e5a65d2c4a0c6f41e6f833649ac17c22ce87bcd2b35a2bce50cc6e7c909",
+        "candidate_sha256": "072f5194b9d88797a57847c604b24e762935f9c3519b8c147157578a8c7492da",
+        "reference_sass_sha256": "1ae8f61f2b002f7ed825c39641d582b333ce9632e3acafcc97ffc60a3b63ac79",
+        "candidate_sass_sha256": "1ae8f61f2b002f7ed825c39641d582b333ce9632e3acafcc97ffc60a3b63ac79",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 36576,
+        "candidate_instructions": 36576
+      }
+    },
+    {
+      "id": "k96_z50_syrk",
+      "source_id": "complex-50bit-lower-tiles-20261005",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "31dff740bc46d1b5803325df3ed7e80b67742c12adc3bd56b744151ccf8fb740",
+          "attributes": "8e6b82a840fcf8b853f671453b72c0871225a5bb92bf8d133c69e5450ab936ac",
+          "initialized_data": "4101427a7a223e01a93c7833f41d68606bd99598dcb8371057c079e5aa540ede"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "31dff740bc46d1b5803325df3ed7e80b67742c12adc3bd56b744151ccf8fb740",
+          "attributes": "8e6b82a840fcf8b853f671453b72c0871225a5bb92bf8d133c69e5450ab936ac",
+          "initialized_data": "4101427a7a223e01a93c7833f41d68606bd99598dcb8371057c079e5aa540ede"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "f6fdb4d062cc288d418a26b898d45a4740ec359d6466fc30b0e4f8c760d5fb0a",
+        "candidate_sha256": "38cf2864fa63d2f30f2dc7a4af8d9b4270b2bf02cc098f1ed999fe9902a8b7f2",
+        "reference_sass_sha256": "33113dd4394746a62a690b5b1fb27d4230afc3bccd2032e4e847c56051d223e3",
+        "candidate_sass_sha256": "33113dd4394746a62a690b5b1fb27d4230afc3bccd2032e4e847c56051d223e3",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 36344,
+        "candidate_instructions": 36344
+      }
+    },
+    {
+      "id": "k96_z49_herk",
+      "source_id": "complex-49bit-lower-tiles-20261005",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c2afa0fb20bb6b9a6053247f3080419c08e3c35ee0a45fc305d1a92b8b4cec7f",
+          "attributes": "9119765563a718e7f0bbcc2f5f09740c6eb4a72bfbda0ab5212837530c7d0789",
+          "initialized_data": "60af8f7b658b4e33c37d9f920e6ec64898122cb889d46b8362fb746904298f25"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c2afa0fb20bb6b9a6053247f3080419c08e3c35ee0a45fc305d1a92b8b4cec7f",
+          "attributes": "9119765563a718e7f0bbcc2f5f09740c6eb4a72bfbda0ab5212837530c7d0789",
+          "initialized_data": "60af8f7b658b4e33c37d9f920e6ec64898122cb889d46b8362fb746904298f25"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "555bce46bc3dadd3de63ebbcaad6b69b1368efaf7373eed8d83e3d30f8bc336d",
+        "candidate_sha256": "e0fb2ba9013a7ab5b92a884d0d89ca85228c7fda526497d4977a96992c6ae5a3",
+        "reference_sass_sha256": "26640059eeabe5399c19ac8e901463fe34c607f68fc100c6f1251363547f81b1",
+        "candidate_sass_sha256": "26640059eeabe5399c19ac8e901463fe34c607f68fc100c6f1251363547f81b1",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 44112,
+        "candidate_instructions": 44112
+      }
+    },
+    {
+      "id": "k96_z48_general",
+      "source_id": "complex-48bit-lower-tiles-20261005",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "46cb4e292be149b9ef2a9ea5419f3982e49860701865c5fb9ccdaf942a5520df",
+          "attributes": "80e1f8613c7bc8091de3c4911213fafa98df514252ab76920663ff0adea97b6e",
+          "initialized_data": "9170e5a9ccd4e693750a9973ad3e8b3670ef7a783dd8d4760cbea2fa2806b4ac"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "46cb4e292be149b9ef2a9ea5419f3982e49860701865c5fb9ccdaf942a5520df",
+          "attributes": "80e1f8613c7bc8091de3c4911213fafa98df514252ab76920663ff0adea97b6e",
+          "initialized_data": "9170e5a9ccd4e693750a9973ad3e8b3670ef7a783dd8d4760cbea2fa2806b4ac"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "cac16745000b29e3d710d36c1e7efdee2229fd1e96c6b4e43ae631fec2447053",
+        "candidate_sha256": "d07a75e07ef457a3ccae1b27ba33c20cd9333f045155d639606364f68a3e9d36",
+        "reference_sass_sha256": "511905f6de99d9f2cbe2ea3b616bea9408c86c68805243f03d756ef2bbeff451",
+        "candidate_sass_sha256": "511905f6de99d9f2cbe2ea3b616bea9408c86c68805243f03d756ef2bbeff451",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 36128,
+        "candidate_instructions": 36128
+      }
+    }
+  ]
+}

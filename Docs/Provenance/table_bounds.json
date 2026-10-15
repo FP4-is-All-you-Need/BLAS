@@ -1,0 +1,47 @@
+[
+  {
+    "id": "k96_d17",
+    "last_contiguous_k_passing_table_checks": 8192,
+    "first_failure": "l8k table: P2: t + bias (modulus 101)"
+  },
+  {
+    "id": "k96_d18",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  },
+  {
+    "id": "k96_d18_syrk",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  },
+  {
+    "id": "k96_d21_syrk",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  },
+  {
+    "id": "k96_d18_syrk_trmm",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  },
+  {
+    "id": "k96_d21_syrk_trmm",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  },
+  {
+    "id": "k64_d17",
+    "last_contiguous_k_passing_table_checks": 8192,
+    "first_failure": "l8k table: P2: t + bias (modulus 101)"
+  },
+  {
+    "id": "k64_d18",
+    "last_contiguous_k_passing_table_checks": 8192,
+    "first_failure": "l8k table: P2: t + bias (modulus 8)"
+  },
+  {
+    "id": "k64_d21",
+    "last_contiguous_k_passing_table_checks": 16384,
+    "first_failure": null
+  }
+]

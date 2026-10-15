@@ -1,0 +1,578 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "scope": "The nine arithmetic engines match their reference device code. The separate float adapter does not match. None of the new public single-precision paths has run or been timed on a GPU.",
+  "engines": [
+    {
+      "id": "k96_s20_fused",
+      "source_id": "s20_fused",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "673b5b06ba29bbc6c5c98e87e46e116a9c279513b753f839fa8160825cbba16b",
+          "attributes": "80cb66e88296edaedfbc1e8e5b66a5417e1e19677c134600e8888c186e457549",
+          "initialized_data": "1839acdb253daecc98dc63a70459023428115f9addfe4337be1d44cfd2108e83"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "673b5b06ba29bbc6c5c98e87e46e116a9c279513b753f839fa8160825cbba16b",
+          "attributes": "80cb66e88296edaedfbc1e8e5b66a5417e1e19677c134600e8888c186e457549",
+          "initialized_data": "1839acdb253daecc98dc63a70459023428115f9addfe4337be1d44cfd2108e83"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "c5ea311d24be469c61037f9d913f53ad566bc9d9d5788bca89fbf0d891b06440",
+        "candidate_sha256": "b9081d1eccab0336f9a3d1483336d753333adeaa252806e00b3b4d8507caa3e3",
+        "reference_sass_sha256": "d4ea0df09c062d8511ad5df2c18e42c1c0c5c106fe1c9f5df7355eeb665bc84e",
+        "candidate_sass_sha256": "d4ea0df09c062d8511ad5df2c18e42c1c0c5c106fe1c9f5df7355eeb665bc84e",
+        "reference_functions": 67,
+        "candidate_functions": 67,
+        "reference_instructions": 106256,
+        "candidate_instructions": 106256
+      }
+    },
+    {
+      "id": "k96_s23_fused",
+      "source_id": "s23_fused",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "1743398bfb6aa66df3a22277f26ab1a2ff3f5c957cb7fe4a863cd6354b4b8ef1",
+          "attributes": "7f030fa2d79b34a5243a6a33798de45d77f816fe9af6b986bd699dfa85871139",
+          "initialized_data": "7c47d7c6d56063ffcbc5c9ac6b3250a63cfc3ea28b9fb70b86580532ae8a08c3"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "1743398bfb6aa66df3a22277f26ab1a2ff3f5c957cb7fe4a863cd6354b4b8ef1",
+          "attributes": "7f030fa2d79b34a5243a6a33798de45d77f816fe9af6b986bd699dfa85871139",
+          "initialized_data": "7c47d7c6d56063ffcbc5c9ac6b3250a63cfc3ea28b9fb70b86580532ae8a08c3"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "273fc0b3abbe7ead9d021703c1372580299e18c065f1310b946c47fa4ffad5fb",
+        "candidate_sha256": "d663126f5fe7bbf6a6eedce5038f7ed1608693a273ab784ce1e9c3b7a280a040",
+        "reference_sass_sha256": "3a0236800a74f3808d496c3544e650e84fc9df53b63df776de9c46c7f98ba193",
+        "candidate_sass_sha256": "3a0236800a74f3808d496c3544e650e84fc9df53b63df776de9c46c7f98ba193",
+        "reference_functions": 95,
+        "candidate_functions": 95,
+        "reference_instructions": 179392,
+        "candidate_instructions": 179392
+      }
+    },
+    {
+      "id": "k96_s24_fused",
+      "source_id": "s24_fused",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "779a3fdc040d045cc0234d4b75d0edbe2eacd9e2ea385373484c9d6130aa4762",
+          "attributes": "bb6473898acefedfd52868cedf4d857e22aba9a3da5f2f9e6bfdb96dfaabf798",
+          "initialized_data": "7c47d7c6d56063ffcbc5c9ac6b3250a63cfc3ea28b9fb70b86580532ae8a08c3"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "779a3fdc040d045cc0234d4b75d0edbe2eacd9e2ea385373484c9d6130aa4762",
+          "attributes": "bb6473898acefedfd52868cedf4d857e22aba9a3da5f2f9e6bfdb96dfaabf798",
+          "initialized_data": "7c47d7c6d56063ffcbc5c9ac6b3250a63cfc3ea28b9fb70b86580532ae8a08c3"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "c7e92c7f4979e975f2231ec3a22591e210751d0792ef69f2a2e1c98f13b023bf",
+        "candidate_sha256": "e9970187cbb594313c1b112dbd2dd01fda828bedb3babeabf1d250cb7c093802",
+        "reference_sass_sha256": "7fc9c0bc890810943bed91d1b0e718042f06abd168aa05d0ff9c1077c84b629e",
+        "candidate_sass_sha256": "7fc9c0bc890810943bed91d1b0e718042f06abd168aa05d0ff9c1077c84b629e",
+        "reference_functions": 95,
+        "candidate_functions": 95,
+        "reference_instructions": 179640,
+        "candidate_instructions": 179640
+      }
+    },
+    {
+      "id": "k96_s22_fused",
+      "source_id": "s22_fused",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "444ae74baff3c78ab83ad137d71635bb418749e6ea6616be9b3713b9c7cf414a",
+          "attributes": "364c65201e7626bd57e19cd9c9e1cdbd50fe9fb4656552a498221c0eb0d1644a",
+          "initialized_data": "3da6d475800d426e403aa0e1f7dc142b4a68367526b4b95334bda091aeea40da"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "444ae74baff3c78ab83ad137d71635bb418749e6ea6616be9b3713b9c7cf414a",
+          "attributes": "364c65201e7626bd57e19cd9c9e1cdbd50fe9fb4656552a498221c0eb0d1644a",
+          "initialized_data": "3da6d475800d426e403aa0e1f7dc142b4a68367526b4b95334bda091aeea40da"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "499c06b5048d43eb5ca7f9ff8bec130c837296bbc875ec7e99f7ed98a6ca5e49",
+        "candidate_sha256": "fd3f28c11ef3b9df849a254b130358189fc0e91f9c55df00e0b0ae8749fdfc74",
+        "reference_sass_sha256": "d22468b77adc2f403717549b137ab6af8ab54dba1d3a8c8331d624e3766b1d49",
+        "candidate_sass_sha256": "d22468b77adc2f403717549b137ab6af8ab54dba1d3a8c8331d624e3766b1d49",
+        "reference_functions": 95,
+        "candidate_functions": 95,
+        "reference_instructions": 177536,
+        "candidate_instructions": 177536
+      }
+    },
+    {
+      "id": "k96_s22_current",
+      "source_id": "s22_current",
+      "source_assembly": "All 36 source files match the archived source manifest. The translation unit was rebuilt from the fused source by omitting its extra Level-3 include and setting the table modulus count. Device equality is checked separately against the archived library.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "837f5444ce36ebccfedcc093a90e82024109f50138863cd42c9e3c60dc30058c",
+          "attributes": "de2acbda753ab447bec3242eeb591b4999ab1c9ca8dbe8f5b2495eb82572cd6c",
+          "initialized_data": "6efd36c36900eef37f0128d61f51d2df2c7ef49cec0cd4b8c410e0f4a6243b9a"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "837f5444ce36ebccfedcc093a90e82024109f50138863cd42c9e3c60dc30058c",
+          "attributes": "de2acbda753ab447bec3242eeb591b4999ab1c9ca8dbe8f5b2495eb82572cd6c",
+          "initialized_data": "6efd36c36900eef37f0128d61f51d2df2c7ef49cec0cd4b8c410e0f4a6243b9a"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "4cd5f316e26189ebc0c94b639e4e477ef5ce0fbedabc3e70e71c586346e86b00",
+        "candidate_sha256": "c08c2d2e9a9589913871df412666c534d8db7e56542b7535cca4acf64418d275",
+        "reference_sass_sha256": "70cd032abcbf420061324a7ced4c05a5a61657d74e7d105582d253c3247c8115",
+        "candidate_sass_sha256": "70cd032abcbf420061324a7ced4c05a5a61657d74e7d105582d253c3247c8115",
+        "reference_functions": 92,
+        "candidate_functions": 92,
+        "reference_instructions": 171056,
+        "candidate_instructions": 171056
+      }
+    },
+    {
+      "id": "k96_s21_current",
+      "source_id": "s21_current",
+      "source_assembly": "All 36 source files match the archived source manifest. The translation unit was rebuilt from the fused source by omitting its extra Level-3 include and setting the table modulus count. Device equality is checked separately against the archived library.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "393abb9fcef6c1f3fee9defc0867826a3765570502dc94bb1f8a242ef706ddce",
+          "attributes": "8daeacae16788227526cd1cc40bd9e327586d19546a4a854d10e9c3d74557869",
+          "initialized_data": "7c68f4f326c3e4b728248138f8e5832b1f90d9e10e735737d40e346dd0801827"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "393abb9fcef6c1f3fee9defc0867826a3765570502dc94bb1f8a242ef706ddce",
+          "attributes": "8daeacae16788227526cd1cc40bd9e327586d19546a4a854d10e9c3d74557869",
+          "initialized_data": "7c68f4f326c3e4b728248138f8e5832b1f90d9e10e735737d40e346dd0801827"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "fd6fd72245b69f2220421522e013741dbb895b294cbea14f7c7dec1819580372",
+        "candidate_sha256": "fdf5592c88d3064a151e0e8fbf7ebb1ac7b693fe46b0fca7d1626ca99ab2bb5d",
+        "reference_sass_sha256": "ad3520c8d44e2674a81e069e34db6b092d69dbc3f44f423956a3628eac920843",
+        "candidate_sass_sha256": "ad3520c8d44e2674a81e069e34db6b092d69dbc3f44f423956a3628eac920843",
+        "reference_functions": 64,
+        "candidate_functions": 64,
+        "reference_instructions": 99872,
+        "candidate_instructions": 99872
+      }
+    },
+    {
+      "id": "k96_s23_gemm",
+      "source_id": "s23_gemm",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c46a3c628a7ea78d5d8cb2cf5332745a611e43a736468cfc598666a2145fc091",
+          "attributes": "c921f6481286077ae4cd14d4019e2751c00762cf92fd3a93014b2c3163ffafaa",
+          "initialized_data": "6440809d6893391b7b7d2e0669ff4f5697e8f1348366e6a5a777711bcf153cfe"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c46a3c628a7ea78d5d8cb2cf5332745a611e43a736468cfc598666a2145fc091",
+          "attributes": "c921f6481286077ae4cd14d4019e2751c00762cf92fd3a93014b2c3163ffafaa",
+          "initialized_data": "6440809d6893391b7b7d2e0669ff4f5697e8f1348366e6a5a777711bcf153cfe"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "fa42ab188f8dae5e7514a4ead7324a6cf163fc88ba15257f444a808b617fd9a2",
+        "candidate_sha256": "6f2d2e18e0dc5c5ec3269e9b1b6fb583be73b4235bbecb5184d5ff1dca45f2ac",
+        "reference_sass_sha256": "d2c0179f0ecd2073d1d080eaa73ff6ee9ce19354d6919a1242f53d6e5b9bc40d",
+        "candidate_sass_sha256": "d2c0179f0ecd2073d1d080eaa73ff6ee9ce19354d6919a1242f53d6e5b9bc40d",
+        "reference_functions": 78,
+        "candidate_functions": 78,
+        "reference_instructions": 112864,
+        "candidate_instructions": 112864
+      }
+    },
+    {
+      "id": "k96_s21_gemm",
+      "source_id": "s21_gemm",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "9fb203765aa835f7473e5ad1daaca4e7d5e7532024edaff56f028bffd3d309db",
+          "attributes": "4c42be4ac91db7ef2ea3c9ab342d64cf5c2b40852367a1db3b33f7144db98d16",
+          "initialized_data": "4a931e1b5a811b7ca0d7cf78432257a15890760a30175a81b95b1dfd32de42d1"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "9fb203765aa835f7473e5ad1daaca4e7d5e7532024edaff56f028bffd3d309db",
+          "attributes": "4c42be4ac91db7ef2ea3c9ab342d64cf5c2b40852367a1db3b33f7144db98d16",
+          "initialized_data": "4a931e1b5a811b7ca0d7cf78432257a15890760a30175a81b95b1dfd32de42d1"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "9a2e242fbd44406fafb60657fab748238ccae1664ab0b89358743379ac956f12",
+        "candidate_sha256": "6d5a56f5f6145f7d939b36ba4827d876b5619e5e8093e24a36fdcf40ab4fd974",
+        "reference_sass_sha256": "fbd68c0e9d595f4ebbbf11dd964a609670c449767b12c93cc99f3caae4594c4c",
+        "candidate_sass_sha256": "fbd68c0e9d595f4ebbbf11dd964a609670c449767b12c93cc99f3caae4594c4c",
+        "reference_functions": 78,
+        "candidate_functions": 78,
+        "reference_instructions": 115784,
+        "candidate_instructions": 115784
+      }
+    },
+    {
+      "id": "k96_s20_syr2k",
+      "source_id": "s20_syr2k",
+      "source_assembly": "Copied source files; comments and host option handling changed.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "45a375b44d51c60887804b0c66aef6090fdc94da578059a5ea18094fc7c3b7df",
+          "attributes": "7e96ae23a453597288b6aae2b2eafb680c7cf44ff90b41d22db3a08eab5b8f32",
+          "initialized_data": "4a931e1b5a811b7ca0d7cf78432257a15890760a30175a81b95b1dfd32de42d1"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "45a375b44d51c60887804b0c66aef6090fdc94da578059a5ea18094fc7c3b7df",
+          "attributes": "7e96ae23a453597288b6aae2b2eafb680c7cf44ff90b41d22db3a08eab5b8f32",
+          "initialized_data": "4a931e1b5a811b7ca0d7cf78432257a15890760a30175a81b95b1dfd32de42d1"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "7ec41f3e5ebbe34d869df97b9e0de3ef6eb0fdd3cf41ef384120840d7dc56f72",
+        "candidate_sha256": "f69833b35956f87fc6cd7f12b081967aa727f0c2bcdabd75f9caf77786478929",
+        "reference_sass_sha256": "cf20ff9994b703a833487814c3b67c4385e7267a356309ffd1941b6b8ab08246",
+        "candidate_sass_sha256": "cf20ff9994b703a833487814c3b67c4385e7267a356309ffd1941b6b8ab08246",
+        "reference_functions": 78,
+        "candidate_functions": 78,
+        "reference_instructions": 115720,
+        "candidate_instructions": 115720
+      }
+    }
+  ],
+  "float_adapter": {
+    "source": "Platforms/cuda/sm103a/level3/float.cu",
+    "source_tokens": {
+      "passed": true,
+      "kernel_tokens_sha256": "63e56dc3e03d5702306102044b65c44104d33fbb0cf424f4af013ea74edd80ee",
+      "original_translation_unit_sha256": "e0ef0054bf8de4d5ddaada724973d37c67ca4e0356d459742de8dc3ed3465299"
+    },
+    "comparison": {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": false,
+        "attributes": false,
+        "initialized_data": false
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "81e95629c92ed09778291967d6a0a7dfe2034f5c63558367e4c864e0f7f6761f",
+        "attributes": "34bd605888a84407e739da81d4e40a06520a2d3ee67c61dd76489c12cb326bf3",
+        "initialized_data": "41b4237c5608f5b68346bbc6dc1e50bd71ef7fa3b5ccc0f9acf180fd3e83037c"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "78145030d4b318fbb43f990ab0285d236805baf255703e93a9c4cc2cb456e1b7",
+        "attributes": "6c7b181fb41f64c50d9f3102efb73974399a79a0238460703c1e811441093e3a",
+        "initialized_data": "a5b96c272f6374be3ed0781b920cee26119b33d7a61fb2e1a55f46f94fe16fe3"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "ea973b80f9c01ff9dacc0a3da4d05fc89cb14172be6956b1fd033594040445de",
+      "candidate_sha256": "d99c579f3cb0185ec0504cd63444da482b5f0e13008d341e77dbe0e941df6e09",
+      "reference_sass_sha256": "a3623d3e478b75568f2e2e8b1173da7537aae79c905e0b90ec3a9be9955ee0ab",
+      "candidate_sass_sha256": "a0b69b56e01925ffe45857b161a205179b643936edbd0fb24296bca5a99293aa",
+      "reference_functions": 3,
+      "candidate_functions": 3,
+      "reference_instructions": 592,
+      "candidate_instructions": 600
+    },
+    "note": "The three kernels retain the archived source tokens. Transpose and matrix copy match; commit differs (248 versus 256 instructions). No binary equality is claimed for this adapter. The new general SSYMM and SSYR2K paths must be tested and timed on GPU.",
+    "public_source_sha256": "38bd1eb13d2ee3204c9c397e0bd172e29fa708361c9074e1cd79f806e92b08d7"
+  },
+  "operation_measurement_bindings": [
+    {
+      "routine": "SSYMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s22_current",
+      "bits": 22,
+      "reference_sha256": "4cd5f316e26189ebc0c94b639e4e477ef5ce0fbedabc3e70e71c586346e86b00",
+      "measurement_sha256": "46ab33d2e371438b579670394a7b5a629a1fc9e93d47a4e6a47cba7c41d2d6e4",
+      "asset_list_sha256": "5d74b65da604bbd59ba9b687c1a9e21f84e8cf542756190d0587d052373ae916",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "dc08c0f991a0c560",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SSYMM",
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s20_fused",
+      "bits": 20,
+      "reference_sha256": "c5ea311d24be469c61037f9d913f53ad566bc9d9d5788bca89fbf0d891b06440",
+      "measurement_sha256": "8c459f99eddab6bc7df5fe72b17779034a8c5dd9496c5e839cf8756f7e9b84c0",
+      "asset_list_sha256": "d8e3424cf7d06dc5be73368d3fd22b0e975b34efa39c31b3b96243ce31b410c1",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "953c1a92334c3116",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SSYRK",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s24_fused",
+      "bits": 24,
+      "reference_sha256": "c7e92c7f4979e975f2231ec3a22591e210751d0792ef69f2a2e1c98f13b023bf",
+      "measurement_sha256": "4d149377f6c5f50d46d7f20c2f9452f3c8a14a48f301d997a9990f929dfed6a3",
+      "asset_list_sha256": "d8e3424cf7d06dc5be73368d3fd22b0e975b34efa39c31b3b96243ce31b410c1",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "608a51d3ea42b609",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SSYRK",
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s23_fused",
+      "bits": 23,
+      "reference_sha256": "273fc0b3abbe7ead9d021703c1372580299e18c065f1310b946c47fa4ffad5fb",
+      "measurement_sha256": "51889e3891b56931c95bf00871ae331a0b24fc6284cf692cb4dde2e0b40ddb0d",
+      "asset_list_sha256": "d8e3424cf7d06dc5be73368d3fd22b0e975b34efa39c31b3b96243ce31b410c1",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "e3c108bb8eddf78d",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SSYR2K",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s21_current",
+      "bits": 21,
+      "reference_sha256": "fd6fd72245b69f2220421522e013741dbb895b294cbea14f7c7dec1819580372",
+      "measurement_sha256": "475507c6bad0593074447b4bc7c1b02d693eb3d2acc27025c32b4a4f51c0be31",
+      "asset_list_sha256": "d8e3424cf7d06dc5be73368d3fd22b0e975b34efa39c31b3b96243ce31b410c1",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "e6291d2f4dd48e3c",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SSYR2K",
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s20_syr2k",
+      "bits": 20,
+      "reference_sha256": "7ec41f3e5ebbe34d869df97b9e0de3ef6eb0fdd3cf41ef384120840d7dc56f72",
+      "measurement_sha256": "b7652b93b4087fe525e8e9a5ce1429883a4b6fa896270c5ea8fa68531f8916ab",
+      "asset_list_sha256": "b1a814dcc75addd32fcfda3e27db324d102affbb7ee1e5ba877a5f0611e45985",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "5b1983920c911b94",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "STRMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s22_fused",
+      "bits": 22,
+      "reference_sha256": "499c06b5048d43eb5ca7f9ff8bec130c837296bbc875ec7e99f7ed98a6ca5e49",
+      "measurement_sha256": "dfc3727c983ceefd785557b0edc6c3ec0b0316f2998264cc17b73a34a62d2706",
+      "asset_list_sha256": "5d74b65da604bbd59ba9b687c1a9e21f84e8cf542756190d0587d052373ae916",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "3870f7049ef67cc4",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "STRMM",
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s22_fused",
+      "bits": 22,
+      "reference_sha256": "499c06b5048d43eb5ca7f9ff8bec130c837296bbc875ec7e99f7ed98a6ca5e49",
+      "measurement_sha256": "924a4797226fb605c307cafb0c647d5691cb1ac1e20a3bb1a163e61e55a52ebf",
+      "asset_list_sha256": "5d74b65da604bbd59ba9b687c1a9e21f84e8cf542756190d0587d052373ae916",
+      "asset_and_loaded_object_match": true,
+      "output_checks": {
+        "output_hash": "34bb1481093d7d4d",
+        "qualified": true,
+        "model_mismatches": 0,
+        "unwritten_nan": 0,
+        "upper_triangle_changed": 0
+      }
+    },
+    {
+      "routine": "SGEMM",
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s23_gemm",
+      "bits": 23,
+      "reference_sha256": "fa42ab188f8dae5e7514a4ead7324a6cf163fc88ba15257f444a808b617fd9a2",
+      "asset_list_sha256": "c43ed7e2e0df71de40dd6eeb5c5a6b88f8cdb661c39c6ea4ba928b349dcc9dcf",
+      "asset_match": true
+    },
+    {
+      "routine": "SGEMM",
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "engine": "k96_s21_gemm",
+      "bits": 21,
+      "reference_sha256": "9a2e242fbd44406fafb60657fab748238ccae1664ab0b89358743379ac956f12",
+      "asset_list_sha256": "d71689b1b6f4ebaf599091e3da12353344822c5cac3a67069f1ec3ae6008e1cb",
+      "asset_match": true
+    }
+  ]
+}

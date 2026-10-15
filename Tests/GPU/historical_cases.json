@@ -1,0 +1,97 @@
+{
+  "scope": "Historical reproduction cases, separate from the new_input_seed cases. These are specifications, not executable cases for level3_worker.py.",
+  "cases": [
+    {
+      "id": "ssymm-b300-uniform-4096-21",
+      "validation_suite": "historical_reproduction",
+      "backend": 96,
+      "routine": "ssymm",
+      "bits": 21,
+      "distribution": "uniform",
+      "m": 4096,
+      "n": 4096,
+      "k": 4096,
+      "measurement_file": "result.json",
+      "measurement_sha256": "e901a9ef7178113794c1b1a4149bbe355fec9790abc2c99cd72755b12fbe4ecc",
+      "status": "not_run",
+      "required_inputs": [
+        "original input arrays or verified original generator and seed",
+        "original reference points",
+        "original native library and settings",
+        "original rounded-reference ULP metric"
+      ],
+      "target": "AWE p95 and max ULP <= native on the original inputs",
+      "metric": "rn-reference-binade-ulp-linear-p95-v1",
+      "reason_not_run": "The new-input worker cannot reproduce these records by generating seed 193. Original fixtures and native settings must be supplied and checked first."
+    },
+    {
+      "id": "cgemm-b300-normal-4096-22",
+      "validation_suite": "historical_reproduction",
+      "backend": 96,
+      "routine": "cgemm",
+      "bits": 22,
+      "distribution": "normal",
+      "m": 4096,
+      "n": 4096,
+      "k": 4096,
+      "measurement_file": "judgement.json",
+      "measurement_sha256": "22b4722b2d5b68a5059a4f78c2de07d2d238dd01319cc9e2283cefe046835e03",
+      "status": "not_run",
+      "required_inputs": [
+        "original input arrays or verified original generator and seed",
+        "original reference points",
+        "original native library and settings",
+        "original rounded-reference ULP metric"
+      ],
+      "target": "AWE p95 and max ULP <= native on the original inputs",
+      "metric": "rn-reference-binade-ulp-linear-p95-v1",
+      "reason_not_run": "The new-input worker cannot reproduce these records by generating seed 193. Original fixtures and native settings must be supplied and checked first."
+    },
+    {
+      "id": "cgemm-b300-uniform-4096-23",
+      "validation_suite": "historical_reproduction",
+      "backend": 96,
+      "routine": "cgemm",
+      "bits": 23,
+      "distribution": "uniform",
+      "m": 4096,
+      "n": 4096,
+      "k": 4096,
+      "measurement_file": "judgement.json",
+      "measurement_sha256": "b535252dc18747277136cc124ae2b4c8ffbef46afb9b64438d2744950ba3e38f",
+      "status": "not_run",
+      "required_inputs": [
+        "original input arrays or verified original generator and seed",
+        "original reference points",
+        "original native library and settings",
+        "original rounded-reference ULP metric"
+      ],
+      "target": "AWE p95 and max ULP <= native on the original inputs",
+      "metric": "rn-reference-binade-ulp-linear-p95-v1",
+      "reason_not_run": "The new-input worker cannot reproduce these records by generating seed 193. Original fixtures and native settings must be supplied and checked first."
+    },
+    {
+      "id": "ssymm-b200-uniform-4096-21",
+      "validation_suite": "historical_reproduction",
+      "backend": 64,
+      "routine": "ssymm",
+      "bits": 21,
+      "distribution": "uniform",
+      "m": 4096,
+      "n": 4096,
+      "k": 4096,
+      "measurement_file": "RESULTS.md",
+      "measurement_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "status": "not_run",
+      "required_inputs": [
+        "original input arrays or verified original generator and seed",
+        "original reference points",
+        "original native library and settings",
+        "original rounded-reference ULP metric"
+      ],
+      "target": "AWE p95 and max ULP <= native on the original inputs",
+      "metric": "rn-reference-binade-ulp-linear-p95-v1",
+      "reason_not_run": "The new-input worker cannot reproduce these records by generating seed 193. Original fixtures and native settings must be supplied and checked first."
+    }
+  ]
+}

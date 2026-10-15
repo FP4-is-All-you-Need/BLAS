@@ -1,31 +1,29 @@
-# Solutions
+# Solution catalogue
 
-An AWE solution is an encoding for one pair of input widths, w_A and w_B bits. It computes the
-exact integer matrix product in a given number of FP4 GEMMs. An encoding has three parts. The
-limb weights of each operand. The planes, which are linear combinations of limbs. The
-reconstruction coefficients, which combine the FP4 GEMM results into the exact integer product.
-Encodings come in two families. Direct: the sum of the products is the exact integer. Modular:
-the products are exact modulo m, for residue systems such as Ozaki scheme II.
+AWE is the canonical source of the mathematical data and verification programs.
+Updates flow from AWE to this copy. Annotations in the data may include Japanese.
+[The schema](schema.md) defines fields and verification rules.
 
-The catalog is the source of truth: kernels take their weights, coefficients and block scales
-from constants generated here and never hand-write them.
-
-## Files
-
-| File | Content |
+| Records | Contents |
 |---|---|
-| `contracts.jsonl` | One line per solution (`schema` = `awe-solutions-1`, unique `id`): limb weights of A and B, planes (products), reconstruction into the exact result, covered input range, safe dot-product length for an FP32 accumulator, verification state. 94 lines for INT4 to INT8 widths: 60 direct encodings, 33 from the width search, 1 five-product encoding. Planes are called faces in the library API. |
-| `../CodeGen/gen_constants.py` | `python3 gen_constants.py contracts.jsonl <solution id> > constants.h` writes the C constants for one solution. Standard library only. The tables inside `Platforms/NVIDIA/CUDA/GEMM` are a snapshot of this catalog. |
+| [SOLUTIONS_intN.json](SOLUTIONS_intN.json) | Integer-width constructions; use `c_min`, `K_ng` and `K_odd`, not the older fixed-cap `K_max` |
+| [plane.json](plane.json) | Width pairs and hardware-dependent cost estimates |
+| `gen_uv.json`, `gen_uv_ext_done.jsonl`, `cap_uv6.json`, `cap_wide.json`, `e4m3_weights.json` | Generalized pair planes, storage caps and scale compatibility |
+| `rect23_r4.json`, `rect_cap.json`, `rect_ext.json` | Independent operand constructions |
+| `verify_six.json`, `verify_uv6.json`, `verify_rect.json`, `minrank5.jsonl`, `minrank5.json`, `l4_pairsum.json` | Verification and bounded search records |
+| [S_2xE2M1/](S_2xE2M1/), [hybrid.jsonl](hybrid.jsonl) | Storage-specific and mixed-format descriptors |
+| [Collected_20260920/](S_2xE2M1/Collected_20260920/) | Collected constructions and line-S observations |
 
-## Storage Set
+[Verification commands](../../Docs/validation.md#solution-checks) operate on the
+included data. `source-archive/`, `archive-search-*`, `archive-sweep-a`,
+`archive-analysis/`, `archive-rect/`, `archive-wide/` and `archive-evidence/`
+are source identifiers, not local or network paths. Referenced artifacts are not
+necessarily distributed here. `verify_couple.py` needs a locally supplied
+`source-archive/` input tree.
 
-Every solution stores limbs in E2M1 with an E4M3 block scale. The limb value set is
-{0, ±1, ±2, ±3, ±4, ±6, ±8, ±12}. A limb value v is stored as v/2, and the block scale
-restores the integer weight.
-
-## Verification States
-
-| State | Meaning |
-|---|---|
-| CPU exact | The integer identity holds over the whole covered domain (exhaustive check on the host). |
-| GPU bit-identical | A GPU run reproduced the host reference bit for bit on the stated shape. |
+The historical [PLANE](PLANE.md), [SIX_PRODUCT](SIX_PRODUCT.md) and
+[SOLUTIONS_intN](SOLUTIONS_intN.md) reports remain because their complete tables
+and corrections have not been matched to the JSON records. They retain their
+original scope and are not current API documentation. In particular, the old
+catalogue summary reports 178,259 solutions while the retained JSON has 178,260
+rows. Neither count has been changed to reconcile the difference.

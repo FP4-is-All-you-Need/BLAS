@@ -1,0 +1,257 @@
+{
+  "hardware": "one NVIDIA GB200 GPU per measurement, SM100, Arm",
+  "month": "2026-10",
+  "gpu_execution": false,
+  "single_level3": [
+    {
+      "routine": "SSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "bits": 23,
+      "moduli": 11,
+      "median_ms": 1.607115,
+      "public_source_choice": "s23_m11_level3",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "SSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "bits": 23,
+      "moduli": 11,
+      "median_ms": 1.605274,
+      "public_source_choice": "s23_m11_level3",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "bits": 21,
+      "moduli": 10,
+      "median_ms": 1.470362,
+      "public_source_choice": "s21_m10_level3",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "bits": 23,
+      "moduli": 11,
+      "median_ms": 1.531466,
+      "public_source_choice": "s23_m11_level3",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "bits": 21,
+      "moduli": 10,
+      "median_ms": 1.508282,
+      "public_source_choice": "s21_m10_level3",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "bits": 22,
+      "moduli": 11,
+      "median_ms": 1.565658,
+      "public_source_choice": "s22_m11_k4096",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "SSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "bits": 22,
+      "moduli": 11,
+      "median_ms": 1.569146,
+      "public_source_choice": "s22_m11_k4096",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "bits": 22,
+      "moduli": 11,
+      "median_ms": 7.151518,
+      "public_source_choice": "s22_m11_k8192",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "bits": 22,
+      "moduli": 11,
+      "median_ms": 7.147166,
+      "public_source_choice": "s22_m11_k8192",
+      "record_sha256": "45781be9e804e281480fd740fbc05720a4732bb546fc9c46f9e7391d8ce736fd",
+      "record_file": "RESULTS.md",
+      "scope": "Earlier general Level-3 implementation with internal CUDA event timers. Twenty calls after three warmups; whole-API median. The public source combination has not been timed again."
+    }
+  ],
+  "complex_single": [
+    {
+      "routine": "CGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "c24_m11_gemm",
+      "bits": 24,
+      "paired_time_median_ms": 2.7861416838440114,
+      "paired_time_ms": [
+        2.7861578300835657,
+        2.7860644726090995,
+        2.786207123491179,
+        2.7861255376044567
+      ],
+      "record_sha256": "b04416c623d7a6fcda962b20552ab0c36e20d8ef628223a6eee10ccccf8a19dc",
+      "record_file": "judge.json",
+      "recorded_output_hash": "92039ccfef314450",
+      "scope": "Median of paired AWE times against the selected INT8 competitor, using the 24-bit, 11-modulus Arm library. Each value measures the host wall-clock time of one synchronous call on device-resident operands (copies inside the call included). The comparison uses correctly-rounded sample counts, not the later native p95/max rule. Allocation, warmup, poisoning and reference checks are outside the measured calls. This is not a timing of the public 20/22/23-bit versions. The public 24-bit build has not been timed again.",
+      "moduli": 11,
+      "measured_library_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "public_build_compared_with_measured_library": false,
+      "measurement_result_sha256": "b357d33350dea840a6e0ed9d47db67a439cfe6f0e338d9ec973e524c13985e86"
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "c24_m11_gemm",
+      "bits": 24,
+      "paired_time_median_ms": 2.7939893859404097,
+      "paired_time_ms": [
+        2.8002467593283584,
+        2.793942729981378,
+        2.7933907681564247,
+        2.7940360418994414
+      ],
+      "record_sha256": "b7b8fe958c26544073e6b6766f132888559fa20662da4ef9d71af5e3defe21f1",
+      "record_file": "judge.json",
+      "recorded_output_hash": "6e385515624d7f81",
+      "scope": "Median of paired AWE times against the selected INT8 competitor, using the 24-bit, 11-modulus Arm library. Each value measures the host wall-clock time of one synchronous call on device-resident operands (copies inside the call included). The comparison uses correctly-rounded sample counts, not the later native p95/max rule. Allocation, warmup, poisoning and reference checks are outside the measured calls. This is not a timing of the public 20/22/23-bit versions. The public 24-bit build has not been timed again.",
+      "moduli": 11,
+      "measured_library_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "public_build_compared_with_measured_library": false,
+      "measurement_result_sha256": "27adfed9ac0de951cbca1655c5292f331bd1c783c351874052704e80836be290"
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "c24_m11_gemm",
+      "bits": 24,
+      "paired_time_median_ms": 16.81160760614525,
+      "paired_time_ms": [
+        16.83205456424581,
+        16.79358069273743,
+        16.82963451955307,
+        16.790557134078213
+      ],
+      "record_sha256": "033f5b1c95bff3b973b91f1bf3be730ad5c12fe1be6ac95da43a9f62f6145951",
+      "record_file": "judge.json",
+      "recorded_output_hash": "1d508baccd060ca4",
+      "scope": "Median of paired AWE times against the selected INT8 competitor, using the 24-bit, 11-modulus Arm library. Each value measures the host wall-clock time of one synchronous call on device-resident operands (copies inside the call included). The comparison uses correctly-rounded sample counts, not the later native p95/max rule. Allocation, warmup, poisoning and reference checks are outside the measured calls. This is not a timing of the public 20/22/23-bit versions. The public 24-bit build has not been timed again.",
+      "moduli": 11,
+      "measured_library_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "public_build_compared_with_measured_library": false,
+      "measurement_result_sha256": "e41661a8eeebf1110e89f5f581a5e9411daf84ef9b416e90ad10b2785e3947c1"
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "c24_m11_gemm",
+      "bits": 24,
+      "paired_time_median_ms": 16.435294800546448,
+      "paired_time_ms": [
+        16.41892893442623,
+        16.367204516304348,
+        16.472444573770492,
+        16.451660666666665
+      ],
+      "record_sha256": "f52d6e179586d50a13d1839ee7c42a61c2461d1a595db73bb802ed3207b35edb",
+      "record_file": "judge.json",
+      "recorded_output_hash": "2580873230234c93",
+      "scope": "Median of paired AWE times against the selected INT8 competitor, using the 24-bit, 11-modulus Arm library. Each value measures the host wall-clock time of one synchronous call on device-resident operands (copies inside the call included). The comparison uses correctly-rounded sample counts, not the later native p95/max rule. Allocation, warmup, poisoning and reference checks are outside the measured calls. This is not a timing of the public 20/22/23-bit versions. The public 24-bit build has not been timed again.",
+      "moduli": 11,
+      "measured_library_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "public_build_compared_with_measured_library": false,
+      "measurement_result_sha256": "e04afcd3ad5285a8edf2c78e802eb2a000cd8159aaa4e2b7a98b4e4b164f6a66"
+    }
+  ]
+}

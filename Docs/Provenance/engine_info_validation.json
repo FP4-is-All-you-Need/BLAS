@@ -1,0 +1,661 @@
+{
+  "parent_tree": "f80ba6b10cf2f2f6769eb21f25f237fe15859310",
+  "gpu_execution": false,
+  "scope": "Info string literals only. Raw host .text and device gates remain identical to the measured-default stage.",
+  "formatter_variants": 52,
+  "cpu_tests_passed": 34,
+  "engines": [
+    {
+      "id": "k96_d17",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "a016783ab4cf7e041afd5365f289144b8f2f44df66572dbfe30cef527ae2140a",
+        "candidate_sha256": "76af138fe2b45708020f5714daafce31016dfb21e853c4f183fd3ecbba5bde2d",
+        "reference_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "candidate_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 65920,
+        "candidate_instructions": 65920
+      },
+      "host_text": {
+        "reference_text_bytes": 93074,
+        "candidate_text_bytes": 93074,
+        "reference_text_sha256": "5fb25935bd38d53c0c6865255178804277447f29b65a2f8dddf35cc8f7fbebb3",
+        "candidate_text_sha256": "5fb25935bd38d53c0c6865255178804277447f29b65a2f8dddf35cc8f7fbebb3",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "aca414ef4bf88b9d6f858edd296aa5251d424c483420476389dc403e4b12db27",
+        "candidate_disassembly_sha256": "0834d722345e305d7b2731f9eb408bfdddaf3c5e2e96c826318b2f91336382a9",
+        "normalized_reference_disassembly_sha256": "0a271be0fbb5f366f9a1d77adebf3d7fdb44f3c3e2666cb2e0e37d99f42e24be",
+        "normalized_candidate_disassembly_sha256": "0a271be0fbb5f366f9a1d77adebf3d7fdb44f3c3e2666cb2e0e37d99f42e24be",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "b0c85a3fa46a02cade3f4942ea81203ef148aa4761741a6b4742010ca7b79a8d",
+        "candidate_sha256": "a41996535b24fe2eefaa38ace8f8efbba490203d393d52ad336ce8f9e644898e",
+        "reference_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "candidate_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68896,
+        "candidate_instructions": 68896
+      },
+      "host_text": {
+        "reference_text_bytes": 88226,
+        "candidate_text_bytes": 88226,
+        "reference_text_sha256": "5e08e9ff722249dcbbe8a4cecc74c38f68df5c5489ae5b7476ee88cd1cdea868",
+        "candidate_text_sha256": "5e08e9ff722249dcbbe8a4cecc74c38f68df5c5489ae5b7476ee88cd1cdea868",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "3fd2a3c8cbdc07ac743cc39b01710bb7f0665b18d997d93a6ed6bbdcb0d04173",
+        "candidate_disassembly_sha256": "b14b0fed5b3ade4780113b5b86d1709bf9d33482ebfdfa5a44f4811542b32518",
+        "normalized_reference_disassembly_sha256": "df63bfa48d9a609ccbb3c9024f8f2a7da3986dd263ef6065ee477ddaca9ea4b6",
+        "normalized_candidate_disassembly_sha256": "df63bfa48d9a609ccbb3c9024f8f2a7da3986dd263ef6065ee477ddaca9ea4b6",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_d18_syrk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "ca4919e21790a12aed09218bb89bf36f323b0bc9ee45efb7bc9116e52a5b5d95",
+        "candidate_sha256": "0153f511a27233d76b1beb477faa4a5588b8de089ebbb681e6ebd97bbe30e9be",
+        "reference_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "candidate_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64344,
+        "candidate_instructions": 64344
+      },
+      "host_text": {
+        "reference_text_bytes": 91362,
+        "candidate_text_bytes": 91362,
+        "reference_text_sha256": "07317d2f5af78b5f5bcb13722282246bc6a334806e90cc12f12d7364fb1dc114",
+        "candidate_text_sha256": "07317d2f5af78b5f5bcb13722282246bc6a334806e90cc12f12d7364fb1dc114",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "dfbee48d2a99da17e02692a780a32559a617aa33140213e4ed4fcdf6e0449351",
+        "candidate_disassembly_sha256": "c084355ee0711fac3481363440a402a02a85685e54249429f17f339b057459f4",
+        "normalized_reference_disassembly_sha256": "d249c4e31c2425c822c7c7ceb2938f11b083a7d761060effa8b1fe27d4255919",
+        "normalized_candidate_disassembly_sha256": "d249c4e31c2425c822c7c7ceb2938f11b083a7d761060effa8b1fe27d4255919",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_d21_syrk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "4c6afa9692e9b0f0451e01ad79f69a5a8f548f12acb4422857480999e51caada",
+        "candidate_sha256": "bcb5232489101b47466a069ad821ef080755475d3abb41f06fb5bf9ad3519cc7",
+        "reference_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "candidate_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67840,
+        "candidate_instructions": 67840
+      },
+      "host_text": {
+        "reference_text_bytes": 90754,
+        "candidate_text_bytes": 90754,
+        "reference_text_sha256": "7f5c68807022596ea4f2afb3d88770e21d02b6d0988967944024abf5bb5891b0",
+        "candidate_text_sha256": "7f5c68807022596ea4f2afb3d88770e21d02b6d0988967944024abf5bb5891b0",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "06c28d6268850028de7fea000ccfc7df5b6314938b67955ea6380b4d647d5d9a",
+        "candidate_disassembly_sha256": "4976225428b46d9faa7628821582f7d7df981ccaeff8a12b01609465d62b6ae3",
+        "normalized_reference_disassembly_sha256": "8e80e150b603296b629a8938de3959d5ad6bcb8089ac7167eee29ce162ede021",
+        "normalized_candidate_disassembly_sha256": "8e80e150b603296b629a8938de3959d5ad6bcb8089ac7167eee29ce162ede021",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_d18_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "bf34e9be9188bb07e1ddfd10e5f22ece96c57e59ffb87b966ea242173bd1804d",
+        "candidate_sha256": "5b472fad81785761bd55b93fe2d3f0a86514ad0a24ca949b437f204a5886fb7d",
+        "reference_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "candidate_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64568,
+        "candidate_instructions": 64568
+      },
+      "host_text": {
+        "reference_text_bytes": 93346,
+        "candidate_text_bytes": 93346,
+        "reference_text_sha256": "3c5026fb1801c1b10d943f98b4519581a7db9114e70a50cc39151d0b24bbbbcc",
+        "candidate_text_sha256": "3c5026fb1801c1b10d943f98b4519581a7db9114e70a50cc39151d0b24bbbbcc",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "81f5de79b93546d9a66d4e719fa97d212e38975755498c715ac37c2c16c48451",
+        "candidate_disassembly_sha256": "62a2a2cc400e0b090d46a1189055b3aeec40a6aafd516f80cad0d69537bbdbb8",
+        "normalized_reference_disassembly_sha256": "0968dbbdf7e37b8d721f88988f3f0d882d298f9cdb44bb91a67f4d29cf5f6e9c",
+        "normalized_candidate_disassembly_sha256": "0968dbbdf7e37b8d721f88988f3f0d882d298f9cdb44bb91a67f4d29cf5f6e9c",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_d21_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "92b5172b63c548badbbf4ec4bbd7ba9b007cf7b0b2044f48540d343b068fef5d",
+        "candidate_sha256": "6ce89b14f093881290cb6c2cae5c36fa411722ed74f93a274ae04492175c43e0",
+        "reference_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "candidate_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68056,
+        "candidate_instructions": 68056
+      },
+      "host_text": {
+        "reference_text_bytes": 92754,
+        "candidate_text_bytes": 92754,
+        "reference_text_sha256": "119cfe57fa0635b57eaf7a79c4cc6a8930c546bf6eea0ad76fe2ac5d74cd9480",
+        "candidate_text_sha256": "119cfe57fa0635b57eaf7a79c4cc6a8930c546bf6eea0ad76fe2ac5d74cd9480",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "36f61e8d48198a2919c5b992eb7e84925bb22da145502918b8e140e520404c0d",
+        "candidate_disassembly_sha256": "5f16bc43b7bb13dbedc62fde4d6199b3492264c18d8fe2b30b4b1e3243a7ef04",
+        "normalized_reference_disassembly_sha256": "5fa5cb4d74a8558abb55e19861cfa4a7c75e8e6b5f86c1f59f3ed808ec51b3f1",
+        "normalized_candidate_disassembly_sha256": "5fa5cb4d74a8558abb55e19861cfa4a7c75e8e6b5f86c1f59f3ed808ec51b3f1",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_z53_syrk_trmm",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "f1df87717ee34f3ce51cf1896152af68d337c0f17036b3f9ef0fa225cd9a1f05",
+        "candidate_sha256": "adc176e728200edae64439150e66dcee1996b5cbb34780b74a95b60ffee9eaf8",
+        "reference_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "candidate_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 37048,
+        "candidate_instructions": 37048
+      },
+      "host_text": {
+        "reference_text_bytes": 66674,
+        "candidate_text_bytes": 66674,
+        "reference_text_sha256": "df46d102f7a173b801c6c96cecc8eff22f97faf1a5c7cdb7d0b7e1247e0d9966",
+        "candidate_text_sha256": "df46d102f7a173b801c6c96cecc8eff22f97faf1a5c7cdb7d0b7e1247e0d9966",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "66b0949ecd94f4c583737d0155ad4952fb268f1de0e637e57e2662c00959982b",
+        "candidate_disassembly_sha256": "80dbde38e63a9f0860e86b23c585992eeee6cebf091d77d6cddd76d7ca7da1ac",
+        "normalized_reference_disassembly_sha256": "dba68a52aa5b4a7e6242620b85de4c59c840893e7d8809d551bcef0ce86c96d8",
+        "normalized_candidate_disassembly_sha256": "dba68a52aa5b4a7e6242620b85de4c59c840893e7d8809d551bcef0ce86c96d8",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k96_z51_herk",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "e62fd8b596b8ce1e88d390a7dc90ae4d881c344488692d6d33f8be1dea58bb5e",
+        "candidate_sha256": "d997a0a561c0c58c1db49a8c62f4e9080fb7612ccd3caf391fea39ae103c5948",
+        "reference_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "candidate_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 43472,
+        "candidate_instructions": 43472
+      },
+      "host_text": {
+        "reference_text_bytes": 66530,
+        "candidate_text_bytes": 66530,
+        "reference_text_sha256": "cc27ab2a129401e6db03013d8184751280167d7eaefa7d2a10dcc2769d2381aa",
+        "candidate_text_sha256": "cc27ab2a129401e6db03013d8184751280167d7eaefa7d2a10dcc2769d2381aa",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "06aeb542a2f02f78a0ec5e23f4fc2e6a60ea6231718dfb2589653b2633be55b4",
+        "candidate_disassembly_sha256": "a72e76c2589d4fbf9db53841003d09a6035c44af24156e26aaf9196f5d461d12",
+        "normalized_reference_disassembly_sha256": "511422ffa050c63a2301be098f2065163d5539ae43b65c12adf8bff6264f5ee1",
+        "normalized_candidate_disassembly_sha256": "511422ffa050c63a2301be098f2065163d5539ae43b65c12adf8bff6264f5ee1",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k64_d17",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "504ed330ee1e6991c97d4a64037883c6459c9923fc06926574c1a9009e9529f9",
+        "candidate_sha256": "a64eb785fee470ee4c153fe1fe13d01269648475c58bc74633db41872f80c31a",
+        "reference_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "candidate_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 66952,
+        "candidate_instructions": 66952
+      },
+      "host_text": {
+        "reference_text_bytes": 93058,
+        "candidate_text_bytes": 93058,
+        "reference_text_sha256": "c704e0a62615047486ce8726b2d50d64e7fe4f66c8225e031507e7109f40439c",
+        "candidate_text_sha256": "c704e0a62615047486ce8726b2d50d64e7fe4f66c8225e031507e7109f40439c",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "d939521943341cadec6995053332a149286ca1e2008c425523da28683020a3ea",
+        "candidate_disassembly_sha256": "378b6eea616213bb0e031131a4dce2479b7d4cd2f3b2be4d780d19cfebdbf0c6",
+        "normalized_reference_disassembly_sha256": "9da52973c615f6d8156788725add66da2b6ccbfe5c33dd71dd4edb950df4f8a5",
+        "normalized_candidate_disassembly_sha256": "9da52973c615f6d8156788725add66da2b6ccbfe5c33dd71dd4edb950df4f8a5",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k64_d18",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "dbd70bc9d9d757479a0725418808164891fb0cdf0e1f7388539f18ec2dc8ce05",
+        "candidate_sha256": "45369932f9ffb7b851c510243fbfea6d488551f6f718e0a5115c2169c89d1e4f",
+        "reference_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "candidate_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 69672,
+        "candidate_instructions": 69672
+      },
+      "host_text": {
+        "reference_text_bytes": 88914,
+        "candidate_text_bytes": 88914,
+        "reference_text_sha256": "c5cd9e58cc3c5bcb98335355e86e36ee16d4fdf367c8e7b96d3dfcb5859599a1",
+        "candidate_text_sha256": "c5cd9e58cc3c5bcb98335355e86e36ee16d4fdf367c8e7b96d3dfcb5859599a1",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "a8591008e81d4a6c91ca3ab837a6b4c4a060e016261cf81f132b8de84790f461",
+        "candidate_disassembly_sha256": "4efc19d2788419a85787e984daa979be69b6034506503de366128143d409b26e",
+        "normalized_reference_disassembly_sha256": "5c515adbb91b2be424bd2033428b091ca418e42b87f9acd55c5d9df7d696b82f",
+        "normalized_candidate_disassembly_sha256": "5c515adbb91b2be424bd2033428b091ca418e42b87f9acd55c5d9df7d696b82f",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    },
+    {
+      "id": "k64_d21",
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "2d58522006f1f923c487607573975d293e81326bdc1711c5fb88ff4249783e72",
+        "candidate_sha256": "e7ff7c120022f379766402a79db664353e5b1e2501ddd2c4d8fad31b89920624",
+        "reference_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "candidate_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67112,
+        "candidate_instructions": 67112
+      },
+      "host_text": {
+        "reference_text_bytes": 86098,
+        "candidate_text_bytes": 86098,
+        "reference_text_sha256": "391311a4f341fc46430303d04e931c7b80567c8c521a830825c4afdee749e99b",
+        "candidate_text_sha256": "391311a4f341fc46430303d04e931c7b80567c8c521a830825c4afdee749e99b",
+        "raw_text_equal": true,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": true,
+        "reference_disassembly_sha256": "734a7a5b5428e28e22fb1e92e841b2192b1ce5bd875c6cfb5f6b154f1716a019",
+        "candidate_disassembly_sha256": "275d1d9e43836d132c0d64856567375d7ae0340a6447b2bbff5a149f8514aa12",
+        "normalized_reference_disassembly_sha256": "64a56f52ea038fc23df38448dbfecbea75d5b1dcd9d3a05cef89b816daa597ae",
+        "normalized_candidate_disassembly_sha256": "64a56f52ea038fc23df38448dbfecbea75d5b1dcd9d3a05cef89b816daa597ae",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": true
+      },
+      "changed_ELF_sections": [
+        ".note.gnu.build-id",
+        ".rodata",
+        ".nv_fatbin",
+        ".strtab"
+      ],
+      "fatbin_difference": "Only compiler-generated _INTERNAL_<8 hex>_ symbol-name components; normalized bytes equal. Device SASS/metadata also pass without changing gate rules."
+    }
+  ],
+  "source_files": 369,
+  "changed_headers": 13,
+  "format_keys_and_nonprose_values": "52 actual snprintf outputs checked against the parent via the frozen test fixture; only source/set/encoder/crt prose may change."
+}

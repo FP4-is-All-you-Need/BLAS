@@ -1,0 +1,40 @@
+{
+  "source_document_sha256": "d9be2190734c974948d7603ae318c9f4df6b90196143f42ca3f211f02ada48bd",
+  "source": "AWE research archive, collected 2026-09-20",
+  "existing_records": {
+    "descriptors": "AWE/Solutions/S_2xE2M1/Collected_20260920/",
+    "run_counts": "AWE/Solutions/S_2xE2M1/Collected_20260920/lineS_observations.jsonl#counts",
+    "verification": "Each descriptor verified and evidence fields"
+  },
+  "additional_archive_observations": {
+    "source_files": 1897,
+    "wave3_wave4_complete": 834,
+    "wave3_wave4_incomplete": 18,
+    "older_root_json_without_matched_run": 2,
+    "catalogue_input_width_pairs": 65
+  },
+  "verification_total": {
+    "derivation": "Sum verified.n_pairs over catalog_representatives.jsonl, catalog_supplementary.jsonl and recent_six_product.jsonl; do not add a second copy of the per-record results"
+  },
+  "archive_artifacts": [
+    "archive-evidence/lineS_raw_collection.tar.gz",
+    "archive-evidence/lineS_source.sha256",
+    "archive-evidence/collection_verification.json",
+    "archive-evidence/scale_observations.json"
+  ],
+  "scale_observation": {
+    "source_scale_value": 480,
+    "verifier_finite_positive_E4M3_max": 448,
+    "status": "unresolved; original values retained as evidence, not certified scale encodings"
+  },
+  "limits": [
+    "The input-width searches are incomplete; representatives are not global minimum product counts.",
+    "Integer checks do not certify floating-point execution.",
+    "A completed run may belong to a timed-out parent job."
+  ],
+  "initial_copy": {
+    "date": "2026-08-24",
+    "source_last_updated": "2026-08-23",
+    "primary_records": "Top-level mathematical records predate the 2026-08-19 schema; the old index describes 2026-08-17."
+  }
+}

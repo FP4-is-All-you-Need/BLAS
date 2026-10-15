@@ -1,0 +1,214 @@
+{
+  "scope": "Public default settings selected from measured runners; explicit serial-payout fallbacks where the matching measurement environment is unconfirmed. Legacy environment selection is unchanged.",
+  "gpu_execution": false,
+  "source_sha256": {
+    "b300_dgemm_runner": "04c28c71262431e32096fccf0d9c79252506d7fbc276351f6afc31da00b0234a",
+    "k64_calibration_job": "5dc9a500cc1e6759097215a69fdc08ffef3eb28d246072f3ed119b71a6afa0aa",
+    "dsyrk_runner": "ac38a8808b3e026501ab2a9ea4cf8b84853093e36a2efe6c416918875f6e7b0c",
+    "real_adapter": "1fca0e61ab34a06bc686e47d6c5dc364eaa0c25d2248f3020e32478afb770f3a",
+    "complex_adapter": "a99674ad6ea054e6a76ccd014e6ce448e17c66039e2df55f7c0f68178b3189a8"
+  },
+  "poison": {
+    "all_public_plans": 0,
+    "evidence": "DGEMM runner and Level-3 adapters disable per-run engine poisoning after create."
+  },
+  "pingpong": {
+    "k96_d17": 1,
+    "k96_d18": 1,
+    "k64_d17": 1,
+    "k64_d18": 1,
+    "k96_d18_syrk": 1,
+    "k96_d21_syrk": 1,
+    "k96_d18_syrk_trmm": 0,
+    "k96_d21_syrk_trmm": 0,
+    "k96_z53_syrk_trmm": 0,
+    "k96_z51_herk": 0,
+    "k64_d21": 0
+  },
+  "fallbacks": [
+    "k96_d18_syrk_trmm",
+    "k96_d21_syrk_trmm",
+    "k96_z53_syrk_trmm",
+    "k96_z51_herk",
+    "k64_d21"
+  ],
+  "fallback_reason": "Matching measurement job environment could not be established from the supplied runner/adapter records; retain pingpong=0. An adapter that inherits the environment alone is insufficient evidence for pingpong=1.",
+  "table_condition": "Every product in a one-accumulator modulus must select accumulator 0. Checked on all table variants used by each engine, without GPU access.",
+  "tables": [
+    {
+      "id": "k96_d17",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 4096,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_d18",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_d18_syrk",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_d21_syrk",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_d18_syrk_trmm",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_d21_syrk_trmm",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_z53_syrk_trmm",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k96_z51_herk",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k64_d17",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 4096,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k64_d18",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    },
+    {
+      "id": "k64_d21",
+      "tables": [
+        {
+          "k_plan": 8192,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        },
+        {
+          "k_plan": 16384,
+          "one_accumulator_products_on_accumulator_1": 0,
+          "pingpong_compatible": true
+        }
+      ]
+    }
+  ]
+}

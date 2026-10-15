@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Please cite AWE when using these implementations or encodings."
+title: "FP4 BLAS"
+type: software
+license: MIT
+authors:
+  - family-names: Hayashi
+    given-names: Shun-ichiro
+  - family-names: Mukunoki
+    given-names: Daichi
+  - family-names: Hoshino
+    given-names: Tetsuya
+  - family-names: Katagiri
+    given-names: Takahiro
+preferred-citation:
+  type: article
+  title: "AWE: Adaptive Weight Encoding for Exact Integer Matrix Products with Fewer GEMMs on FP4 Tensor Cores"
+  authors:
+    - family-names: Hayashi
+      given-names: Shun-ichiro
+    - family-names: Mukunoki
+      given-names: Daichi
+    - family-names: Hoshino
+      given-names: Tetsuya
+    - family-names: Katagiri
+      given-names: Takahiro
+  year: 2026
+  url: "https://arxiv.org/abs/2609.24519"
+  doi: "10.48550/arXiv.2609.24519"

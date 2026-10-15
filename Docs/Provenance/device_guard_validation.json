@@ -1,0 +1,669 @@
+{
+  "stage": "03_device",
+  "parent_tree": "ad73ab0b4ffffe59742d7af92386b32d5cd770c0",
+  "nvcc": "13.2.86",
+  "host_gxx": "11.4.0",
+  "mode": "host",
+  "gpu_execution": false,
+  "engines": [
+    {
+      "id": "k96_d17",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b81a4ea2329ed6cc15cc635aea8816f032e5c271a77643978abb1dda2a9fe3cf",
+          "attributes": "3d912f7e6d31a89e8238831a685bda8de2f186ba165db91b9486f30e3b84602c",
+          "initialized_data": "cc70f859d5d1572418f80c378d675574bdb95949ceefdc986ecf18581f9995aa"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "a016783ab4cf7e041afd5365f289144b8f2f44df66572dbfe30cef527ae2140a",
+        "candidate_sha256": "ec74ff5f6c9a24549b41cd26ad8416ada53d7a3b04324b0e323ca6e55467ac05",
+        "reference_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "candidate_sass_sha256": "d60e6761fdf3addf3b063622dd0ad5535659e06476cbb37887d1543c06056a57",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 65920,
+        "candidate_instructions": 65920
+      },
+      "host_text": {
+        "reference_text_bytes": 92082,
+        "candidate_text_bytes": 92114,
+        "reference_text_sha256": "c78efe8a2952a5e1d8b963297038be98e95a8ef7eeb13508ca2182dbd0627776",
+        "candidate_text_sha256": "04f7ebb583e876b7c7d2ef382e78f9daa2a29e409e735f7fc8e80a6502f93591",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "73d055b259fc99bf7ce9366f96b10ee2514b34fb7bcf1d66fcd02c0abfce4c73",
+        "candidate_disassembly_sha256": "0a0c28d9d86a32a347c5ff11a4b6145baec989c9ed1c054851534c2e7ddce6c2",
+        "normalized_reference_disassembly_sha256": "f994b7f5fee06af5ef326ed7b7be01f5b58af93949e7789fa0097792a3c52f0c",
+        "normalized_candidate_disassembly_sha256": "d81ca869eecd4a5833c8acc5e38af2059da2512663527d9d6b7b855367cbf383",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_d18",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "8d59715d91b7a962bf6ca47984ac56d4580ee36ad1eb7ac2192284bf2d06fe9d",
+          "attributes": "0a2a5caf9b9bffac450f88c98b04861f3063f47ab47914ecc5c15eebb0b8e0f0",
+          "initialized_data": "63a5b3f0a140538beef9d6289cea442eb38a869455c5e9cb7893364a27dd24e6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "b0c85a3fa46a02cade3f4942ea81203ef148aa4761741a6b4742010ca7b79a8d",
+        "candidate_sha256": "1ecd9bbda96dfaaaa6c81f52f2ca725078c695276e74db0a0f0ab8246b29dece",
+        "reference_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "candidate_sass_sha256": "7d06af066dbe9c42681f51a7a7cc6716f34c03088f52a3ac97796e8f9b933e66",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68896,
+        "candidate_instructions": 68896
+      },
+      "host_text": {
+        "reference_text_bytes": 87026,
+        "candidate_text_bytes": 87058,
+        "reference_text_sha256": "5109f5617136407157eb0c7f9268b21823a22749cb4f6079d1b2067a47dfc7ae",
+        "candidate_text_sha256": "e82a134dd26f14cda6647f80a884d860c68ab8ea60b4bb4d6fe24ce094f1aea2",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "d04dbabbdd0b6ebd6deb3ba19b1ee32b3e7894b58acd7ce5f7dc1f4acbf20365",
+        "candidate_disassembly_sha256": "37c77f82b42207b49718a75ff648f109a030fccc1d24c96c8178b4d0c8aecb71",
+        "normalized_reference_disassembly_sha256": "923e279480fc954089897dd29b62587261607c749e9e30ec672bc6f1d3f1024f",
+        "normalized_candidate_disassembly_sha256": "e418321e7ae7912637984cc0041b3be518e280f3dd5bb659aac602264ab9442a",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_d18_syrk",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "f789b85ac533d4b9f11ebfffcefab3458849c920a7b8c21e7e2104afab919402",
+          "attributes": "2b9ea3318537ed73775e481afc2be10bd55e06c5355ec0a0f4bc75be267692fd",
+          "initialized_data": "584485b7f0736153a89601ff985da4c235bc0390c8e9672f3b40e4a00eeaddf6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "ca4919e21790a12aed09218bb89bf36f323b0bc9ee45efb7bc9116e52a5b5d95",
+        "candidate_sha256": "3dd6dc675f9670529865e4dc6fcfb28930241c63fc3e13911bb5bcdefbb221dd",
+        "reference_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "candidate_sass_sha256": "3d13c4957f85f0c323c20e5a82268f2489d169a76a6aea289fcf4d790de3aa7e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64344,
+        "candidate_instructions": 64344
+      },
+      "host_text": {
+        "reference_text_bytes": 89858,
+        "candidate_text_bytes": 89890,
+        "reference_text_sha256": "f6b798b316f278ca77aeab4229a9dca7f702d31c2e6b0c8fea73e337f3bff1ef",
+        "candidate_text_sha256": "d9e23844fe6df6c1c4a16a5099bd5da042df74c6c4a07e7817d065d1d20a5905",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "b6cf62edf92501eb8932afae9af23078d882a33808d8d4a8c652405a413565de",
+        "candidate_disassembly_sha256": "06dfde639a22e925986ce7f35bdd71cf1cbd7663d137703a066552c00aea4bb6",
+        "normalized_reference_disassembly_sha256": "3f6e25242a52b3d267b0bf77c44f7368b6bca57e234ec9ff9e51682478a9b037",
+        "normalized_candidate_disassembly_sha256": "c0d52be432711bffd53041de1ffff7bab2020316793a37dfe6c1ae93bf6e4d4d",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_d21_syrk",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "ce77a8a09c00c2ee76d6e06764fe8c094544e3f6fbfacb91e888d109f5769385",
+          "attributes": "a102c43acba90b8ff31b229f39c94edc529941de8bf63feba991fbdffc7dc889",
+          "initialized_data": "c88ab0b48937c80024632ae78c34f6182f6f2b3eb0e0a047a1572ccd088f2270"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "4c6afa9692e9b0f0451e01ad79f69a5a8f548f12acb4422857480999e51caada",
+        "candidate_sha256": "edcb9f0bca9a2134a5d25a1c578e1d6db5edf675caa1ce27d8e12dbfbf89a890",
+        "reference_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "candidate_sass_sha256": "4f94c7c6adc1a15ca0f1e507183e77cbbfad57be3db38d6b49b947a0eee02f70",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67840,
+        "candidate_instructions": 67840
+      },
+      "host_text": {
+        "reference_text_bytes": 89138,
+        "candidate_text_bytes": 89154,
+        "reference_text_sha256": "9a035b842989764495384eefaa93e6dc03227ff2385bca95ff6acfcee2f1f6ea",
+        "candidate_text_sha256": "61d4678f9ed362e699bcf7bb166f883afd0b1d784675cf449553a6d806906c87",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "ae139d7918da9bfb0936dc6be9d90bc9c7a8c6ab0ea4a7a3ff9376a03671f5ca",
+        "candidate_disassembly_sha256": "875f4a5d4ae3ffac3d906258a458126a308711b29788b8b429cc482b57d5bbbb",
+        "normalized_reference_disassembly_sha256": "31c4d32efda64100f729c836bee744886e88b8b3239d9a957df08ac9ae64fc08",
+        "normalized_candidate_disassembly_sha256": "7e28f8dfabeb73e8fec49cc12e9d1ddbbe1a264143a693cc509ff2e501d4b4b3",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_d18_syrk_trmm",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "507f299379d5e4a5835a666628f3eb3f0301d6d652658be9dfe85e666837274e",
+          "attributes": "a4c2a2aab7f854464e755c108bbcef84517632be2019bf73fc0aea33ca3cefb0",
+          "initialized_data": "1a8805d0246e6f0ddcfc0c88710bde9261a5593ed510ef792c0e3d2144ceca1e"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "bf34e9be9188bb07e1ddfd10e5f22ece96c57e59ffb87b966ea242173bd1804d",
+        "candidate_sha256": "b5339f380ef0a095426ea0720df0d15780acdafcbd140188d9e7171f91d38457",
+        "reference_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "candidate_sass_sha256": "1c0fec7d924223e4d8841da4ef5c6b3339926d9e0a8bcd1cda1394e1dc5215c6",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 64568,
+        "candidate_instructions": 64568
+      },
+      "host_text": {
+        "reference_text_bytes": 91586,
+        "candidate_text_bytes": 91618,
+        "reference_text_sha256": "abd2e0f728fc4f5e90c603b5aef53498548bb956bc0419cf60474bff9a5ed5e5",
+        "candidate_text_sha256": "2c6a7a11721fb390a6c2d9d17dbf813aeb145bc40b74dd24b7a352acdc2ec6b6",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "8289618307b5ffdadf7c36fe3663f34ff63c66ca5b28e500ada064ac27c8b926",
+        "candidate_disassembly_sha256": "52cb8155403d0653b13c54cf36507649ca4d088bd3bdcc3dcb79f0b329aac551",
+        "normalized_reference_disassembly_sha256": "1fd10816c5eb6b2a8cfff020e8d470ce391bac97884b8b548b2754e75c93393b",
+        "normalized_candidate_disassembly_sha256": "f885a815aab590b85400d6bcb4b74f169bc5ab6e488b3303c1e2a24c2f1be806",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_d21_syrk_trmm",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c33bf77f4eb06fe98dbb35555a33e1057b52bd87b1cfe09ab02458b72793ffdb",
+          "attributes": "9469c3e078d5176b568a4b8680ca5f76c6c77a25a86b912f9c8f7e155925248e",
+          "initialized_data": "cbb6e49a6e03700512299dca3200917bc757f397574d88d9f754d5f2dbade595"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "92b5172b63c548badbbf4ec4bbd7ba9b007cf7b0b2044f48540d343b068fef5d",
+        "candidate_sha256": "9eb6e4147f5066f1defec9d6fa803a499124a0ca50ea5fa60f53d66276e32e70",
+        "reference_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "candidate_sass_sha256": "dce99525ad25985275542204e8c120dcd4c711e0c327b0b9b809a2353130166e",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 68056,
+        "candidate_instructions": 68056
+      },
+      "host_text": {
+        "reference_text_bytes": 90850,
+        "candidate_text_bytes": 90866,
+        "reference_text_sha256": "de5dc3da6a1ab47541b1ac15577dd668ee8e5c2637202cf4a95bcd82afa4f6e3",
+        "candidate_text_sha256": "75bc877ca3bebde8be01c85fcfbd9c05a254063f59b1749027f53fd96c19d029",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "0110d4c11aff49242046ab0d4d29b6d80a62cd136d5d1ea9fe83ff605e2fa474",
+        "candidate_disassembly_sha256": "88a3416187b5a928d12218d3de064c89cdcf4e1abe65d76d7c6f3dc2544238db",
+        "normalized_reference_disassembly_sha256": "2539dbe3140112aeb87f037203184243ed7273edee663875359d791f63e74c1a",
+        "normalized_candidate_disassembly_sha256": "9ec954bcac3a2db279897d3085ee6692811fe6bd905af2b5ac61893e8b4e2639",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_z53_syrk_trmm",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "b95406ef040e0bda4622563248f0aa8342aa940e0731bafe420fa6accce70d4e",
+          "attributes": "e0e1a3c621d4828463abae9d71ba2ffd4a063510c3f3ece284e90cab4448dffc",
+          "initialized_data": "969554214279c8b53c1819039169df96e1eceb37f7a36a626f6bcd4b74e68cb8"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "f1df87717ee34f3ce51cf1896152af68d337c0f17036b3f9ef0fa225cd9a1f05",
+        "candidate_sha256": "cca491f711679fd9beb06c99c95162976eb75a261e2ee93922b39fc37d6391d1",
+        "reference_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "candidate_sass_sha256": "010d1abb0be16055e9c8bc6d40620b14271e52339f0d9ffce3ace9421bfb3805",
+        "reference_functions": 31,
+        "candidate_functions": 31,
+        "reference_instructions": 37048,
+        "candidate_instructions": 37048
+      },
+      "host_text": {
+        "reference_text_bytes": 65138,
+        "candidate_text_bytes": 65154,
+        "reference_text_sha256": "bf3056e21e1081bbe8c113503b27d09f328db197cf515f37f508ec454a4b4591",
+        "candidate_text_sha256": "e74b4d2f3be703d5552d1dce33a0914ee36f102c5666acfa0d7c109d856e62fb",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "7c44098f0add63fd4e60494adcb837922c75bf8ce677af22ed9a8c876083b900",
+        "candidate_disassembly_sha256": "91640a04e55c6079ca3feeaa6d020b4a994759c8b587518352f6623fd039617c",
+        "normalized_reference_disassembly_sha256": "85309423eb1ae9f32d2744954435e270b81f0fee21ec28f9eb518637a0ffa7b2",
+        "normalized_candidate_disassembly_sha256": "65165951fb0c3ba94cd16985928abdc6ef90ba1f0a551340d8e349743ec35413",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k96_z51_herk",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "34f27439e499e763a748521fb4f8494ed633baf8a6692307d3a229cd8dbd79f7",
+          "attributes": "f14c8c2f992194bfcf00aa72fe3c834f63bfabb85792263b8ae3e50a0bb78415",
+          "initialized_data": "a85037b88f9026d665fbe189eadfa9be158d5cd5f8728295e7aaf2b0a514f1a6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "e62fd8b596b8ce1e88d390a7dc90ae4d881c344488692d6d33f8be1dea58bb5e",
+        "candidate_sha256": "b08e9c2a7491fb12481ca62ebefb69f48b738732f8c5cc383eed35500d39be66",
+        "reference_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "candidate_sass_sha256": "0c5bac6313f5a0798d203afc290c75724fe2f6228764f4ead73ac254a529e3d8",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 43472,
+        "candidate_instructions": 43472
+      },
+      "host_text": {
+        "reference_text_bytes": 65474,
+        "candidate_text_bytes": 65506,
+        "reference_text_sha256": "93af273318276872bd2ef16abd5df5dee106c1cbd29e11727f06728b0d800b24",
+        "candidate_text_sha256": "26a90ee505b07c56a4725de10541d86c01b9619dc165566abd95bbe7578f22d0",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "64c56a263d2def9ee67010cf5c0d6acd76b9b8d83c254c6ff8b5609dde2fdbca",
+        "candidate_disassembly_sha256": "76cbe0321120abee98a177b3d5a8836c254b2e354ff8dc1419de3aa68ab05dd5",
+        "normalized_reference_disassembly_sha256": "9d113247cd23ab11276f9e2dde3925ad17095fec24fa0c06418b49b9815852a0",
+        "normalized_candidate_disassembly_sha256": "44178ddaa1ae8bdb588172fe82a4eb0d33dc912813bfd4e5e2b067d1db061cec",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k64_d17",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "dc0b13d581fb5b7a6e258adee0c95918e01afbb477989c3d13b50f104e7fd574",
+          "attributes": "ef5b59b4971dd87ba3d91a77cd77bb52c13b044f3d66702a6befac1e61b08845",
+          "initialized_data": "b57d5d5d144967f28bf326a4945ec73a17964f7055aab76b60a1ae41c3c39db6"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "504ed330ee1e6991c97d4a64037883c6459c9923fc06926574c1a9009e9529f9",
+        "candidate_sha256": "d06670cf5436ba5f69d14ec5e55734756d6948dcaf5a6fe99347df443ce831a6",
+        "reference_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "candidate_sass_sha256": "3687dbc157de871628005bc8361528436f670c737ad2627806a95bb485fbba39",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 66952,
+        "candidate_instructions": 66952
+      },
+      "host_text": {
+        "reference_text_bytes": 92066,
+        "candidate_text_bytes": 92082,
+        "reference_text_sha256": "4359e413e5ca9b2a8a4256ab69d0a6c9eb621b4b90692b3e83c146599397dd60",
+        "candidate_text_sha256": "f1eeb9dc39812ae930cc164ddddf1e9e3161d5d6d857eeefd6418f77f39c1190",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "27c476855770a85afca6f00cc51cceb8b0091f4e87c21ffd284170405029a66c",
+        "candidate_disassembly_sha256": "750c33ab03703ce7c36a930e4aba95eef1a7a02ba53a7c455e64135a758c2814",
+        "normalized_reference_disassembly_sha256": "8c253ddb1b258017c470084a052b8dffff35ccbd7aa5c2fedb28fcf3170df4dd",
+        "normalized_candidate_disassembly_sha256": "0d4330ef00f0261a9b1822c469f1f060b60ac18e0152f1cec7489478a26fc586",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k64_d18",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "de1f87e1e3aa9833b6e255e3becd7fe3272f6f23b55f31cfb478eca45fa1fcfb",
+          "attributes": "8876e8b61251f5672016db87f90a9e56851aeb39fb0b632e3bc6dc2433add9db",
+          "initialized_data": "807437b6a3bd41866caabc812560e027651d747f874fab4748aed4efe49d4798"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "dbd70bc9d9d757479a0725418808164891fb0cdf0e1f7388539f18ec2dc8ce05",
+        "candidate_sha256": "979e1b34b0ea63ba9664aa4f89e1f610f453299076eb6d46fefa0660562361f7",
+        "reference_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "candidate_sass_sha256": "67080abaa132dc66677147644199952e1d12080d21ddc80a6ebd879bed2fd0b2",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 69672,
+        "candidate_instructions": 69672
+      },
+      "host_text": {
+        "reference_text_bytes": 87634,
+        "candidate_text_bytes": 87650,
+        "reference_text_sha256": "4a3153a1ca3e53fd75692269a93e64c71f6c454d7d9a5c0b145d76bd7598583b",
+        "candidate_text_sha256": "dd5d8ce5800642b8c30f74ff2574603f6a228819479a5fbe4e4d7e91f68c6e81",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "d750641198d821e171fb9f5325173ab02cfe41fabc8acf86d009d0e9184fd1b7",
+        "candidate_disassembly_sha256": "11e1af111912e074595ff119b9e38c0adb968bea27a0c6bf72ed37289f0807d5",
+        "normalized_reference_disassembly_sha256": "4f6498bf9e2dde9a15ea6abfad128f5c373fd61a46d047e308663e1e5a2f9e8d",
+        "normalized_candidate_disassembly_sha256": "65534cb775e1c6e41e4c753fa846a6eaa7941501e0838662a5ce63f78df577c2",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    },
+    {
+      "id": "k64_d21",
+      "source_files_equal": null,
+      "device": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "b45fb7ef165d995bfcba1e73168609a2cca9b6c89d9c0f851474181a4e428ec5",
+          "attributes": "80c41a0573b12a76127f83241bbe69ae4720a29b1d80001ad65a5b0067dedb5d",
+          "initialized_data": "a60d23c05da73e70f3288b8cdd0ef1c85d9d30a90bd1479678201e5385cb4de9"
+        },
+        "ignore_kernel_names": true,
+        "reference_sha256": "2d58522006f1f923c487607573975d293e81326bdc1711c5fb88ff4249783e72",
+        "candidate_sha256": "3df775f8e5eb5383ab2ec9b76a190fdd336d5fc5c3e9c66f7ffba519718ad449",
+        "reference_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "candidate_sass_sha256": "073dbcf4020471d8d8845bb4823899a7f7976cfbc729f65b58189bbf721db98d",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 67112,
+        "candidate_instructions": 67112
+      },
+      "host_text": {
+        "reference_text_bytes": 84722,
+        "candidate_text_bytes": 84738,
+        "reference_text_sha256": "6e1c44f46ce31fd5f2a84a9a00d1c8afcaac27bc8ea06bb1f54bcfc36b5fb0e7",
+        "candidate_text_sha256": "0362f770730077d59a316ea627dd306889c43fe053cb1d0f4eca89960da080b7",
+        "raw_text_equal": false,
+        "raw_disassembly_equal": false,
+        "disassembly_equal": false,
+        "reference_disassembly_sha256": "bd1e2fdec43737d07eff9fa0006cb100ad84020f4578d48a660adb286e5297bc",
+        "candidate_disassembly_sha256": "8daf303aeccba56816c2862fb47b01a667043bfaceceb23cff7c18aea70308db",
+        "normalized_reference_disassembly_sha256": "860c42e4d4ff05b225cac766906696a4c34cb9de6e8848971638fed42c91e85e",
+        "normalized_candidate_disassembly_sha256": "ddce821a28707ffaad42ac5dafcbe50fc75f13cb4be01b2e05b85628d13eebe7",
+        "temporary_name_normalization": "(?<=<_GLOBAL__sub_I_)tmpxft_[0-9a-f]{8}_[0-9a-f]{8}_[0-9]+_",
+        "reference_normalized_labels": 1,
+        "candidate_normalized_labels": 1,
+        "scope": "Host .text only; no host data, dynamic linking, or runtime behavior claim.",
+        "passed": false
+      },
+      "abi": {
+        "equal": true,
+        "removed": [],
+        "added": []
+      }
+    }
+  ],
+  "completed": true,
+  "source_check": {
+    "files": 369,
+    "allowed_edit": "Query the active CUDA ordinal before properties; geometry predicates unchanged.",
+    "changed_files": [
+      "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M18/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M21/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/D53_M17/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/D18_SYRK_TRMM/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/D18_SYRK/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/D21_SYRK_TRMM/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z51_HERK/zl8_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/HERK/SM103a_K96/Z51_HERK/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/Z53_SYRK_TRMM/zl8_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/Level3/SM103a_K96/Z53_SYRK_TRMM/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M17/l8rt_dtab.cuh",
+      "Platforms/NVIDIA/CUDA-Inline/SYRK/SM103a_K96/D21_SYRK/l8rt_dtab.cuh"
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "engine": "k64_c24",
+  "public_name": "c24_m11_gemm",
+  "width": 24,
+  "moduli": 11,
+  "measured_library_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+  "source_manifest_sha256": "88ef32c1424c66a757dc8161c3cef42de5c5f136d1aeb0678c0ade6947c1ffbb",
+  "measured_compiler": "CUDA 13.3 compiler.38244171_0 on AArch64",
+  "measured_scope": "One GB200 GPU; 4096 cubed and 8192 cubed, normal and uniform; 1024 complex points per input and three output hashes. Quantized-model correctness and timing records are separate from native p95/max targets.",
+  "public_gpu_execution": true,
+  "measured_device_comparison": "passed on AArch64 with nvcc 13.3.73; see ../Results/GPU_RESULTS_20261015.json",
+  "local_compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "local_device_gate": {
+    "passed": true,
+    "sass_equal": true,
+    "device_metadata_checks": {
+      "inventory": true,
+      "resources": true,
+      "attributes": true,
+      "initialized_data": true
+    },
+    "reference_device_metadata_sha256": {
+      "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+      "resources": "22a6b3fcc3123b7cdb9a122eb7970b230499c077280541a009f8992a605a7dcd",
+      "attributes": "4c2a765080ee75eaf0eab6cf4d3dbaff69169c30e3262f07ed866ce2cba1eaa2",
+      "initialized_data": "5c530bf0b7a160d974078d844fa5a36d84323819f478ea2f3b2bf58c2dd02230"
+    },
+    "candidate_device_metadata_sha256": {
+      "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+      "resources": "22a6b3fcc3123b7cdb9a122eb7970b230499c077280541a009f8992a605a7dcd",
+      "attributes": "4c2a765080ee75eaf0eab6cf4d3dbaff69169c30e3262f07ed866ce2cba1eaa2",
+      "initialized_data": "5c530bf0b7a160d974078d844fa5a36d84323819f478ea2f3b2bf58c2dd02230"
+    },
+    "ignore_kernel_names": false,
+    "reference_sha256": "4e220e5893230e63b75a023d1c550ce2ffa91aea37661e7d132e8136c5a31dd2",
+    "candidate_sha256": "3dc786117592665a5233d74dc39cb13118cf5a8dc29642d814174e07574611a6",
+    "reference_sass_sha256": "3beea915be31e4612f62647709dca3aab2e96ff15b09397687532d1b9f026123",
+    "candidate_sass_sha256": "3beea915be31e4612f62647709dca3aab2e96ff15b09397687532d1b9f026123",
+    "reference_functions": 28,
+    "candidate_functions": 28,
+    "reference_instructions": 31360,
+    "candidate_instructions": 31360
+  },
+  "local_host_constant_arrays_equal": true,
+  "local_host_constant_arrays_sha256": {
+    "_ZL12zl8_part_mod": "0241f7e06eb27d106c43746c5bb0b762fba7e7baeddd62e9c953c497785a60e5",
+    "_ZL17zl8_planes_of_mod": "e4910a4b48c971aacab6eb841ad57db8b49f0480d30286839c3e95021514e5fc",
+    "_ZL11zl8_lut_off": "499b00bbd5b4af75c5f516d8fa58e4504d238cb7b77da4f120eb28b0f1333fdf",
+    "_ZL7zl8_lut": "a4369a7938493bdeddbd701b7707380dc4d03854c84e05b9c0e471976ebb6c07",
+    "_ZL18l8k_flips59_k16384": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3",
+    "_ZL17l8k_flips59_k8192": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3",
+    "_ZL17l8k_mods59_k16384": "4e63154126ec610d99f8e430be37eaf9d994e189e7e93bde1d204078767aa142",
+    "_ZL16l8k_mods59_k8192": "998d28f294439efc656d1378e8518867785ed521b01cda6e0e2dd93ce4dae92a",
+    "_ZL14zl8_modc_k8192": "3bb188353a1ca305129d68b39cbe3b7ad6b8a09b94175f135ce8d7a6feb76e5d",
+    "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+  },
+  "source_tokens": {
+    "zl8_dtab.cuh": "reviewed host edits",
+    "fused_qe.cuh": true,
+    "l8k_host.cuh": true,
+    "l8k_tables_rt.h": true,
+    "l8_flips.h": true,
+    "l8k.cu": true,
+    "duald40_load.cuh": true,
+    "l8rt_plan.cuh": "reviewed host edits",
+    "l8_probe.cuh": true,
+    "l8k_kernel.cuh": true,
+    "zl8_tables_rt.h": true,
+    "l8k_tables_k4096.h": true,
+    "fp64k_common.h": true,
+    "quant_int.cuh": true,
+    "zl8_encode.cuh": true,
+    "fp64kc_parts.h": true,
+    "l8_tables.h": true,
+    "l8k_tables.h": true,
+    "l8k_tables_K8192.h": true,
+    "sample_hash.cuh": true,
+    "l8k_kernel_rt.cuh": true,
+    "l8rt.cu": "reviewed host edits",
+    "ptx_common.cuh": true,
+    "zverify.cuh": true,
+    "crt_f32.cuh": true,
+    "l8rt_dtab.cuh": "reviewed host edits",
+    "fp64k_tables.h": true,
+    "l8k_tables_K16384.h": true,
+    "l8_encode_fast.cuh": true,
+    "l8rt_main.cuh": true,
+    "zl8_host.cuh": true,
+    "l8_encode.cuh": true,
+    "cgemm_dtab.cuh": true,
+    "zl8_lut.h": true,
+    "fp64k_encode.cuh": true,
+    "fused_zqe2.cuh": true,
+    "r1b/awe_blas.h": true,
+    "r1b/tables_generated.h": true,
+    "r1b/awe_backend.h": true,
+    "r1b/f64_backend.cuh": true
+  },
+  "host_changes": [
+    "Configured create wrapper and effective-options query",
+    "Ignore environment overrides; retain measured width 24 and pingpong=1",
+    "Strict complex CRT bound; reject equality to the bound",
+    "Rename unused real/double-complex diagnostic text"
+  ],
+  "host_checks": [
+    "Production configured wrapper and effective options compiled against CPU stubs",
+    "Strict CRT equality and adjacent boundaries checked on CPU",
+    "Public API width/backend/routine/name and maximum K checked before CUDA creation"
+  ],
+  "limits": [
+    "The local comparison is between two x86 builds, not the measured Arm library.",
+    "The GPU retry selected C24 explicitly; CPU tests checked the later default switch to the same engine.",
+    "The first 4096 correctness run did not establish detection of every unwritten output; later checks disabled internal poisoning."
+  ],
+  "arm_device_gates": {
+    "measured_public": {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "candidate_sha256": "6fc255546daa12d2bd3e12a251862f9b1e3374e224af493d03614549fe66ca8e",
+      "reference_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "candidate_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31384,
+      "candidate_instructions": 31384
+    },
+    "measured_original": {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "434247ad3893bb97b984016cac0fec8cd5ba457a081b3546a3397e8e1f411813",
+      "candidate_sha256": "d895a8175a004efaf87a596b43a1465a375baabc14edd7144894844b42efe9d9",
+      "reference_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "candidate_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31384,
+      "candidate_instructions": 31384
+    },
+    "original_public": {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "54ee3b5342aa3cb5065748396e93a47846da783a46d6ae4dd6ce2eacd0128026",
+        "attributes": "815b076f3975d8e3fb16e78937fa1ae7af8b9c27753e0ee0514c348ca39922c8",
+        "initialized_data": "2127584e49522a4aac492740e5bd55c995dc2db566c776c364dd84a08fa70b6e"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "d895a8175a004efaf87a596b43a1465a375baabc14edd7144894844b42efe9d9",
+      "candidate_sha256": "6fc255546daa12d2bd3e12a251862f9b1e3374e224af493d03614549fe66ca8e",
+      "reference_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "candidate_sass_sha256": "df9411940576b97c1f55783bd7ccaba44c4a5e5cd043570c3d88dc4fd2570069",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31384,
+      "candidate_instructions": 31384
+    }
+  },
+  "public_gpu_result": "../Results/GPU_RESULTS_20261015.json",
+  "historical_input_output_hashes": [
+    {
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "seeds": [
+        1,
+        2
+      ],
+      "output_hash": "6e385515624d7f81",
+      "verdict": "exact_match"
+    },
+    {
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "seeds": [
+        20260921,
+        76543210
+      ],
+      "output_hash": "92039ccfef314450",
+      "verdict": "exact_match"
+    },
+    {
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "seeds": [
+        1,
+        2
+      ],
+      "output_hash": "1d508baccd060ca4",
+      "verdict": "exact_match"
+    },
+    {
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "seeds": [
+        20260921,
+        76543210
+      ],
+      "output_hash": "2580873230234c93",
+      "verdict": "exact_match"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "canonical_archive": "AWE research archive",
+  "gpu": "sm_120",
+  "scope": "Earlier implementation and search conditions; source and raw results are not included here.",
+  "fp32_spmm_speedup_range": [
+    2,
+    4
+  ],
+  "fp64_spmm": "Slower; outcome depended on limb count L.",
+  "conjugate_gradient": "Acceleration was demonstrated.",
+  "current_layer_implemented": false
+}

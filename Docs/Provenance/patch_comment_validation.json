@@ -1,0 +1,15 @@
+{
+  "scope": "Comment wording only, including comments emitted by these scripts. The SYRK comment used as a TRMM search anchor is updated in both scripts. Original scripts remain in the research archive.",
+  "changes": [
+    {
+      "file": "patches/patch_syrk.py",
+      "before_sha256": "597743267eb792937ce5e726d552e9d56409c475a75539fc1d44dc853c32aca3",
+      "after_sha256": "27382deb3382cc15f7787875cbc84dc5153f2251db2d38b30308d1c2642793bb"
+    },
+    {
+      "file": "patches/patch_trmm.py",
+      "before_sha256": "57a531833ad1ef5bed6074002a82adfac1dfdc06d3f551d2774926b71db41291",
+      "after_sha256": "b0d936520d1af596a9dcca69c17c5f5fd1c2f29f40bfbd1887143e43a86f29e6"
+    }
+  ]
+}

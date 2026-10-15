@@ -1,0 +1,287 @@
+{
+  "legacy_root": "Legacy/20260922/",
+  "contracts": "legacy_contracts.json",
+  "modulus_sets": "legacy_moduli.json",
+  "comparison_rules": {
+    "operand_order": "A and B are distinct; a different basis is not the same weight pair.",
+    "safe_k": "Derived from saved lookup tables, planes and coefficients with the old weighted-accumulator rule. Grouped K arrays were not copied into a new contract format.",
+    "integer_corrections": "4 records match the numeric fields but require integer corrections absent from the old contract; these are not complete matches.",
+    "awe_accumulation": "AWE uses a different, separate-product accumulation rule.",
+    "moduli": "Saved sets, not arbitrary combinations of available moduli; equal sets do not prove equal kernels or safe K.",
+    "scope": "Data comparison, not a GPU correctness test.",
+    "field_list": "legacy_contracts.json#/criteria"
+  },
+  "old_cuda_root": "Platforms/NVIDIA/CUDA/GEMM/",
+  "old_cuda_file_roles": [
+    {
+      "old_file": "CMakeLists.txt",
+      "current_files": [
+        "CMakeLists.txt"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "LICENSE",
+      "current_files": [
+        "LICENSE"
+      ],
+      "relationship": "Same license text"
+    },
+    {
+      "old_file": "README.md",
+      "current_files": [
+        "README.md",
+        "Docs/build.md"
+      ],
+      "relationship": "Related role"
+    },
+    {
+      "old_file": "awe_blasConfig.cmake.in",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "bench/bench_i8.cu",
+      "current_files": [
+        "Tests/GPU/level3_worker.py",
+        "Tests/GPU/level3_cases.py"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "bench/compare_i8.cu",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "docs/API.md",
+      "current_files": [
+        "Docs/api.md"
+      ],
+      "relationship": "Related role"
+    },
+    {
+      "old_file": "examples/CMakeLists.txt",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "examples/minimal.c",
+      "current_files": [
+        "Docs/api.md"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "examples/minimal.cpp",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "include/awe_backend.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/awe_backend.h"
+      ],
+      "relationship": "Internal reference"
+    },
+    {
+      "old_file": "include/awe_blas.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/awe_blas.h",
+        "Include/AWE/awe.h"
+      ],
+      "relationship": "Internal reference; different public API"
+    },
+    {
+      "old_file": "include/awe_blas.hpp",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "ozaki2/backend.cu",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/hayashi_i8gemm.cu",
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/hayashi_i8gemm.cu"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "ozaki2/tables_generated.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/tables_generated.h"
+      ],
+      "relationship": "Table entries retained"
+    },
+    {
+      "old_file": "scripts/build_complex.sh",
+      "current_files": [
+        "CMakeLists.txt",
+        "Tools/replay_cuda_build.py"
+      ],
+      "relationship": "Related role"
+    },
+    {
+      "old_file": "scripts/build_fp64.sh",
+      "current_files": [
+        "CMakeLists.txt",
+        "Tools/replay_cuda_build.py"
+      ],
+      "relationship": "Related role"
+    },
+    {
+      "old_file": "src/awe_blas.cu",
+      "current_files": [
+        "API/api.cpp",
+        "Routines/Common/engine_loader.cpp"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "src/complex/complex.cu",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/Z53_General/",
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/Z53_General/",
+        "API/api.cpp"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "src/complex/emulation.cu",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "src/complex/harness.cu",
+      "current_files": [
+        "Tests/GPU/level3_worker.py"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "src/fp64/backend.cu",
+      "current_files": [
+        "Routines/Common/engine_loader.cpp",
+        "API/api.cpp"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "src/fp64/f64_backend.cuh",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/f64_backend.cuh",
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/"
+      ],
+      "relationship": "Related implementation; no byte-identity claim"
+    },
+    {
+      "old_file": "src/fp64/generate_tables.py",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "src/fp64/i8_backend.cuh",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/",
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "src/fp64/i8_tables_generated.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/tables_generated.h"
+      ],
+      "relationship": "Table entries retained"
+    },
+    {
+      "old_file": "src/fp64/tables_generated.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/tables_generated.h"
+      ],
+      "relationship": "Internal reference"
+    },
+    {
+      "old_file": "src/fp64/tables_pareto.h",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/D53_M18/Reference/tables_generated.h"
+      ],
+      "relationship": "Related implementation; no byte-identity claim"
+    },
+    {
+      "old_file": "src/ozaki2_backend.cu",
+      "current_files": [],
+      "relationship": "No current replacement"
+    },
+    {
+      "old_file": "src/tables.hpp",
+      "current_files": [
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM103a_K96/INT8/lut1728.h",
+        "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/INT8/lut1526_alt.h"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "tests/crt_smoke.cu",
+      "current_files": [
+        "Tests/test_coverage_bounds.py",
+        "Tests/GPU/level3_worker.py"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "tests/fp64_acc_check.cu",
+      "current_files": [
+        "Tests/GPU/level3_worker.py",
+        "Tools/awe_validation.py"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "tests/fp64_contract.c",
+      "current_files": [
+        "Tests/test_api.py"
+      ],
+      "relationship": "Related role; API differs"
+    },
+    {
+      "old_file": "tests/fp64_smoke.cu",
+      "current_files": [
+        "Tests/GPU/b300.py",
+        "Tests/GPU/b200.py",
+        "Tests/GPU/level3_worker.py"
+      ],
+      "relationship": "Related role"
+    },
+    {
+      "old_file": "tests/smoke.cu",
+      "current_files": [
+        "Tests/GPU/level3_worker.py",
+        "Tests/test_api.py"
+      ],
+      "relationship": "Related role; API differs"
+    }
+  ],
+  "generator": {
+    "old_file": "AWE/CodeGen/gen_constants.py",
+    "current_replacement": null,
+    "note": "Old constant and witness generators remain in Legacy; they do not generate the current included tables."
+  },
+  "figure": {
+    "old_file": "Figures/AWE-INT8-Six-Products.png",
+    "weights": [
+      1,
+      29,
+      37
+    ],
+    "construction_present_in": [
+      "BLAS catalogue",
+      "AWE catalogue"
+    ],
+    "current_overview_weights": [
+      1,
+      5,
+      27
+    ],
+    "note": "The original image remains in Legacy."
+  }
+}

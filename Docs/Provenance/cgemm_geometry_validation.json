@@ -1,0 +1,606 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_retested": false,
+  "engines": [
+    {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": false,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "5a622c46acf2da75f92391a104643d4e23d36a058f9ae03ba3994398e825738b",
+        "attributes": "b2a43939dd8ac33b8615b402e4dbbed4d72a43cf0a764cd5a42da7833d264880",
+        "initialized_data": "d45c69904891da9e434b130fba9744be7d262121576234f305d7b2d0064a2db0"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "5a622c46acf2da75f92391a104643d4e23d36a058f9ae03ba3994398e825738b",
+        "attributes": "553d3c394a2e6d001984c85a2a5c1b0aa084c6152c38e9c000f742bf03643614",
+        "initialized_data": "d45c69904891da9e434b130fba9744be7d262121576234f305d7b2d0064a2db0"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "c81cfab6a9d653306f834718f220ac300e0947cc0552965007940bcd1eac90ce",
+      "candidate_sha256": "95175e483e6486c930b7b96785b874c57196ad95c7165c0c8689ab1ea21f0874",
+      "reference_sass_sha256": "84607a55c19f0d3716cf19c29d36fa1280a379f939623ce9d8f6f362388d3975",
+      "candidate_sass_sha256": "df533c22a3c1912bf41a532db038e8c1f593fabdb8d2bea648b1b146bc5cebf8",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31080,
+      "candidate_instructions": 31016,
+      "engine": "k64_c20",
+      "changed_functions": [
+        "_ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+        "_ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+        "_ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+        "_ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+        "_ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+        "_ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi"
+      ],
+      "unchanged_function_count": 22,
+      "intentional_change": "Correct the K64 tile layout: 64 elements, 4096 bytes, 256-byte row-group stride. GPU output not checked again.",
+      "host_tables_equal": true,
+      "host_table_sha256": {
+        "_ZL12zl8_part_mod": "c2a7758411195605e11635712039bf2ad404a098651c3139b1230a4b1208228b",
+        "_ZL17zl8_planes_of_mod": "cb795d5104eac1d22cb5d8eef7d425bd6bf25dca468a5e388d90b06669018618",
+        "_ZL11zl8_lut_off": "60cfc99d0c3e5180cc0ad3ecfea7d2c21dae30fc041d0c67e93e1a69247f0d86",
+        "_ZL7zl8_lut": "78704facb0bfae7d79abd92cdabd5d9936ad560eee93b48bad9a3f9a80a8e51a",
+        "_ZL18l8k_flips59_k16384": "f2c0d5456a983ecd12e314fcfa19879179fc8424343baeb1325457472ae85601",
+        "_ZL17l8k_flips59_k8192": "f2c0d5456a983ecd12e314fcfa19879179fc8424343baeb1325457472ae85601",
+        "_ZL17l8k_mods59_k16384": "b0e55c14991368a9aa3011f4d73d008e52511b05081ed5e370bc17322b9eb8ed",
+        "_ZL16l8k_mods59_k8192": "49d175efdcdd54f4171c82e1937f2e9a81d61d487935ebd20500d8de999c8882",
+        "_ZL14zl8_modc_k8192": "0064702e918068bd0c9c8547f38a3c8c6eb1d27b42c0c31b4333c7657822ebff",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "changed_attributes": {
+        "before": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8a60 SpillRefill : Offset : 0x8ba0 SpillRefill : Offset : 0x8bd0 SpillRefill : Offset : 0x8c40 SpillRefill : Offset : 0x8c80 SpillRefill : Offset : 0x8cf0 SpillRefill : Offset : 0x8d20 SpillRefill : Offset : 0x8d90 SpillRefill : Offset : 0x8dc0 SpillRefill : Offset : 0x8e30 SpillRefill : Offset : 0x8e60 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fd0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x8ff0 SpillRefill : Offset : 0x9000 SpillRefill : Offset : 0x9040 SpillRefill : Offset : 0x9050 SpillRefill : Offset : 0x9060 SpillRefill : Offset : 0x9070 SpillRefill : Offset : 0x9080 SpillRefill : Offset : 0x90a0 SpillRefill : Offset : 0x90e0 SpillRefill : Offset : 0x90f0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9f00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5810 0x6170"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9300 0xbb70"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9240 0xf580"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x19a0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x96b0 0x105d0 0x10810 0x1b5a0 0x1b630 0x1b8a0 0x1b9a0 0x1bbc0 0x1bc70 0x1bd20"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1b9e0 0x1ba00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1b770 0x1b780 0x1b7c0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8e20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9740 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10670 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10770 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107c0 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10950 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x189b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18a60 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x190f0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x19180 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x19dc0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x19e50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a7d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1a860 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b250 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b390 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b420 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b460 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1ba10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1ba60 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bac0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bb10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bd80 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bdd0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1be20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1be70 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bec0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf60 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1bfb0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c000 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c050 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c0a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c0f0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ],
+        "after": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8ad0 SpillRefill : Offset : 0x8b20 SpillRefill : Offset : 0x8b80 SpillRefill : Offset : 0x8bc0 SpillRefill : Offset : 0x8c20 SpillRefill : Offset : 0x8c60 SpillRefill : Offset : 0x8cc0 SpillRefill : Offset : 0x8d10 SpillRefill : Offset : 0x8d70 SpillRefill : Offset : 0x8db0 SpillRefill : Offset : 0x8e10 SpillRefill : Offset : 0x8e40 SpillRefill : Offset : 0x8f10 SpillRefill : Offset : 0x8f20 SpillRefill : Offset : 0x8f30 SpillRefill : Offset : 0x8f40 SpillRefill : Offset : 0x8f80 SpillRefill : Offset : 0x8f90 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fb0 SpillRefill : Offset : 0x8fc0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x9020 SpillRefill : Offset : 0x9030"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9e40"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5700 0x6040"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9270 0xbac0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x91f0 0xf4f0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1950"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x96b0 0x105d0 0x10810 0x1b620 0x1b6b0 0x1b920 0x1ba20 0x1bc40 0x1bcf0 0x1bda0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1ba60 0x1ba80"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1b7f0 0x1b800 0x1b840"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8e20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9740 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10670 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10770 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107c0 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10950 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x189b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18a60 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x19170 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x19200 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x19e40 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x19ed0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a850 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1a8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b2d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b410 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b4a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b4e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1ba90 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bae0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bb40 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bb90 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1be00 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1be50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bea0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bef0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bf40 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf90 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bfe0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c030 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c080 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c0d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c120 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c170 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ]
+      },
+      "sass_diff_sha256": "cb59c08b18557e736cad9891e0686647aef54ad10dbb4d7006d74d20342e0ddc"
+    },
+    {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": false,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+        "attributes": "07acb8cd0c749caac7388989b2fa8978b171d3f0f3e5ba5c5942559a93e704f6",
+        "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+        "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+        "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "783538fe9b68f92d1df2d28e284ee074787bb291737dd5cafca2c6db4c1a88c6",
+      "candidate_sha256": "b7ed0d3fe4af6db806d420330e21b662d51d77f79572d0d9c04e0be96e9f2649",
+      "reference_sass_sha256": "0a161ae3dbed133727e05f4259342678d752e5bfe8226eddd13ab3721da9bdf8",
+      "candidate_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31360,
+      "candidate_instructions": 31288,
+      "engine": "k64_c22",
+      "changed_functions": [
+        "_ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+        "_ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+        "_ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+        "_ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+        "_ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+        "_ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi"
+      ],
+      "unchanged_function_count": 22,
+      "intentional_change": "Correct the K64 tile layout: 64 elements, 4096 bytes, 256-byte row-group stride. GPU output not checked again.",
+      "host_tables_equal": true,
+      "host_table_sha256": {
+        "_ZL12zl8_part_mod": "ea2059758e5e34c9b814324478c2774abc24b3158afc222120afdfd2ffe5fbf8",
+        "_ZL17zl8_planes_of_mod": "424f4cc748b22bdde4de44b30443cdcf66587a04ec207babb8538373df5d671a",
+        "_ZL11zl8_lut_off": "c613ba7e582ea082df1c90f44f44f96402a83221afd6203482859c9153080316",
+        "_ZL7zl8_lut": "8b0b86d4102df186f7ef2e753bbc860ab444b039a8ee24e049bfab8153001eb8",
+        "_ZL18l8k_flips59_k16384": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL17l8k_flips59_k8192": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL17l8k_mods59_k16384": "283ace1885a9f516eeea8546a075e991e88a662042a41fbe4b82f70795faea4c",
+        "_ZL16l8k_mods59_k8192": "e33b6af3891a816eba4ec44258700aff2e5a239588bc0538938e241fab0f0e3f",
+        "_ZL14zl8_modc_k8192": "c7e8475afbbf3a9c86a5fac0de9b0f3a2d13ca300769c58bc95d4dc30adcfe64",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "changed_attributes": {
+        "before": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8a60 SpillRefill : Offset : 0x8ba0 SpillRefill : Offset : 0x8bd0 SpillRefill : Offset : 0x8c40 SpillRefill : Offset : 0x8c80 SpillRefill : Offset : 0x8cf0 SpillRefill : Offset : 0x8d20 SpillRefill : Offset : 0x8d90 SpillRefill : Offset : 0x8dc0 SpillRefill : Offset : 0x8e30 SpillRefill : Offset : 0x8e60 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fd0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x8ff0 SpillRefill : Offset : 0x9000 SpillRefill : Offset : 0x9040 SpillRefill : Offset : 0x9050 SpillRefill : Offset : 0x9060 SpillRefill : Offset : 0x9070 SpillRefill : Offset : 0x9080 SpillRefill : Offset : 0x90a0 SpillRefill : Offset : 0x90e0 SpillRefill : Offset : 0x90f0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9f00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5810 0x6170"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9300 0xbb70"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x93e0 0xff80"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x19a0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x9790 0x10710 0x10950 0x1ba60 0x1baf0 0x1bd60 0x1be60 0x1c080 0x1c130 0x1c1e0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1bea0 0x1bec0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1bc30 0x1bc40 0x1bc80"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8f00 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9820 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x108b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10900 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10a90 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x18e70 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18f20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x195b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x19640 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1a280 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a310 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1ac90 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1ad20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b710 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b850 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b920 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bed0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf80 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bfd0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c240 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c290 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c2e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c330 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c380 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c3d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c420 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c470 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c4c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c510 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c560 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c5b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ],
+        "after": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8ad0 SpillRefill : Offset : 0x8b20 SpillRefill : Offset : 0x8b80 SpillRefill : Offset : 0x8bc0 SpillRefill : Offset : 0x8c20 SpillRefill : Offset : 0x8c60 SpillRefill : Offset : 0x8cc0 SpillRefill : Offset : 0x8d10 SpillRefill : Offset : 0x8d70 SpillRefill : Offset : 0x8db0 SpillRefill : Offset : 0x8e10 SpillRefill : Offset : 0x8e40 SpillRefill : Offset : 0x8f10 SpillRefill : Offset : 0x8f20 SpillRefill : Offset : 0x8f30 SpillRefill : Offset : 0x8f40 SpillRefill : Offset : 0x8f80 SpillRefill : Offset : 0x8f90 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fb0 SpillRefill : Offset : 0x8fc0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x9020 SpillRefill : Offset : 0x9030"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9e40"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5700 0x6040"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9270 0xbac0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9340 0xfee0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1950"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x9790 0x10710 0x10950 0x1bae0 0x1bb70 0x1bde0 0x1bee0 0x1c100 0x1c1b0 0x1c260"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1bf20 0x1bf40"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1bcb0 0x1bcc0 0x1bd00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8f00 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9820 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x108b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10900 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10a90 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x18e70 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18f20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x19630 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x196c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1a300 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a390 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1ad10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1ada0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b790 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b8d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b960 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b9a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bf50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bfa0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c000 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c050 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c2c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c310 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c360 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c3b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c400 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c450 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c4a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c4f0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c540 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c590 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c5e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c630 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ]
+      },
+      "sass_diff_sha256": "2cdebe95129e9539a262658b56c8150aaaf4f7382f867833e82c6a28de204862"
+    },
+    {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": false,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+        "attributes": "07acb8cd0c749caac7388989b2fa8978b171d3f0f3e5ba5c5942559a93e704f6",
+        "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+        "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+        "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+      },
+      "ignore_kernel_names": false,
+      "reference_sha256": "e00a3fd239bfb97f5fbfdfa9211cef75808b3f6d59110ac61caa3382ac218d90",
+      "candidate_sha256": "f7c26fed2c1ef032143629b0e298c8874e92a4a977a347d7f1d687e4e3b5ff5b",
+      "reference_sass_sha256": "0a161ae3dbed133727e05f4259342678d752e5bfe8226eddd13ab3721da9bdf8",
+      "candidate_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+      "reference_functions": 28,
+      "candidate_functions": 28,
+      "reference_instructions": 31360,
+      "candidate_instructions": 31288,
+      "engine": "k64_c23",
+      "changed_functions": [
+        "_ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+        "_ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+        "_ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+        "_ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+        "_ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+        "_ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi"
+      ],
+      "unchanged_function_count": 22,
+      "intentional_change": "Correct the K64 tile layout: 64 elements, 4096 bytes, 256-byte row-group stride. GPU output not checked again.",
+      "host_tables_equal": true,
+      "host_table_sha256": {
+        "_ZL12zl8_part_mod": "ea2059758e5e34c9b814324478c2774abc24b3158afc222120afdfd2ffe5fbf8",
+        "_ZL17zl8_planes_of_mod": "424f4cc748b22bdde4de44b30443cdcf66587a04ec207babb8538373df5d671a",
+        "_ZL11zl8_lut_off": "c613ba7e582ea082df1c90f44f44f96402a83221afd6203482859c9153080316",
+        "_ZL7zl8_lut": "8b0b86d4102df186f7ef2e753bbc860ab444b039a8ee24e049bfab8153001eb8",
+        "_ZL18l8k_flips59_k16384": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL17l8k_flips59_k8192": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL17l8k_mods59_k16384": "283ace1885a9f516eeea8546a075e991e88a662042a41fbe4b82f70795faea4c",
+        "_ZL16l8k_mods59_k8192": "e33b6af3891a816eba4ec44258700aff2e5a239588bc0538938e241fab0f0e3f",
+        "_ZL14zl8_modc_k8192": "c7e8475afbbf3a9c86a5fac0de9b0f3a2d13ca300769c58bc95d4dc30adcfe64",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "changed_attributes": {
+        "before": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8a60 SpillRefill : Offset : 0x8ba0 SpillRefill : Offset : 0x8bd0 SpillRefill : Offset : 0x8c40 SpillRefill : Offset : 0x8c80 SpillRefill : Offset : 0x8cf0 SpillRefill : Offset : 0x8d20 SpillRefill : Offset : 0x8d90 SpillRefill : Offset : 0x8dc0 SpillRefill : Offset : 0x8e30 SpillRefill : Offset : 0x8e60 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fd0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x8ff0 SpillRefill : Offset : 0x9000 SpillRefill : Offset : 0x9040 SpillRefill : Offset : 0x9050 SpillRefill : Offset : 0x9060 SpillRefill : Offset : 0x9070 SpillRefill : Offset : 0x9080 SpillRefill : Offset : 0x90a0 SpillRefill : Offset : 0x90e0 SpillRefill : Offset : 0x90f0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9f00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5810 0x6170"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9300 0xbb70"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x93e0 0xff80"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x19a0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x9790 0x10710 0x10950 0x1ba60 0x1baf0 0x1bd60 0x1be60 0x1c080 0x1c130 0x1c1e0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1bea0 0x1bec0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1bc30 0x1bc40 0x1bc80"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8f00 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9820 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x108b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10900 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10a90 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x18e70 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18f20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x195b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x19640 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1a280 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a310 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1ac90 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1ad20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b710 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b850 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b920 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bed0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bf80 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bfd0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c240 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c290 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c2e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c330 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c380 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c3d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c420 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c470 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c4c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c510 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c560 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c5b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ],
+        "after": [
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_ANNOTATIONS Format: EIFMT_SVAL Value: SpillRefill : Offset : 0x8ad0 SpillRefill : Offset : 0x8b20 SpillRefill : Offset : 0x8b80 SpillRefill : Offset : 0x8bc0 SpillRefill : Offset : 0x8c20 SpillRefill : Offset : 0x8c60 SpillRefill : Offset : 0x8cc0 SpillRefill : Offset : 0x8d10 SpillRefill : Offset : 0x8d70 SpillRefill : Offset : 0x8db0 SpillRefill : Offset : 0x8e10 SpillRefill : Offset : 0x8e40 SpillRefill : Offset : 0x8f10 SpillRefill : Offset : 0x8f20 SpillRefill : Offset : 0x8f30 SpillRefill : Offset : 0x8f40 SpillRefill : Offset : 0x8f80 SpillRefill : Offset : 0x8f90 SpillRefill : Offset : 0x8fa0 SpillRefill : Offset : 0x8fb0 SpillRefill : Offset : 0x8fc0 SpillRefill : Offset : 0x8fe0 SpillRefill : Offset : 0x9020 SpillRefill : Offset : 0x9030"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3fqe12encode_fusedEPKdlPKiPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9e40"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN3l8e9encode_l8EPKdlPKiPhPKNS_4ModCEPKtiNS_4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x5700 0x6040"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e10encode_zl8EPK6float2lPKiPhPKNS_5ZModCEPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9270 0xbac0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN4zl8e11encode_zl8fEPK6float2lPKiPhPKtiN3l8e4GeomE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x9340 0xfee0"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k12fp64k_encodeEPKxPhPK8Fp64kModPKhi",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1950"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_COOP_GROUP_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x640 0x6e0 0xb80 0xc40 0x1c20 0x9790 0x10710 0x10950 0x1bae0 0x1bb70 0x1bde0 0x1bee0 0x1c100 0x1c1b0 0x1c260"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_EXIT_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x1bf20 0x1bf40"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_INT_WARP_WIDE_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x3910 0x43e0 0x1bcb0 0x1bcc0 0x1bd00"
+          ],
+          [
+            "sm_100a",
+            ".nv.info._ZN5fp64k18l8k_gemm_kernel_rtILb1EEEvPKhS2_PtPK6L8kModjPNS_13KernelMetricsEPNS_7MetricsEPoPKoPfPKiSG_o14CUtensorMap_stSH_NS_7L8ShapeE",
+            "Attribute: EIATTR_MBARRIER_INSTR_OFFSETS Format: EIFMT_SVAL Value: 0x430 : Instruction Kind : MBARRIER_INIT (R255 + UR8) Stride : MBARRIER_STRIDE_X4 0x470 : Instruction Kind : MBARRIER_INIT (R255 + UR9) Stride : MBARRIER_STRIDE_X4 0x480 : Instruction Kind : MBARRIER_INIT (R255 + UR12) Stride : MBARRIER_STRIDE_X4 0x490 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 8) Stride : MBARRIER_STRIDE_X4 0x4a0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 8) Stride : MBARRIER_STRIDE_X4 0x4b0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 8) Stride : MBARRIER_STRIDE_X4 0x4c0 : Instruction Kind : MBARRIER_INIT (R255 + UR8 + 16) Stride : MBARRIER_STRIDE_X4 0x4d0 : Instruction Kind : MBARRIER_INIT (R255 + UR9 + 16) Stride : MBARRIER_STRIDE_X4 0x4e0 : Instruction Kind : MBARRIER_INIT (R255 + UR12 + 16) Stride : MBARRIER_STRIDE_X4 0x4f0 : Instruction Kind : MBARRIER_INIT (R255 + UR13) Stride : MBARRIER_STRIDE_X4 0x500 : Instruction Kind : MBARRIER_INIT (R255 + UR14) Stride : MBARRIER_STRIDE_X4 0x510 : Instruction Kind : MBARRIER_INIT (R255 + UR15) Stride : MBARRIER_STRIDE_X4 0x520 : Instruction Kind : MBARRIER_INIT (R255 + UR16) Stride : MBARRIER_STRIDE_X4 0x530 : Instruction Kind : MBARRIER_INIT (R255 + UR17) Stride : MBARRIER_STRIDE_X4 0x540 : Instruction Kind : MBARRIER_INIT (R255 + UR18) Stride : MBARRIER_STRIDE_X4 0x8c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x8e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa30 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xa50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0xb10 : Instruction Kind : MBARRIER_ARRIVE (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x3b10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x8f00 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x9820 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x107b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x108b0 : Instruction Kind : MBARRIER_ARRIVE (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x10900 : Instruction Kind : MBARRIER_ARRIVE (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x10a90 : Instruction Kind : MBARRIER_ARRIVE (R0 + UR255) Stride : MBARRIER_STRIDE_X4 0x18e70 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x18f20 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x19630 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x196c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1a300 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1a390 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1ad10 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1ada0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1b790 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b8d0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b960 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1b9a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1bf50 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1bfa0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R2 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c000 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R22 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c050 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R4 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c2c0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c310 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R8 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c360 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R70 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c3b0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c400 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c450 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R76 + UR255 + 8) Stride : MBARRIER_STRIDE_X4 0x1c4a0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R72 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c4f0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R74 + UR255 + 16) Stride : MBARRIER_STRIDE_X4 0x1c540 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R5 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c590 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c5e0 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R3 + UR255) Stride : MBARRIER_STRIDE_X4 0x1c630 : Instruction Kind : MBARRIER_TRY_WAIT_PARITY (R13 + UR255) Stride : MBARRIER_STRIDE_X4"
+          ]
+        ]
+      },
+      "sass_diff_sha256": "2cdebe95129e9539a262658b56c8150aaaf4f7382f867833e82c6a28de204862"
+    }
+  ],
+  "additional_source_checks": {
+    "reference": "Platforms/NVIDIA/CUDA-Inline/GEMM/SM100a_K64/Z53_General",
+    "test": "Tests/test_k64_cgemm_geometry.py",
+    "scope": "Source tokens for the complex encoder, common geometry, plane layout, TMA and MMA; only explicit float input/storage changes and the two CRT bodies are excluded. The unused probe and fast-encoder sources also match the K64 reference.",
+    "rejected_mutations": [
+      "enc12: complex encoder row/chunk/cut allocation",
+      "grid6: complex encoder grid width",
+      "tmarow: kernel TMA row stride"
+    ],
+    "mutations_rejected_in_each_engine": [
+      20,
+      22,
+      23
+    ],
+    "probe_choice": "Use the K64 reference source. Normal builds still use L8_FAST_ENC=0.",
+    "normal_build_device_comparisons": [
+      {
+        "engine": "k64_c20",
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "5a622c46acf2da75f92391a104643d4e23d36a058f9ae03ba3994398e825738b",
+          "attributes": "553d3c394a2e6d001984c85a2a5c1b0aa084c6152c38e9c000f742bf03643614",
+          "initialized_data": "d45c69904891da9e434b130fba9744be7d262121576234f305d7b2d0064a2db0"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "5a622c46acf2da75f92391a104643d4e23d36a058f9ae03ba3994398e825738b",
+          "attributes": "553d3c394a2e6d001984c85a2a5c1b0aa084c6152c38e9c000f742bf03643614",
+          "initialized_data": "d45c69904891da9e434b130fba9744be7d262121576234f305d7b2d0064a2db0"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "95175e483e6486c930b7b96785b874c57196ad95c7165c0c8689ab1ea21f0874",
+        "candidate_sha256": "776ff17bf1fe52018dc520020f08cac6a95a96c9d15d3c1a552d98fb0901b539",
+        "reference_sass_sha256": "df533c22a3c1912bf41a532db038e8c1f593fabdb8d2bea648b1b146bc5cebf8",
+        "candidate_sass_sha256": "df533c22a3c1912bf41a532db038e8c1f593fabdb8d2bea648b1b146bc5cebf8",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 31016,
+        "candidate_instructions": 31016
+      },
+      {
+        "engine": "k64_c22",
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+          "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+          "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+          "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+          "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "b7ed0d3fe4af6db806d420330e21b662d51d77f79572d0d9c04e0be96e9f2649",
+        "candidate_sha256": "32a62ba307ed2be76011f757eced838e1c4355752eaf3bf9394f5a74bd28cdba",
+        "reference_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+        "candidate_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 31288,
+        "candidate_instructions": 31288
+      },
+      {
+        "engine": "k64_c23",
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+          "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+          "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+          "resources": "79a47bc68a932d712866dee8ebc200539ff7b3d5121c8499e58d713c430e0ccb",
+          "attributes": "17969352841abcaf4b153dec5a97c0ee4acb7f793ba15291581f8b539a9b20ae",
+          "initialized_data": "ea98c50822ac0bc01ec9c37ce1b967d79703ebed6016f64c6e5e2b64cb2130db"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "f7c26fed2c1ef032143629b0e298c8874e92a4a977a347d7f1d687e4e3b5ff5b",
+        "candidate_sha256": "2e6fcbfd2eda031b786f395e50dfec0919acdbe6dc9c06b34ecccac50ff137f1",
+        "reference_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+        "candidate_sass_sha256": "16a22897d3f4bbc5243f671dc3d322506ecd987c4c6fb2bd492cb423d837f8c6",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 31288,
+        "candidate_instructions": 31288
+      }
+    ]
+  }
+}

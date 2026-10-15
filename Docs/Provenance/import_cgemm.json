@@ -1,0 +1,204 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "scope": "The 22/20-bit engine device code and recovered host table bytes match the measured libraries. The public frontend has not run or been timed on GPU.",
+  "engines": [
+    {
+      "id": "k96_c22",
+      "bits": 22,
+      "reference_sha256": "95648847262f5ba20faf343bad1281a8d3a3dbd1b771bd26a81543460f0fcc03",
+      "matched_original_files": 35,
+      "extracted_symbols_sha256": {
+        "l8k_mods59_k8192": "e33b6af3891a816eba4ec44258700aff2e5a239588bc0538938e241fab0f0e3f",
+        "l8k_mods59_k16384": "283ace1885a9f516eeea8546a075e991e88a662042a41fbe4b82f70795faea4c",
+        "zl8_modc_k8192": "c7e8475afbbf3a9c86a5fac0de9b0f3a2d13ca300769c58bc95d4dc30adcfe64",
+        "zl8_lut_off": "c613ba7e582ea082df1c90f44f44f96402a83221afd6203482859c9153080316",
+        "zl8_planes_of_mod": "424f4cc748b22bdde4de44b30443cdcf66587a04ec207babb8538373df5d671a",
+        "zl8_lut": "8b0b86d4102df186f7ef2e753bbc860ab444b039a8ee24e049bfab8153001eb8",
+        "zl8_part_mod": "ea2059758e5e34c9b814324478c2774abc24b3158afc222120afdfd2ffe5fbf8",
+        "l8k_flips59_k8192": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "l8k_flips59_k16384": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365"
+      },
+      "derived_constants": "K16384 CRT coefficients use the copied per-part lambda inverse, inverse(2) and inverse(2*j). Part roles and plane/product/accumulator counts follow the measured table rows.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c642136a08f6c9c76150381124418de499ad78d20d78cce92be17086fbae1fb8",
+          "attributes": "b525e10c7f5c1052f0e265c96d2be10bef3a938e3c3a3d62ec7495114fb94f02",
+          "initialized_data": "22b25b7edc78a79c4be3f0601cd20b1c083833f21997ec6079ac37dc6b87f88b"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c642136a08f6c9c76150381124418de499ad78d20d78cce92be17086fbae1fb8",
+          "attributes": "b525e10c7f5c1052f0e265c96d2be10bef3a938e3c3a3d62ec7495114fb94f02",
+          "initialized_data": "22b25b7edc78a79c4be3f0601cd20b1c083833f21997ec6079ac37dc6b87f88b"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "95648847262f5ba20faf343bad1281a8d3a3dbd1b771bd26a81543460f0fcc03",
+        "candidate_sha256": "49ab9d19f2353ac98829aa453152096ba26825768746ee3a5e583c1ad8eb7ce7",
+        "reference_sass_sha256": "9367b4560fc33d2c26a838af903e139a1b45f8e1aaa1d60d705ad7b92431c0a8",
+        "candidate_sass_sha256": "9367b4560fc33d2c26a838af903e139a1b45f8e1aaa1d60d705ad7b92431c0a8",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 32104,
+        "candidate_instructions": 32104
+      },
+      "host_table_comparison": {
+        "id": "k96_c22",
+        "checks": {
+          "l8k_mods59_k8192": true,
+          "l8k_mods59_k16384": true,
+          "zl8_modc_k8192": true,
+          "zl8_lut_off": true,
+          "zl8_planes_of_mod": true,
+          "zl8_lut": true,
+          "zl8_part_mod": true,
+          "l8k_flips59_k8192": true,
+          "l8k_flips59_k16384": true
+        },
+        "passed": true
+      },
+      "source_assembly": "35 matched files for 22 bits and 37 for 20 bits. Missing complex table and LUT headers were recovered from named ELF constants. The 22-bit translation unit and host plan use the 20-bit source with modulus count 10 and width 22. The two unused real-path K headers come from the same source family; ZL8=1 does not include them."
+    },
+    {
+      "id": "k96_c20",
+      "bits": 20,
+      "reference_sha256": "df9f80e643b55f44f4dc8d4de30b5cd8b3d93fb2c0fe833a638d1cb45eb4fed3",
+      "matched_original_files": 37,
+      "extracted_symbols_sha256": {
+        "l8k_mods59_k8192": "49d175efdcdd54f4171c82e1937f2e9a81d61d487935ebd20500d8de999c8882",
+        "l8k_mods59_k16384": "b0e55c14991368a9aa3011f4d73d008e52511b05081ed5e370bc17322b9eb8ed",
+        "zl8_modc_k8192": "0064702e918068bd0c9c8547f38a3c8c6eb1d27b42c0c31b4333c7657822ebff",
+        "zl8_lut_off": "60cfc99d0c3e5180cc0ad3ecfea7d2c21dae30fc041d0c67e93e1a69247f0d86",
+        "zl8_planes_of_mod": "cb795d5104eac1d22cb5d8eef7d425bd6bf25dca468a5e388d90b06669018618",
+        "zl8_lut": "78704facb0bfae7d79abd92cdabd5d9936ad560eee93b48bad9a3f9a80a8e51a",
+        "zl8_part_mod": "c2a7758411195605e11635712039bf2ad404a098651c3139b1230a4b1208228b",
+        "l8k_flips59_k8192": "f2c0d5456a983ecd12e314fcfa19879179fc8424343baeb1325457472ae85601",
+        "l8k_flips59_k16384": "f2c0d5456a983ecd12e314fcfa19879179fc8424343baeb1325457472ae85601"
+      },
+      "derived_constants": "K16384 CRT coefficients use the copied per-part lambda inverse, inverse(2) and inverse(2*j). Part roles and plane/product/accumulator counts follow the measured table rows.",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4850d2bf000fc3da93006fb0f6eca66464ad307afa3c811e64e2dc399adef763",
+          "attributes": "cdd472f9dc11fd3c4ef1aad95bd447a408830220e70bde9f2124854e0acd0b48",
+          "initialized_data": "7d90457db2aee332939f1d6072b50b852bb64c8b9281ebfc9293627fe9682c67"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "4850d2bf000fc3da93006fb0f6eca66464ad307afa3c811e64e2dc399adef763",
+          "attributes": "cdd472f9dc11fd3c4ef1aad95bd447a408830220e70bde9f2124854e0acd0b48",
+          "initialized_data": "7d90457db2aee332939f1d6072b50b852bb64c8b9281ebfc9293627fe9682c67"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "df9f80e643b55f44f4dc8d4de30b5cd8b3d93fb2c0fe833a638d1cb45eb4fed3",
+        "candidate_sha256": "86c59cecba81be0fd9193349be0801c427bb2905ea7defedf1c34a70f761dfef",
+        "reference_sass_sha256": "4a60a1246e7f29418b145b7d84c4f95d8b4e6030be0479c084b64d319112e648",
+        "candidate_sass_sha256": "4a60a1246e7f29418b145b7d84c4f95d8b4e6030be0479c084b64d319112e648",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 31816,
+        "candidate_instructions": 31816
+      },
+      "host_table_comparison": {
+        "id": "k96_c20",
+        "checks": {
+          "l8k_mods59_k8192": true,
+          "l8k_mods59_k16384": true,
+          "zl8_modc_k8192": true,
+          "zl8_lut_off": true,
+          "zl8_planes_of_mod": true,
+          "zl8_lut": true,
+          "zl8_part_mod": true,
+          "l8k_flips59_k8192": true,
+          "l8k_flips59_k16384": true
+        },
+        "passed": true
+      },
+      "source_assembly": "35 matched files for 22 bits and 37 for 20 bits. Missing complex table and LUT headers were recovered from named ELF constants. The 22-bit translation unit and host plan use the 20-bit source with modulus count 10 and width 22. The two unused real-path K headers come from the same source family; ZL8=1 does not include them."
+    }
+  ],
+  "measurement_binding": {
+    "asset_list_sha256": "915409abb5d346d666fa36423340029380eaab6e3aaf57df850c303b0ef7bf35",
+    "engine_sha256_match": true,
+    "comparison_helper_sha256": "4f65b14c7b55f7a39e5ef1efb90b88e1d2532f83a1cb9ab540856ca475b7eee7",
+    "scope": "The measurement asset list names both engine libraries and the separate CGEMM comparison helper. Both engine SHA values match the archived build used for these comparisons."
+  },
+  "measurement_checks": [
+    {
+      "distribution": "normal",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "judgement_sha256": "1e327a7d7286302f54571deb2745bbd011967b7085af4f9a13b71e1fed463b22",
+      "checks": [
+        {
+          "name": "canary_exact",
+          "ok": true,
+          "hard": true,
+          "detail": null
+        },
+        {
+          "name": "minimality_not_shown_ours",
+          "ok": false,
+          "hard": false,
+          "detail": "the lowest ladder setting already met the target"
+        },
+        {
+          "name": "ours_frozen_output_hash",
+          "ok": true,
+          "hard": true,
+          "detail": null
+        }
+      ]
+    },
+    {
+      "distribution": "uniform",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "judgement_sha256": "4a190f47669e47d7cf392a31d43c7c1b1281c19745cd462696735eee4568fb04",
+      "checks": [
+        {
+          "name": "canary_exact",
+          "ok": true,
+          "hard": true,
+          "detail": null
+        },
+        {
+          "name": "minimality_not_shown_ours",
+          "ok": false,
+          "hard": false,
+          "detail": "the lowest ladder setting already met the target"
+        },
+        {
+          "name": "ours_frozen_output_hash",
+          "ok": true,
+          "hard": true,
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "info_cleanup": "The unused real/complex-double ABI headers now use neutral info strings. JSON keys and numeric fields are unchanged. Device code and recovered host table bytes were checked again."
+}

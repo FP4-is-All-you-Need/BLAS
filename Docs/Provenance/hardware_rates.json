@@ -1,0 +1,151 @@
+{
+  "kind": "Nominal maximum rates, not measured performance",
+  "hgx_eight_gpu": {
+    "source_title": "NVIDIA HGX specifications",
+    "source_url": "https://www.nvidia.com/en-au/data-center/hgx/",
+    "rechecked_date": "2026-10-15",
+    "gpu_count": 8,
+    "architecture": {
+      "B200": "sm_100a",
+      "B300": "sm_103a"
+    },
+    "dense_rates": [
+      {
+        "format": "FP64",
+        "unit": "TFLOP/s",
+        "B200": 296,
+        "B300": 10,
+        "rule": "reported FP64 rate",
+        "displayed_ratio": "≈1/30",
+        "B300_div_B200": 0.033783783783783786
+      },
+      {
+        "format": "INT8 Tensor Core",
+        "unit": "POPS",
+        "B200": 36,
+        "B300": 1.5,
+        "rule": "sparse / 2",
+        "displayed_ratio": "1/24",
+        "B300_div_B200": 0.041666666666666664
+      },
+      {
+        "format": "FP8 Tensor Core",
+        "unit": "PFLOP/s",
+        "B200": 36,
+        "B300": 36,
+        "rule": "sparse / 2",
+        "displayed_ratio": "1.0×",
+        "B300_div_B200": 1.0
+      },
+      {
+        "format": "FP4 Tensor Core",
+        "unit": "PFLOP/s",
+        "B200": 72,
+        "B300": 108,
+        "rule": "reported dense",
+        "displayed_ratio": "1.5×",
+        "B300_div_B200": 1.5
+      }
+    ],
+    "sparse_rates": {
+      "INT8_POPS": {
+        "B200": 72,
+        "B300": 3
+      },
+      "FP8_PFLOPS": {
+        "B200": 72,
+        "B300": 72
+      }
+    },
+    "FP4_rule": "Use the explicit dense columns: B200 72 and B300 108 PFLOP/s. Do not halve B300 sparse FP4 to derive its dense value."
+  },
+  "earlier_per_gpu_reference": {
+    "source_title": "NVIDIA Blackwell Architecture Technical Brief V2.1",
+    "source_url": "https://resources.nvidia.com/en-us-blackwell-architecture/blackwell-architecture-technical-brief",
+    "source_pdf_url": "https://dam-cdn.nvd.orangelogic.com/AssetLink/gl2l4l4812s5fw0p614s6i8bv6mi3vx5.pdf",
+    "source_pdf_sha256": "df58a797c6bc4236b1877b634fe31ff8da4c82fff289605adfb5aaca424aec69",
+    "table": 3,
+    "printed_pages": [
+      25,
+      26
+    ],
+    "kind": "Nominal rates, not measured performance",
+    "per_gpu": [
+      {
+        "format": "FP4",
+        "unit": "PFLOPS",
+        "B200": 9,
+        "B300": 14,
+        "rule": "reported dense",
+        "B300_div_B200": 1.5555555555555556
+      },
+      {
+        "format": "FP8 / FP6",
+        "unit": "PFLOPS",
+        "B200": 4.5,
+        "B300": 4.5,
+        "rule": "sparse / 2",
+        "B300_div_B200": 1.0
+      },
+      {
+        "format": "BF16 / FP16",
+        "unit": "PFLOPS",
+        "B200": 2.25,
+        "B300": 2.25,
+        "rule": "sparse / 2",
+        "B300_div_B200": 1.0
+      },
+      {
+        "format": "TF32",
+        "unit": "PFLOPS",
+        "B200": 1.1,
+        "B300": 1.1,
+        "rule": "sparse / 2",
+        "B300_div_B200": 1.0
+      },
+      {
+        "format": "INT8",
+        "unit": "POPS",
+        "B200": 4.5,
+        "B300": 0.15,
+        "rule": "sparse / 2",
+        "B300_div_B200": 0.03333333333333333
+      },
+      {
+        "format": "FP64",
+        "unit": "TFLOPS",
+        "B200": 37,
+        "B300": 1.2,
+        "rule": "reported FP64 rate",
+        "B300_div_B200": 0.032432432432432434
+      }
+    ],
+    "source_sparse_values": {
+      "FP8_PFLOPS": {
+        "B200": 9,
+        "B300": 9
+      },
+      "BF16_FP16_PFLOPS": {
+        "B200": 4.5,
+        "B300": 4.5
+      },
+      "INT8_POPS": {
+        "B200": 9,
+        "B300": 0.3
+      },
+      "TF32_PFLOPS": {
+        "B200": 2.2,
+        "B300": 2.2
+      }
+    },
+    "source_FP16_dense_rounding": "Table 3 prints 2.2 PFLOPS dense and 4.5 PFLOPS sparse. The earlier per-GPU comparison used sparse/2, 2.25 PFLOPS.",
+    "FP4_server_dense_PFLOPS": {
+      "B200": 72,
+      "B300": 108,
+      "B300_div_B200": 1.5
+    },
+    "FP4_per_gpu_rounding": "The reported per-GPU values 14 and 9 give 1.5555555555555556. The server totals give 1.5.",
+    "source_choice": "Retained only as the earlier per-GPU reference for the 893 effective TOPS / 6.0 ratio and the 93 and 11000 FP4 rate comparisons. The README hardware table uses HGX 8-GPU rates instead."
+  },
+  "measurement_scope": "Runtime results used 1 B300 GPU. The earlier 6.0 ratio is 893 effective TOPS divided by the Technical Brief INT8 reference of 150 TOPS, rounded."
+}

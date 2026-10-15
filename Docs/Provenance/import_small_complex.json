@@ -1,0 +1,472 @@
+{
+  "scope": "K96 complex choices. All three new engines pass the full device gate and host table comparison against saved builds; no GPU execution.",
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "values_file": "all_routines_values.json",
+  "values_sha256": "0e68e35d33fe39e027c44b99565a8393b02261b1c6ae3110caac2a1b58849b68",
+  "engines": [
+    {
+      "id": "k96_z51_herk_k4096",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "0488a99fd7ec08ba66126bef8ce56c1b931cdb194f7618f76237dd61c53785bf",
+          "attributes": "e1d8df878bff33ba8322f597d7aba8b6b2f95b8f2a7d9a79dbebade32334dfa5",
+          "initialized_data": "60af8f7b658b4e33c37d9f920e6ec64898122cb889d46b8362fb746904298f25"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "0488a99fd7ec08ba66126bef8ce56c1b931cdb194f7618f76237dd61c53785bf",
+          "attributes": "e1d8df878bff33ba8322f597d7aba8b6b2f95b8f2a7d9a79dbebade32334dfa5",
+          "initialized_data": "60af8f7b658b4e33c37d9f920e6ec64898122cb889d46b8362fb746904298f25"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "d277deaebe9aee19f8c419eb031152f350f9b10469396c78ef43adbd68eb511b",
+        "candidate_sha256": "806cad2e2f7d38ce9d23acf676a20642ca92dde5e8d04c822559d75a6bac9476",
+        "reference_sass_sha256": "7717ea136142c5900f95d47d275eaa5d6332d60514f336234bab9efa514f5794",
+        "candidate_sass_sha256": "7717ea136142c5900f95d47d275eaa5d6332d60514f336234bab9efa514f5794",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 44184,
+        "candidate_instructions": 44184
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL12zl8_part_mod": "f6c16e0db9180e1bb98c17d0c9f870190bdb9cce8952819a8661879212e4ac33",
+        "_ZL17zl8_planes_of_mod": "11b5f17221e3595adc66e281fb8b8ea3d75d90c7aaae0169db1c3d33c1668857",
+        "_ZL11zl8_lut_off": "400e93ec854760c0f9bd6cc51f29d5c392b7cbcf75bd685248defdeb6efa9c1f",
+        "_ZL7zl8_lut": "fcccfae35f04cf04b2fcbd100a5b02b9c3d307cd51d2e41932900ee953bf1973",
+        "_ZL17l8k_flips59_k8192": "e3c2af35d1dfc500e16f826a071cc311bf55003a3de77de7ea3376c6b6fa2857",
+        "_ZL18l8k_flips59_k16384": "e3c2af35d1dfc500e16f826a071cc311bf55003a3de77de7ea3376c6b6fa2857",
+        "_ZL17l8k_mods59_k16384": "4a796dead1a993a928af776c6ac18563302c751e3c3423171ed09d8401858459",
+        "_ZL16l8k_mods59_k8192": "d549d5bf5ead4f8554999c5f9877e135e494280a9aab65c6201249d2c28fadd3",
+        "_ZL14zl8_modc_k8192": "fbd9de0839f54b73a4828469f8f5c56ecb11048447731f2f40575554eb61e166",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "tokens": {
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "crt2c_host.h": true,
+        "duald40_load.cuh": true,
+        "crt2c_dev.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "zl8_tables_rt.h": true,
+        "l8k_tables_k4096.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "crt2c_split.h": true,
+        "l8k_tables.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "ptx_common.cuh": true,
+        "zverify.cuh": true,
+        "fp64k_tables.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "zl8_host.cuh": true,
+        "l8_encode.cuh": true,
+        "zl8_lut.h": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {
+        "zl8_dtab.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt_plan.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "zl8_encode.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt.cu": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt_dtab.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately."
+      }
+    },
+    {
+      "id": "k96_z53_herk",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "697c34f54fd02847ff2e0d86307f4c7aedafac6d9cafc2dcba3f89d8b0c0d919",
+          "attributes": "265c383aeb477399908b2ffeb6230408e4da3bd8a8b3a1376d6ba337954d983d",
+          "initialized_data": "4c96fa1028ff75e7f170761ea9f7125f6e1cd46ca4a08be39badd8bfdee9a70f"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "697c34f54fd02847ff2e0d86307f4c7aedafac6d9cafc2dcba3f89d8b0c0d919",
+          "attributes": "265c383aeb477399908b2ffeb6230408e4da3bd8a8b3a1376d6ba337954d983d",
+          "initialized_data": "4c96fa1028ff75e7f170761ea9f7125f6e1cd46ca4a08be39badd8bfdee9a70f"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "a4cf3e62dd7469dcce82b419324e92edb40f6b2fec1e154ac0108eba7c3e094b",
+        "candidate_sha256": "143140a509224b08d5f6d15e392c2be79d60e25e73c1a45c1fea8f25ccf35f43",
+        "reference_sass_sha256": "824a424a637637c979651fdf297eb9816f9a14354be6098993afe51e352054c9",
+        "candidate_sass_sha256": "824a424a637637c979651fdf297eb9816f9a14354be6098993afe51e352054c9",
+        "reference_functions": 32,
+        "candidate_functions": 32,
+        "reference_instructions": 43928,
+        "candidate_instructions": 43928
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL12zl8_part_mod": "9f1900ba3b873f45b08e3291bb293f5fc4691e05ac90dbfd27f956a42313e6ef",
+        "_ZL17zl8_planes_of_mod": "1cb8fab7555294277d69ef048958c73fd77118bcb462e8c58ef401312d2029ee",
+        "_ZL11zl8_lut_off": "993986d6acf130bb00af54b0645bef7bcbb50d9561175b1df4d3378ee7fb533e",
+        "_ZL7zl8_lut": "6540a7b4ae092fef0434ea88479edb1f2cf73ad3f43435beab3ac2d03530c70d",
+        "_ZL17l8k_flips59_k8192": "10b2a66888c58a54b277fe2e68fb6e87150c3cd2c537b7f6a2d84559017438c7",
+        "_ZL18l8k_flips59_k16384": "10b2a66888c58a54b277fe2e68fb6e87150c3cd2c537b7f6a2d84559017438c7",
+        "_ZL17l8k_mods59_k16384": "e8416fd5955b546535efb749cfac658db360cf7c75ecd44d6ff1c8b4aa304fb9",
+        "_ZL16l8k_mods59_k8192": "e072ec97987a376c3c6f4c92acadefe9d34e62e2d189c5d2c7794b975faab5e4",
+        "_ZL14zl8_modc_k8192": "8e4b362d920867f65011cd0827f60c8c8eeac4bcc4e42284829892a8a624ce84",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "tokens": {
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "duald40_load.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "zl8_tables_rt.h": true,
+        "l8k_tables_k4096.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "l8k_tables.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "ptx_common.cuh": true,
+        "zverify.cuh": true,
+        "fp64k_tables.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "zl8_host.cuh": true,
+        "l8_encode.cuh": true,
+        "zl8_lut.h": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {
+        "zl8_dtab.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt_plan.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "zl8_encode.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt.cu": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately.",
+        "l8rt_dtab.cuh": "Configured host API, environment lookup, active-device lookup, strict coverage, or neutral info descriptions; device and tables checked separately."
+      }
+    },
+    {
+      "id": "k96_c23",
+      "device_gate": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c642136a08f6c9c76150381124418de499ad78d20d78cce92be17086fbae1fb8",
+          "attributes": "b525e10c7f5c1052f0e265c96d2be10bef3a938e3c3a3d62ec7495114fb94f02",
+          "initialized_data": "22b25b7edc78a79c4be3f0601cd20b1c083833f21997ec6079ac37dc6b87f88b"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "c642136a08f6c9c76150381124418de499ad78d20d78cce92be17086fbae1fb8",
+          "attributes": "b525e10c7f5c1052f0e265c96d2be10bef3a938e3c3a3d62ec7495114fb94f02",
+          "initialized_data": "22b25b7edc78a79c4be3f0601cd20b1c083833f21997ec6079ac37dc6b87f88b"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "95648847262f5ba20faf343bad1281a8d3a3dbd1b771bd26a81543460f0fcc03",
+        "candidate_sha256": "6dc40b4ec32f1451631a36ebc4976242074217d65cad231e422112f4fa0f9dd0",
+        "reference_sass_sha256": "9367b4560fc33d2c26a838af903e139a1b45f8e1aaa1d60d705ad7b92431c0a8",
+        "candidate_sass_sha256": "9367b4560fc33d2c26a838af903e139a1b45f8e1aaa1d60d705ad7b92431c0a8",
+        "reference_functions": 28,
+        "candidate_functions": 28,
+        "reference_instructions": 32104,
+        "candidate_instructions": 32104
+      },
+      "host_tables_equal": true,
+      "host_tables_sha256": {
+        "_ZL12zl8_part_mod": "ea2059758e5e34c9b814324478c2774abc24b3158afc222120afdfd2ffe5fbf8",
+        "_ZL17zl8_planes_of_mod": "424f4cc748b22bdde4de44b30443cdcf66587a04ec207babb8538373df5d671a",
+        "_ZL11zl8_lut_off": "c613ba7e582ea082df1c90f44f44f96402a83221afd6203482859c9153080316",
+        "_ZL7zl8_lut": "8b0b86d4102df186f7ef2e753bbc860ab444b039a8ee24e049bfab8153001eb8",
+        "_ZL17l8k_flips59_k8192": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL18l8k_flips59_k16384": "10eef285deef7a4b7c82b22aa53589b7833df29de3814649c772bbd5c832f365",
+        "_ZL17l8k_mods59_k16384": "283ace1885a9f516eeea8546a075e991e88a662042a41fbe4b82f70795faea4c",
+        "_ZL16l8k_mods59_k8192": "e33b6af3891a816eba4ec44258700aff2e5a239588bc0538938e241fab0f0e3f",
+        "_ZL14zl8_modc_k8192": "c7e8475afbbf3a9c86a5fac0de9b0f3a2d13ca300769c58bc95d4dc30adcfe64",
+        "_ZZ13zl8_fp4_valuejE3mag": "f1c77f4154d5c5f21f90450e01e061da8a2c7c1ec7b1546d8d0e071aeb729509"
+      },
+      "tokens": {
+        "zl8_dtab.cuh": true,
+        "fused_qe.cuh": true,
+        "l8k_host.cuh": true,
+        "l8k_tables_rt.h": true,
+        "l8_flips.h": true,
+        "l8k.cu": true,
+        "duald40_load.cuh": true,
+        "l8rt_plan.cuh": true,
+        "l8_probe.cuh": true,
+        "l8k_kernel.cuh": true,
+        "zl8_tables_rt.h": true,
+        "l8k_tables_k4096.h": true,
+        "fp64k_common.h": true,
+        "quant_int.cuh": true,
+        "zl8_encode.cuh": true,
+        "fp64kc_parts.h": true,
+        "l8_tables.h": true,
+        "l8k_tables.h": true,
+        "l8k_tables_K8192.h": true,
+        "sample_hash.cuh": true,
+        "l8k_kernel_rt.cuh": true,
+        "l8rt.cu": true,
+        "ptx_common.cuh": true,
+        "crt_small_p_f32.cuh": true,
+        "zverify.cuh": true,
+        "crt_f32.cuh": true,
+        "l8rt_dtab.cuh": true,
+        "fp64k_tables.h": true,
+        "l8k_tables_K16384.h": true,
+        "l8_encode_fast.cuh": true,
+        "l8rt_main.cuh": true,
+        "zl8_host.cuh": true,
+        "l8_encode.cuh": true,
+        "cgemm_dtab.cuh": true,
+        "zl8_lut.h": true,
+        "fp64k_encode.cuh": true,
+        "fused_zqe2.cuh": true,
+        "r1b/awe_blas.h": true,
+        "r1b/tables_generated.h": true,
+        "r1b/awe_backend.h": true,
+        "r1b/f64_backend.cuh": true
+      },
+      "host_changes": {}
+    }
+  ],
+  "measurements": [
+    {
+      "routine": "ZSYRK",
+      "distribution": "normal",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "median_ms": 3.260339350341469,
+      "record_file": "judgement.json",
+      "record_sha256": "8f4b9056648bface37ca0aa4ac32f000d88778b3176c49f419af90930096ba7e",
+      "record_method": "ours_y3",
+      "source_choice": "k96_z53_syrk_trmm",
+      "binary_binding_confirmed": false,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 2048,
+        "nonfinite": 0,
+        "correctly_rounded": 36,
+        "p95": 130.0,
+        "max": 6493.0,
+        "p95_exact": [
+          130,
+          1
+        ],
+        "max_exact": [
+          6493,
+          1
+        ]
+      },
+      "precision": {
+        "qualified": true,
+        "p95": 20.0,
+        "max_ulp": 805.0
+      },
+      "hard_checks_pass": null,
+      "limit": "The timing record does not supply the loaded library SHA. Source/build equality does not establish this measurement binding."
+    },
+    {
+      "routine": "ZSYRK",
+      "distribution": "uniform",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "median_ms": 3.2598308450432234,
+      "record_file": "judgement.json",
+      "record_sha256": "132c656a8696e606918e56a742270328a8c19e1ca498c2b886a91155cd7fc9ae",
+      "record_method": "ours_y3",
+      "source_choice": "k96_z53_syrk_trmm",
+      "binary_binding_confirmed": false,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 2048,
+        "nonfinite": 0,
+        "correctly_rounded": 37,
+        "p95": 135.65,
+        "max": 27129.0,
+        "p95_exact": [
+          2713,
+          20
+        ],
+        "max_exact": [
+          27129,
+          1
+        ]
+      },
+      "precision": {
+        "qualified": true,
+        "p95": 0.0,
+        "max_ulp": 0.0
+      },
+      "hard_checks_pass": null,
+      "limit": "The timing record does not supply the loaded library SHA. Source/build equality does not establish this measurement binding."
+    },
+    {
+      "routine": "ZHERK",
+      "distribution": "normal",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "median_ms": 3.0656066116021607,
+      "record_file": "judgement.json",
+      "record_sha256": "2cd29e7cff44e359be6cf5f435892e137e20b4fe7ccaccf246cade68aa4e98e0",
+      "record_method": "ours_p5n51i",
+      "source_choice": "k96_z51_herk_k4096",
+      "binary_binding_confirmed": false,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 2048,
+        "nonfinite": 0,
+        "correctly_rounded": 44,
+        "p95": 127.3,
+        "max": 59933.0,
+        "p95_exact": [
+          1273,
+          10
+        ],
+        "max_exact": [
+          59933,
+          1
+        ]
+      },
+      "precision": {
+        "qualified": true,
+        "p95": 95.3,
+        "max_ulp": 34971.0
+      },
+      "hard_checks_pass": null,
+      "limit": "The timing record does not supply the loaded library SHA. Source/build equality does not establish this measurement binding."
+    },
+    {
+      "routine": "ZHERK",
+      "distribution": "uniform",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "median_ms": 3.551583541421329,
+      "record_file": "judgement.json",
+      "record_sha256": "c3023b5a4053dc779976402464e53de42ac261a9276637dcf77737e164ecd526",
+      "record_method": "ours_p3k96",
+      "source_choice": null,
+      "binary_binding_confirmed": false,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 64,
+        "components": 2048,
+        "nonfinite": 0,
+        "correctly_rounded": 38,
+        "p95": 139.0,
+        "max": 19145.0,
+        "p95_exact": [
+          139,
+          1
+        ],
+        "max_exact": [
+          19145,
+          1
+        ]
+      },
+      "precision": {
+        "qualified": true,
+        "p95": 0.0,
+        "max_ulp": 0.0
+      },
+      "hard_checks_pass": null,
+      "limit": "The timing record does not supply the loaded library SHA. Source/build equality does not establish this measurement binding."
+    },
+    {
+      "routine": "CGEMM",
+      "distribution": "uniform",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "median_ms": 2.5519695277938004,
+      "record_file": "judgement.json",
+      "record_sha256": "b535252dc18747277136cc124ae2b4c8ffbef46afb9b64438d2744950ba3e38f",
+      "record_method": "ours23",
+      "source_choice": "k96_c23",
+      "binary_binding_confirmed": false,
+      "native_target": {
+        "version": "rn-reference-binade-ulp-linear-p95-v1",
+        "width": 32,
+        "components": 2048,
+        "nonfinite": 0,
+        "correctly_rounded": 33,
+        "p95": 138.0,
+        "max": 4840.0,
+        "p95_exact": [
+          138,
+          1
+        ],
+        "max_exact": [
+          4840,
+          1
+        ]
+      },
+      "precision": null,
+      "hard_checks_pass": true,
+      "limit": "The timing record does not supply the loaded library SHA. Source/build equality does not establish this measurement binding."
+    }
+  ],
+  "missing_binding": "Small uniform ZHERK uses a recorded method whose width and library SHA are not established. The included 53-bit HERK source is not claimed to be that measured method.",
+  "c23_source": "Same device source and residue tables as c22; host runtime integer width is 23, with K<=4096. Equality to the saved c22 library is checked, but its use in the 23-bit timing is not directly linked."
+}

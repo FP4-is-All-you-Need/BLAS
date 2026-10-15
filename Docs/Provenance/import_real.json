@@ -1,0 +1,115 @@
+{
+  "compiler": "nvcc 13.2.86 / g++ 11.4.0",
+  "gpu_execution": false,
+  "scope": "Device instructions and metadata match the measured 51/53-bit libraries and the archived 52-bit build. The new frontend paths have CPU tests but have not run or been timed on GPU.",
+  "engines": [
+    {
+      "id": "k96_d53_general",
+      "source_id": "real-general-53bit-18-modulus",
+      "reference_kind": "measured-device-binary-match",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "aef72b3be6dbf827943727d18018b32bb293cebd081f6a245844afc37bb49723",
+          "attributes": "e4ebdf58b4a60d6eccba5ccb744ecbab8fa7282f18cc36fc756038ea93af8d15",
+          "initialized_data": "eb59a4b7fcdf8d9873e07c512d0ad08574c78f9b4677bd4b4e81d1757b7d9924"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "aef72b3be6dbf827943727d18018b32bb293cebd081f6a245844afc37bb49723",
+          "attributes": "e4ebdf58b4a60d6eccba5ccb744ecbab8fa7282f18cc36fc756038ea93af8d15",
+          "initialized_data": "eb59a4b7fcdf8d9873e07c512d0ad08574c78f9b4677bd4b4e81d1757b7d9924"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "c097f78b5b37480e092c63462a56cdf6f50d2e2f5f4df2fb144b202c3fb5d09f",
+        "candidate_sha256": "dc9f46d07ed10df19c40e6d18aec20f2b771f2ea99b6bf6dfc282b8e69d49ee8",
+        "reference_sass_sha256": "176d3e8f6e3b73354b23f1a230278e8b3d55a7174331e226e1305f42454b81ed",
+        "candidate_sass_sha256": "176d3e8f6e3b73354b23f1a230278e8b3d55a7174331e226e1305f42454b81ed",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 63672,
+        "candidate_instructions": 63672
+      }
+    },
+    {
+      "id": "k96_d51_general",
+      "source_id": "real-general-51bit-17-modulus",
+      "reference_kind": "measured-device-binary-match",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "febb35ffe0e3404b71cd30a0426b50f9620299eb026f6ee636d08022d284e78b",
+          "attributes": "7d84118f46722e48bcab17037d900b88dcf14cfe2612d5330d245750f52ffdf7",
+          "initialized_data": "013fee08522b6756661f119d8d4a755e291a6ac1a0e6a3d3e48de3e89f59a560"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "febb35ffe0e3404b71cd30a0426b50f9620299eb026f6ee636d08022d284e78b",
+          "attributes": "7d84118f46722e48bcab17037d900b88dcf14cfe2612d5330d245750f52ffdf7",
+          "initialized_data": "013fee08522b6756661f119d8d4a755e291a6ac1a0e6a3d3e48de3e89f59a560"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "d83a36bac8c51e0ec11e79ab2fa96c0bf0a672e1038f25e4e6c009e3bc42088c",
+        "candidate_sha256": "29b411442c61b799d38812faa191b5cc57c16b8ed16984da56bf604d97a7d3df",
+        "reference_sass_sha256": "379eb2574cd55deef0aeb6835fff5f7dfd03e49c6f48e450e71a26b4be0e70fb",
+        "candidate_sass_sha256": "379eb2574cd55deef0aeb6835fff5f7dfd03e49c6f48e450e71a26b4be0e70fb",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 63144,
+        "candidate_instructions": 63144
+      }
+    },
+    {
+      "id": "k96_d52_general",
+      "source_id": "real-general-52bit-17-modulus",
+      "reference_kind": "archived-build-device-match",
+      "comparison": {
+        "passed": true,
+        "sass_equal": true,
+        "device_metadata_checks": {
+          "inventory": true,
+          "resources": true,
+          "attributes": true,
+          "initialized_data": true
+        },
+        "reference_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "febb35ffe0e3404b71cd30a0426b50f9620299eb026f6ee636d08022d284e78b",
+          "attributes": "e66931c952ebe701597d4d34bae747c339ac4cb423b13ba064ae00dd532657ec",
+          "initialized_data": "013fee08522b6756661f119d8d4a755e291a6ac1a0e6a3d3e48de3e89f59a560"
+        },
+        "candidate_device_metadata_sha256": {
+          "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+          "resources": "febb35ffe0e3404b71cd30a0426b50f9620299eb026f6ee636d08022d284e78b",
+          "attributes": "e66931c952ebe701597d4d34bae747c339ac4cb423b13ba064ae00dd532657ec",
+          "initialized_data": "013fee08522b6756661f119d8d4a755e291a6ac1a0e6a3d3e48de3e89f59a560"
+        },
+        "ignore_kernel_names": false,
+        "reference_sha256": "3ab84be574027902baa23cf675827a8344785fdb8ea9ae6f4c7248995e198ff7",
+        "candidate_sha256": "52a380e6f5264d32d556084ddaea5796f89a6000fd3f4345e347a0a5f3a03cd4",
+        "reference_sass_sha256": "1cf8f5918bb7984b7de26372a2dc91e235342ea3ea3b15d15220e98a93d51cb8",
+        "candidate_sass_sha256": "1cf8f5918bb7984b7de26372a2dc91e235342ea3ea3b15d15220e98a93d51cb8",
+        "reference_functions": 47,
+        "candidate_functions": 47,
+        "reference_instructions": 62416,
+        "candidate_instructions": 62416
+      }
+    }
+  ]
+}

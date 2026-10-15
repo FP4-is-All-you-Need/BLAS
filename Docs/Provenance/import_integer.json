@@ -1,0 +1,344 @@
+{
+  "engine": "k96_i8",
+  "build_source_id": "integer-six-product-runtime",
+  "build_source_note": "Recorded CUDA 13.2.86 source and library from the September 30 K96 comparison package. The October 5 encoder changes are not selected: no timing record for them is linked here.",
+  "reference_sha256": "4f35aa21363af4bc5da36546224acac5de736c3d75771676f63990d5e68c4493",
+  "measurement": {
+    "source_id": "integer-8192-full-range-20260930",
+    "filename": "k8192_full.jsonl",
+    "sha256": "83d3e4fc24edcb99038ba4a2d18b8c79aa03f7d0b41eada5884cdcdebacfeac7",
+    "date": "2026-09-30",
+    "device": "one NVIDIA B300",
+    "shape": [
+      8192,
+      8192,
+      8192
+    ],
+    "distribution": "full signed INT8 range",
+    "backend": 6,
+    "reuse_b": false,
+    "median_ms": 1.2309192780525,
+    "timing_scope": "API encoding, GEMM and output restoration",
+    "phases": [
+      {
+        "calls": 2480,
+        "ms_per_call": 1.230755123015,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      },
+      {
+        "calls": 2480,
+        "ms_per_call": 1.230831416961,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      },
+      {
+        "calls": 2480,
+        "ms_per_call": 1.231664940619,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      },
+      {
+        "calls": 2480,
+        "ms_per_call": 1.231680396295,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      },
+      {
+        "calls": 2480,
+        "ms_per_call": 1.230082653415,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      },
+      {
+        "calls": 2480,
+        "ms_per_call": 1.231007139144,
+        "rint_mismatches": 0,
+        "cpu_grid_mismatches": 0,
+        "max_abs_error": 0
+      }
+    ],
+    "cpu_reference": "1024 points calculated from actual input rows with CPU int64",
+    "output_hash_sum": "7ad2134a976273d7",
+    "output_hash_xor": "a73e554a9bf05153",
+    "full_output_mismatches": 0,
+    "fallback_used": false
+  },
+  "measurement_binding": "The timing record has no library SHA. Equality to the archived library does not establish equality to the timed library. The public frontend has not run or been timed on GPU.",
+  "coverage": {
+    "crt": false,
+    "explanation": "This direct integer construction does not use residues. Each call proves the two FP32 accumulator bounds or selects an exact integer fallback. K*128^2 is below INT32_MAX for every accepted K.",
+    "max_k": 16384,
+    "fp32_group_bound": 16777216,
+    "energy_product_bound": 281474976710656,
+    "fast_conversion_bound": 4194304,
+    "fast_conversion_energy_bound": 17592186044416,
+    "table_maximum": [
+      974,
+      1152
+    ],
+    "cpu_all_input_pairs": 65536
+  },
+  "host_options": {
+    "backend": 6,
+    "graph_mode": 0,
+    "reuse_b": 0,
+    "poison": 0,
+    "pingpong": 0,
+    "moduli": 0,
+    "encoder_launch": [
+      4,
+      2,
+      true
+    ]
+  },
+  "source_changes": "Four-space formatting and comment cleanup retain source tokens. One private helper namespace is renamed to integer_planes. The new host-only adapter selects backend 6 explicitly and accepts no environment tuning.",
+  "source_token_check": [
+    {
+      "file": "api_layout.cuh",
+      "input_sha256": "9877a76ae5ca96fa2947590a57295aca746b8b461d6665cd7abfeafe01cab76c",
+      "tokens_equal": true
+    },
+    {
+      "file": "d1_kernel.cuh",
+      "input_sha256": "21a4576270b63c7ac74ca6fc4cddd91448f5a00ff71c49cf015c519788ef11b6",
+      "tokens_equal": true
+    },
+    {
+      "file": "duald40_load.cuh",
+      "input_sha256": "5c01a87bdc6dfc3ca726a514a6ab8bbe2d0491ddfca6fcb6dffe842f9401da07",
+      "tokens_equal": true
+    },
+    {
+      "file": "e1_kernel.cuh",
+      "input_sha256": "e81debb642d963b7e417dccd2c94761020e2b4dbb0751e4078cc69b02f190d95",
+      "tokens_equal": true
+    },
+    {
+      "file": "e2_kernel.cuh",
+      "input_sha256": "c6b7de501a7e0421948e0eb68d3bb349ad22bdb204f1e1bd7ba5d9c443946610",
+      "tokens_equal": true
+    },
+    {
+      "file": "enc1526.h",
+      "input_sha256": "77bbafb3e513dad8aa303f25773df84a9b39678e3d7d335f4ab5ef337bd845d4",
+      "tokens_equal": true
+    },
+    {
+      "file": "ext5_digits.h",
+      "input_sha256": "29e3ad7686ce06795c8f57b260d72613ad821f3e67d5b08e6b91fa9199b57d34",
+      "tokens_equal": true
+    },
+    {
+      "file": "f16way.cuh",
+      "input_sha256": "8e9cd8a6413eb035d6ef500cf1387528e21e84be397e74209417ffe52485428e",
+      "tokens_equal": true
+    },
+    {
+      "file": "f5_kernel.cuh",
+      "input_sha256": "a6ed1823d3aa62193b7ac83684fa1490c5506bfca5e0fad0271895b16dd3b424",
+      "tokens_equal": true
+    },
+    {
+      "file": "f5enc.cuh",
+      "input_sha256": "8c2f1b5bcc31c5d07afdd9060b3f2b7a07a3b4cdc1068cd3bcbd8df35e948715",
+      "tokens_equal": true
+    },
+    {
+      "file": "hayashi_i8gemm.cu",
+      "input_sha256": "f8d9334e7126e3d29c32ab144cef8afac846178059ff364f3b708be8fa01ab8d",
+      "tokens_equal": true
+    },
+    {
+      "file": "hayashi_i8gemm.h",
+      "input_sha256": "00117d12bd6aa5525580a4fa53697e11a8ac994024eefed8775c9ca6535245d3",
+      "tokens_equal": true
+    },
+    {
+      "file": "lut1526_alt.h",
+      "input_sha256": "b6e09ee2322a8625f6479bb737930b89de6af26ad3cacab4d639b1912afbefe7",
+      "tokens_equal": true
+    },
+    {
+      "file": "lut1526_le4.h",
+      "input_sha256": "1a399000bb55fda8d951c00c11a52a21a5dd1a61311e3b17f4142168a7132a7c",
+      "tokens_equal": true
+    },
+    {
+      "file": "lut1728.h",
+      "input_sha256": "835899ff9a72a078030c2879b19d942fc6e970032323a34f7b1bbf76e0820bf1",
+      "tokens_equal": true
+    },
+    {
+      "file": "lut5_1_10_13.h",
+      "input_sha256": "58623e5ca7e6779725195a53027fc490a0f876aded3d67b93d95705b9f9a551a",
+      "tokens_equal": true
+    },
+    {
+      "file": "packed_1526.h",
+      "input_sha256": "7e11c100ce1e07b0a16e5bfbe5a5560ff59cb6b4ceb5fbc3b1884c94b94a028f",
+      "tokens_equal": true
+    },
+    {
+      "file": "v5_backend.cu",
+      "input_sha256": "0ea2ddba0a6ffb2ed099dd4869a44e004dc821b54848960696a59ca0ed7818c4",
+      "tokens_equal": true
+    },
+    {
+      "file": "v5_backend.h",
+      "input_sha256": "34f48bd6a149ab8ff757d2a0ee09721b12596735c5f104771770475b053f42ac",
+      "tokens_equal": true
+    },
+    {
+      "file": "v5_kernel.cuh",
+      "input_sha256": "f1def0b694791010f30062d63d95fdc51b82a0ff4fd2114628e152c70c4691fe",
+      "tokens_equal": true
+    },
+    {
+      "file": "v5enc.cuh",
+      "input_sha256": "953a08da04fb9d96afcc235bc6fd09e8fe02e58fc22424ca88c519fac1a26b3d",
+      "tokens_equal": true
+    },
+    {
+      "file": "v5fenc.cuh",
+      "input_sha256": "b38cc7e7985cd81c954e805a8fff2a62732179ddd0f25238f8ac9c5adbb60ad8",
+      "tokens_equal": true
+    }
+  ],
+  "device_gate": {
+    "passed": true,
+    "sass_equal": true,
+    "device_metadata_checks": {
+      "inventory": true,
+      "resources": true,
+      "attributes": true,
+      "initialized_data": true
+    },
+    "reference_device_metadata_sha256": {
+      "inventory": "b4e710d6519927a4205c93d98920a27f6dce74e04a139ece95611157496a843b",
+      "resources": "86f349af3c97ca3fef505ab8131dc2fa472a7268baf97e97a7544ae6138a60b3",
+      "attributes": "0fe9490318bdc5b6f7a25138403e469108234378dbdedec0d5274401bce26e89",
+      "initialized_data": "7e9580ebc7aa7f56aaf1a114d078e37339b4d5cde1f513ea05e614300d477caa"
+    },
+    "candidate_device_metadata_sha256": {
+      "inventory": "b4e710d6519927a4205c93d98920a27f6dce74e04a139ece95611157496a843b",
+      "resources": "86f349af3c97ca3fef505ab8131dc2fa472a7268baf97e97a7544ae6138a60b3",
+      "attributes": "0fe9490318bdc5b6f7a25138403e469108234378dbdedec0d5274401bce26e89",
+      "initialized_data": "7e9580ebc7aa7f56aaf1a114d078e37339b4d5cde1f513ea05e614300d477caa"
+    },
+    "ignore_kernel_names": true,
+    "reference_sha256": "4f35aa21363af4bc5da36546224acac5de736c3d75771676f63990d5e68c4493",
+    "candidate_sha256": "64ef2c4ffd91adab929ef29ef6003671890956803aba9dfcc07524cbe9fa8dd2",
+    "reference_sass_sha256": "a23ae166dc003644ebbb6859ca78a111b69ce7d7ce13757579aa6a2376c3b09c",
+    "candidate_sass_sha256": "a23ae166dc003644ebbb6859ca78a111b69ce7d7ce13757579aa6a2376c3b09c",
+    "reference_functions": 74,
+    "candidate_functions": 74,
+    "reference_instructions": 91728,
+    "candidate_instructions": 91728
+  },
+  "name_comparison": "The name-sensitive gate rejects nvcc-generated anonymous namespace hashes. The existing name-independent gate passes all checks; instruction operands and control words are not changed or removed.",
+  "host_tables": {
+    "passed": true,
+    "sha256": {
+      "_ZL5LUT_A": "a939bcd0b2a3829d322437a670b2b8b62971e4d8b65f7b955745384f4b08bf8f",
+      "_ZL5LUT_B": "d1c501065870a399a560cf2ee338f43f365f56d496dd782c14f439d94379ff8e",
+      "_ZN5f5lutL5LUT_AE": "eaac81f10331fa49b11b4d9f48eee2b27f5f64d446c6985d95605ca5b726368f",
+      "_ZN5f5lutL5LUT_BE": "dbe2db2844570018f54947a05ebb2e45b449f62987c82c81c4e0a7f66342c3fa"
+    }
+  },
+  "final_source_token_check": [
+    {
+      "file": "v5_kernel.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "hayashi_i8gemm.cu",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "d1_kernel.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "packed_1526.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "duald40_load.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "enc1526.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "api_layout.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "lut1526_le4.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "lut1728.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "f5_kernel.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "v5enc.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "e2_kernel.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "f16way.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "v5_backend.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "v5_backend.cu",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "f5enc.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "lut1526_alt.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "ext5_digits.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "lut5_1_10_13.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "hayashi_i8gemm.h",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "e1_kernel.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    },
+    {
+      "file": "v5fenc.cuh",
+      "tokens_equal_except_host_adapter_and_namespace": true
+    }
+  ]
+}

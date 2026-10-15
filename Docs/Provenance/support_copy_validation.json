@@ -1,0 +1,211 @@
+{
+  "gpu_execution": false,
+  "checks": [
+    {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": false,
+        "attributes": false,
+        "initialized_data": false
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "3115d34d3f40d860636710f41c7ab0bffde0a6ebc362bdb4f763c5b2a78a1d7b",
+        "attributes": "04324c3964cf391e5ae3e7fabb86dacb50b3eaeb66ddb959d6ab16906d5f0a0e",
+        "initialized_data": "0b29aba8b1689d3fff1c2c0c5037004c8f99d7a9957102fbf1170126b28e58b9"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "68d5a4305b763b799ce91075ce7427ca53d15bba1b53072768f47480c02e7b0b",
+        "attributes": "43da92d1c663b92998f8c0c76e73d7e0ee38d4dcbd663c5c4d6bb2ec18d37d41",
+        "initialized_data": "c9080bc89727e32925ae7ad5a88d2b78f701c9fe9d6e22b9dccfcee4e2311b37"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "7b5bb264c51b2578e3c85eaf75af14d11e0a746917e95da74a960879fb5d2b5f",
+      "candidate_sha256": "8572e67245356c6e00b27390b71f1ae8fbf0669c1b3ceb53aa267a9855fadde5",
+      "reference_sass_sha256": "6aa9ddf8e0e8fd38f9a1943ad544e21a4c76587baf313a5f3642e1d05a2639ab",
+      "candidate_sass_sha256": "e00c2f3ddddf1a993ade88cbc4cd550f3dcae00fa4433d9507ed616dde6218a1",
+      "reference_functions": 11,
+      "candidate_functions": 12,
+      "reference_instructions": 1960,
+      "candidate_instructions": 2128,
+      "backend": 96,
+      "kind": "real",
+      "existing_kernel_instructions_equal": true,
+      "new_kernel": "copy_lower",
+      "new_kernel_instructions": 168,
+      "scope": "The full gate differs because copy_lower is new. All existing kernel instructions match. The new kernel has not run on a GPU."
+    },
+    {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "6448f7266234c34c576be0f05125f8759225129d029f3e70d2ee93d8954aa8e2",
+        "attributes": "041d90a1899718f34885b9dfbcf58bfb48ea9e25ad83d4d0405f40a1570a3b17",
+        "initialized_data": "f4de6a97611b540b64f5572dea7b008df53b0772965e74c66a28e63b6a0e1aa1"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "6448f7266234c34c576be0f05125f8759225129d029f3e70d2ee93d8954aa8e2",
+        "attributes": "041d90a1899718f34885b9dfbcf58bfb48ea9e25ad83d4d0405f40a1570a3b17",
+        "initialized_data": "f4de6a97611b540b64f5572dea7b008df53b0772965e74c66a28e63b6a0e1aa1"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "5272711ed16ce2ece852b2f5c0876e37267c49b5a3fa81ba3b9a702b461d4abf",
+      "candidate_sha256": "a0455823c1f5f1bc88f379f4956438bc87f48b2a74f464919615a42d98584a05",
+      "reference_sass_sha256": "98e1e9917d84a5524038b52146496a09222a0f48baae31b41cde9692a1b7bae6",
+      "candidate_sass_sha256": "98e1e9917d84a5524038b52146496a09222a0f48baae31b41cde9692a1b7bae6",
+      "reference_functions": 3,
+      "candidate_functions": 3,
+      "reference_instructions": 720,
+      "candidate_instructions": 720,
+      "backend": 96,
+      "kind": "complex"
+    },
+    {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "78145030d4b318fbb43f990ab0285d236805baf255703e93a9c4cc2cb456e1b7",
+        "attributes": "6c7b181fb41f64c50d9f3102efb73974399a79a0238460703c1e811441093e3a",
+        "initialized_data": "a5b96c272f6374be3ed0781b920cee26119b33d7a61fb2e1a55f46f94fe16fe3"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "e2ef392b121bc0a2784bc7821ea5931730e599978318751f956fbc18f3110c24",
+        "resources": "78145030d4b318fbb43f990ab0285d236805baf255703e93a9c4cc2cb456e1b7",
+        "attributes": "6c7b181fb41f64c50d9f3102efb73974399a79a0238460703c1e811441093e3a",
+        "initialized_data": "a5b96c272f6374be3ed0781b920cee26119b33d7a61fb2e1a55f46f94fe16fe3"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "665e41ab00ed78fe5fba7b53c1d10b3977e86b52db2f1cc525f4ee27eaacaba2",
+      "candidate_sha256": "39bdff9be62f8768af6192ce4ced574334d952f70c04bf3a8c26ad30472d21a7",
+      "reference_sass_sha256": "a0b69b56e01925ffe45857b161a205179b643936edbd0fb24296bca5a99293aa",
+      "candidate_sass_sha256": "a0b69b56e01925ffe45857b161a205179b643936edbd0fb24296bca5a99293aa",
+      "reference_functions": 3,
+      "candidate_functions": 3,
+      "reference_instructions": 600,
+      "candidate_instructions": 600,
+      "backend": 96,
+      "kind": "float"
+    },
+    {
+      "passed": false,
+      "sass_equal": false,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": false,
+        "attributes": false,
+        "initialized_data": false
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "0c8bdf5150b677f04577c1d78242814b7fe324d67341184e092956b9646911d7",
+        "attributes": "08280dceb4807ec42bac67ed585ba1cd3323674921ba9851d4217da5a694aebf",
+        "initialized_data": "28d24af14d10c2a41334a01165462c95dbf01bbd41ebf93ebf203bd99f98dc70"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "d99e0e7ef8309b657dcc98fcd3cf7009741934accb9849a115b28b6849d2c59d",
+        "attributes": "7f251c39696725f8bd8c98dab52722f1667e654c339711d1bf44c84c059cba50",
+        "initialized_data": "386cd3662053c25fa52cd60ec79a6742f20bfce26129d17a059fbd78bf411162"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "b493992b909741e91ba8ab8d40c6e99fce286701586997e4f9f9887dc25c968d",
+      "candidate_sha256": "e22baa69f646aa682c79d0c04092291626ec7d8029e6ef28f5a6ad8f2dd4fe81",
+      "reference_sass_sha256": "ed1975f3248a4c7b8e5960c87d8664b2ad7812f5938aba1c215e5103163a9baf",
+      "candidate_sass_sha256": "5509f9b1f70555f7b99b836c7505846160b2eb288520efb7314bf4bea1f9f29a",
+      "reference_functions": 11,
+      "candidate_functions": 12,
+      "reference_instructions": 1688,
+      "candidate_instructions": 1848,
+      "backend": 64,
+      "kind": "real",
+      "existing_kernel_instructions_equal": true,
+      "new_kernel": "copy_lower",
+      "new_kernel_instructions": 160,
+      "scope": "The full gate differs because copy_lower is new. All existing kernel instructions match. The new kernel has not run on a GPU."
+    },
+    {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "4fe742a7c75a8ac4d59f40307a40111836962ddd060ed57b8c55ce673954a373",
+        "attributes": "3e25b61716786bac3ccdff0638ddab742c44cbecde60844f55dc4c582eaed9cf",
+        "initialized_data": "b87c8fdfdca37457961585cd246d4673e16ecb1f660db2c0ad3c48002e1cc02a"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "4fe742a7c75a8ac4d59f40307a40111836962ddd060ed57b8c55ce673954a373",
+        "attributes": "3e25b61716786bac3ccdff0638ddab742c44cbecde60844f55dc4c582eaed9cf",
+        "initialized_data": "b87c8fdfdca37457961585cd246d4673e16ecb1f660db2c0ad3c48002e1cc02a"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "7b5020060997a53945d3b1028aaa2c1cc4ef3a37637d923690581b3c0eeffd3c",
+      "candidate_sha256": "c634a50f0594858557ff2fdd90981c669938c528f73069916cab6d95b63b3840",
+      "reference_sass_sha256": "28146360d5e44db22037b52b7e4b5bb4543530d86488d3b018995561bd806fdc",
+      "candidate_sass_sha256": "28146360d5e44db22037b52b7e4b5bb4543530d86488d3b018995561bd806fdc",
+      "reference_functions": 3,
+      "candidate_functions": 3,
+      "reference_instructions": 704,
+      "candidate_instructions": 704,
+      "backend": 64,
+      "kind": "complex"
+    },
+    {
+      "passed": true,
+      "sass_equal": true,
+      "device_metadata_checks": {
+        "inventory": true,
+        "resources": true,
+        "attributes": true,
+        "initialized_data": true
+      },
+      "reference_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "53d0b49eff38e36d42f92a2b74c484ea340a570d32e307231b38525c0d796cac",
+        "attributes": "0ad4a9c1749d5f6253e14837c7ac6953bc6c3ecb67d12d3265922900b7034fe4",
+        "initialized_data": "1a0241b894005ba166329b88953376c20173f5267c95aa6e82b7ae305c2f0428"
+      },
+      "candidate_device_metadata_sha256": {
+        "inventory": "3b0f935de5f5103ce39c52a4f82007d4f5d7f7bd147721435bac52206e880e4d",
+        "resources": "53d0b49eff38e36d42f92a2b74c484ea340a570d32e307231b38525c0d796cac",
+        "attributes": "0ad4a9c1749d5f6253e14837c7ac6953bc6c3ecb67d12d3265922900b7034fe4",
+        "initialized_data": "1a0241b894005ba166329b88953376c20173f5267c95aa6e82b7ae305c2f0428"
+      },
+      "ignore_kernel_names": true,
+      "reference_sha256": "d62c0d6d537b606abae50d7bef1c9c15f13bff3ed3ead06b96e90b529862caa6",
+      "candidate_sha256": "d447288d3786324580fea00eef302ae86549fc64cbfb3c1af269439996316341",
+      "reference_sass_sha256": "0995dba86f699671a324ba01101a0b67198bb6d61c81529d974e7cb52e42802d",
+      "candidate_sass_sha256": "0995dba86f699671a324ba01101a0b67198bb6d61c81529d974e7cb52e42802d",
+      "reference_functions": 3,
+      "candidate_functions": 3,
+      "reference_instructions": 592,
+      "candidate_instructions": 592,
+      "backend": 64,
+      "kind": "float"
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "figures": [
+    {
+      "file": "Figures/radix13-storage.png",
+      "png_sha256": "e281647dbbc56384ccde950d9c39805ef6f13b73f283d4682087bbd217c4d9f5",
+      "source_id": "radix13-storage-supplied-figure",
+      "source_pdf_sha256": "776bd15f729eab462bc02248376c862a04212bc4504f4f50a95f3526c1a21f8a",
+      "source_page": 1,
+      "pixel_size": [
+        6019,
+        1470
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Construction"
+    },
+    {
+      "file": "Figures/product-count-by-width.png",
+      "png_sha256": "5ef534e0e00916c302b483c67297ea39b9ab3d8e920ab60fb37b683d3f5b6338",
+      "source_id": "product-count-by-width-supplied-figure",
+      "source_pdf_sha256": "928536be7b78bf40ae309c7a25329c1827455d5df88706cf5fa97d4cced62e69",
+      "source_page": 1,
+      "pixel_size": [
+        2088,
+        1686
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Construction"
+    },
+    {
+      "file": "Figures/product-count-map.png",
+      "png_sha256": "5645e264622c8d7cf189a55332ad9264f202dba7095bb35a305764f19d92578a",
+      "source_id": "product-count-map-supplied-figure",
+      "source_pdf_sha256": "3e3740bacf1bcb67a9af22110daead09085ab1add489850f93264b08d43cf079",
+      "source_page": 1,
+      "pixel_size": [
+        3194,
+        2528
+      ],
+      "render_dpi": 600,
+      "render_method": "Supplied 600 dpi PNG copied without changing any bytes; legend placed to the right of the grid in the source plot",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "Inspected local browser rendering at 1280 px and 375 px viewport widths. Legend is to the right; the grid retains its aspect ratio; both plots have matching displayed heights.",
+      "role": "Construction",
+      "source_pdf_file": "fig_plane_tri_v16a_hatchfree_swap_vio50_m25_legright_fp4title.pdf",
+      "source_script": "plot_v16_swap_m25_legright.py",
+      "source_script_sha256": "3d1895c654b25c543c8c916f0e8b0afd216ec3e42af1c4c909e77a34524b7d13",
+      "source_title_arguments": [
+        "--title",
+        "Integer AWE and CRT: FP4 product counts"
+      ],
+      "change_scope": "Legend moved to the right; title names FP4 product counts. Cells, values, colors and font sizes retained by the supplied plot script."
+    },
+    {
+      "file": "Figures/modulus-set-53bit-awe.png",
+      "png_sha256": "5b434b115c7a47f7e5d2569493f77e17e0b5e8596bfc989f473b55dc9c882d1a",
+      "source_id": "awe-site-53bit-modulus-set",
+      "source_commit": "85680bd3fc3a60659cfb8fdff27918b78d27886c",
+      "source_url": "https://fp4-is-all-you-need.github.io/AWE/?lang=en&precision=fp64&b=53&K=8192&crt=1&modset_id=awems1_5b05738257bbabf8901c9dfaa2c8b7d03469ce483316bd6e8f9b0b46197e5757&view=main&slot=1&swap=0&open.main=1",
+      "url_parameters": "lang=en&precision=fp64&b=53&K=8192&crt=1&modset_id=awems1_5b05738257bbabf8901c9dfaa2c8b7d03469ce483316bd6e8f9b0b46197e5757&view=main&slot=1&swap=0&open.main=1",
+      "viewport_css_pixels": [
+        1440,
+        1000
+      ],
+      "language": "en",
+      "device_pixel_ratio": 2,
+      "pixel_size": [
+        2240,
+        858
+      ],
+      "capture_method": "Browser screenshot of the matching AWE release build, cropped to the heading and all 18 modulus cards; no content edits.",
+      "image_copied_byte_for_byte": true,
+      "moduli": [
+        8,
+        73,
+        79,
+        81,
+        83,
+        89,
+        103,
+        113,
+        121,
+        127,
+        131,
+        139,
+        149,
+        151,
+        155,
+        157,
+        161,
+        169
+      ],
+      "products": 62,
+      "planes_per_operand": {
+        "A": 39,
+        "B": 39
+      },
+      "accumulators": 23,
+      "maximum_K": 8254,
+      "selected_K": 8192,
+      "png_metadata_forbidden_hits": 0,
+      "visual_review": "All 18 tiles, 62 products, 39 planes per operand and K limit are visible and readable. The 23 accumulators are confirmed by the capture data.",
+      "role": "Construction shown in the interactive AWE site",
+      "clip_css_pixels": {
+        "x": 272,
+        "y": 1650.4375,
+        "width": 1120,
+        "height": 428.96875
+      },
+      "readme_displayed": true,
+      "readme_display_width": 600
+    },
+    {
+      "file": "Figures/dgemm-shape-times.png",
+      "png_sha256": "5f9d910dd7938d90af5c3b4b496677b9408c50a32010903d019c7335f180995e",
+      "source_id": "dgemm-shape-times-supplied-figure",
+      "source_pdf_sha256": "c2402099fa7bafbbd91e842badcf71f56645163177bb2a405c9fed13a8b70af9",
+      "source_page": 1,
+      "pixel_size": [
+        2092,
+        1104
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Earlier repository measurement, one B300, October 2026; not a timing of the current frontend.",
+      "readme_displayed": false,
+      "retention": "Original retained for comparison with the replacement README figure."
+    },
+    {
+      "file": "Figures/dgemm-time-accuracy.png",
+      "png_sha256": "00e061f608d9da40ec481f7b148f8c6e62fb1c47c6e791dd10100450e13549ea",
+      "source_id": "dgemm-time-accuracy-supplied-figure",
+      "source_pdf_sha256": "744ac70be18a4cf08686a1cce48a6dabd9b3e73192a3921927c44e5e19f6b3d9",
+      "source_page": 1,
+      "pixel_size": [
+        2092,
+        1640
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Earlier repository measurement, one B300, October 2026; not a timing of the current frontend."
+    },
+    {
+      "file": "Figures/dgemm-time-energy-by-precision.png",
+      "png_sha256": "4a707a3e5d561c22f310de9c987fb2c7cd03941de361ec9ee2f777e7bcaaadbc",
+      "source_id": "dgemm-time-energy-by-precision-supplied-figure",
+      "source_pdf_sha256": "2b4f7f926e91ee499d39b817c5892971ff4e6e98e4d29a4f68d82fe4a5081ad1",
+      "source_page": 1,
+      "pixel_size": [
+        2100,
+        1191
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Earlier repository measurement, one B300, October 2026; not a timing of the current frontend."
+    },
+    {
+      "file": "Figures/int8-substitution.png",
+      "png_sha256": "00d7b0406caa731dcfe7a802c0b86432bb5d1806f03ac93a2a1a082ced79ba88",
+      "source_id": "int8-substitution-supplied-figure",
+      "source_pdf_sha256": "5e3c506cf2bf0dc79eabb0243c4ba167630ea3a52cc78b2610470258ee1fa7b4",
+      "source_page": 1,
+      "pixel_size": [
+        2100,
+        832
+      ],
+      "render_dpi": 600,
+      "render_method": "PyMuPDF full-page RGB rendering; no crop, rescale, recolor or content edits",
+      "pixels_equal_to_source_page_render": true,
+      "aspect_ratio_preserved": true,
+      "pdf_text_and_metadata_forbidden_hits": 0,
+      "png_metadata_forbidden_hits": 0,
+      "png_visual_review": "All labels read on rendered PNG; no excluded identifiers visible.",
+      "role": "Earlier repository measurement, one B300, October 2026; not a timing of the current frontend.",
+      "measurement_values": {
+        "source_id": "archived-dgemm-product-substitution-values",
+        "source_sha256": "cbb4ec6ab2f3d3db27bc7750bc95681c2fc223efd33e85681d335e7edc522b4b",
+        "shape": [
+          8192,
+          8192,
+          8192
+        ],
+        "distribution": "normal",
+        "validated_rows": [
+          {
+            "row": "g8_int8_cublas",
+            "time_ms": 113.37648405852141,
+            "rounds": 10,
+            "points": 1024,
+            "accuracy": {
+              "p95": 17.85,
+              "max": 2399.0
+            },
+            "native_pass": true,
+            "machine": "B300",
+            "source_sha256": "878cf21f97939473f22751a960fb0ecd7aeadfa75037a005bf1e5839214c9f71"
+          },
+          {
+            "row": "g8_int8_ours",
+            "time_ms": 20.485980429616916,
+            "rounds": 10,
+            "points": 1024,
+            "accuracy": {
+              "p95": 17.85,
+              "max": 2399.0
+            },
+            "native_pass": true,
+            "machine": "B300",
+            "source_sha256": "878cf21f97939473f22751a960fb0ecd7aeadfa75037a005bf1e5839214c9f71"
+          },
+          {
+            "row": "g8_fp8_352",
+            "time_ms": 14.55216976294771,
+            "rounds": 10,
+            "points": 1024,
+            "accuracy": {
+              "p95": 17.85,
+              "max": 2399.0
+            },
+            "native_pass": true,
+            "machine": "B300",
+            "source_sha256": "878cf21f97939473f22751a960fb0ecd7aeadfa75037a005bf1e5839214c9f71"
+          },
+          {
+            "row": "cublas_emu",
+            "time_ms": 14.162966152407089,
+            "rounds": 10,
+            "points": 1024,
+            "accuracy": {
+              "p95": 78.85,
+              "max": 2114.0
+            },
+            "native_pass": true,
+            "machine": "B300",
+            "source_sha256": "878cf21f97939473f22751a960fb0ecd7aeadfa75037a005bf1e5839214c9f71"
+          }
+        ],
+        "final_nvfp4_bar": "11.8 ms from the separate 53-bit routine-comparison series recorded in performance_sources.json; not the older NVFP4 row of this archived substitution dataset."
+      }
+    },
+    {
+      "file": "Figures/engine-architecture.svg",
+      "svg_sha256": "dd202ac8f7e894925a238d58cdb6beaeb37f56569be672d50cccd71d018110c5",
+      "source_id": "repository-architecture",
+      "source_file": "Docs/architecture.md",
+      "source_sha256": "b4cebbe582e575e0ae88d4d9577f7fdeace834cc29b5f05c14cc389023d2f17a",
+      "adaptation": "Labels show Inline dispatch, Template comparison builds and current source paths.",
+      "svg_text_and_metadata_forbidden_hits": 0,
+      "visual_review": "Rendered with CairoSVG and inspected as a PNG; all labels fit their boxes.",
+      "palette": {
+        "base13": "#9464CB",
+        "awe_direct": "#ED964F",
+        "awe_crt": "#DC92AE"
+      }
+    },
+    {
+      "file": "Figures/fp4-overview.png",
+      "png_sha256": "7c829a4997be1cda08d5b8ee243887a0eab6e3816c897ea4ab0923fa84dda2db",
+      "source_id": "overview-briefing-20261015-page1",
+      "source_pdf_sha256": "9bdd400ea25d3722eef4f63d1a0f7a4cc1752148d44fa4dae9b0f232010dcd71",
+      "source_page": 1,
+      "pixel_size": [
+        3159,
+        1701
+      ],
+      "render_dpi": 600,
+      "render_method": "Supplied PNG rendered with PyMuPDF page.get_pixmap, dpi=600, alpha=False, colorspace=csRGB, clip=clip_pt; copied byte for byte",
+      "aspect_ratio_preserved": true,
+      "png_metadata_forbidden_hits": 0,
+      "role": "Overview layout updated on 2026-10-15; routine status describes research measurements on 2026-10-02, not current release support.",
+      "readme_displayed": true,
+      "clip_pt": [
+        32.0,
+        47.4,
+        411.0,
+        251.5
+      ],
+      "clip_coordinate_system": "PDF page points, top-left origin",
+      "pixels_equal_to_source_clip_render": true,
+      "source_pdf_file": "brief_en_awe_release_20261015.pdf",
+      "source_tex": [
+        {
+          "file": "brief_en_awe_release_20261015.tex",
+          "sha256": "3db29399aedae18ba7a3d0ca0b1b175de63b3e7c691d7a426ccaea50099a5794"
+        },
+        {
+          "file": "frame_overview_awe_release_20261015.tex",
+          "sha256": "8c182ba8c29d80afa510205a20c1fa4db3290fa88cfaafb1afdec92b68e406a7"
+        }
+      ],
+      "source_build_engine": "LuaHBTeX 1.22.0 (TeX Live 2025)",
+      "source_build_command": "lualatex -interaction=nonstopmode -halt-on-error brief_en_awe_release_20261015.tex (run twice)",
+      "pymupdf_version": "1.26.7",
+      "mupdf_version": "1.26.12",
+      "change_scope": "Removed the obsolete kernel-availability note; moved the GitHub line down above the BLAS figure. Other pixels are identical.",
+      "previous_figure": {
+        "source_id": "overview-briefing-20261002-page1",
+        "png_sha256": "1b17af31934156fb39d615d20d86f482b880c77b8ec6667037970a98b7df1091",
+        "source_pdf_sha256": "1d4dd1bf7f4b36ac2722e2fcb94adae7bdb75e59757a8ccb635a29248bb854ce",
+        "clip_validation": {
+          "removed_header_and_page_number_text_blocks_disjoint": true,
+          "retained_text_blocks_contained": 77,
+          "retained_images_contained": 6,
+          "retained_drawings_contained": 1039,
+          "partial_items": [
+            {
+              "name": "Page white background",
+              "paint_bbox_pt": [
+                0.0,
+                0.0,
+                453.5429992675781,
+                255.1179962158203
+              ],
+              "intersection_pt": [
+                32.0,
+                47.4,
+                411.0,
+                251.5
+              ]
+            }
+          ],
+          "note": "Only the page white background is clipped. The header separator stroke is outside the clip; all image rectangles, including the GitHub icon, are inside."
+        },
+        "pdf_metadata_event_or_machine_identifiers": 0
+      },
+      "pixel_comparison": {
+        "previous_png_sha256": "1b17af31934156fb39d615d20d86f482b880c77b8ec6667037970a98b7df1091",
+        "new_png_sha256": "7c829a4997be1cda08d5b8ee243887a0eab6e3816c897ea4ab0923fa84dda2db",
+        "pixel_size": [
+          3159,
+          1701
+        ],
+        "changed_pixels": 72601,
+        "changed_bbox_px_inclusive_x0_y0_x1_y1": [
+          1944,
+          27,
+          3127,
+          198
+        ],
+        "changed_pixels_outside_declared_rectangle": 0,
+        "source_record_pdf_checks": "Supplied by main; only PNG comparison was repeated here",
+        "visual_review": "Obsolete availability note removed; GitHub line is directly above the BLAS frame; remaining content unchanged"
+      },
+      "source_record_checks": {
+        "basis": "Supplied source build and PDF inspection record",
+        "previous_source_render_reproduced_previous_png": true,
+        "other_pdf_images_same_position": true,
+        "pages_2_to_5_identical_at_150dpi": true
+      }
+    },
+    {
+      "file": "Figures/dgemm-shape-times-fp4-legend.png",
+      "png_sha256": "458ece6aa0760f399433cb253ae3f278453c9592b8311d4d8182749f59f9123d",
+      "source_id": "dgemm-nine-shapes-fp4-legend",
+      "source_figure": "Figures/dgemm-shape-times.png",
+      "source_png_sha256": "5f9d910dd7938d90af5c3b4b496677b9408c50a32010903d019c7335f180995e",
+      "source_pdf_sha256": "c2402099fa7bafbbd91e842badcf71f56645163177bb2a405c9fed13a8b70af9",
+      "source_page": 1,
+      "pixel_size": [
+        2092,
+        1104
+      ],
+      "render_dpi": 600,
+      "render_method": "Replayed plotting source with environment-controlled legend labels; PyMuPDF full-page RGB rendering.",
+      "legend_replacements": {
+        "Ours": "AWE FP4 (Ours)",
+        "Base-13 limbs": "Base-13 limbs FP4"
+      },
+      "scope": "Only the two legend texts changed; bars, values, colors, order and axes are identical. Other figures are unchanged.",
+      "sources": [
+        {
+          "role": "plotter",
+          "input_sha256": "e0cede83abe418a5c4d1e3e55f5d60ecd39c4d38bd9930f6893d47375fbb41d7",
+          "working_copy_sha256": "57dac2a87bc2e00b8c1bfd76504e2361485e209fb5416bb25ea9fd9e921bb778",
+          "input_unchanged": true
+        },
+        {
+          "role": "style",
+          "input_sha256": "772e390b653ec7cbc0c9b56fba8a98f4dacfc786be457903d4113fe1970874c7",
+          "working_copy_sha256": "772e390b653ec7cbc0c9b56fba8a98f4dacfc786be457903d4113fe1970874c7",
+          "input_unchanged": true
+        },
+        {
+          "role": "driver_reference",
+          "input_sha256": "80eec74a908aec04259392ebc2299ff1d4b845361e3dcbe65ab1bb77a11bdb10",
+          "working_copy_sha256": "80eec74a908aec04259392ebc2299ff1d4b845361e3dcbe65ab1bb77a11bdb10",
+          "input_unchanged": true
+        },
+        {
+          "role": "measurement_values",
+          "input_sha256": "0e68e35d33fe39e027c44b99565a8393b02261b1c6ae3110caac2a1b58849b68",
+          "working_copy_sha256": "0e68e35d33fe39e027c44b99565a8393b02261b1c6ae3110caac2a1b58849b68",
+          "input_unchanged": true
+        },
+        {
+          "role": "combined_nine_shape_values",
+          "input_sha256": "a1116395486f9c51061498f569e2196240378fc051614e7afef4038398d33ffe",
+          "working_copy_sha256": "a1116395486f9c51061498f569e2196240378fc051614e7afef4038398d33ffe",
+          "input_unchanged": true
+        }
+      ],
+      "plot_configuration": {
+        "half": true,
+        "no_fp8_row": true,
+        "no_ratio": true,
+        "l13": true,
+        "ymax_factor": 1.1,
+        "l13_order": "v5",
+        "full_emulation_legend": true
+      },
+      "validation": {
+        "baseline_pixels_identical_to_original": true,
+        "changed_pixels": 11366,
+        "allowed_legend_regions_px": [
+          [
+            322,
+            366,
+            480,
+            468
+          ],
+          [
+            322,
+            292,
+            762,
+            394
+          ],
+          [
+            322,
+            366,
+            809,
+            468
+          ],
+          [
+            322,
+            292,
+            893,
+            394
+          ]
+        ],
+        "different_pixels_outside_legend": 0,
+        "non_legend_drawings_equal": true,
+        "values_rows_equal": true,
+        "values_source_equal": true,
+        "pdf_text_equal_after_two_legend_replacements": true,
+        "readback": {
+          "page_in": [
+            3.486,
+            1.839
+          ],
+          "min_text_pt": 8.0,
+          "ratio_texts": 0,
+          "bars_read": 36,
+          "bars_expected": 36,
+          "max_bar_diff_ms": 1.443590298855213e-06,
+          "ymax_ms": 19.15196989271376,
+          "tallest_bar_ms": 18.594145526906562,
+          "errors": [],
+          "passed": true,
+          "label_angle": 30,
+          "touching_labels": null,
+          "swap": null
+        }
+      },
+      "png_visual_review": "Longer legend labels clear all bars; no overlap.",
+      "readme_displayed": true
+    }
+  ],
+  "source": "Supplied construction and repository measurement figures, a dated overview slide and the repository implementation diagram. The original nine-shape figure remains alongside its README replacement. Source PDFs and plotting inputs are retained separately, not distributed here.",
+  "gpu_execution": false
+}

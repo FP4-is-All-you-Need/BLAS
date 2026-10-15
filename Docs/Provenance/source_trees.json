@@ -1,0 +1,376 @@
+{
+  "scope": "Historical source trees and SHA-256 of selected build, API and validation files. These are source identities, not references to public version history. Existing engine file and binary SHA-256 records are retained.",
+  "trees": [
+    {
+      "source_tree": "5d09550d10316960f6a03f6c8941636574afe8a6",
+      "file_sha256": {
+        "CMakeLists.txt": "ab6a2d32fc125afb5c5273a40ef2f5eaf3b9c88cd897ab1457748c6a07fa9f48",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "a3299ffd37c3e3ce6702e2c2a0c64c3de1c0dde3",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "ac13761283f1e02a227ed49132d45c09accf2b5c",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "4806768b15e19854836ba29cb444808d8e304ce9418fcb5f0ce89bee15260e2c",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "64974a3a17edca606909615b6341269b6d248386",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "f323f0da557c888119804367b38e8475016d715c",
+      "file_sha256": {
+        "CMakeLists.txt": "4cbdcab688d6dacf3e3664f8782ee8d203296a0e947519b6685b0bbdf370ead0",
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "5a9ee749c6b2ba80e66530ed6ed33ac07a3ac41f",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "9b34550403aaba9981121cfd2df31bac7e563b99",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "a4e09963c3948c2aef18607a86d9241193ab6aa9",
+      "file_sha256": {
+        "CMakeLists.txt": "225a8fdedf05c0a69475472509a0ad8f3009abba0555f9a7260de368972134af",
+        "API/api.cpp": "c4bad42c51161f8be89867920ef5c8c5f4f048a3dd63d18519bf2e40b5333845",
+        "Routines/Common/dispatch.hpp": "932a1ea10cdf0099cd8ced701e0ea7b2ac82a907ac32c85e8db5697aabf29405",
+        "Routines/Common/engine_choices.hpp": "ccc318d5cab58f19f7e96ad27ed03ba047d806a0c1f6b9dcb7af09ac4ca279aa",
+        "Include/AWE/awe.h": "96ed0652c9e11ea9a99024acb8eb2d5acf40db6a102536eb1696b78c90f8841c",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "1b89d237945add752911216022959f77e2758b09",
+      "file_sha256": {
+        "CMakeLists.txt": "4cbdcab688d6dacf3e3664f8782ee8d203296a0e947519b6685b0bbdf370ead0",
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "027e25cb173ed8474f6d5180d938aa113871a6fd",
+      "file_sha256": {
+        "CMakeLists.txt": "073fc8b09065851b8ce670f63b28d5337ee566310ecf7e484ba6dbda219798a4",
+        "API/api.cpp": "ba9091aa1448e8b4c5079bc802d73dbb0635202fe720664c7505709879842780",
+        "Routines/Common/dispatch.hpp": "c113a921823f5311b52ae59105f84c7c0a0ea83088566f3a7756872ebe4e75b6",
+        "Include/AWE/awe.h": "38fbe2d72adf6754c3e15d8a6f9ad6c4e7a59f18e1f1b8137522121d5904477b",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "b4cd99ee76b6416bc1596e07e5fda081f960825b",
+      "file_sha256": {
+        "CMakeLists.txt": "073fc8b09065851b8ce670f63b28d5337ee566310ecf7e484ba6dbda219798a4",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "fca107ab1b7919fd5201590ccf245d58186a6f3e",
+      "file_sha256": {
+        "CMakeLists.txt": "52f28ea318ecbcce69ed801ec107825c71e4a1ce0a86dde4acf82e31ddd6c1ba",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "9e42e8cfadbd48ae32352d2bf401ab465bb22893",
+      "file_sha256": {
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "7f4bd7ba798c59aebcecd5ad9cefc1150bac5465",
+      "file_sha256": {
+        "CMakeLists.txt": "4cbdcab688d6dacf3e3664f8782ee8d203296a0e947519b6685b0bbdf370ead0",
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "7fd32bac79e4d6123ecfe3c397b4f1e116ea08f9",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "0882d4fc571296508011372273b8c588c9819c8f",
+      "file_sha256": {
+        "CMakeLists.txt": "3dc1cc131d7703b8371a2e31e210e3f547710cdc98b5157b6e8df14b182c3959",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "de567971fe795c186a020f87ce305eeadb35dfee",
+      "file_sha256": {
+        "CMakeLists.txt": "3dc1cc131d7703b8371a2e31e210e3f547710cdc98b5157b6e8df14b182c3959",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "f0f74d80d007ba40e8c48fed23c53c4fc89a0794",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "755087bdb7454be782863de41a4a8193d60a10f5",
+      "file_sha256": {
+        "CMakeLists.txt": "073fc8b09065851b8ce670f63b28d5337ee566310ecf7e484ba6dbda219798a4",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "0324d5c568ad73c090c8e5041d2e131e70af9bd8",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "fb465e26a47db4446bad861186df43ccd60acf1a",
+      "file_sha256": {
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "b52dbbf362c736916611552698133523b707d5a0",
+      "file_sha256": {
+        "CMakeLists.txt": "225a8fdedf05c0a69475472509a0ad8f3009abba0555f9a7260de368972134af",
+        "API/api.cpp": "c4bad42c51161f8be89867920ef5c8c5f4f048a3dd63d18519bf2e40b5333845",
+        "Routines/Common/dispatch.hpp": "932a1ea10cdf0099cd8ced701e0ea7b2ac82a907ac32c85e8db5697aabf29405",
+        "Routines/Common/engine_choices.hpp": "ccc318d5cab58f19f7e96ad27ed03ba047d806a0c1f6b9dcb7af09ac4ca279aa",
+        "Include/AWE/awe.h": "96ed0652c9e11ea9a99024acb8eb2d5acf40db6a102536eb1696b78c90f8841c",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a",
+        "Tests/GPU/run_single.py": "bf97c68a4c707c24034d400effa80861ae2483051e0eaaf76980b184e34637c3"
+      }
+    },
+    {
+      "source_tree": "6d2e31627cfc7ba43b1e7e60779c6564de84f177",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "a77f9345e58fc2f48cc1c359e9dc9c9bf265966a",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "c5655294b5b7e4de93fcf8c00b033ba53e96fef3",
+      "file_sha256": {
+        "CMakeLists.txt": "acada793e4a1cebd30dd18437d3b5cbc8c3177fdae127c6e1ce842196d090fce",
+        "API/api.cpp": "9dbd70855e660d0a1a9316fb35c4c87b4a8b727acec1218c0f37b9cfd4b8550f",
+        "Routines/Common/dispatch.hpp": "4ebabdc7be98bbb78007ce36475d384b474cdebc0dc547e4089223367bbc4d39",
+        "Include/AWE/awe.h": "fbb2f39ccd92e9d770761008d3984e0ac550109072e8c9881b091658dca3d8fe",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "9797a904d3bae5cce729b54572633a67cca6102d",
+      "file_sha256": {
+        "CMakeLists.txt": "5ec4ce7864d93128a37d180324f3e353ca42d330f2d02f270cd50848ce50c33a",
+        "API/api.cpp": "3ea57849fceae7aebe3fc2bb831804c59574ca8ccb444518a17e1cd1889ffe20",
+        "Routines/Common/dispatch.hpp": "016dff856f6653440dfd8947446c00b7196c0bace99fb150c5c0c8144aa430c1",
+        "Include/AWE/awe.h": "7d481ec640a4ccc57d42cae171c2d3dffe4cf2a4ffb3321f0a106e85f40374a1",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "d6c6a10f619421da87f0463b679c3e5d97f82950",
+      "file_sha256": {
+        "Tools/sass_gate.py": "fc407ff1c7e194c8e4146841264ac5a8177ac82896d499f78ec72030882a8c3e",
+        "Tools/source_tokens.py": "a73b87db3d58e695772c79c0fccc5396fe8bec0813427a2551621dbe6be2616e",
+        "Tools/replay_cuda_build.py": "bc117ef098764be5e89a0f4f9b3739fb199c11bc2aa1da7cbbaf25171f74d25f"
+      }
+    },
+    {
+      "source_tree": "a0fd4ebb4dc3ae78b3ecc74d82f4ac3decc13f96",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "0e67a3a3a7419ceb2780f9906df871d9bc3c238f0863f6923b5e32af62f275b5",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "d4c8eae98bb76f7278a3f372d1e1dfb65c18f633",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "f80ba6b10cf2f2f6769eb21f25f237fe15859310",
+      "file_sha256": {
+        "CMakeLists.txt": "073fc8b09065851b8ce670f63b28d5337ee566310ecf7e484ba6dbda219798a4",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "42866fed2cd03b5c740562fa93ad74b820419513",
+      "file_sha256": {
+        "CMakeLists.txt": "3dc1cc131d7703b8371a2e31e210e3f547710cdc98b5157b6e8df14b182c3959",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "c39295173af258ce4118c7285a3c4423baf50c50",
+      "file_sha256": {
+        "CMakeLists.txt": "3dc1cc131d7703b8371a2e31e210e3f547710cdc98b5157b6e8df14b182c3959",
+        "API/api.cpp": "22ea734bb70d0ecba723ce85cd49921a72296a706bd896eb1850b8d0cdf34e56",
+        "Routines/Common/dispatch.hpp": "a72b695204f81d24d85257d5d3e5ab6f3213514123152c494e985111af22b02a",
+        "Include/AWE/awe.h": "a80b82aaa60ffda33efc6ddd2c716590524fc0d249d3606ca7b5cb83f3153b59",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "fd8a97e1810e506a1cd50a8bf4ef1c3bd7ac09f4",
+      "file_sha256": {
+        "CMakeLists.txt": "073fc8b09065851b8ce670f63b28d5337ee566310ecf7e484ba6dbda219798a4",
+        "API/api.cpp": "ba9091aa1448e8b4c5079bc802d73dbb0635202fe720664c7505709879842780",
+        "Routines/Common/dispatch.hpp": "c113a921823f5311b52ae59105f84c7c0a0ea83088566f3a7756872ebe4e75b6",
+        "Include/AWE/awe.h": "38fbe2d72adf6754c3e15d8a6f9ad6c4e7a59f18e1f1b8137522121d5904477b",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "b93e09089010c48fbc05504dcc74d139bca91cc8",
+      "file_sha256": {
+        "CMakeLists.txt": "225a8fdedf05c0a69475472509a0ad8f3009abba0555f9a7260de368972134af",
+        "API/api.cpp": "48fdd89ac81997e3c28ca37a2f14236fe6ced49d38e0e3b2185f8dde1b800b56",
+        "Routines/Common/dispatch.hpp": "d39369287db0ee2e4b0a828375b5a56027db801f4f970e9c6f86ad2e77bbdbad",
+        "Routines/Common/engine_choices.hpp": "ccc318d5cab58f19f7e96ad27ed03ba047d806a0c1f6b9dcb7af09ac4ca279aa",
+        "Include/AWE/awe.h": "96ed0652c9e11ea9a99024acb8eb2d5acf40db6a102536eb1696b78c90f8841c",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a",
+        "Tests/GPU/run_single.py": "89b73bb9c177354c0df8975222e9040ae267eb540bcfc6c7208284a423530933"
+      }
+    },
+    {
+      "source_tree": "ad73ab0b4ffffe59742d7af92386b32d5cd770c0",
+      "file_sha256": {
+        "CMakeLists.txt": "2b7bd964a99e8f0527471ceb1fa39c539489eb7c03edbb9012e2bd2c125ef505",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    },
+    {
+      "source_tree": "9e9e3a36504655d8901e4a5e9ce8e10dc0c91d04",
+      "file_sha256": {
+        "CMakeLists.txt": "225a8fdedf05c0a69475472509a0ad8f3009abba0555f9a7260de368972134af",
+        "Tools/sass_gate.py": "1c4b2e7d9fba93f5eefcfa1a74e73a9efa5af194e12e613ef6bb9ba29c70e598",
+        "Tools/source_tokens.py": "f15764a2eb119c28c6818207a1663a9ca1d09e2319d72e096ec4bc4d691becc0",
+        "Tools/replay_cuda_build.py": "1766442df24479a0b16f89202b2555b5f8eb10d2b5dc6ca550f1fd83fe80305a"
+      }
+    }
+  ]
+}

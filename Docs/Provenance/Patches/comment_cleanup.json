@@ -1,0 +1,11 @@
+{
+  "file": "patches/patch_syrk.py",
+  "original_sha256": "ecca3f202418a54863ef42c9122a74f2ae0374e3323bebd8fe071193908042eb",
+  "repository_sha256": "597743267eb792937ce5e726d552e9d56409c475a75539fc1d44dc853c32aca3",
+  "original_retained_in_input_bundle": true,
+  "change": "Replace an internal attribution in one comment with \"the CRT stage's\".",
+  "non_comment_python_tokens_equal": true,
+  "python_ast_equal": true,
+  "engine_manifest_patch_sha256": "Historical digests in engines.json identify the original applied patch; they are unchanged.",
+  "run_at_build_time": false
+}

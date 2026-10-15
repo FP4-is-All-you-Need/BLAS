@@ -1,0 +1,1617 @@
+{
+  "hardware": "one NVIDIA B300",
+  "month": "2026-10",
+  "values_file": "all_routines_values.json",
+  "values_sha256": "0e68e35d33fe39e027c44b99565a8393b02261b1c6ae3110caac2a1b58849b68",
+  "new_gpu_execution": false,
+  "rows": [
+    {
+      "routine": "DGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d51_m17_gemm_crt",
+      "engine": "k96_d51_gemm_crt",
+      "earlier_ms": 11.802428494966946,
+      "measured_bits": 51,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "f83f313a607e294e36f80cdc1edbb0f09649289e1e74fd25343fe6eb7c6d4327"
+        },
+        {
+          "file": "judgement_fix.json",
+          "sha256": "aa811be37c3d455d7bffc40922f40f5df8baf72d699a23a62a9357f03e0d9505"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d51_m17_level3",
+      "engine": "k96_d51_general",
+      "earlier_ms": 11.987096170278695,
+      "measured_bits": 51,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "ac7d3c08641489b4e810daeccfef984bd17a903575381b5386ac6caea8d1fc7b"
+        },
+        {
+          "file": "judgement.json",
+          "sha256": "0b6c45e5c2199c943a0ec454f79970f672f1be65653d225557caec62d154a0c5"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d52_m17_gemm_crt",
+      "engine": "k96_d52_gemm_crt",
+      "earlier_ms": 1.8965253162384033,
+      "measured_bits": 52,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "26b53e8f6cb0fd579e7cfd8489ad10a56d14156e9dd5a3e1c1ef20e7f3de7fbe"
+        },
+        {
+          "file": "judgement_fix.json",
+          "sha256": "d5bf7811d7b83332564d13badad8a95435285be896be7b432f7cfa86603cdf44"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d51_m17_level3",
+      "engine": "k96_d51_general",
+      "earlier_ms": 1.9397110119844094,
+      "measured_bits": 51,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "7c5b92be19c6647617d24a8e5b88ca7c9f11befb1aa7397af711dcbf43220e87"
+        },
+        {
+          "file": "judgement_fix.json",
+          "sha256": "9c16e225ac6636f6f8e4fd2da7789c9d3c3172879c8460edb676e110d2a7fd8e"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 13.286610561868418,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "9ce70c64f28e944722c55820b4e78490076ce43d38cdc631b3b94e8585da7b8b"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 13.265679836273193,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "34d949550b5d99ec6e6bde02fd35cf157d88a15e588c970afae66c5152a07399"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 2.037237529819076,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "63dbdc331a5cb8c2688867bfc21cb4806e6474fae187ddbd320f0b4f01686033"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 2.0012143411134415,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "85c86e62f395ac2bc22dd9480a172f0f4d1f382dabd03d7d52f374cd98f69592"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_syrk",
+      "engine": "k96_d18_syrk",
+      "earlier_ms": 7.529864341020584,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement_fix.json",
+          "sha256": "7dbcd33e04134c94251b00d588a38df90482031c797f9ee2e732fb86c7944643"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_syrk",
+      "engine": "k96_d18_syrk",
+      "earlier_ms": 7.461103166021951,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement_fix.json",
+          "sha256": "3cde361343aec77ab0010786759ddd7a9cb2dac01bc67f5a5c7f33cd39aab3da"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_syrk",
+      "engine": "k96_d18_syrk",
+      "earlier_ms": 2.060246366625305,
+      "measured_bits": 53,
+      "measurement_sources": [
+        {
+          "file": "blas_results_20261004_timing_corrected.json",
+          "sha256": "5ecb08748b8e263887081580afda380a63ba0e59a7de17326578fe1ac2c08bc7"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_syrk",
+      "engine": "k96_d18_syrk",
+      "earlier_ms": 1.353887106691088,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement_fix.json",
+          "sha256": "f5f92067d3b503b98535ce2c7b9b0dcb176446e61805dfe60b6d3e403f7559a4"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 13.474331420400869,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "69d21416c3b86bbec22f4df82c2dd2d119ce830dae4464d6c737a889b59d3654"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 13.04038655757904,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "db7a0870f39ef4cff2e1e326f407039cb43afdfb5d68d392acdb8ed34bc5e1c6"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 2.049405215559779,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "f8a65f82fec80fd7e0836c67ebcc999167225f452a368647758129b761f6029b"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_level3",
+      "engine": "k96_d53_general",
+      "earlier_ms": 2.0490133987890706,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "ce3f0221a68a30262d1dca8d9477a9d43e1e759b36ec20a118145bc1c55d697c"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DTRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_syrk_trmm",
+      "engine": "k96_d18_syrk_trmm",
+      "earlier_ms": 8.65988505908421,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "298dacfbcafb16c5fe30e6728e38ab550531b4dce6e6d20a988be5dcba95156f"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DTRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_syrk_trmm",
+      "engine": "k96_d18_syrk_trmm",
+      "earlier_ms": 8.487302442391712,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "066b3025303ed7c4f6e03ca8d2c5c217cc10c712548787be90538746e45fd16a"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DTRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "d53_m18_syrk_trmm",
+      "engine": "k96_d18_syrk_trmm",
+      "earlier_ms": 1.6567426570083783,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "eeb187517850dc33a4a19fccd2b4237ed459bfc9d065d0bee64679b2dc17d546"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "DTRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "d53_m18_syrk_trmm",
+      "engine": "k96_d18_syrk_trmm",
+      "earlier_ms": 1.6573440186355426,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "55f9bdfe34d205109a6bb6417040f36a95386d38adb650c65e560c4a18764abc"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 29.985485839843747,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "73b7b09cb142a7b59489972b7a9da0c352529c1b6f032421ef92b6daf17a2af5"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z48_m18_level3",
+      "engine": "k96_z48_general",
+      "earlier_ms": 26.999550437927248,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "5ccb97face2af614e342eb0415db191eb07a4d6f33fe10fe84a1ad08cde3c99d"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 4.513753049513873,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "355ca64f14339894e4a75f936314e1c376ac89f3e37b96712a6dbd5ead6445b7"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 4.259639634026421,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "f9d31b898840c3c0d7b3e55b7b7d742a867e65c1bd0e3d1cd5cd130f02625a19"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.479785919189453,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "8ce7e877a1526476184228b11efc86120360423009e2f9f8f7fdc5ccff568bcb"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.674464263916015,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "00369aeaf96dfc5f36019da74c59e3976fb62027c981f1a97979b2353aa17231"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.033784351348877,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "47cddb4d3e3e323084fafdb6ffc3da3ddf08171c09e551cda3c2ebcfad5bc0a8"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.022608509063721,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "ec4402acf141c471d425231080bb30a6b3ee86747e19d415316c72bc735e7adb"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.552709045410154,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "a2b8663675d962ce70fab581416a079c078af75cd4cd0af87b558abb92541855"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.63759536743164,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "cbdf0f550720895de157eb315d255ba495fe7856169f4ca82a3586fe9d848187"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.036354923248291,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "5b4d439ce998acc6d5059c731adc47feec1df4dada5884abf030a3d88149e495"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.034354206720987,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "1ef53d030a90d0a06658a1f49d55434561fbe41e564633be7938b1c40b0e287f"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z52_m19_syrk",
+      "engine": "k96_z52_syrk",
+      "earlier_ms": 19.796899223327635,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "05d618af6028ea21ee3ca0319d830425b25ddbca0e2fd3aeadeff6ae15f2bbee"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z50_m18_syrk",
+      "engine": "k96_z50_syrk",
+      "earlier_ms": 18.454519832835476,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "595879d1cbdcb261becdad2c7b4ba50b1509e4b72b9efb5b644648221dd1ab80"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 3.260339350341469,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "8f4b9056648bface37ca0aa4ac32f000d88778b3176c49f419af90930096ba7e"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 3.2598308450432234,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "132c656a8696e606918e56a742270328a8c19e1ca498c2b886a91155cd7fc9ae"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHERK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z51_m19_herk",
+      "engine": "k96_z51_herk",
+      "earlier_ms": 18.87346019744873,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "e49b9afbea6b534660c6c7fed68127ff547f68b5fc7d7d3ca896863e489f0cc7"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHERK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z49_m19_herk",
+      "engine": "k96_z49_herk",
+      "earlier_ms": 17.611298497517904,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "7c402fe3fb47ca6574fd6e173adc1eee6f038831070536dfe808c2dea480c676"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHERK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z51_m19_herk_k4096",
+      "engine": "k96_z51_herk_k4096",
+      "earlier_ms": 3.0656066116021607,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "2cd29e7cff44e359be6cf5f435892e137e20b4fe7ccaccf246cade68aa4e98e0"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHERK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": null,
+      "engine": null,
+      "earlier_ms": 3.551583541421329,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "c3023b5a4053dc779976402464e53de42ac261a9276637dcf77737e164ecd526"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.50168411254883,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "b855659f0598d08ffdf0412a29ec53597524edd19c7577bd492910264fd01bea"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.561252441406253,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "f501ddf6612fd03d6976b4d3878ab3dd977335f84292e0b461ba6b8ef691d4d7"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 4.910766423133111,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "c5f3c46bfb0cf61072930626027bd474886cd6ad685c0513dcffd1bce6b9e9a8"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 4.963783470529025,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "800afd2c8de50b09e3956dacd8784cc5f1e0094cfee39c85fc736a4d4428c6fa"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHER2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.522723083496096,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "7055ba431e4f954f720f2611dbe320294f25d7804418feb5cd6bacfcd3af808c"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHER2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 30.622862854003905,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "0b57e5ea2cca5664127e6f3d53f6c70347514a33d23ada8a7be1e4f8b2fae67c"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHER2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.022458025614421,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "060277eaab34b18c5b2208b1484d41ab69c0cd451759628aa1c08c7bd57f9590"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZHER2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_level3",
+      "engine": "k96_z53_general",
+      "earlier_ms": 5.022484804789226,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "866606336fba7fd1f3900b6cae5136ed55e6ae952f5ef6db1122b64f080cba56"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZTRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 20.003701527913414,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "fa9ea09f39c013eefc492833b4c52d910beb0b84cb7a03c14e5c121d2153bc50"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZTRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 20.032696889241535,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "6fb94f0746cf90ce1b416fabf112034074417f8d779bd3258b319e068b042b55"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZTRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 4.006992080688477,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "8416576b3a56eedad10f06cc548fe107aef71bf4cf250c6bab36e4bb8e002cd6"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "ZTRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "z53_m20_syrk_trmm",
+      "engine": "k96_z53_syrk_trmm",
+      "earlier_ms": 4.029823516845703,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "561ab949d1dbaf62243f65ff36394ce71c71efb16dd453643dea9571886732e8"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s23_m9_gemm",
+      "engine": "k96_s23_gemm",
+      "earlier_ms": 6.815927596714186,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s21_m10_gemm",
+      "engine": "k96_s21_gemm",
+      "earlier_ms": 6.209578605651856,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s23_m9_gemm",
+      "engine": "k96_s23_gemm",
+      "earlier_ms": 1.21170180689904,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s22_m8_gemm_k4096",
+      "engine": "k96_s22_gemm_k4096",
+      "earlier_ms": 1.125044950086679,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        },
+        {
+          "file": "judgement.json",
+          "sha256": null
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s22_m11_level3",
+      "engine": "k96_s22_current",
+      "earlier_ms": 7.2213413597122305,
+      "measured_bits": 22,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "46ab33d2e371438b579670394a7b5a629a1fc9e93d47a4e6a47cba7c41d2d6e4"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s20_m10_level3_fused",
+      "engine": "k96_s20_fused",
+      "earlier_ms": 6.892758773972602,
+      "measured_bits": 20,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "8c459f99eddab6bc7df5fe72b17779034a8c5dd9496c5e839cf8756f7e9b84c0"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s22_m11_symm_k4096",
+      "engine": "k96_s22_current_k4096",
+      "earlier_ms": 1.519931061550152,
+      "measured_bits": 22,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "4689eee8e518db2f4ee9d3ed1e5a9e20ed087611e7f981399bf2f607589851ff"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s21_m10_level3_k4096",
+      "engine": "k96_s21_level3_k4096",
+      "earlier_ms": 1.2472536577306732,
+      "measured_bits": 21,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "e901a9ef7178113794c1b1a4149bbe355fec9790abc2c99cd72755b12fbe4ecc"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s24_m12_level3_fused",
+      "engine": "k96_s24_fused",
+      "earlier_ms": 5.320802204787234,
+      "measured_bits": 24,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "4d149377f6c5f50d46d7f20c2f9452f3c8a14a48f301d997a9990f929dfed6a3"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYRK",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s23_m12_level3_fused",
+      "engine": "k96_s23_fused",
+      "earlier_ms": 5.3143207195767195,
+      "measured_bits": 23,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "51889e3891b56931c95bf00871ae331a0b24fc6284cf692cb4dde2e0b40ddb0d"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s23_m11_syrk_k4096_a",
+      "engine": "k96_s23_syrk_k4096_a",
+      "earlier_ms": 1.391892621779198,
+      "measured_bits": 23,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "761bc7dab1c9aa539344390b9574efe73206ae7517e8a732ff8fa43391ace592"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYRK",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s23_m11_syrk_k4096_b",
+      "engine": "k96_s23_syrk_k4096_b",
+      "earlier_ms": 0.8162899021207177,
+      "measured_bits": 23,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "4b95f78e6c0b458524dd502b871dbd340197c6ac472f3dc3de099447bcfefc64"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s21_m10_level3",
+      "engine": "k96_s21_current",
+      "earlier_ms": 6.930445031034482,
+      "measured_bits": 21,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "475507c6bad0593074447b4bc7c1b02d693eb3d2acc27025c32b4a4f51c0be31"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYR2K",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s20_m10_syr2k",
+      "engine": "k96_s20_syr2k",
+      "earlier_ms": 6.507310866883117,
+      "measured_bits": 20,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "b7652b93b4087fe525e8e9a5ce1429883a4b6fa896270c5ea8fa68531f8916ab"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "SSYR2K",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s22_m11_syr2k_k4096",
+      "engine": "k96_s22_syr2k_k4096",
+      "earlier_ms": 1.4039171304347824,
+      "measured_bits": 22,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "1d37001dcb852019887b6ecf15254ba645f386529c54a08289927a7e13a78e4d"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s22_m11_level3_fused",
+      "engine": "k96_s22_fused",
+      "earlier_ms": 5.569613038888889,
+      "measured_bits": 22,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "dfc3727c983ceefd785557b0edc6c3ec0b0316f2998264cc17b73a34a62d2706"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s22_m11_level3_fused",
+      "engine": "k96_s22_fused",
+      "earlier_ms": 5.518343760989011,
+      "measured_bits": 22,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "924a4797226fb605c307cafb0c647d5691cb1ac1e20a3bb1a163e61e55a52ebf"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "s23_m11_trmm_k4096",
+      "engine": "k96_s23_current_k4096",
+      "earlier_ms": 1.4832152948148147,
+      "measured_bits": 23,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "d054b377c30f3c783e01b6565568b4da83b7efef5d68b31c99bca7bc00ea43f5"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "STRMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "s21_m10_level3_k4096",
+      "engine": "k96_s21_level3_k4096",
+      "earlier_ms": 1.0970688130482456,
+      "measured_bits": 21,
+      "measurement_sources": [
+        {
+          "file": "result.json",
+          "sha256": "433a26365399c0331d1e01c36c42aa500629fcc5bbd921ecb79519865342e750"
+        },
+        {
+          "file": "fig_single_l3_b300_values.json",
+          "sha256": "f8dc315b5c270310d694087f2ffdd64326c669512107b94dc7a5e5ec9aff8317"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "normal",
+      "public_source_choice": "c22_m10_gemm",
+      "engine": "k96_c22",
+      "earlier_ms": 14.850707705658262,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "1e327a7d7286302f54571deb2745bbd011967b7085af4f9a13b71e1fed463b22"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        8192,
+        8192,
+        8192
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "c20_m9_gemm",
+      "engine": "k96_c20",
+      "earlier_ms": 13.991370024504484,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "4a190f47669e47d7cf392a31d43c7c1b1281c19745cd462696735eee4568fb04"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "normal",
+      "public_source_choice": "c22_m10_gemm",
+      "engine": "k96_c22",
+      "earlier_ms": 2.5535384046201592,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "22b4722b2d5b68a5059a4f78c2de07d2d238dd01319cc9e2283cefe046835e03"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    },
+    {
+      "routine": "CGEMM",
+      "shape": [
+        4096,
+        4096,
+        4096
+      ],
+      "distribution": "uniform",
+      "public_source_choice": "c23_m10_gemm",
+      "engine": "k96_c23",
+      "earlier_ms": 2.5519695277938004,
+      "measured_bits": null,
+      "measurement_sources": [
+        {
+          "file": "judgement.json",
+          "sha256": "b535252dc18747277136cc124ae2b4c8ffbef46afb9b64438d2744950ba3e38f"
+        }
+      ],
+      "limit": "Source choice for testing; consult the per-engine binary comparison. This table does not establish a loaded-library match."
+    }
+  ]
+}
