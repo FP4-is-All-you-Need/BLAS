@@ -19,6 +19,14 @@ Its published MD5 is `5d7a0bc1f719655f2083fc711cacf7cf`. Select the version from
 [NVIDIA archive](https://developer.nvidia.com/cuda-13-2-2-download-archive);
 CUDA 13.2.0 and 13.2.1 contain different compiler builds.
 
+## AMD MI350X
+
+`-DAWE_BACKEND=MI350X` skips the nvcc check and the C API and builds only
+`Platforms/AMD/HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/` with ROCm 7.2 (hipcc, the ROCm clang
+assembler, rocBLAS, hipBLASLt). Outputs are `Lib/awe_mxfp6_modular.co` and `Bin/`. This
+configuration needs CMake 3.31, like the rest of the top-level build; configuring that directory on
+its own needs CMake 3.21. See [the AMD page](../Platforms/AMD/README.md).
+
 ## Build options and library placement
 
 The [README](../README.md#build-and-minimal-use) gives the build commands.

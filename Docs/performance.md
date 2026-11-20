@@ -59,6 +59,29 @@ The plotting script lists excluded points separately and checks that the compute
 and energy devices match. Its power cross-check uses NVML energy. The complete
 dataset was not regenerated during release preparation.
 
+## AMD MI350X measurement
+
+The [MI350X result](../Platforms/AMD/README.md#measured-result) used 1 MI350X (gfx950), ROCm 7.2.0,
+rocBLAS 5.2.0, GEMMul8 commit 5f3fae8 (INT8, 15 moduli, fast mode), 8192³ with uniform inputs in
+[-1, 1) at 53 bits. The MXFP6 GEMM figure used AITER commit 22c7cb4, Composable Kernel commit 1439bc4
+and hipBLASLt 1.2. Whole-call host time with the stream synchronized before and after each
+call, method order rotated, 3 warm-ups and 11 timed calls in each of 3 runs of a measurement program
+that also ran GEMMul8 and checked every output on the CPU between calls, so the calls were 2 s or more
+apart. `awe_mxfp6_bench` in this repository times AWE, rocBLAS and hipBLASLt back to back.
+The accuracy criterion is the sampled criterion above with rocBLAS DGEMM as the native reference.
+In a separate sweep, none of the 64 algorithms that hipBLASLt 1.2 returns for FP64 DGEMM meets it (sampled p95 154 to
+166 ULP; rocBLAS 151); the fastest took 16.9 to 18.9 ms across the runs. The FP64 DGEMM
+kernels that rocBLAS 5.2.0 and hipBLASLt 1.2 ran use the FP64 Matrix Cores (`v_mfma_f64_16x16x4_f64`
+in their code objects, read with the ROCm disassembler); rocBLAS reaches 73 to 81% of
+the 72.1 TFLOP/s FP64 theoretical peak.
+
+### AMD MI350X optimization steps
+
+The [steps table](../Platforms/AMD/README.md#measured-result) gives the whole 8192³ DGEMM time after
+each change and the share of the time that change alone saved against a control run in the same
+session. The controls were measured anew in each session, so the savings do not add up to the
+difference of the whole times.
+
 ## Exact INT8 measurements and hardware rates
 
 The [README's exact INT8 result](../README.md#measured-results) uses 8192³ inputs

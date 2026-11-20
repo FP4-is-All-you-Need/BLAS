@@ -84,7 +84,7 @@ available; the table lists the retained settings for the other engines.
 |---|---:|---|
 | K96/K64 DGEMM d17/d18 | 1 | DGEMM runner / K64 calibration |
 | K96 DSYRK d18/d21 | 1 | Measured SYRK adapter runner |
-| K96 other D/Z/C imports and K64 d21 | 0 | Earlier runner settings were not recovered; retain 0 |
+| K96 other D/Z/C imports and K64 d21 | 0 | Pingpong off by default |
 | K96 S imports | 0 | Retained adapter settings |
 | K64 S and complex imports | 1 | Measurement runners; table compatibility checked |
 
@@ -136,8 +136,9 @@ selection rule; a default that requires an explicit name returns
 | K96/K64 | INT8 GEMM | 8 bits; only AUTO moduli |
 
 At a fixed width, the normal-input source is used where a matching measurement
-exists. K96 small SSYRK variant b is the recorded uniform choice. Small SSYR2K
-keeps 21 bits without a matching normal-input 4096 measurement. These choices
+exists. K96 small SSYRK variant b is the recorded uniform choice. K96 SSYR2K
+uses 21 bits by default at every K; through K=4096, a width of 22 selects
+`s22_m11_syr2k_k4096`, the recorded uniform-input choice. These choices
 are not guarantees for every input. [Measurements by engine](performance.md#measurements-by-engine)
 record distributions, timings and missing binary links.
 

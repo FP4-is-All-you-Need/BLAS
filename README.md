@@ -1,4 +1,4 @@
-# FP4 BLAS
+# AWE FP4 BLAS
 
 Exact integer matrix products on FP4 Tensor Cores, and BLAS routines built on them.
 
@@ -86,17 +86,28 @@ The NVFP4 bar is from a separate 53-bit comparison. The INT8 engine is included;
 
 More: [conditions and accuracy](Docs/performance.md#measurement-figures-and-conditions) · [time and accuracy](Docs/performance.md#time-and-accuracy) · [time and energy](Docs/performance.md#time-and-energy-at-matched-accuracy) · [INT8 details](Docs/performance.md#exact-int8-measurements-and-hardware-rates) · [accuracy limits](Docs/validation.md#results-and-known-failures)
 
+### AMD Instinct MI350X
+
+The MI350X runs MXFP6 at the same rate as MXFP4 ([9.2 PFLOP/s each](https://www.amd.com/en/products/accelerators/instinct/mi350/mi350x.html)),
+so its 8192³ DGEMM engine multiplies FP6 (E2M3) values instead of FP4 ones.
+
+<a href="Platforms/AMD/README.md"><img src="Figures/amd-mi350x-dgemm-times.png" alt="Horizontal bars of the MI350X whole DGEMM time at 8192 cubed: AWE MXFP6 (ours) 20.53 ms in 4 stages in shades of pink (shift 0.26, encode 4.29, MXFP6 GEMMs 14.72, CRT + sync 1.26), rocBLAS 5.2.0 DGEMM 20.81 in grey, GEMMul8 5f3fae8 INT8 10.48 in orange; sampled ULP error p95 and max: AWE 0 and 0, rocBLAS 151 and 214,787, GEMMul8 0 and 0" width="700"></a>
+
+[Results, build and limits](Platforms/AMD/README.md)
+
 ## Supported operations
 
-Each cell is B300 (K96), then B200/GB200 (K64): ✅ measured engine included · ☑ included, not compared with a measured performance record · ○ source included, explicit selection required · blank: absent.
+✓ runs by default · by name: runs only when the call names an engine (a default call returns `AWE_NOT_SUPPORTED`) · blank or –: not included · B300/B200 where the two GPUs differ. B300 uses the K96 backend; B200 uses K64, where SSYRK, SSYR2K and STRMM need an explicit engine name above K = 4096.
 
 | Type | GEMM | SYMM | HEMM | SYRK | HERK | SYR2K | HER2K | TRMM | TRSM |
 |---|---|---|---|---|---|---|---|---|---|
-| Z | ☑ ☑ | ☑ ☑ | ☑ ☑ | ✅ ☑ | ✅ ☑ | ☑ ☑ | ☑ ☑ | ✅ ☑ | |
-| D | ✅ ☑ | ☑ ☑ | | ✅ ☑ | | ☑ ☑ | | ✅ ☑ | &emsp;○ |
-| S | ✅ ○ | ☑ ○ | | ✅ ☑ | | ☑ ○ | | ✅ ○ | |
-| C | ✅ ✅ | | | | | | | | |
-| INT8 | ☑ ☑ | | | | | | | | |
+| Z | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| D | ✓ | ✓ | | ✓ | | ✓ | | ✓ | –/by name |
+| S | ✓/by name | ✓/by name | | ✓ | | ✓ | | ✓ | |
+| C | ✓ | | | | | | | | |
+| INT8 | ✓ | | | | | | | | |
+
+Speeds were measured on B300 for every routine in the table except DTRSM, and on B200 for DGEMM, SSYMM, SSYRK, SSYR2K, STRMM, CGEMM, INT8 GEMM and DTRSM. Conditions and limits: [measurements by engine](Docs/performance.md#measurements-by-engine). The timings are records of the engines as imported; this frontend has not been timed.
 
 > [!NOTE]
 > Supported forms: column-major, no transpose, lower triangle, left side, non-unit diagonal, alpha = 1, beta = 0. Defaults and explicit engine selection are in the [API guide](Docs/api.md); known failures are in the [GPU test results](Docs/validation.md#results-and-known-failures).
@@ -111,7 +122,7 @@ cmake --build Build-K96 --parallel 2
 ctest --test-dir Build-K96 --output-on-failure
 ```
 
-Use `-DAWE_BACKEND=K64` for B200. Keep the frontend and engine libraries together in `Build-K96/Lib/`. GPU tests are off by default; see [validation](Docs/validation.md).
+Use `-DAWE_BACKEND=K64` for B200. Keep the frontend and engine libraries together in `Build-K96/Lib/`. GPU tests are off by default; see [validation](Docs/validation.md). `-DAWE_BACKEND=MI350X` builds the AMD engine with ROCm instead ([AMD page](Platforms/AMD/README.md)).
 
 <details>
 <summary>Minimal C call with ready device arrays on B300</summary>
@@ -143,6 +154,7 @@ Compile with `-IInclude -LBuild-K96/Lib -lawe`.
 | `Platforms/NVIDIA/CUDA-Inline/<Routine>/<SM_K>/<Engine>/` | Imported CUDA/PTX implementations; selected by default |
 | `Platforms/NVIDIA/CUDA-Template/GEMM/` | Shared traits for d17/d18; used for new development |
 | `Platforms/NVIDIA/CUDA-Common/` | Shared host options and Level-3 support kernels |
+| `Platforms/AMD/HIP-Inline/GEMM/GFX950_K128/` | MI350X MXFP6 DGEMM engine with its own tests and benchmark; `-DAWE_BACKEND=MI350X` |
 | `AWE/Solutions/` | Weights, planes, reconstruction and coverage checks |
 | `AWE/CodeGen/`, `AutoTuning/`, `Sparse/` | Not implemented yet: constant generation, automatic selection, sparse routines |
 | `Figures/`, `Docs/`, `Tests/`, `Tools/`, `CMake/` | Figures, documentation, validation and build support |

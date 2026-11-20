@@ -7,8 +7,16 @@ set_target_properties(awe_engine_loader PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(awe_engine_loader PUBLIC ${CMAKE_DL_LIBS})
 target_include_directories(awe_engine_loader PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Routines/Common")
 
-set(AWE_BACKEND "K96" CACHE STRING "Fixed engine geometry: K96 or K64")
-set_property(CACHE AWE_BACKEND PROPERTY STRINGS K96 K64)
+set(AWE_BACKEND "K96" CACHE STRING "Fixed engine geometry: K96 or K64 (NVIDIA), or MI350X (AMD)")
+set_property(CACHE AWE_BACKEND PROPERTY STRINGS K96 K64 MI350X)
+if(AWE_BACKEND STREQUAL "MI350X")
+    # AMD Instinct MI350X: the HIP engine, its tests and benchmark only. The C API and the CUDA
+    # engines below need nvcc and are not built. enable_testing() here lets ctest at the top of
+    # the build tree find the engine's tests.
+    enable_testing()
+    add_subdirectory(Platforms/AMD/HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT)
+    return()
+endif()
 if(AWE_BACKEND STREQUAL "K96")
     set(_awe_k 96)
     set(_awe_arch sm_103a)
