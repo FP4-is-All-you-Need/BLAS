@@ -3,9 +3,7 @@
 // Selected by table_select.h when K <= 4096: there every product of this set fits in one launch,
 // and it needs one product fewer than table_d53_k8192.h.
 // Do not edit by hand. host_lut maps a residue to the FP6 code of each product plane; the product
-// weights and the CRT prefixes/inverses are listed per form. Table identity: SHA-256 of the original
-// generated header a9c474e30d612561e2a69ccc345e14c8568786a3f69511c523ef05643da1758e (only the include
-// line and this comment differ).
+// weights and the CRT prefixes/inverses are listed per form.
 // clang-format off
 #include "wide_integer.h"
 #include <cstdint>

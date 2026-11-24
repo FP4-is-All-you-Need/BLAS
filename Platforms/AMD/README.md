@@ -97,8 +97,8 @@ rounded dot product of the quantized inputs, applies the accuracy criterion to t
 
 Whole 8192³ DGEMM time after each change; each + row adds one change to the row above, and the last
 one is the engine in this repository. Saved: share of the time that change alone saved, against the
-version without it run in the same session. The last row was timed with `awe_mxfp6_bench` and a 2 s
-pause added between calls; in that session the row above took 20.63 to 20.69 ms and rocBLAS 20.47 to
+version without it run in the same session. The last + row (30 products, 31 launches) was timed with
+`awe_mxfp6_bench` and a 2 s pause added between calls; in that session the row above took 20.63 to 20.69 ms and rocBLAS 20.47 to
 20.70 ms.
 
 <a href="../../Figures/amd-mi350x-mxfp6-gemm.png"><img src="../../Figures/amd-mi350x-mxfp6-gemm.png" alt="Horizontal bars of MXFP6 GEMM throughput at 8192 cubed, all with FP32 output, against the 9.23 PFLOP/s theoretical peak: AITER 22c7cb4 with our epilogue 3.23 PFLOP/s (35.0%); our own kernel 2.53 (27.4%); Composable Kernel 1439bc4 1.12 (12.2%); hipBLASLt 1.2 1.06 (11.5%)" width="700"></a>
