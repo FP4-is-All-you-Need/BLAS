@@ -11,6 +11,7 @@ See [the platform page](../../../../README.md) for the result, build and limits.
 | `layout.h` | AITER operand layout, segment caps from the exact-accumulator bound, the 2 lookup tables |
 | `aiter_module.h` | loads the code object and fills its 448-byte argument block |
 | `table_d53_k8192.h` | generated: moduli, product weights, FP6 code tables, CRT constants |
+| `table_d53_k4096.h`, `table_select.h` | generated 29-product table, used when K <= 4096; the choice of table by K |
 | `wide_integer.h`, `word_round.h` | multi-word integers and rounding to binary64 |
 | `AITER/` | kernel assembly and metadata ([THIRD_PARTY.md](THIRD_PARTY.md)) |
 | `Tests/host_exact_test.cpp` | CPU: table bounds, plane identity of every form, small shapes end to end |
@@ -22,12 +23,13 @@ One call runs, on one stream:
 1. `shifts_a_partial` + `shifts_finish` (A rows) and `shifts_b` (B columns): shift = 52 - exponent of the
    largest magnitude of the line.
 2. `encode_kernel<false>` (A) and `encode_kernel<true>` (B): 256 x 64 blocks of 32 rows x 128 K; each
-   block writes its tile into all 29 product planes.
-3. 44 launches of `f6gemm_awe_modular_v1`, one per (product, K segment); the first launch of a modulus
+   block writes its tile into all 30 product planes.
+3. 31 launches of `f6gemm_awe_modular_v1`, one per (product, K segment); the first launch of a modulus
    writes its residue plane, the others add to it.
 4. `reconstruct_kernel`: 19 residues -> centred integer -> binary64 times 2^-(shift_A + shift_B).
 
 The accumulator of a launch must be an exact FP32 integer, so products whose FP6 magnitudes are large
-run K in 2 segments of 4096 (15 products) and the others in 1 segment of 8192 (14 products);
+run K in 2 segments of 4096 (1 product) and the others in 1 segment of 8192 (29 products);
 `layout.h` derives this from the code tables, and the kernel sets an error flag if an accumulator is not
-an integer of magnitude below 2^24.
+an integer of magnitude below 2^24. In the three-product forms every FP6 value (E2M3 times 8) has
+magnitude 36 or less (36 x 36 x 8192 < 2^24), so only the second product of 121 needs two segments.

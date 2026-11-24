@@ -6,15 +6,15 @@ so this engine multiplies FP6 (E2M3) values instead of FP4 ones.
 One engine: `HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/` computes C = A B in FP64 (8192 x 8192 x
 8192, column-major, alpha = 1, beta = 0) from exact integer products on the MXFP6 (E2M3) Matrix Cores
 of gfx950. Each input row of A and column of B is scaled to a 53-bit integer grid, encoded as residues
-modulo 19 moduli (29 FP6 product planes, [table](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/table_d53_k8192.h)),
-multiplied by 44 MXFP6 GEMM launches whose epilogue folds the FP32 accumulator into uint16 residues,
+modulo 19 moduli (30 FP6 product planes, [table](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/table_d53_k8192.h)),
+multiplied by 31 MXFP6 GEMM launches whose epilogue folds the FP32 accumulator into uint16 residues,
 and reconstructed with the Chinese remainder theorem (CRT) and one rounding to binary64. The output equals the exactly rounded
 dot product of the quantized inputs.
 
-<a href="https://fp4-is-all-you-need.github.io/AWE/?prime_set=fp6&periodic_fp6=8xE2M3&fp6_modset_id=awemfs2_901e24fa7687e5a9a64a46546750a6550eb05bd56e94ca605d683a925a3869d3&lang=en"><img src="../../Figures/amd-mi350x-fp6-moduli.png" alt="Cards of the 19 moduli of this engine on the AWE site: 17 to 49 (13 moduli) with 1 FP6 product each, 121 and 169 with 2, and 1319, 1321, 1373 and 1381 with 3"></a>
-
-The 19 moduli on the [AWE site](https://fp4-is-all-you-need.github.io/AWE/?prime_set=fp6&periodic_fp6=8xE2M3&fp6_modset_id=awemfs2_901e24fa7687e5a9a64a46546750a6550eb05bd56e94ca605d683a925a3869d3&lang=en),
-one card per modulus: the first two rows need 1 FP6 product each, the last row 2 or 3.
+The 19 moduli: 17, 19, 23, 25, 27, 29, 31, 32, 37, 41, 43, 47 and 49 need 1 FP6 product each, 121 needs
+2, and 1223, 1231, 1249, 1279 and 1283 need 3. The three-product moduli are chosen so that every FP6
+value of their products has magnitude 36 or less (E2M3 values times 8), which keeps K = 8192 in one
+launch (see [the engine page](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/README.md)).
 
 ## Build and run
 
@@ -44,11 +44,20 @@ The kernel code object `Build-MI350X/Lib/awe_mxfp6_modular.co` is assembled from
 <a href="../../Figures/amd-mi350x-dgemm-times.png"><img src="../../Figures/amd-mi350x-dgemm-times.png" alt="Horizontal bars of the MI350X whole DGEMM time at 8192 cubed: AWE MXFP6 (ours) 20.53 ms in 4 stages in shades of pink (shift 0.26, encode 4.29, MXFP6 GEMMs 14.72, CRT + sync 1.26), rocBLAS 5.2.0 DGEMM 20.81 in grey, GEMMul8 5f3fae8 INT8 10.48 in orange; sampled ULP error p95 and max: AWE 0 and 0, rocBLAS 151 and 214,787, GEMMul8 0 and 0" width="700"></a>
 
 > [!NOTE]
-> With 2 s or more between calls, as in the figure, AWE takes about 1.3% less time than rocBLAS.
-> Called back to back, as `awe_mxfp6_bench` does, AWE takes about 1% more: 18.9 ms against 18.7 ms.
+> The figure was measured with the 29-product table (44 launches at K = 8192; the second-to-last step
+> in the table below). The 30-product table that the engine uses at 8192³, timed with
+> `awe_mxfp6_bench` against rocBLAS DGEMM in the same runs (median of 11 calls; saving = 1 - median of
+> the paired time ratios):
+>
+> | Calls | Runs | AWE (ms) | rocBLAS (ms) | AWE saves |
+> |:---|---:|---:|---:|---:|
+> | 2 s pause added between calls | 2 | 19.7–19.8 | 20.5–20.7 | 4.5% |
+> | back to back (the default of `awe_mxfp6_bench`) | 14 | 18.0–18.2 | 18.7–18.9 | 3.2–4.4% |
 
 The engine passes the accuracy criterion in all 3 runs, and GEMMul8 passes it too. GEMMul8 was built
-separately and is not part of this repository.
+separately and is not part of this repository. With the 30-product table the engine also passes the
+CPU test and `awe_mxfp6_check --full` (1,024 sampled outputs bit equal, ULP errors 0; every output
+within the bound).
 
 <details><summary>Conditions and checks</summary>
 
@@ -83,17 +92,20 @@ rounded dot product of the quantized inputs, applies the accuracy criterion to t
 | + less shared memory | CRT | 21.14 | 1.6 |
 | + fewer moduli (19) | all | 20.64 | 2.6 |
 | + reordered reads | encode | 20.53 | 0.7 |
-| rocBLAS 5.2.0 DGEMM, same sessions | | 20.69–20.95 | |
+| + moduli that keep K = 8192 in one launch (30 products, 31 launches) | MXFP6 GEMMs | 19.69–19.83 | 4.4 |
+| rocBLAS 5.2.0 DGEMM, same sessions | | 20.47–20.95 | |
 
 Whole 8192³ DGEMM time after each change; each + row adds one change to the row above, and the last
 one is the engine in this repository. Saved: share of the time that change alone saved, against the
-version without it run in the same session.
+version without it run in the same session. The last row was timed with `awe_mxfp6_bench` and a 2 s
+pause added between calls; in that session the row above took 20.63 to 20.69 ms and rocBLAS 20.47 to
+20.70 ms.
 
 <a href="../../Figures/amd-mi350x-mxfp6-gemm.png"><img src="../../Figures/amd-mi350x-mxfp6-gemm.png" alt="Horizontal bars of MXFP6 GEMM throughput at 8192 cubed, all with FP32 output, against the 9.23 PFLOP/s theoretical peak: AITER 22c7cb4 with our epilogue 3.23 PFLOP/s (35.0%); our own kernel 2.53 (27.4%); Composable Kernel 1439bc4 1.12 (12.2%); hipBLASLt 1.2 1.06 (11.5%)" width="700"></a>
 
 The MXFP6 GEMM alone at 8192³ with FP32 output: 2MNK over the kernel time, against the 9.23 PFLOP/s
 theoretical peak. Our own kernel is the one at the start of the steps above and is not in this
-repository. We changed the epilogue of AITER's kernel to store FP32, and the engine's 44
+repository. We changed the epilogue of AITER's kernel to store FP32, and the engine's 31
 launches run the same kernel with the residue update in that epilogue
 ([changes](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/THIRD_PARTY.md)).
 
@@ -103,16 +115,21 @@ launches run the same kernel with the residue update in that epilogue
 > Only M = N = K = 8192, FP64, column-major, no transpose, alpha = 1, beta = 0.
 
 > [!NOTE]
-> - About 5.7 GB of device memory per plan, in addition to A, B and C.
+> - About 5.8 GB of device memory per plan, in addition to A, B and C.
 > - Inputs with NaN or infinity are rejected (the call throws).
 > - A value 2^-e times the largest of its row of A or column of B keeps about 53 - e significant bits.
 > - The accuracy criterion is sampled, not a proof for all inputs.
+> - Smaller sizes are slower than rocBLAS DGEMM. A build of the same code with the matrix size changed
+>   (not in this repository), timed back to back, took 1.28 to 1.53 times as long as rocBLAS at 4096³
+>   (AWE 3.5 ms) and 1.15 to 1.18 times as long at 8192 x 8192 x 4096 (AWE 10.8 to 11.0 ms). At
+>   K = 4096 every product fits in one launch and the 29-product table is the faster one, so
+>   `table_select.h` uses it there.
 
 <details><summary>Details</summary>
 
 - The operand layout, the segment schedule and the kernel grid are written for the 8192 shape. The
   modulus set is exact for K <= 8192 at 53 bits.
-- The 5.7 GB are 3.2 GB of FP6 operand planes and 2.6 GB of residues.
+- The 5.8 GB are 3.2 GB of FP6 operand planes and 2.6 GB of residues.
 - Each row of A and column of B shares one power-of-two scale.
 - With ROCm 7.2.0 and the flags in its CMakeLists.txt, the 6 HIP kernels of this source compile to the
   same gfx950 instructions as the measured build, and `AITER/modular.s` assembles to the same code

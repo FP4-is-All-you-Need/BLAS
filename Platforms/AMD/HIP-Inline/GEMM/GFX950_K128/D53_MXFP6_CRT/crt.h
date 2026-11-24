@@ -7,7 +7,7 @@
 // guarantees 2 K 2^(2 b) < P, so k is exact. C is the centred integer dot product; its sign, magnitude
 // and the final rounding are then the same as a digit-by-digit (Garner) reconstruction.
 #include "common.h"
-#include "table_d53_k8192.h"
+#include "table_select.h"
 #include "wide_integer.h"
 #include "word_round.h"
 #include <cstdint>

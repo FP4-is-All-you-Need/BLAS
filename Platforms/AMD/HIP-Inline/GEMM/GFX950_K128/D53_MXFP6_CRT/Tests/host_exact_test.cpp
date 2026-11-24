@@ -33,10 +33,18 @@ static int decode(unsigned code) {
 }
 
 static void test_table() {
-    // Expected segment caps of this table (14 products at K 8192, 15 at 4096 = 44 launches).
+    // Expected segment caps of the selected table (table_select.h).
+#if AWE_MXFP6_TABLE_K > 4096
+    // 29 products at K 8192, 1 at 4096 = 31 launches.
+    static const unsigned expected_cap[30] = {
+        8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 4096, 8192,
+        8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192};
+#else
+    // 14 products at K 8192, 15 at 4096 = 44 launches.
     static const unsigned expected_cap[29] = {
         8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 4096, 4096,
         4096, 8192, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096};
+#endif
     const auto caps = segment_caps();
     unsigned launches = 0;
     for (unsigned pi = 0; pi < table::product_count; ++pi) {
@@ -46,7 +54,7 @@ static void test_table() {
         check(caps[pi] == expected_cap[pi], "segment cap of this table");
         launches += 8192 / caps[pi];
     }
-    check(launches == 44, "44 product launches");
+    check(launches == AWE_MXFP6_TABLE_LAUNCHES_AT_8192, "product launches at K = 8192");
     for (unsigned char code : table::host_lut) {
         check(code <= 63, "LUT entries are E2M3 codes");
     }

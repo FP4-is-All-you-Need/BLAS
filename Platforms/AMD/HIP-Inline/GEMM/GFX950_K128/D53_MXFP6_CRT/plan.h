@@ -2,7 +2,7 @@
 // FP64 GEMM C = A B (8192 x 8192 x 8192, column-major, alpha = 1, beta = 0) on MXFP6 Matrix Cores:
 //   1. shifts: one power-of-two scale per row of A and per column of B (53-bit integer grid)
 //   2. encode: residues of every quantized input modulo the 19 moduli, as FP6 product planes
-//   3. products: 44 MXFP6 GEMM launches (29 products, K split in 4096/8192 segments); each launch
+//   3. products: 31 MXFP6 GEMM launches (30 products, K split in 4096/8192 segments); each launch
 //      folds its FP32 accumulator into the uint16 residue plane of its modulus
 //   4. CRT: every output is reconstructed from its 19 residues and rounded once to binary64
 // The result equals the exactly rounded dot product of the quantized inputs.

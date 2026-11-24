@@ -3,7 +3,7 @@
 // lookup tables the encoder reads (one packed word per residue for 2- and 3-product forms, one byte
 // per residue for single-product forms).
 #include "common.h"
-#include "table_d53_k8192.h"
+#include "table_select.h"
 #include <cstddef>
 #include <cstdint>
 #include <stdexcept>
@@ -12,9 +12,9 @@
 namespace awe_mxfp6 {
 namespace table = fp6_catalog_table;
 
-static_assert(table::form_count == 19 && table::product_count == 29 && table::max_bits == 53 &&
-                  table::max_k == 8192,
-              "this engine is written for the 19-modulus, 29-product table");
+static_assert(table::form_count == 19 && table::product_count == AWE_MXFP6_TABLE_PRODUCTS &&
+                  table::max_bits == 53 && table::max_k == 8192,
+              "this engine is written for the 19-modulus tables of table_select.h");
 
 // ---- AITER operand layout -------------------------------------------------------------------
 // The kernel reads A and B as 256-row tiles of 128-element K stages. Each stage holds 1024 groups of
@@ -221,7 +221,7 @@ template <bool SideB, unsigned Fi> AWE_MXFP6_HD constexpr size_t offset() {
     static_assert(table::host_forms[Fi].count >= 2);
     return (SideB ? side_words() : 0) + Prefix<Fi>::value;
 }
-static_assert(word_count() == 11368, "packed LUT footprint of the public table");
+static_assert(word_count() == AWE_MXFP6_TABLE_WORDS, "packed LUT footprint of the selected table");
 
 // Host construction of the packed table from host_lut; byte j of a word is product j's code.
 inline std::vector<uint32_t> build() {

@@ -75,6 +75,18 @@ kernels that rocBLAS 5.2.0 and hipBLASLt 1.2 ran use the FP64 Matrix Cores (`v_m
 in their code objects, read with the ROCm disassembler); rocBLAS reaches 73 to 81% of
 the 72.1 TFLOP/s FP64 theoretical peak.
 
+The 30-product modulus table (31 launches) that the engine uses at 8192³ was timed separately from
+that figure with `awe_mxfp6_bench` on 1 MI350X (gfx950), ROCm 7.2.0 and rocBLAS 5.2.0, with the
+same inputs. Each run has 3 warm-up and 11 timed rounds, AWE and rocBLAS alternating with the order
+rotated every round;
+the saving is 1 minus the median of the per-round ratios AWE/rocBLAS. At 8192³ there were 14 runs
+back to back in 5 sessions (AWE 18.0 to 18.2 ms, rocBLAS 18.7 to 18.9 ms, saving 3.2 to 4.4%) and
+2 runs with a 2 s pause added between calls (AWE 19.7 to 19.8 ms, rocBLAS 20.5 to 20.7 ms, saving
+4.5%). Builds of the same code with the size changed (not in this repository) were timed back to back
+in 6 runs each: AWE took 1.28 to 1.53 times as long as rocBLAS at 4096³ and 1.15 to 1.18 times as long
+at 8192 x 8192 x 4096. The rocBLAS time at 4096³ varied between about 2.3 and 2.9 ms from call to
+call, hence the wide range.
+
 ### AMD MI350X optimization steps
 
 The [steps table](../Platforms/AMD/README.md#measured-result) gives the whole 8192³ DGEMM time after
