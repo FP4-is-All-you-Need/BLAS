@@ -64,10 +64,13 @@ dataset was not regenerated during release preparation.
 The [MI350X result](../Platforms/AMD/README.md#measured-result) used 1 MI350X (gfx950), ROCm 7.2.0,
 rocBLAS 5.2.0, GEMMul8 commit 5f3fae8 (INT8, 15 moduli, fast mode), 8192³ with uniform inputs in
 [-1, 1) at 53 bits. The MXFP6 GEMM figure used AITER commit 22c7cb4, Composable Kernel commit 1439bc4
-and hipBLASLt 1.2. Whole-call host time with the stream synchronized before and after each
-call, method order rotated, 3 warm-ups and 11 timed calls in each of 3 runs of a measurement program
-that also ran GEMMul8 and checked every output on the CPU between calls, so the calls were 2 s or more
-apart. `awe_mxfp6_bench` in this repository times AWE, rocBLAS and hipBLASLt back to back.
+and hipBLASLt 1.2. For the AWE and rocBLAS DGEMM bars, `awe_mxfp6_bench` measured whole-call host time
+with the stream synchronized before and after each call and a 2 s pause between calls. At 8192³
+AWE took 19.69 ms with the 30-product table (31 launches). Its stages were shift (0.28 ms), encode (4.47 ms),
+MXFP6 GEMMs (13.56 ms) and CRT + sync (1.38 ms). rocBLAS took 20.47 ms. The GEMMul8 bar (10.48 ms)
+comes from a separate benchmark with the 29-product engine. That program rotated method order,
+ran 3 warm-ups and 11 timed calls per method in each of 3 runs, and checked every output on the CPU
+between calls. By default, `awe_mxfp6_bench` times calls back to back.
 The accuracy criterion is the sampled criterion above with rocBLAS DGEMM as the native reference.
 In a separate sweep, none of the 64 algorithms that hipBLASLt 1.2 returns for FP64 DGEMM meets it (sampled p95 154 to
 166 ULP; rocBLAS 151); the fastest took 16.9 to 18.9 ms across the runs. The FP64 DGEMM
@@ -75,15 +78,13 @@ kernels that rocBLAS 5.2.0 and hipBLASLt 1.2 ran use the FP64 Matrix Cores (`v_m
 in their code objects, read with the ROCm disassembler); rocBLAS reaches 73 to 81% of
 the 72.1 TFLOP/s FP64 theoretical peak.
 
-The 30-product modulus table (31 launches) that the engine uses at 8192³ was timed separately from
-that figure with `awe_mxfp6_bench` on 1 MI350X (gfx950), ROCm 7.2.0 and rocBLAS 5.2.0, with the
-same inputs. Each run has 3 warm-up and 11 timed rounds, AWE and rocBLAS alternating with the order
-rotated every round;
-the saving is 1 minus the median of the per-round ratios AWE/rocBLAS. At 8192³ there were 14 runs
-back to back in 5 sessions (AWE 18.0 to 18.2 ms, rocBLAS 18.7 to 18.9 ms, saving 3.2 to 4.4%) and
-2 runs with a 2 s pause added between calls (AWE 19.7 to 19.8 ms, rocBLAS 20.5 to 20.7 ms, saving
-4.5%). Builds of the same code with the size changed (not in this repository) were timed back to back
-in 6 runs each: AWE took 1.28 to 1.53 times as long as rocBLAS at 4096³ and 1.15 to 1.18 times as long
+Each 30-product run had 3 warm-up and 11 timed rounds, with the AWE and rocBLAS order reversed
+every round. The AWE and rocBLAS bars show each method's median time in one run. Both runs with a 2 s pause gave
+a 4.5% saving, calculated as one minus the median of the per-round AWE/rocBLAS time ratios. The
+run medians ranged from 19.7 to 19.8 ms for AWE and from 20.5 to 20.7 ms for rocBLAS. In 14
+back-to-back runs across 5 sessions, AWE took 18.0 to 18.2 ms and rocBLAS took 18.7 to 18.9 ms,
+with savings of 3.2 to 4.4%. Separate builds for the smaller sizes were timed back to back in 6 runs
+each. AWE took 1.28 to 1.53 times as long as rocBLAS at 4096³ and 1.15 to 1.18 times as long
 at 8192 x 8192 x 4096. The rocBLAS time at 4096³ varied between about 2.3 and 2.9 ms from call to
 call, hence the wide range.
 

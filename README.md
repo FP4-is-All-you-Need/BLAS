@@ -91,12 +91,12 @@ More: [conditions and accuracy](Docs/performance.md#measurement-figures-and-cond
 The MI350X runs MXFP6 at the same rate as MXFP4 ([9.2 PFLOP/s each](https://www.amd.com/en/products/accelerators/instinct/mi350/mi350x.html)),
 so its 8192³ DGEMM engine multiplies FP6 (E2M3) values instead of FP4 ones.
 
-<a href="Platforms/AMD/README.md"><img src="Figures/amd-mi350x-dgemm-times.png" alt="Horizontal bars of the MI350X whole DGEMM time at 8192 cubed: AWE MXFP6 (ours) 20.53 ms in 4 stages in shades of pink (shift 0.26, encode 4.29, MXFP6 GEMMs 14.72, CRT + sync 1.26), rocBLAS 5.2.0 DGEMM 20.81 in grey, GEMMul8 5f3fae8 INT8 10.48 in orange; sampled ULP error p95 and max: AWE 0 and 0, rocBLAS 151 and 214,787, GEMMul8 0 and 0" width="700"></a>
+<a href="Platforms/AMD/README.md"><img src="Figures/amd-mi350x-dgemm-times.png" alt="MI350X whole DGEMM times at 8192 cubed. AWE MXFP6 (pink) took 19.69 ms (shift 0.28, encode 4.47, MXFP6 GEMMs 13.56, CRT + sync 1.38 ms). rocBLAS 5.2.0 DGEMM (grey) took 20.47 ms and GEMMul8 5f3fae8 INT8 (orange) took 10.48 ms. Sampled p95 and maximum ULP errors were 0 and 0 for AWE, 151 and 214,787 for rocBLAS, and 0 and 0 for GEMMul8." width="700"></a>
 
-The figure was measured with a 29-product modulus table. With the 30-product table that the engine
-uses at 8192³, AWE takes 4.5% less time than rocBLAS DGEMM with 2 s between calls and 3.2 to 4.4% less
-back to back; at 4096³ and 8192 x 8192 x 4096 (builds not in this repository) it is slower than
-rocBLAS.
+At 8192³ with the 30-product table and a 2 s pause between calls, the median times were 19.69 ms
+for AWE and 20.47 ms for rocBLAS. The median of the paired time ratios gives a 4.5% saving for AWE.
+Back to back, AWE took 3.2 to 4.4% less time. Separate builds for 4096³ and 8192 x 8192 x 4096
+(outside this repository) were slower than rocBLAS.
 
 [Results, build and limits](Platforms/AMD/README.md)
 

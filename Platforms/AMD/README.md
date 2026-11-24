@@ -41,36 +41,36 @@ The kernel code object `Build-MI350X/Lib/awe_mxfp6_modular.co` is assembled from
 
 ## Measured result
 
-<a href="../../Figures/amd-mi350x-dgemm-times.png"><img src="../../Figures/amd-mi350x-dgemm-times.png" alt="Horizontal bars of the MI350X whole DGEMM time at 8192 cubed: AWE MXFP6 (ours) 20.53 ms in 4 stages in shades of pink (shift 0.26, encode 4.29, MXFP6 GEMMs 14.72, CRT + sync 1.26), rocBLAS 5.2.0 DGEMM 20.81 in grey, GEMMul8 5f3fae8 INT8 10.48 in orange; sampled ULP error p95 and max: AWE 0 and 0, rocBLAS 151 and 214,787, GEMMul8 0 and 0" width="700"></a>
+<a href="../../Figures/amd-mi350x-dgemm-times.png"><img src="../../Figures/amd-mi350x-dgemm-times.png" alt="MI350X whole DGEMM times at 8192 cubed. AWE MXFP6 (pink) took 19.69 ms (shift 0.28, encode 4.47, MXFP6 GEMMs 13.56, CRT + sync 1.38 ms). rocBLAS 5.2.0 DGEMM (grey) took 20.47 ms and GEMMul8 5f3fae8 INT8 (orange) took 10.48 ms. Sampled p95 and maximum ULP errors were 0 and 0 for AWE, 151 and 214,787 for rocBLAS, and 0 and 0 for GEMMul8." width="700"></a>
 
 > [!NOTE]
-> The figure was measured with the 29-product table (44 launches at K = 8192; the second-to-last step
-> in the table below). The 30-product table that the engine uses at 8192³, timed with
-> `awe_mxfp6_bench` against rocBLAS DGEMM in the same runs (median of 11 calls; saving = 1 - median of
-> the paired time ratios):
+> The AWE and rocBLAS bars show one run with a 2 s pause between calls. At 8192³ AWE took 19.69 ms
+> with the 30-product table (31 launches) and rocBLAS DGEMM took 20.47 ms. Each bar gives the median of
+> 11 calls. The 4.5% saving is one minus the median of the paired AWE/rocBLAS time ratios.
+> The table gives the range of run medians for each timing condition.
 >
 > | Calls | Runs | AWE (ms) | rocBLAS (ms) | AWE saves |
 > |:---|---:|---:|---:|---:|
 > | 2 s pause added between calls | 2 | 19.7–19.8 | 20.5–20.7 | 4.5% |
 > | back to back (the default of `awe_mxfp6_bench`) | 14 | 18.0–18.2 | 18.7–18.9 | 3.2–4.4% |
 
-The engine passes the accuracy criterion in all 3 runs, and GEMMul8 passes it too. GEMMul8 was built
-separately and is not part of this repository. With the 30-product table the engine also passes the
-CPU test and `awe_mxfp6_check --full` (1,024 sampled outputs bit equal, ULP errors 0; every output
-within the bound).
+The GEMMul8 bar comes from a separate build of GEMMul8, benchmarked alongside the 29-product AWE
+engine. Both passed the accuracy criterion in all 3 runs. The 30-product engine passes the CPU test and
+`awe_mxfp6_check --full` with 1,024 bit-equal sampled outputs, zero sampled ULP error and every
+output within the bound.
 
 <details><summary>Conditions and checks</summary>
 
 1 MI350X (gfx950), ROCm 7.2.0, 8192³, uniform inputs in [-1, 1) on a 53-bit grid, FP64 inputs resident
 on the device to FP64 output. Libraries: rocBLAS 5.2.0, hipBLASLt 1.2, GEMMul8 commit 5f3fae8 (INT8,
-15 moduli, fast), Composable Kernel commit 1439bc4, AITER commit 22c7cb4. Median of 11 timed calls
-after 3 warm-ups, in 3 independent runs of a measurement program that also ran GEMMul8 and checked
-every output on the CPU between calls, method order rotated. Accuracy
-criterion: on 1,024 sampled outputs, the 95th-percentile and maximum ULP errors against the exact dot
-product rounded to binary64 are no worse than rocBLAS DGEMM on the same inputs.
+15 moduli, fast), Composable Kernel commit 1439bc4, AITER commit 22c7cb4. The AWE and rocBLAS bars
+use whole-call host times from `awe_mxfp6_bench`, with the stream synchronized before and after each call.
+Each run used 3 warm-up and 11 timed rounds, with method order rotated. The accuracy criterion requires
+the 95th-percentile and maximum ULP errors on 1,024 sampled outputs, measured against the exact dot
+product rounded to binary64, to be no worse than rocBLAS DGEMM on the same inputs.
 
-The CRT + sync bar is CRT 1.20 ms and 0.06 ms of host synchronization outside the GPU events. In each
-of the 3 runs, the timed build compared all 67,108,864 outputs 15 times with an independent reference
+The CRT + sync stage includes reconstruction and host synchronization outside the GPU events. In each
+of the 3 runs with GEMMul8, the timed build compared all 67,108,864 outputs 15 times with an independent reference
 of the quantized products (bit equal) and with rocBLAS (within the quantization plus rounding bound),
 and 9,186 outputs were checked against the exact dot product of the original inputs.
 `awe_mxfp6_check` in this repository checks 1,024 sampled outputs bit for bit against the exactly
