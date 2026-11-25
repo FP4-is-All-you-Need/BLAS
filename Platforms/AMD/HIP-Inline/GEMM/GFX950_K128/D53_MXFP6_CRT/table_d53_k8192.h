@@ -2,8 +2,8 @@
 // Generated modulus set: 19 moduli, 30 MXFP6 (E2M3) products, exact for K <= 8192 at 53 bits.
 // Selected by table_select.h when K > 4096. The three-product forms (1223, 1231, 1249, 1279, 1283)
 // use FP6 values of magnitude at most 36 (E2M3 values times 8), so each of their products sums
-// K = 8192 terms exactly in FP32 in one launch; only the second product of 121 reaches 60 and runs
-// as two launches of K = 4096.
+// K = 8192 terms exactly in one FP32 segment. Only the second product of 121 reaches magnitude 60
+// and uses two segments of K = 4096 within the same kernel launch.
 // Do not edit by hand. host_lut maps a residue to the FP6 code of each product plane; the product
 // weights and the CRT prefixes/inverses are listed per form.
 // clang-format off

@@ -7,14 +7,14 @@ One engine: `HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/` computes C = A B in FP6
 8192, column-major, alpha = 1, beta = 0) from exact integer products on the MXFP6 (E2M3) Matrix Cores
 of gfx950. Each input row of A and column of B is scaled to a 53-bit integer grid, encoded as residues
 modulo 19 moduli (30 FP6 product planes, [table](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/table_d53_k8192.h)),
-multiplied by 31 MXFP6 GEMM launches whose epilogue folds the FP32 accumulator into uint16 residues,
+multiplied in one MXFP6 launch that holds partial residues in registers and writes each modulus once,
 and reconstructed with the Chinese remainder theorem (CRT) and one rounding to binary64. The output equals the exactly rounded
 dot product of the quantized inputs.
 
 The 19 moduli: 17, 19, 23, 25, 27, 29, 31, 32, 37, 41, 43, 47 and 49 need 1 FP6 product each, 121 needs
 2, and 1223, 1231, 1249, 1279 and 1283 need 3. The three-product moduli are chosen so that every FP6
 value of their products has magnitude 36 or less (E2M3 values times 8), which keeps K = 8192 in one
-launch (see [the engine page](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/README.md)).
+K segment (see [the engine page](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/README.md)).
 
 ## Build and run
 
@@ -41,73 +41,40 @@ The kernel code object `Build-MI350X/Lib/awe_mxfp6_modular.co` is assembled from
 
 ## Measured result
 
-<a href="../../Figures/amd-mi350x-dgemm-times.png"><img src="../../Figures/amd-mi350x-dgemm-times.png" alt="MI350X whole DGEMM times at 8192 cubed. AWE MXFP6 (pink) took 19.69 ms (shift 0.28, encode 4.47, MXFP6 GEMMs 13.56, CRT + sync 1.38 ms). rocBLAS 5.2.0 DGEMM (grey) took 20.47 ms and GEMMul8 5f3fae8 INT8 (orange) took 10.48 ms. Sampled p95 and maximum ULP errors were 0 and 0 for AWE, 151 and 214,787 for rocBLAS, and 0 and 0 for GEMMul8." width="700"></a>
+<a href="../../Figures/amd-mi350x-dgemm-times.png"><img src="../../Figures/amd-mi350x-dgemm-times.png" alt="MI350X DGEMM e2e times from device-resident FP64 inputs to synchronized FP64 output at 8192 cubed. AWE MXFP6 took 18.10 ms (shift 0.27, encode 4.00, MXFP6 products and residue updates 12.48, CRT and synchronization 1.35 ms). rocBLAS took 20.64 ms. GEMMul8 INT8 took 12.12 ms. Sampled ULP errors (p95, maximum) were AWE MXFP6 (0, 0), rocBLAS (151, 214,787), GEMMul8 INT8 (0, 0)." width="700"></a>
 
-> [!NOTE]
-> The AWE and rocBLAS bars show one run with a 2 s pause between calls. At 8192³ AWE took 19.69 ms
-> with the 30-product table (31 launches) and rocBLAS DGEMM took 20.47 ms. Each bar gives the median of
-> 11 calls. The 4.5% saving is one minus the median of the paired AWE/rocBLAS time ratios.
-> The table gives the range of run medians for each timing condition.
->
-> | Calls | Runs | AWE (ms) | rocBLAS (ms) | AWE saves |
-> |:---|---:|---:|---:|---:|
-> | 2 s pause added between calls | 2 | 19.7–19.8 | 20.5–20.7 | 4.5% |
-> | back to back (the default of `awe_mxfp6_bench`) | 14 | 18.0–18.2 | 18.7–18.9 | 3.2–4.4% |
+The e2e time covers the call from device-resident FP64 inputs to synchronized FP64 output.
+The figure shows medians for 8192³ with 2 s between calls. The same MI350X and inputs
+were used for all methods. GEMMul8 was built separately and timed in the same runs as the other libraries.
 
-The GEMMul8 bar comes from a separate build of GEMMul8, benchmarked alongside the 29-product AWE
-engine. Both passed the accuracy criterion in all 3 runs. The 30-product engine passes the CPU test and
-`awe_mxfp6_check --full` with 1,024 bit-equal sampled outputs, zero sampled ULP error and every
-output within the bound.
+| Calls | Methods timed together | AWE (ms) | rocBLAS (ms) | GEMMul8 INT8 (ms) |
+|:---|:---|---:|---:|---:|
+| 2 s pause | AWE, rocBLAS | 18.08 | 20.64 | — |
+| back to back | AWE, rocBLAS | 16.70 | 18.99 | — |
+| 2 s pause | all | 18.10 | 20.64 | 12.12 |
+| back to back | all | 16.80 | 18.93 | 10.46 |
+
+The all-method runs included hipBLASLt FP64 DGEMM. With a 2 s pause it took 19.10 ms. Its sampled p95 was 159 ULP against 151 for rocBLAS, so it did not qualify for the figure.
 
 <details><summary>Conditions and checks</summary>
 
-1 MI350X (gfx950), ROCm 7.2.0, 8192³, uniform inputs in [-1, 1) on a 53-bit grid, FP64 inputs resident
-on the device to FP64 output. Libraries: rocBLAS 5.2.0, hipBLASLt 1.2, GEMMul8 commit 5f3fae8 (INT8,
-15 moduli, fast), Composable Kernel commit 1439bc4, AITER commit 22c7cb4. The AWE and rocBLAS bars
-use whole-call host times from `awe_mxfp6_bench`, with the stream synchronized before and after each call.
-Each run used 3 warm-up and 11 timed rounds, with method order rotated. The accuracy criterion requires
-the 95th-percentile and maximum ULP errors on 1,024 sampled outputs, measured against the exact dot
-product rounded to binary64, to be no worse than rocBLAS DGEMM on the same inputs.
+One MI350X (gfx950), ROCm 7.2.0, rocBLAS 5.2.0, hipBLASLt 1.2 and GEMMul8 commit 5f3fae8
+(INT8, 15 moduli, fast mode). Uniform FP64 inputs on a 53-bit grid in [−1, 1), seed 20261021,
+M = N = K = 8192, α = 1, β = 0. The measurement driver extends `awe_mxfp6_bench` with a separately
+built GEMMul8, an optional pause and the reverse starting order. It synchronizes the stream before
+and after each call. Each run rotates method order through three warm-ups and eleven timed rounds.
+The figure and table pool 22 calls per method across the two opposite orders. The four AWE stages
+come from the two central calls after sorting AWE e2e times. The last stage includes reconstruction and
+host synchronization.
 
-The CRT + sync stage includes reconstruction and host synchronization outside the GPU events. In each
-of the 3 runs with GEMMul8, the timed build compared all 67,108,864 outputs 15 times with an independent reference
-of the quantized products (bit equal) and with rocBLAS (within the quantization plus rounding bound),
-and 9,186 outputs were checked against the exact dot product of the original inputs.
-`awe_mxfp6_check` in this repository checks 1,024 sampled outputs bit for bit against the exactly
-rounded dot product of the quantized inputs, applies the accuracy criterion to them, and with
-`--full` checks every output against rocBLAS within that bound.
+Using the correctly rounded dot products of the original inputs as the reference for 1,024 sampled outputs,
+a method passes if both it and rocBLAS have finite maximum errors and its 95th-percentile and maximum
+errors in units of the last place (ULP) are each no greater than the corresponding rocBLAS value. The exactness check
+compared all 67,108,864 AWE outputs to the exactly rounded dot of the quantized inputs for each of
+the uniform, normal and wide-exponent distributions. `awe_mxfp6_check --full` also checks every
+uniform output against the quantization and rounding bound.
 
 </details>
-
-| Change | Stage | Whole time (ms) | Saved (%) |
-|:---|:---|---:|---:|
-| Start: our own MXFP6 GEMM kernel (figure below) | | 26.15 | |
-| + packed encoding table | encode | 25.48 | 2.6 |
-| + branch-free encoding, fewer register spills in the GEMMs | encode, GEMMs | 23.70 | 7.1 |
-| + AITER `22c7cb4` kernel, residue update in its epilogue | MXFP6 GEMMs | 23.14 | 2.5 |
-| + encoder writes the GEMM input directly | encode | 22.66 | 2.7 |
-| + one encoding table (432 bytes) in shared memory | encode | 22.18 | 1.8 |
-| + higher occupancy (more wavefronts per SIMD unit) | encode | 21.88 | 1.7 |
-| + addresses in shared memory | encode | 21.56 | 1.2 |
-| + less shared memory | CRT | 21.14 | 1.6 |
-| + fewer moduli (19) | all | 20.64 | 2.6 |
-| + reordered reads | encode | 20.53 | 0.7 |
-| + moduli that keep K = 8192 in one launch (30 products, 31 launches) | MXFP6 GEMMs | 19.69–19.83 | 4.4 |
-| rocBLAS 5.2.0 DGEMM, same sessions | | 20.47–20.95 | |
-
-Whole 8192³ DGEMM time after each change; each + row adds one change to the row above, and the last
-one is the engine in this repository. Saved: share of the time that change alone saved, against the
-version without it run in the same session. The last + row (30 products, 31 launches) was timed with
-`awe_mxfp6_bench` and a 2 s pause added between calls; in that session the row above took 20.63 to 20.69 ms and rocBLAS 20.47 to
-20.70 ms.
-
-<a href="../../Figures/amd-mi350x-mxfp6-gemm.png"><img src="../../Figures/amd-mi350x-mxfp6-gemm.png" alt="Horizontal bars of MXFP6 GEMM throughput at 8192 cubed, all with FP32 output, against the 9.23 PFLOP/s theoretical peak: AITER 22c7cb4 with our epilogue 3.23 PFLOP/s (35.0%); our own kernel 2.53 (27.4%); Composable Kernel 1439bc4 1.12 (12.2%); hipBLASLt 1.2 1.06 (11.5%)" width="700"></a>
-
-The MXFP6 GEMM alone at 8192³ with FP32 output: 2MNK over the kernel time, against the 9.23 PFLOP/s
-theoretical peak. Our own kernel is the one at the start of the steps above and is not in this
-repository. We changed the epilogue of AITER's kernel to store FP32, and the engine's 31
-launches run the same kernel with the residue update in that epilogue
-([changes](HIP-Inline/GEMM/GFX950_K128/D53_MXFP6_CRT/THIRD_PARTY.md)).
 
 ## Limits
 
@@ -115,25 +82,21 @@ launches run the same kernel with the residue update in that epilogue
 > Only M = N = K = 8192, FP64, column-major, no transpose, alpha = 1, beta = 0.
 
 > [!NOTE]
-> - About 5.8 GB of device memory per plan, in addition to A, B and C.
+> - About 5.7 GB of device memory per plan, in addition to A, B and C.
 > - Inputs with NaN or infinity are rejected (the call throws).
 > - A value 2^-e times the largest of its row of A or column of B keeps about 53 - e significant bits.
-> - The accuracy criterion is sampled, not a proof for all inputs.
-> - Smaller sizes are slower than rocBLAS DGEMM. A build of the same code with the matrix size changed
->   (not in this repository), timed back to back, took 1.28 to 1.53 times as long as rocBLAS at 4096³
->   (AWE 3.5 ms) and 1.15 to 1.18 times as long at 8192 x 8192 x 4096 (AWE 10.8 to 11.0 ms). At
->   K = 4096 every product fits in one launch and the 29-product table is the faster one, so
->   `table_select.h` uses it there.
+> - Uniform and normal inputs met the sampled ULP criterion. With wide-exponent inputs the
+>   1,024 sampled errors against the original dot products had p95 248,975 and maximum 42,995,406 ULP
+>   for AWE, versus 70 and 4,166 for rocBLAS. All 67,108,864 AWE outputs still matched the
+>   exactly rounded dot products of the quantized inputs.
+> - Separate builds with the 29-product table at K = 4096 ran back to back. 4096 × 4096 × 4096 took 3.04 ms against 2.44 ms for rocBLAS. 8192 × 8192 × 4096 took 9.95 ms against 9.41 ms for rocBLAS.
 
 <details><summary>Details</summary>
 
 - The operand layout, the segment schedule and the kernel grid are written for the 8192 shape. The
   modulus set is exact for K <= 8192 at 53 bits.
-- The 5.8 GB are 3.2 GB of FP6 operand planes and 2.6 GB of residues.
+- The plan allocates 5.67 GB, including 2.55 GB for the residue planes.
 - Each row of A and column of B shares one power-of-two scale.
-- With ROCm 7.2.0 and the flags in its CMakeLists.txt, the 6 HIP kernels of this source compile to the
-  same gfx950 instructions as the measured build, and `AITER/modular.s` assembles to the same code
-  object except for the linker version string. The host code launches the same kernels in the same
-  order, with the same argument values apart from device addresses.
+- The MXFP6 kernel uses four wavefronts per 256 × 256 output tile, three stages in the local data share and a fixed E8M0 scale of 130.
 
 </details>

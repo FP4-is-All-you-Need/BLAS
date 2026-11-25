@@ -2,8 +2,8 @@
 // FP64 GEMM C = A B (8192 x 8192 x 8192, column-major, alpha = 1, beta = 0) on MXFP6 Matrix Cores:
 //   1. shifts: one power-of-two scale per row of A and per column of B (53-bit integer grid)
 //   2. encode: residues of every quantized input modulo the 19 moduli, as FP6 product planes
-//   3. products: 31 MXFP6 GEMM launches (30 products, K split in 4096/8192 segments); each launch
-//      folds its FP32 accumulator into the uint16 residue plane of its modulus
+//   3. products: one MXFP6 launch over 30 products in 4096/8192-element K segments; each tile
+//      keeps partial residues in registers until the last segment of each modulus
 //   4. CRT: every output is reconstructed from its 19 residues and rounded once to binary64
 // The result equals the exactly rounded dot product of the quantized inputs.
 #include "aiter_module.h"
@@ -27,9 +27,8 @@ class Dgemm8192 {
     static constexpr int m_ = rows, n_ = rows, k_ = rows, bits_ = table::max_bits;
     hipStream_t stream_;
     Module module_;
-    std::vector<unsigned> caps_;
     Memory sa_, sb_, invalid_, shift_max_, residues_, lut_, packed_lut_, table_a_, table_b_,
-        caps_device_;
+        product_args_;
     std::vector<std::unique_ptr<Memory>> planes_;
     std::array<ProductOperands, table::product_count> ha_{}, hb_{};
     hipEvent_t events_[5]{};
@@ -48,24 +47,9 @@ class Dgemm8192 {
         require(awe_wide::compare(table::modulus_product, bound) > 0,
                 "modulus product does not cover K");
     }
-    // Encoder shape of one side (rows of A or columns of B; both are padded to whole 256-row tiles).
-    static EncodeShape encode_shape(int outer) {
-        EncodeShape s;
-        s.outer = uint64_t(outer);
-        s.k = uint64_t(k_);
-        s.products = table::product_count;
-        s.padded_outer = (s.outer + 255) / 256 * 256;
-        s.padded_full_k = (s.k + 255) / 256 * 256;
-        s.segments = (s.k + 4095) / 4096;
-        s.product_words = s.padded_outer * (s.padded_full_k / 16) * 3;
-        s.total_words = s.products * s.product_words;
-        s.grid_blocks = (s.padded_outer / 16) * (s.padded_full_k / 128);
-        return s;
-    }
-
   public:
     Dgemm8192(hipStream_t stream, const std::string &module_path)
-        : stream_(stream), module_(module_path), caps_(segment_caps()) {
+        : stream_(stream), module_(module_path) {
         hipDeviceProp_t prop{};
         int device = 0;
         hip_check(hipGetDevice(&device));
@@ -90,27 +74,53 @@ class Dgemm8192 {
         packed_lut_ = Memory(packed.size() * 4);
         hip_check(
             hipMemcpy(packed_lut_.p, packed.data(), packed.size() * 4, hipMemcpyHostToDevice));
-        caps_device_ = Memory(caps_.size() * sizeof(unsigned));
-        hip_check(hipMemcpy(caps_device_.p, caps_.data(), caps_.size() * sizeof(unsigned),
-                            hipMemcpyHostToDevice));
         bytes_ = size_t(m_ + n_) * 4 + 4 + size_t(m_) * 8 + size_t(table::form_count) * count * 2 +
                  sizeof(table::host_lut) + packed.size() * 4;
+        const auto caps = segment_caps();
         for (unsigned pi = 0; pi < table::product_count; ++pi) {
-            const unsigned cap = caps_[pi], segments = unsigned(k_) / cap;
+            const unsigned cap = caps[pi], segments = unsigned(k_) / cap;
             ha_[pi].cap = hb_[pi].cap = cap;
             ha_[pi].segments = hb_[pi].segments = segments;
             for (unsigned s = 0; s < segments; ++s) {
                 ha_[pi].data[s] = keep(plane_words(cap) * 4)->as<uint32_t>();
                 hb_[pi].data[s] = keep(plane_words(cap) * 4)->as<uint32_t>();
-                ha_[pi].scale[s] = keep(plane_scale_bytes(cap))->as<uint8_t>();
-                hb_[pi].scale[s] = keep(plane_scale_bytes(cap))->as<uint8_t>();
             }
         }
+        for (const auto *side : {&ha_, &hb_}) {
+            for (const auto &operand : *side) encode::prepare_prefetch(operand, stream_);
+        }
+        hip_check(hipStreamSynchronize(stream_));
         table_a_ = Memory(sizeof(ha_));
         table_b_ = Memory(sizeof(hb_));
         hip_check(hipMemcpy(table_a_.p, ha_.data(), sizeof(ha_), hipMemcpyHostToDevice));
         hip_check(hipMemcpy(table_b_.p, hb_.data(), sizeof(hb_), hipMemcpyHostToDevice));
         bytes_ += sizeof(ha_) + sizeof(hb_);
+        std::vector<ModuleArgs> records;
+        for (unsigned fi = 0; fi < table::form_count; ++fi) {
+            const auto f = table::host_forms[fi];
+            bool first = true;
+            for (unsigned pi = f.first; pi < f.first + f.count; ++pi) {
+                for (unsigned s = 0; s < ha_[pi].segments; ++s) {
+                    ModuleLaunch x{};
+                    x.residues = residues_.as<uint16_t>() + size_t(fi) * count;
+                    x.invalid = invalid_.as<int>();
+                    x.a = ha_[pi].data[s];
+                    x.b = hb_[pi].data[s];
+                    x.k = ha_[pi].cap;
+                    x.p = f.p;
+                    x.weight = table::host_products[pi].weight % f.p;
+                    x.accumulate = first ? 0u : 1u;
+                    first = false;
+                    const bool last = pi + 1 == f.first + f.count && s + 1 == ha_[pi].segments;
+                    records.push_back(Module::pack(x, last));
+                }
+            }
+        }
+        records.back().at(440, 1u); // end of the product sequence
+        const size_t record_bytes = records.size() * sizeof(ModuleArgs);
+        product_args_ = Memory(record_bytes);
+        hip_check(hipMemcpy(product_args_.p, records.data(), record_bytes, hipMemcpyHostToDevice));
+        bytes_ += record_bytes;
         for (auto &event : events_) {
             hip_check(hipEventCreate(&event));
         }
@@ -140,11 +150,7 @@ class Dgemm8192 {
         return bytes_;
     }
     unsigned launches() const {
-        unsigned calls = 0;
-        for (unsigned cap : caps_) {
-            calls += unsigned(k_) / cap;
-        }
-        return calls;
+        return 1;
     }
     const uint16_t *residues() const {
         return residues_.as<uint16_t>();
@@ -170,41 +176,17 @@ class Dgemm8192 {
         hip_check(hipGetLastError());
         hip_check(hipEventRecord(events_[1], stream_));
 
-        hipLaunchKernelGGL(encode::encode_kernel<false>, dim3(m_ / 32, k_ / 128), dim3(256), 0,
-                           stream_, a, sa_.as<int>(), table_a_.as<ProductOperands>(),
-                           lut_.as<uint8_t>(), invalid_.as<int>(), encode_shape(m_), lda,
-                           caps_device_.as<unsigned>(), packed_lut_.as<uint32_t>());
+        hipLaunchKernelGGL(encode::encode_tile<false>, dim3(m_ / 16, k_ / 64), dim3(256), 0,
+                           stream_, a, sa_.as<int>(), table_a_.as<ProductOperands>(), lda,
+                           invalid_.as<int>(), lut_.as<uint8_t>(), packed_lut_.as<uint32_t>());
         hip_check(hipGetLastError());
-        hipLaunchKernelGGL(encode::encode_kernel<true>, dim3(n_ / 32, k_ / 128), dim3(256), 0,
-                           stream_, b, sb_.as<int>(), table_b_.as<ProductOperands>(),
-                           lut_.as<uint8_t>(), invalid_.as<int>(), encode_shape(n_), ldb,
-                           caps_device_.as<unsigned>(), packed_lut_.as<uint32_t>());
+        hipLaunchKernelGGL(encode::encode_tile<true>, dim3(n_ / 16, k_ / 64), dim3(256), 0,
+                           stream_, b, sb_.as<int>(), table_b_.as<ProductOperands>(), ldb,
+                           invalid_.as<int>(), lut_.as<uint8_t>(), packed_lut_.as<uint32_t>());
         hip_check(hipGetLastError());
         hip_check(hipEventRecord(events_[2], stream_));
 
-        // The first launch of a modulus writes its residue plane, later ones add to it, so the plane
-        // needs no clearing. A form with mixed caps (p = 121) has products with 1 and 2 segments.
-        for (unsigned fi = 0; fi < table::form_count; ++fi) {
-            const auto f = table::host_forms[fi];
-            bool first = true;
-            for (unsigned pi = f.first; pi < f.first + f.count; ++pi) {
-                for (unsigned s = 0; s < ha_[pi].segments; ++s) {
-                    ModuleLaunch x{};
-                    x.residues = residues_.as<uint16_t>() + size_t(fi) * count;
-                    x.invalid = invalid_.as<int>();
-                    x.a = ha_[pi].data[s];
-                    x.b = hb_[pi].data[s];
-                    x.scale_a = ha_[pi].scale[s];
-                    x.scale_b = hb_[pi].scale[s];
-                    x.k = ha_[pi].cap;
-                    x.p = f.p;
-                    x.weight = table::host_products[pi].weight % f.p;
-                    x.accumulate = first ? 0u : 1u;
-                    first = false;
-                    module_.launch(x, stream_);
-                }
-            }
-        }
+        module_.launch(product_args_.as<ModuleArgs>(), stream_);
         hip_check(hipEventRecord(events_[3], stream_));
 
         hipLaunchKernelGGL(crt::reconstruct_kernel, dim3((count + 255) / 256), dim3(256), 0,

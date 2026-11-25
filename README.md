@@ -91,12 +91,16 @@ More: [conditions and accuracy](Docs/performance.md#measurement-figures-and-cond
 The MI350X runs MXFP6 at the same rate as MXFP4 ([9.2 PFLOP/s each](https://www.amd.com/en/products/accelerators/instinct/mi350/mi350x.html)),
 so its 8192³ DGEMM engine multiplies FP6 (E2M3) values instead of FP4 ones.
 
-<a href="Platforms/AMD/README.md"><img src="Figures/amd-mi350x-dgemm-times.png" alt="MI350X whole DGEMM times at 8192 cubed. AWE MXFP6 (pink) took 19.69 ms (shift 0.28, encode 4.47, MXFP6 GEMMs 13.56, CRT + sync 1.38 ms). rocBLAS 5.2.0 DGEMM (grey) took 20.47 ms and GEMMul8 5f3fae8 INT8 (orange) took 10.48 ms. Sampled p95 and maximum ULP errors were 0 and 0 for AWE, 151 and 214,787 for rocBLAS, and 0 and 0 for GEMMul8." width="700"></a>
+<a href="Platforms/AMD/README.md"><img src="Figures/amd-mi350x-dgemm-times.png" alt="MI350X DGEMM e2e times from device-resident FP64 inputs to synchronized FP64 output at 8192 cubed. AWE MXFP6 took 18.10 ms (shift 0.27, encode 4.00, MXFP6 products and residue updates 12.48, CRT and synchronization 1.35 ms). rocBLAS took 20.64 ms. GEMMul8 INT8 took 12.12 ms. Sampled ULP errors (p95, maximum) were AWE MXFP6 (0, 0), rocBLAS (151, 214,787), GEMMul8 INT8 (0, 0)." width="700"></a>
 
-At 8192³ with the 30-product table and a 2 s pause between calls, the median times were 19.69 ms
-for AWE and 20.47 ms for rocBLAS. The median of the paired time ratios gives a 4.5% saving for AWE.
-Back to back, AWE took 3.2 to 4.4% less time. Separate builds for 4096³ and 8192 x 8192 x 4096
-(outside this repository) were slower than rocBLAS.
+Release v1.1.1 speeds up the MI350X DGEMM engine.
+
+The e2e measurement covers the call from device-resident FP64 inputs to synchronized FP64 output.
+At 8192³ with 2 s between calls, the median was **18.10 ms** for AWE, **20.64 ms** for rocBLAS DGEMM
+and **12.12 ms** for GEMMul8 INT8 on the same MI350X. The bars show medians over both method orders.
+Uniform and normal inputs met the sampled ULP criterion. Wide-exponent inputs exceeded it.
+GEMMul8 was built separately. In the back-to-back two-method benchmark, AWE took
+16.70 ms and rocBLAS took 18.99 ms.
 
 [Results, build and limits](Platforms/AMD/README.md)
 

@@ -1,6 +1,6 @@
 #pragma once
 // Generated modulus set: 19 moduli, 29 MXFP6 (E2M3) products, exact for K <= 8192 at 53 bits.
-// Selected by table_select.h when K <= 4096: there every product of this set fits in one launch,
+// Selected by table_select.h when K <= 4096: there every product of this set fits in one K segment,
 // and it needs one product fewer than table_d53_k8192.h.
 // Do not edit by hand. host_lut maps a residue to the FP6 code of each product plane; the product
 // weights and the CRT prefixes/inverses are listed per form.

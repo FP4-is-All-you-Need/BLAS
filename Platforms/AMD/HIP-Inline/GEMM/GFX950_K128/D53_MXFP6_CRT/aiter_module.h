@@ -1,8 +1,5 @@
 #pragma once
-// Loader and launcher of the MXFP6 GEMM code object (AITER/modular.s assembled at build time). The
-// kernel keeps AITER's main loop and kernel-argument block (384 bytes) and adds a 64-byte tail for the
-// modular epilogue: residues += weight * (acc mod p) mod p, written as uint16 straight from the AGPRs,
-// so no FP32 plane is ever stored.
+// One workgroup owns an output tile through the sequence of 448-byte product records.
 #include "common.h"
 #include "layout.h"
 #include <array>
@@ -32,8 +29,6 @@ struct ModuleLaunch {
     int *invalid;        // set to nonzero when an accumulator is not a small integer
     const void *a;       // A plane data of this product segment (layout.h)
     const void *b;       // B plane data
-    const void *scale_a; // A scale bytes
-    const void *scale_b; // B scale bytes
     unsigned k;          // 4096 or 8192
     unsigned p;          // modulus
     unsigned weight;     // product weight modulo p
@@ -45,11 +40,15 @@ class Module {
     hipFunction_t function_{};
 
   public:
-    static constexpr const char *symbol = "f6gemm_awe_modular_v1";
+    static constexpr const char *symbol = "f6gemm_awe_modular_v2";
 
     explicit Module(const std::string &path) {
         hip_check(hipModuleLoad(&module_, path.c_str()));
-        hip_check(hipModuleGetFunction(&function_, module_, symbol));
+        const hipError_t status = hipModuleGetFunction(&function_, module_, symbol);
+        if (status != hipSuccess) {
+            (void)hipModuleUnload(module_);
+            hip_check(status);
+        }
     }
     ~Module() {
         if (module_) {
@@ -59,13 +58,17 @@ class Module {
     Module(const Module &) = delete;
     Module &operator=(const Module &) = delete;
 
-    void launch(const ModuleLaunch &x, hipStream_t stream) const {
+    static ModuleArgs pack(const ModuleLaunch &x, bool last_in_form) {
         require(x.k == 4096 || x.k == 8192, "segment K must be 4096 or 8192");
         require(x.p >= 2 && x.p <= 65535 && x.weight < x.p && x.accumulate <= 1,
                 "modular launch arguments");
+        // The first reciprocal reduction leaves a value below 2p. Multiplication
+        // by the weight and addition of the prior residue must fit in a dword.
+        require(uint64_t(2 * x.p - 1) * x.weight + x.p - 1 <= UINT32_MAX,
+                "weighted residue bound");
         ModuleArgs args;
         // AITER's argument block: output pointer, A, B, alpha, N as the output stride, M, N, K,
-        // scales, and K / 32 scale groups per row. The epilogue does not use slot 0 (the output
+        // and K / 32 scale groups per row. The epilogue does not use slot 0 (the output
         // pointer), but the main loop still loads it, so it holds the residue plane.
         args.slot(0, x.residues);
         args.slot(2, x.a);
@@ -75,8 +78,6 @@ class Module {
         args.slot(14, rows);
         args.slot(15, rows);
         args.slot(16, x.k);
-        args.slot(17, x.scale_a);
-        args.slot(18, x.scale_b);
         args.slot(19, x.k / 32);
         args.slot(21, x.k / 32);
         // Modular tail (offsets fixed by AITER/modular.s).
@@ -84,12 +85,18 @@ class Module {
         args.at(392, x.invalid);
         args.at(400, x.p);
         args.at(404, x.weight);
-        args.at(408, 1.0 / double(x.p));
+        args.at(408, unsigned((uint64_t(1) << 32) / x.p));
+        args.at(412, ((1u << 24) + x.p - 1) / x.p * x.p); // offset all valid sums to nonnegative
         args.at(416, x.accumulate);
         args.at(420, rows);        // residue stride
         args.at(424, 16777216.0f); // |acc| must stay below 2^24 to be an exact integer
-        // FP32 shadow plane; unused by this engine (null).
-        args.at(432, static_cast<float *>(nullptr));
+        args.at(428, unsigned(last_in_form));
+        return args;
+    }
+
+    void launch(const ModuleArgs *products, hipStream_t stream) const {
+        ModuleArgs args;
+        args.at(0, products);
         size_t size = sizeof(args);
         void *config[] = {HIP_LAUNCH_PARAM_BUFFER_POINTER, args.bytes.data(),
                           HIP_LAUNCH_PARAM_BUFFER_SIZE, &size, HIP_LAUNCH_PARAM_END};

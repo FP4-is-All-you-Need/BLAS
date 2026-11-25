@@ -1,169 +1,100 @@
 #pragma once
-// Encoder: FP64 input -> residues modulo every form -> FP6 codes of every product plane, written
-// directly in the AITER operand layout. One block handles a 32 (rows) x 128 (K) tile; each thread
-// quantizes 16 inputs once, then the 19 forms are processed in pairs through LDS so the packet writers
-// read 16 consecutive K residues of one row while the quantization stays coalesced along the input.
-#include "common.h"
 #include "layout.h"
 #include "quantize.h"
 
-namespace awe_mxfp6 {
-namespace encode {
+namespace awe_mxfp6::encode {
 
-// Residues of the pair of forms (Fi, Fi+1) for one input; 1 << 16 marks an inactive or invalid input.
-template <unsigned Fi, unsigned Group, unsigned J = 0>
-__device__ __forceinline__ void tiled_residues_flag(uint32_t (&tile)[Group][32][129], unsigned row,
-                                                    unsigned kk, const Prepared &q, bool active,
-                                                    uint32_t &bad) {
-    if constexpr (J < Group && Fi + J < table::form_count) {
-        constexpr auto f = table::host_forms[Fi + J];
-        const auto v = residue<f.p>(q);
-        const bool ok = active && v.valid;
-        bad |= active && !v.valid;
-        tile[J][row][kk] = ok ? v.residue : (1u << 16);
-        tiled_residues_flag<Fi, Group, J + 1>(tile, row, kk, q, active, bad);
+inline void prepare_prefetch(const ProductOperands &out, hipStream_t stream) {
+    // Each 256-row tile has two zero K stages for the three-stage prefetch.
+    const size_t stages = out.cap / 128;
+    const size_t stage_bytes = 6144 * sizeof(uint32_t);
+    for (unsigned s = 0; s < out.segments; ++s) {
+        auto *data = reinterpret_cast<uint8_t *>(out.data[s]);
+        hip_check(hipMemset2DAsync(data + stages * stage_bytes, (stages + 2) * stage_bytes,
+                                   0, 2 * stage_bytes, row_tiles, stream));
     }
 }
 
-// At most one atomic OR per input and pair of forms.
-template <unsigned Fi, unsigned Group>
-__device__ __forceinline__ void tiled_residues(uint32_t (&tile)[Group][32][129], unsigned row,
-                                               unsigned kk, const Prepared &q, bool active,
-                                               int *invalid) {
-    uint32_t bad = 0;
-    tiled_residues_flag<Fi, Group>(tile, row, kk, q, active, bad);
-    if (bad) {
-        atomicOr(invalid, 1);
-    }
+struct Digits {
+    uint32_t lo, mid, hi;
+};
+
+template <unsigned P>
+__device__ __forceinline__ unsigned reduce(Digits d) {
+    // Reverse the 2^53 bias after reducing the three base-2^18 digits.
+    constexpr unsigned r = (1u << 18) % P, rr = r * r % P;
+    constexpr unsigned bias_correction = (P - (uint64_t(1) << 53) % P) % P;
+    static_assert(uint64_t(0x3ffff) * (1 + r + rr) + bias_correction <= UINT32_MAX);
+    return (d.lo + d.mid * r + d.hi * rr + bias_correction) % P;
 }
 
-// Codes of a 2- or 3-product form come from one packed word; byte j belongs to product j.
-template <unsigned Fi, unsigned J = 0>
-__device__ __forceinline__ void pack_products(uint32_t (&words)[table::host_forms[Fi].count][8],
-                                              unsigned t, uint32_t codes, uint32_t &bad) {
-    static_assert(table::host_forms[Fi].count >= 2 && table::host_forms[Fi].count <= 3);
-    if constexpr (J < table::host_forms[Fi].count) {
+template <bool SideB, unsigned Fi>
+__device__ __forceinline__ void write_forms(const Digits (&digits)[4], unsigned row,
+                                            unsigned packet_k, const ProductOperands *outputs,
+                                            const uint8_t *lut, const uint32_t *packed) {
+    if constexpr (Fi < table::form_count) {
         constexpr auto f = table::host_forms[Fi];
-        constexpr auto p = table::host_products[f.first + J];
-        static_assert(p.p == f.p && p.bits == 6, "E2M3 product binding");
-        uint32_t code = (codes >> (8 * J)) & 255u;
-        const bool over = code > 63;
-        bad |= over;
-        code = over ? 0u : code;
-        insert(words[J], t, code);
-        pack_products<Fi, J + 1>(words, t, codes, bad);
-    }
-}
-
-// Write the packets of the pair of forms for 16 consecutive K values of one row.
-template <bool SideB, unsigned Fi, unsigned Group, unsigned J = 0>
-__device__ __forceinline__ void tiled_packets(const uint32_t (&tile)[Group][32][129], unsigned row,
-                                              unsigned kk, uint64_t outer, uint64_t global_k,
-                                              const ProductOperands *outputs, int *invalid,
-                                              const uint32_t *packed, const uint8_t *single) {
-    if constexpr (J < Group && Fi + J < table::form_count) {
-        constexpr auto f = table::host_forms[Fi + J];
-        // 16 codes of 6 bits fill 3 words. The array has 8 words: its size sets the register
-        // allocation of this kernel.
-        uint32_t words[f.count][8]{};
-        uint32_t bad = 0;
-#pragma unroll 16
-        for (unsigned t = 0; t < 16; ++t) {
-            const uint32_t r = tile[J][row][kk + t];
-            const bool valid = r < (1u << 16);
-            if constexpr (f.count >= 2) {
-                constexpr size_t base = packed_lut::offset<SideB, Fi + J>();
-                const uint32_t looked = packed[base + (r & 65535u)];
-                pack_products<Fi + J>(words, t, valid ? looked : 0u, bad);
+        unsigned chunks[f.count]{};
+#pragma unroll
+        for (unsigned j = 0; j < 4; ++j) {
+            unsigned v = reduce<f.p>(digits[j]);
+            unsigned codes;
+            if constexpr (f.count == 1) {
+                constexpr auto p = table::host_products[f.first];
+                codes = lut[(SideB ? p.lut_b : p.lut_a) + v];
             } else {
-                const uint32_t looked = single[single_lut::offset<Fi + J>() + (r & 65535u)];
-                uint32_t code = valid ? looked : 0u;
-                const bool over = code > 63;
-                bad |= over;
-                code = over ? 0u : code;
-                insert(words[0], t, code);
+                codes = packed[packed_lut::offset<SideB, Fi>() + v];
             }
+#pragma unroll
+            for (unsigned p = 0; p < f.count; ++p)
+                chunks[p] |= ((codes >> (8 * p)) & 63u) << (6 * j);
         }
-        if (bad) {
-            atomicOr(invalid, 4);
-        }
+        // For each row the four lanes 16 apart hold 24 bits each. The first three
+        // in each four-lane set concatenate adjacent chunks into three dwords.
+        const unsigned w = (threadIdx.x >> 4) & 3;
 #pragma unroll
         for (unsigned p = 0; p < f.count; ++p) {
-            store_packet(outputs[f.first + p], unsigned(outer), global_k, words[p]);
+            const unsigned a = chunks[p], b = __shfl_down(a, 16, 64);
+            if (w < 3) {
+                const auto &out = outputs[f.first + p];
+                const unsigned k = packet_k & (out.cap - 1);
+                out.data[packet_k / out.cap][word_index(row, k, w, out.cap)] =
+                    (a >> (8 * w)) | (b << (24 - 8 * w));
+            }
         }
-        tiled_packets<SideB, Fi, Group, J + 1>(tile, row, kk, outer, global_k, outputs, invalid,
-                                               packed, single);
+        write_forms<SideB, Fi + 1>(digits, row, packet_k, outputs, lut, packed);
     }
 }
 
-template <bool SideB, unsigned Fi = 0>
-__device__ __forceinline__ void
-allform_pairs(const Prepared (&prepared)[16], const bool (&active)[16],
-              uint32_t (&tile)[2][32][129], uint64_t o0, uint64_t k0,
-              const ProductOperands *outputs, int *invalid, const uint32_t *packed,
-              const uint8_t *single) {
-    if constexpr (Fi < table::form_count) {
-#pragma unroll 16
-        for (unsigned q = 0; q < 16; ++q) {
-            const unsigned linear = threadIdx.x + 256 * q;
-            const unsigned row = SideB ? linear / 128 : linear % 32,
-                           kk = SideB ? linear % 128 : linear / 32;
-            tiled_residues<Fi, 2>(tile, row, kk, prepared[q], active[q], invalid);
-        }
-        __syncthreads();
-        // Packet reader ownership: lanes 0..127 take rows 0..15, 128..255 rows 16..31; within a half,
-        // consecutive lane pairs share a row and take the two 16-wide halves of a 32-wide K group,
-        // so the stores of one group are contiguous.
-        const unsigned lane = threadIdx.x;
-        const unsigned row = (lane / 128) * 16 + (lane % 32) / 2;
-        const unsigned kk = ((lane % 128) / 32) * 32 + (lane % 2) * 16;
-        tiled_packets<SideB, Fi, 2>(tile, row, kk, o0 + row, k0 + kk, outputs, invalid, packed,
-                                    single);
-        // Every packet reader finishes before the next pair overwrites the LDS tile.
-        __syncthreads();
-        allform_pairs<SideB, Fi + 2>(prepared, active, tile, o0, k0, outputs, invalid, packed,
-                                     single);
-    }
-}
-
-// input: column-major A (M x K, element (o, g) at g * ld + o) or B (K x N, element (g, o) at o * ld + g).
-// shifts: per row of A or column of B. outputs: the 29 product descriptors of this side.
-// lut: host_lut on the device; packed: the packed LUT; invalid: OR of error flags (1 quantization, 4 LUT).
-// shape: only outer and k are read. caps is not read; the argument keeps the kernel argument
-// layout.
-// Launch bounds (256, 4): 4 blocks per CU keep the encoder's many stores in flight.
 template <bool SideB>
-__global__ __launch_bounds__(256, 4) void encode_kernel(
-    const double *input, const int *shifts, const ProductOperands *outputs, const uint8_t *lut,
-    int *invalid, EncodeShape shape, int ld, const unsigned *caps, const uint32_t *packed) {
-    __shared__ uint32_t tile[2][32][129];
-    alignas(16) __shared__ uint8_t single[single_lut::allocation_bytes];
-    alignas(16) __shared__ ProductOperands cached_outputs[table::product_count];
-    for (unsigned i = threadIdx.x; i < single_lut::bytes; i += 256) {
-        single[i] = lut[single_lut::source_index<SideB>(i)];
-    }
-    if (threadIdx.x < table::product_count) {
-        cached_outputs[threadIdx.x] = outputs[threadIdx.x];
+__global__ __launch_bounds__(256) void encode_tile(const double *input, const int *shifts,
+                                                   const ProductOperands *outputs, int ld,
+                                                   int *invalid, const uint8_t *lut,
+                                                   const uint32_t *packed) {
+    __shared__ uint64_t tile[16][65];
+    const unsigned row0 = blockIdx.x * 16, k0 = blockIdx.y * 64;
+    const unsigned lane = threadIdx.x;
+#pragma unroll
+    for (unsigned i = 0; i < 4; ++i) {
+        const unsigned at = lane + 256 * i;
+        const unsigned r = SideB ? at / 64 : at % 16, k = SideB ? at % 64 : at / 16;
+        const unsigned row = row0 + r, g = k0 + k;
+        const auto q = prepare(raw_binary64(input[SideB ? size_t(row) * ld + g : size_t(g) * ld + row]),
+                               shifts[row]);
+        // The row or column shift bounds |q| by 2^53 - 1.
+        const uint64_t mag = (uint64_t(q.words[1]) << 32) | q.words[0];
+        if (!q.valid || q.words[2] || (mag >> 53)) atomicOr(invalid, 1);
+        tile[r][k] = (uint64_t(1) << 53) + (q.negative ? -mag : mag);
     }
     __syncthreads();
-    const uint64_t o0 = uint64_t(blockIdx.x) * 32, k0 = uint64_t(blockIdx.y) * 128;
-    Prepared prepared[16]{};
-    bool active[16]{};
-#pragma unroll 16
-    for (unsigned q = 0; q < 16; ++q) {
-        const unsigned linear = threadIdx.x + 256 * q;
-        const unsigned row = SideB ? linear / 128 : linear % 32,
-                       kk = SideB ? linear % 128 : linear / 32;
-        const uint64_t o = o0 + row, g = k0 + kk;
-        active[q] = o < shape.outer && g < shape.k;
-        if (active[q]) {
-            prepared[q] =
-                prepare(raw_binary64(input[SideB ? o * uint64_t(ld) + g : g * uint64_t(ld) + o]),
-                        shifts[o]);
-        }
+    const unsigned r = lane % 16, k = (lane / 16) * 4;
+    Digits digits[4];
+#pragma unroll
+    for (unsigned i = 0; i < 4; ++i) {
+        uint64_t x = tile[r][k + i];
+        digits[i] = {unsigned(x) & 0x3ffff, unsigned(x >> 18) & 0x3ffff, unsigned(x >> 36)};
     }
-    allform_pairs<SideB>(prepared, active, tile, o0, k0, cached_outputs, invalid, packed, single);
+    write_forms<SideB, 0>(digits, row0 + r, k0 + (k & ~15u), outputs, lut, packed);
 }
 
-} // namespace encode
-} // namespace awe_mxfp6
+} // namespace awe_mxfp6::encode

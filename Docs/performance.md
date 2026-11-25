@@ -61,39 +61,18 @@ dataset was not regenerated during release preparation.
 
 ## AMD MI350X measurement
 
-The [MI350X result](../Platforms/AMD/README.md#measured-result) used 1 MI350X (gfx950), ROCm 7.2.0,
-rocBLAS 5.2.0, GEMMul8 commit 5f3fae8 (INT8, 15 moduli, fast mode), 8192³ with uniform inputs in
-[-1, 1) at 53 bits. The MXFP6 GEMM figure used AITER commit 22c7cb4, Composable Kernel commit 1439bc4
-and hipBLASLt 1.2. For the AWE and rocBLAS DGEMM bars, `awe_mxfp6_bench` measured whole-call host time
-with the stream synchronized before and after each call and a 2 s pause between calls. At 8192³
-AWE took 19.69 ms with the 30-product table (31 launches). Its stages were shift (0.28 ms), encode (4.47 ms),
-MXFP6 GEMMs (13.56 ms) and CRT + sync (1.38 ms). rocBLAS took 20.47 ms. The GEMMul8 bar (10.48 ms)
-comes from a separate benchmark with the 29-product engine. That program rotated method order,
-ran 3 warm-ups and 11 timed calls per method in each of 3 runs, and checked every output on the CPU
-between calls. By default, `awe_mxfp6_bench` times calls back to back.
-The accuracy criterion is the sampled criterion above with rocBLAS DGEMM as the native reference.
-In a separate sweep, none of the 64 algorithms that hipBLASLt 1.2 returns for FP64 DGEMM meets it (sampled p95 154 to
-166 ULP; rocBLAS 151); the fastest took 16.9 to 18.9 ms across the runs. The FP64 DGEMM
-kernels that rocBLAS 5.2.0 and hipBLASLt 1.2 ran use the FP64 Matrix Cores (`v_mfma_f64_16x16x4_f64`
-in their code objects, read with the ROCm disassembler); rocBLAS reaches 73 to 81% of
-the 72.1 TFLOP/s FP64 theoretical peak.
+The [MI350X measurement and accuracy checks](../Platforms/AMD/README.md#measured-result) use
+8192³, uniform 53-bit inputs and one MI350X with ROCm 7.2.0. The e2e timer covers the call from device-resident FP64
+inputs to synchronized FP64 output. With 2 s between calls, the medians
+were 18.10 ms for AWE, 20.64 ms for rocBLAS 5.2.0 DGEMM and 12.12 ms for GEMMul8 INT8
+(commit 5f3fae8, 15 moduli, fast mode). Each median uses both method orders in the same session.
 
-Each 30-product run had 3 warm-up and 11 timed rounds, with the AWE and rocBLAS order reversed
-every round. The AWE and rocBLAS bars show each method's median time in one run. Both runs with a 2 s pause gave
-a 4.5% saving, calculated as one minus the median of the per-round AWE/rocBLAS time ratios. The
-run medians ranged from 19.7 to 19.8 ms for AWE and from 20.5 to 20.7 ms for rocBLAS. In 14
-back-to-back runs across 5 sessions, AWE took 18.0 to 18.2 ms and rocBLAS took 18.7 to 18.9 ms,
-with savings of 3.2 to 4.4%. Separate builds for the smaller sizes were timed back to back in 6 runs
-each. AWE took 1.28 to 1.53 times as long as rocBLAS at 4096³ and 1.15 to 1.18 times as long
-at 8192 x 8192 x 4096. The rocBLAS time at 4096³ varied between about 2.3 and 2.9 ms from call to
-call, hence the wide range.
-
-### AMD MI350X optimization steps
-
-The [steps table](../Platforms/AMD/README.md#measured-result) gives the whole 8192³ DGEMM time after
-each change and the share of the time that change alone saved against a control run in the same
-session. The controls were measured anew in each session, so the savings do not add up to the
-difference of the whole times.
+The separate [FP32-output MXFP6 throughput figure](../Figures/amd-mi350x-mxfp6-gemm.png) uses AITER commit 22c7cb4, Composable Kernel commit 1439bc4
+and hipBLASLt 1.2. The rocBLAS and hipBLASLt FP64 DGEMM kernels use FP64 Matrix Cores
+(`v_mfma_f64_16x16x4_f64` in the code objects). In a separate 64-algorithm hipBLASLt sweep, the
+sampled 95th-percentile FP64 error ranged from 154 to 166 ULP, against 151 for rocBLAS. In those
+runs the fastest hipBLASLt algorithm took 16.9–18.9 ms, and rocBLAS reached 73–81% of the
+72.1 TFLOP/s FP64 theoretical peak.
 
 ## Exact INT8 measurements and hardware rates
 

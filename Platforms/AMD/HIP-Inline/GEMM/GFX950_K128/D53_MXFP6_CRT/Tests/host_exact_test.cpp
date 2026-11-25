@@ -4,7 +4,7 @@
 //   3. the line shift (crt::shift_of) for normal, subnormal and zero maxima;
 //   4. small shapes end to end on the host: quantize -> residues -> integer products per segment ->
 //      residue update -> CRT -> binary64, compared bit for bit with the exact dot of the quantized
-//      inputs. The device kernels run the same residue, CRT and rounding code (quantize.h, crt.h).
+//      inputs. The device kernels use the same quantization, CRT and rounding (quantize.h, crt.h).
 #include "../crt.h"
 #include "../layout.h"
 #include "../quantize.h"
@@ -35,26 +35,26 @@ static int decode(unsigned code) {
 static void test_table() {
     // Expected segment caps of the selected table (table_select.h).
 #if AWE_MXFP6_TABLE_K > 4096
-    // 29 products at K 8192, 1 at 4096 = 31 launches.
+    // 29 products at K 8192, 1 at 4096 = 31 segments.
     static const unsigned expected_cap[30] = {
         8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 4096, 8192,
         8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192};
 #else
-    // 14 products at K 8192, 15 at 4096 = 44 launches.
+    // 14 products at K 8192, 15 at 4096 = 44 segments.
     static const unsigned expected_cap[29] = {
         8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 8192, 4096, 4096,
         4096, 8192, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096};
 #endif
     const auto caps = segment_caps();
-    unsigned launches = 0;
+    unsigned segments = 0;
     for (unsigned pi = 0; pi < table::product_count; ++pi) {
         const auto bound = product_bound(pi);
         check(bound.max_a <= 60 && bound.max_b <= 60, "E2M3 magnitude bound");
         check(uint64_t(caps[pi]) <= bound.terms, "segment cap within the exact accumulator bound");
         check(caps[pi] == expected_cap[pi], "segment cap of this table");
-        launches += 8192 / caps[pi];
+        segments += 8192 / caps[pi];
     }
-    check(launches == AWE_MXFP6_TABLE_LAUNCHES_AT_8192, "product launches at K = 8192");
+    check(segments == AWE_MXFP6_TABLE_SEGMENTS_AT_8192, "product segments at K = 8192");
     for (unsigned char code : table::host_lut) {
         check(code <= 63, "LUT entries are E2M3 codes");
     }

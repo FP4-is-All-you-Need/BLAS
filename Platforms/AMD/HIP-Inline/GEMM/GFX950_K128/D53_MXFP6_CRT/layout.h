@@ -18,36 +18,22 @@ static_assert(table::form_count == 19 && table::product_count == AWE_MXFP6_TABLE
 
 // ---- AITER operand layout -------------------------------------------------------------------
 // The kernel reads A and B as 256-row tiles of 128-element K stages. Each stage holds 1024 groups of
-// 32 FP6 values (24 bytes) stored as 16 + 8 bytes in two halves, plus one E8M0 scale byte per group.
+// 32 FP6 values (24 bytes) stored as 16 + 8 bytes in two halves. Matrix fused multiply-add uses constant E8M0 scale 130.
 // Two zero-filled stages follow the last real stage because the kernel's prefetch reads past K.
 // A segment of K columns (cap = 4096 or 8192) of one product is one such operand plane per side.
 struct ProductOperands {
     uint32_t *data[2]; // plane data per K segment (at most 2 segments at K = 8192)
-    uint8_t *scale[2]; // plane scale bytes per K segment
     uint32_t cap;      // K columns per segment
     uint32_t segments; // 8192 / cap
 };
-static_assert(sizeof(ProductOperands) == 40 && offsetof(ProductOperands, cap) == 32,
+static_assert(sizeof(ProductOperands) == 24 && offsetof(ProductOperands, cap) == 16,
               "device copy of the table");
-
-// Encoder shape argument, passed by value. The encoder reads only outer and k. The other fields are
-// not read; the 80-byte layout fixes the argument offsets, which the compiled kernel depends on.
-struct EncodeShape {
-    uint64_t outer = 0, k = 0, products = 0, padded_outer = 0, padded_full_k = 0;
-    uint64_t segments = 0, product_words = 0, total_words = 0, grid_blocks = 0;
-    bool side_b = false;
-};
-static_assert(sizeof(EncodeShape) == 80 && offsetof(EncodeShape, k) == 8,
-              "encoder argument layout");
 
 constexpr unsigned rows = 8192; // M = N = K = 8192 is the only shape this engine handles
 constexpr unsigned row_tiles = rows / 256;
 
 AWE_MXFP6_HD constexpr uint64_t plane_words(unsigned cap) {
     return uint64_t(row_tiles) * (cap / 128 + 2) * 6144;
-}
-AWE_MXFP6_HD constexpr uint64_t plane_scale_bytes(unsigned cap) {
-    return uint64_t(row_tiles) * (cap / 128 + 2) * 1024;
 }
 AWE_MXFP6_HD constexpr unsigned group(unsigned row, unsigned k) {
     return ((row % 256) / 16) * 64 + ((k % 128) / 32) * 16 + row % 16;
@@ -57,50 +43,6 @@ AWE_MXFP6_HD constexpr uint64_t word_index(unsigned row, unsigned k, unsigned w,
     const unsigned g = group(row, k), j = 3 * ((k % 32) / 16) + w;
     return j < 4 ? base + g * 4 + j : base + 4096 + g * 2 + j - 4;
 }
-AWE_MXFP6_HD constexpr uint64_t scale_index(unsigned row, unsigned k, unsigned cap) {
-    return (uint64_t(row / 256) * (cap / 128 + 2) + k / 128) * 1024 + group(row, k);
-}
-
-// Store one packet of 16 FP6 codes (3 words) for (row, global_k). The scale byte 130 is the E8M0
-// value 2^3. E2M3 values are integers times 2^-3, so with this scale every operand value is an
-// integer and every product term of the FP32 accumulation is an integer. The thread that owns
-// k < 128 also zeroes the two trailing stages of its packet position so no stale data reaches the
-// prefetch.
-AWE_MXFP6_HD inline void store_packet(const ProductOperands &out, unsigned row, uint64_t global_k,
-                                      const uint32_t *words) {
-    const unsigned seg = unsigned(global_k >> (out.cap == 4096 ? 12 : 13)),
-                   k = unsigned(global_k & (out.cap - 1u));
-#pragma unroll
-    for (unsigned w = 0; w < 3; ++w) {
-        out.data[seg][word_index(row, k, w, out.cap)] = words[w];
-    }
-    if ((k & 31u) == 0) {
-        out.scale[seg][scale_index(row, k, out.cap)] = 130;
-    }
-    if (k < 128) {
-#pragma unroll
-        for (unsigned pad = 0; pad < 2; ++pad) {
-            const unsigned pk = out.cap + 128 * pad + k;
-#pragma unroll
-            for (unsigned w = 0; w < 3; ++w) {
-                out.data[seg][word_index(row, pk, w, out.cap)] = 0;
-            }
-            if ((k & 31u) == 0) {
-                out.scale[seg][scale_index(row, pk, out.cap)] = 127;
-            }
-        }
-    }
-}
-
-// Pack a 6-bit code into the packet words at position t (0..15).
-AWE_MXFP6_HD inline void insert(uint32_t *words, unsigned t, uint32_t code) {
-    const unsigned bit = t * 6, w = bit / 32, s = bit % 32;
-    words[w] |= (code & 63u) << s;
-    if (s > 26) {
-        words[w + 1] |= (code & 63u) >> (32 - s);
-    }
-}
-
 // ---- Product bounds and K segmentation ------------------------------------------------------
 // The FP32 accumulator of the kernel must stay an exact integer, so a product whose largest |code|
 // values are max_a and max_b may sum at most (2^24 - 1) / (max_a * max_b) terms per segment.
@@ -148,7 +90,7 @@ inline unsigned select_cap(uint64_t safe_terms) {
     return safe_terms >= 16384 ? 16384 : safe_terms >= 8192 ? 8192 : safe_terms >= 4096 ? 4096 : 0;
 }
 
-// Segment caps at K = 8192 (the kernel accepts K = 4096 or 8192 per launch).
+// Segment caps at K = 8192 (each record covers a K segment of 4096 or 8192).
 inline std::vector<unsigned> segment_caps() {
     std::vector<unsigned> caps(table::product_count);
     for (unsigned pi = 0; pi < table::product_count; ++pi) {
@@ -160,36 +102,6 @@ inline std::vector<unsigned> segment_caps() {
     }
     return caps;
 }
-
-// ---- Single-product LUT (420 bytes, copied to LDS per side) ---------------------------------
-namespace single_lut {
-template <unsigned Fi, unsigned J = 0> AWE_MXFP6_HD constexpr unsigned offset() {
-    if constexpr (J < Fi) {
-        constexpr auto f = table::host_forms[J];
-        return (f.count == 1 ? f.p : 0) + offset<Fi, J + 1>();
-    } else {
-        return 0;
-    }
-}
-inline constexpr unsigned bytes = offset<table::form_count>(),
-                          allocation_bytes = (bytes + 15u) & ~15u;
-static_assert(bytes == 420 && allocation_bytes == 432, "single-product forms of the public table");
-template <bool SideB, unsigned Fi = 0> AWE_MXFP6_HD constexpr unsigned source_index(unsigned i) {
-    if constexpr (Fi < table::form_count) {
-        constexpr auto f = table::host_forms[Fi];
-        if constexpr (f.count == 1) {
-            constexpr auto p = table::host_products[f.first];
-            if (i < f.p) {
-                return (SideB ? p.lut_b : p.lut_a) + i;
-            }
-            i -= f.p;
-        }
-        return source_index<SideB, Fi + 1>(i);
-    } else {
-        return 0;
-    }
-}
-} // namespace single_lut
 
 // ---- Packed LUT for 2- and 3-product forms (one 32-bit word per residue and side) -------------
 namespace packed_lut {
